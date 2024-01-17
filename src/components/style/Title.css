@@ -1,0 +1,9 @@
+.content-title {
+    border-top-style: solid;
+    border-width : 2px;
+    border-bottom-style : solid;
+    border-color : #FF5238;
+    padding : 10px;
+    text-align : center;
+    /* margin-bottom: 100px; */
+}
