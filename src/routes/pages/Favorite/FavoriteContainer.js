@@ -3,7 +3,7 @@ import { FavoritePresenter } from './FavoritePresenter'
 
 const FavoriteContainer = () => {
 
-  const counselorInfo = [
+  const [counselorInfo, setCounselorInfo] = useState([
     {
       id: 1,
       name: '허관',
@@ -22,7 +22,7 @@ const FavoriteContainer = () => {
       category: '화이트',
       rank: '브론즈'
     }
-  ]
+  ]);
 
   return (
     <FavoritePresenter counselorInfo={counselorInfo} />
