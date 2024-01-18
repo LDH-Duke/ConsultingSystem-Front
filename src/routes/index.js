@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { SignIn, Home, Counselor, Favorite, EditProfile } from './pages';
+import { SignIn, Home, Counselor, Favorite, EditProfile, Search } from './pages';
 
 const Router = () => (
   <Routes>
@@ -13,6 +13,7 @@ const Router = () => (
     <Route exact path="/counselor" element={<Counselor />} />
     <Route exact path="/favorite" element={<Favorite />} />
     <Route exact path="/editprofile" element={<EditProfile />} />
+    <Route exact path="/search" element={<Search />} />
     {/* <Route exact path="/*" component={() => <h1>Not Found</h1>} /> */}
   </Routes>
 )

@@ -12,16 +12,16 @@ const EditProfileContainer = () => {
       children:
         <div className='editprofile-box'>
           <div className='info-box'>
-            <div className='info-box-content'>
-              <div className='info-box-title'>{'닉네임'}</div>
-              <div className='info-box-output'>
+            <div className='info-content-box'>
+              <div className='info-title-box'>{'닉네임'}</div>
+              <div className='info-output-box'>
                 <Form>
                   <Form.Item>
                     <Input placeholder={'닉네임을 입력해 주세요'} />
                   </Form.Item>
                 </Form>
               </div>
-              <div className="info-box-button">
+              <div className="info-button-box">
                 <Button>적용</Button>
                 <Button>취소</Button>
               </div>
@@ -35,32 +35,32 @@ const EditProfileContainer = () => {
       children:
         <div className='editprofile-box'>
           <div className='info-box'>
-            <div className='info-box-content'>
-              <div className='info-box-title'>{'현재 비밀번호'}</div>
-              <div className='info-box-output'>
+            <div className='info-content-box'>
+              <div className='info-title-box'>{'현재 비밀번호'}</div>
+              <div className='info-output-box'>
                 <Form>
                   <Form.Item>
                     <Input placeholder={'현재 비밀번호를 입력해 주세요'} />
                   </Form.Item>
                 </Form>
               </div>
-              <div className='info-box-title'>{'새 비밀번호'}</div>
-              <div className='info-box-output'>
+              <div className='info-title-box'>{'새 비밀번호'}</div>
+              <div className='info-output-box'>
                 <Form>
                   <Form.Item>
                     <Input placeholder={'새 비밀번호를 입력해 주세요'} />
                   </Form.Item>
                 </Form>
               </div>
-              <div className='info-box-title'>{'새 비밀번호 확인'}</div>
-              <div className='info-box-output'>
+              <div className='info-title-box'>{'새 비밀번호 확인'}</div>
+              <div className='info-output-box'>
                 <Form>
                   <Form.Item>
                     <Input placeholder = {'새 비밀번호를 재입력해 주세요'} />
                   </Form.Item>
                 </Form>
               </div>
-              <div className="info-box-button">
+              <div className="info-button-box">
                 <Button>적용</Button>
                 <Button>취소</Button>
               </div>

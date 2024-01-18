@@ -1,7 +1,7 @@
 import React from 'react'
 import './EditProfile.css'
 import Title from '../../../components/Title';
-import { Button, Form, Tabs } from 'antd';
+import { Button, Form, Tabs, Input, Space } from 'antd';
 
 export const EditProfilePresenter = ({
     items
