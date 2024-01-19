@@ -1,0 +1,75 @@
+.editprofile-container {
+    margin: 0 300px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+}
+
+.editprofile-container .editprofile-wrap,
+.editprofile-wrap .tab-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* .ant-tabs {
+    height: 100vh;
+} */
+
+.ant-tabs-content-holder {
+    height: 100vh;
+}
+
+.ant-tabs-content, .ant-tabs-tabpane {
+    width: 100%;
+    height: 100%;
+}
+
+.tab-container .editprofile-box {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.editprofile-box .info-box {
+    padding: 5rem 5rem;
+    justify-content: center;
+    width: 70%;
+}
+
+.info-box .info-content-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-box .info-title-box {
+    width: 80%;
+    padding-bottom: 10px;
+}
+
+.info-box .info-output-box {
+    width: 80%;
+}
+
+.info-box .info-button-box {
+    width: 100%;
+    height: 5vh;
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+}
+
+.info-button-box button{
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #FF8472;
+    color: white;
+    width: 100px;
+    height: 50px;
+}

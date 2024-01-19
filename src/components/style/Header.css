@@ -1,0 +1,35 @@
+.header-container {
+    width: 100%;
+    height: 12vh;
+    background-color: #FF8472;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container .header-img-box {
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    padding-left: 1rem;
+    background-clip: content-box;
+    background-color: gray;
+}
+
+.header-container .header-text-box {
+    padding-right: 1rem;
+    gap: 1rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text-box .ant-form-item {
+    margin-bottom: 0px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
