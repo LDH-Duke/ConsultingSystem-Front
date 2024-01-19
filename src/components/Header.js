@@ -14,7 +14,7 @@ const Header = props => {
             <div className='header-text-box'>
                 <Link to='/search'>검색</Link>
                 <Link to='/pricedetail'>결제내역</Link>
-                <a>후기내역</a>
+                <Link to='review'>후기내역</Link>
                 <Link to='/coin'>코인충전</Link>
                 <Link to='/favorite'>즐겨찾기</Link>
                 <Link to='/signup'>회원가입</Link>

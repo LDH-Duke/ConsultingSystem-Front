@@ -16,7 +16,7 @@ export const FavoritePresenter = ({
                     <Title title = {'즐겨찾기'} />
                 </div>
                 {
-                    counselorInfo.map(props => <Card Key={props.id} info={props} />)
+                    counselorInfo.map(info => <Card Key={info.id} info={info} />)
                 }
             </div>
         </div>
