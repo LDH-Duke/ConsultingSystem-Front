@@ -1,6 +1,7 @@
-import React from 'react'
-import './Counselor.css'
-import { Button , Form, Tabs } from 'antd'; 
+import React from 'react';
+import './Counselor.css';
+import { Button , Form, Tabs } from 'antd';
+import { Link } from 'react-router-dom';
 
 export const CounselorPresenter = ({
     items,
@@ -21,7 +22,10 @@ export const CounselorPresenter = ({
                     </div>
                     <div className='profile-button'>
                         <Form.Item>
-                            <Button>문의하기</Button>
+                            <Link to='/donation'><Button>선물하기</Button></Link>
+                        </Form.Item>
+                        <Form.Item>
+                            <Link to='/question'><Button>문의하기</Button></Link>
                         </Form.Item>
                         <Form.Item>
                             <Button>상담하기</Button>

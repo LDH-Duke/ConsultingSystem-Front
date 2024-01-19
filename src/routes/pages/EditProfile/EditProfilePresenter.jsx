@@ -1,6 +1,7 @@
 import React from 'react'
 import './EditProfile.css'
 import Title from '../../../components/Title';
+import Header from '../../../components/Header'
 import { Button, Form, Tabs, Input, Space } from 'antd';
 
 export const EditProfilePresenter = ({
@@ -11,6 +12,7 @@ export const EditProfilePresenter = ({
         <div className='editprofile-container'>
             <div className='editprofile-wrap'>
                 <div className='Title'>
+                    {/* <Header /> */}
                     <Title title={"회원정보 수정"} />
                 </div>
                 <div className='tab-container'>

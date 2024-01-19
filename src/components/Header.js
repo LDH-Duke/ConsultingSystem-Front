@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style/Header.css';
 import { Button, Form } from 'antd';
 
@@ -8,15 +9,18 @@ const Header = props => {
     return (
         <div className='header-container'>
             <div className='header-img-box'>
-                <a href='/'>로고</a>
+                <Link to='/'>로고</Link>
             </div>
             <div className='header-text-box'>
-                <a href='/search'>검색</a>
+                <Link to='/search'>검색</Link>
+                <Link to='/pricedetail'>결제내역</Link>
                 <a>후기내역</a>
-                <a>코인충전</a>
-                <a href='/favorite'>즐겨찾기</a>
+                <Link to='/coin'>코인충전</Link>
+                <Link to='/favorite'>즐겨찾기</Link>
+                <Link to='/signup'>회원가입</Link>
+                <Link to='/editprofile'>프로필수정</Link>
                 <Form.Item>
-                    <Button>로그인</Button>
+                    <Link to='/sign'><Button>로그인</Button></Link>
                 </Form.Item>
             </div>
         </div>

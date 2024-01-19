@@ -9,7 +9,7 @@ export const DonationPresenter = ({ TextArea }) => {
     return (
         <div className='donation-container'>
             <div className='donation-wrap'>
-                <Header />
+                {/* <Header /> */}
                 <Title title={'선물하기'} />
                 <div className='donation-box'>
                     <div className='donation-content-box'>

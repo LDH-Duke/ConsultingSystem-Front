@@ -5,20 +5,20 @@ import Header from '../../../components/Header'
 import Card from './components/Card'
 
 export const FavoritePresenter = ({
+    counselorInfo
 }) => {
     
     return (
         <div className="favorite-container">
             <div className="favorite-wrap">
                 <div className='title'>
-                    <Header />
+                    {/* <Header /> */}
                     <Title title = {'즐겨찾기'} />
                 </div>
-                <Card />
-                <Card />
-                <Card />
+                {
+                    counselorInfo.map(props => <Card Key={props.id} info={props} />)
+                }
             </div>
-            
         </div>
     )
-}
+}   

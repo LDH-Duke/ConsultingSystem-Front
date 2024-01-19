@@ -31,6 +31,11 @@ const CounselorContainer = () => {
           label: '상담사 정보',
           children: <div className='aa'>aaa</div>,
         },
+        {
+          key: '4',
+          label: '후기',
+          children: <div className='aa'>aaa</div>,
+        }
       ];
 
     return (

@@ -13,7 +13,7 @@ export const SearchPresenter = ({
     return (
         <div className='search-container'>
             <div className='search-wrap'>
-                <Header userName={'asdf'} />
+                {/* <Header /> */}
                 <Title title={'검색'} />
                 <div className='search-box'>
                     <div className='search-content-box'>
