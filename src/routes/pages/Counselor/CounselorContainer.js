@@ -1,8 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CounselorPresenter } from './CounselorPresenter'
+import API from '../../../api/API'
+import { useParams } from 'react-router-dom';
 
 const CounselorContainer = () => {
+    const [counselor, setCounselor] = useState([]);
+    const params = useParams();
 
+    useEffect(() => {
+      const counselorinfo = API.getCounselor(params.counselor_id);
+      setCounselor(counselorinfo)
+    }, [])
 
     // 예시 데이터
     const counselorInfo = [
@@ -39,7 +47,7 @@ const CounselorContainer = () => {
       ];
 
     return (
-        <CounselorPresenter counselorInfo={counselorInfo} items={items} />
+        <CounselorPresenter counselorInfo={counselorInfo} items={items} counselor = {counselor}/>
     )
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Input, Button } from 'antd';
 import { EditProfilePresenter } from './EditProfilePresenter'
+import API from '../../../api/API';
 
 const EditProfileContainer = () => {
 
@@ -79,7 +80,10 @@ const EditProfileContainer = () => {
       children: <div className='aa'>aaa</div>,
     }
   ];
-
+  const onSubmit = () => {
+    const profileupdate = API.putProfile()
+  }
+  
   return (
     <EditProfilePresenter items={items} />
   )

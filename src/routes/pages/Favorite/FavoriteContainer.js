@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FavoritePresenter } from './FavoritePresenter'
+import API from '../../../api/API';
 
 const FavoriteContainer = () => {
 
@@ -23,6 +24,8 @@ const FavoriteContainer = () => {
       rank: '브론즈'
     }
   ]);
+  // user_id, counselor_id
+  const favoriteinfo = API.postFavorite()
 
   return (
     <FavoritePresenter counselorInfo={counselorInfo} />

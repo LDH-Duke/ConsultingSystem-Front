@@ -13,6 +13,7 @@ const List = (props) => {
     const {name} = props
     const {price} = props
     const {introduce} = props
+    const {counselor_id} = props
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const showModal = () => {
@@ -40,7 +41,7 @@ const List = (props) => {
                 </div>
             </div>
             <div className="list-bottom">
-                <Link to='/counselor'><img src={example} alt=""></img></Link>
+                <Link to={`/counselor/${counselor_id}`}><img src={example} alt=""></img></Link>
                 <div className="list-bottom-info">
                     <div className="list-bottom-info-top">
                         <div className="list-detail">
