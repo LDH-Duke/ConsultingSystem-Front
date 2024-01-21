@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Counselor, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp } from './pages';
+import { Counselor, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review } from './pages';
 import Header from '../components/Header'
 
 const Router = () => (
@@ -23,6 +23,7 @@ const Router = () => (
       <Route exact path='/pricedetail' element={<PriceDetail />} />
       <Route exact path='/question/:counselor_id' element={<Question /> } />
       <Route exact path='/consultingsignup' element={<ConsultingSignUp />} />
+      <Route exact path='/review' element={<Review />} />
     </Routes>
   </div>
 )

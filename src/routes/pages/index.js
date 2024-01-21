@@ -10,3 +10,4 @@ export { default as Coin } from './Coin';
 export { default as PriceDetail} from './PriceDetail';
 export { default as Question} from './Question';
 export { default as ConsultingSignUp } from './ConsultingSignUp';
+export { default as Review } from './Review';
