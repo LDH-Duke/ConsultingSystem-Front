@@ -1,7 +1,6 @@
 import React from "react";
 import Title from '../../../components/Title';
 import Formname from './components/Formname';
-import Header from '../../../components/Header'
 import { Form, Input, Button, Checkbox } from "antd";
 import './ConsultingSignUp.css'
 

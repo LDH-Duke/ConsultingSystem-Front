@@ -1,7 +1,6 @@
 import React from "react";
 import './PriceDetail.css';
 import Title from '../../../components/Title';
-import Header from '../../../components/Header';
 import example from './components/img/example.png';
 import {Form, Button} from 'antd';
 

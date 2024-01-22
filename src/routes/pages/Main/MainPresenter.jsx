@@ -1,7 +1,6 @@
 import React from "react";
 import './Main.css';
 import List from "./components/List";
-import Header from '../../../components/Header'
 import {Form, Button} from 'antd'
 
 export const MainPresenter = () => {

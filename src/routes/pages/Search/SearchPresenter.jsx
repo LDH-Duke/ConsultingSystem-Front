@@ -2,8 +2,7 @@ import React from 'react'
 import './Search.css'
 import Title from '../../../components/Title'
 import SearchCard from './components/SearchCard';
-import Header from '../../../components/Header';
-import { Space, Checkbox } from 'antd';
+import { Space } from 'antd';
 
 export const SearchPresenter = ({
     onSearch,

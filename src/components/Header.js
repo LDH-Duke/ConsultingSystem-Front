@@ -4,7 +4,6 @@ import './style/Header.css';
 import { Button, Form } from 'antd';
 
 const Header = props => {
-    const { userName } = props;
 
     return (
         <div className='header-container'>

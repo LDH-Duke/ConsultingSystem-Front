@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import './Coin.css'
 import Title from "../../../components/Title"
-import Header from '../../../components/Header'
 import { Button, Form } from "antd"
 
 export const CoinPresenter = ({

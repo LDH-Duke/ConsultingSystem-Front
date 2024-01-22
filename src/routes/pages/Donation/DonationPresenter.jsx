@@ -1,8 +1,7 @@
 import React from 'react'
 import './Donation.css'
-import { Button, Form, Input, Flex } from 'antd'; 
+import { Button, Input, Flex } from 'antd'; 
 import Title from '../../../components/Title';
-import Header from '../../../components/Header';
 
 export const DonationPresenter = ({ TextArea }) => {
     

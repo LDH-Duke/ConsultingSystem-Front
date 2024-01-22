@@ -7,7 +7,7 @@ const Router = () => (
   <div>
     <Header />
     <Routes>
-      <Route exact path="/counselorDetail" element={<CounselorDetail />} />
+      <Route exact path="/counselordetail" element={<CounselorDetail />} />
       <Route exact path="/favorite" element={<Favorite />} />
       <Route exact path="/editprofile" element={<EditProfile />} />
       <Route exact path="/search" element={<Search />} />
