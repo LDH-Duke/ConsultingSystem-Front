@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 
 export const CounselorDetailPresenter = ({
     items,
-    counselorInfo
+    counselorInfo,
+    counselor
 }) => {
     
     return (
@@ -22,10 +23,10 @@ export const CounselorDetailPresenter = ({
                     </div>
                     <div className='profile-button'>
                         <Form.Item>
-                            <Link to='/donation'><Button>선물하기</Button></Link>
+                            <Link to={`/donation/${counselor.id}`}><Button>선물하기</Button></Link>
                         </Form.Item>
                         <Form.Item>
-                            <Link to='/question'><Button>문의하기</Button></Link>
+                            <Link to={`/question/${counselor.id}`}><Button>문의하기</Button></Link>
                         </Form.Item>
                         <Form.Item>
                             <Button>상담하기</Button>

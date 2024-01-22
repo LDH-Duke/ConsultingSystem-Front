@@ -1,3 +1,5 @@
+@import url(../../../Common.css);
+
 .editprofile-container {
     margin: 0 300px;
     height: 100vh;
@@ -68,7 +70,7 @@
 .info-button-box button{
     font-weight: bold;
     font-size: 18px;
-    background-color: #FF8472;
+    background-color: var(--main-bg-color);
     color: white;
     width: 100px;
     height: 50px;

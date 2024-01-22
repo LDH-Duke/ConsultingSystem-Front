@@ -3,7 +3,9 @@ import './Main.css';
 import List from "./components/List";
 import {Form, Button} from 'antd'
 
-export const MainPresenter = () => {
+export const MainPresenter = ({
+    counselors,
+}) => {
     return(
         <div className="main-container">
             <div className="main-wrap">
@@ -25,7 +27,7 @@ export const MainPresenter = () => {
                     </div>
                 </div>
                 <div className="list">
-                    <List name = {'상담사1'} price = {'1500'} introduce = {'인생은 속도가 아닌 방향'}></List>
+                    <List name = {'상담사1'} price = {'1500'} introduce = {'인생은 속도가 아닌 방향'} /*counselor_id={counselors[0].id}*/ ></List>
                     <List name = {'상담사1'} price = {'1500'} introduce = {'인생은 속도가 아닌 방향'}></List>
                     <List name = {'상담사1'} price = {'1500'} introduce = {'인생은 속도가 아닌 방향'}></List>
                 </div>
