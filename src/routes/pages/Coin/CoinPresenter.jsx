@@ -17,7 +17,6 @@ export const CoinPresenter = ({
         <div className='coin-container'>
             <div className="coin-wrap">
                 <div className='title'>
-                    {/* <Header /> */}
                     <Title title={'코인충전'} />
                 </div>
                 <div className="form">

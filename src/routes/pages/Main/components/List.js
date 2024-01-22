@@ -51,7 +51,7 @@ const List = (props) => {
                             <span>{introduce}</span>
                         </div>
                         <div className="list-button">
-                            <Button type="primary" onClick={showModal}>
+                            <Button type="default" onClick={showModal}>
                                 상담하기
                             </Button>
                             <div className="list-modal">

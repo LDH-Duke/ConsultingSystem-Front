@@ -18,6 +18,8 @@ const Header = props => {
                 <Link to='/favorite'>즐겨찾기</Link>
                 <Link to='/signup'>회원가입</Link>
                 <Link to='/editprofile'>프로필수정</Link>
+                <Link to='/exchange'>포인트 환전</Link>
+                <Link to='/counselor/home'>상담사용 메인</Link>
                 <Form.Item>
                     <Link to='/sign'><Button>로그인</Button></Link>
                 </Form.Item>

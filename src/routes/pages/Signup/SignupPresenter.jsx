@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Title from '../../../components/Title';
 import Formname from './components/Formname';
 import { Form, Input, Button, Select, Space } from "antd";

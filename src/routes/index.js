@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error } from './pages';
+import { AskAdmin, Exchange, CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error } from './pages';
 import Header from '../components/Header'
 
 const Router = () => (
@@ -22,6 +22,8 @@ const Router = () => (
       <Route exact path='/review' element={<Review />} />
       <Route exact path='/*' element={<Error />} />
       <Route exact path='/counselor/home' element={<CounselorHome />} />
+      <Route exact path='/exchange' element={<Exchange />} />
+      <Route exact path='/askadmin' element={<AskAdmin />} />
     </Routes>
   </div>
 )

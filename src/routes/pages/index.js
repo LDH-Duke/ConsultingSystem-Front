@@ -13,3 +13,5 @@ export { default as ConsultingSignUp } from './ConsultingSignUp';
 export { default as Review } from './Review';
 export { default as Error } from './Error';
 export { default as CounselorHome } from './CounselorHome';
+export { default as Exchange } from './Exchange';
+export { default as AskAdmin } from './AskAdmin';

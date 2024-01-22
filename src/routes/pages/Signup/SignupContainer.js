@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SignupPresenter } from "./SignupPresenter";
 import API from "../../../api/API";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +15,8 @@ const SignupContainer = () => {
     const [isEmail, setIsEmail] = useState(1);
     const [isId, setIsId] = useState(1);
     const [isPw, setIsPw] = useState(1);
-    const [isCheck, setIsCheck] = useState(0);
+    const [isCheck, setIsCheck] = useState(1);
+    const [isActive, setIsActive] = useState(false);
 
     const navigate = useNavigate()
 
@@ -28,12 +29,19 @@ const SignupContainer = () => {
     const emailRegex = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
 
 
+    /**
+     * 회원가입 빈칸 확인
+     */
+    const checkIsActiveButton = () => {
+      setIsActive(isId && isPw && nickname && tel && isCheck !== 0);
+    }
 
     /**
      *  id 입력 시 state 변경
      */
     const handleIdChange = (id) => {
-      setId(id)
+      setId(id);
+      checkIsActiveButton();
     }
 
 
@@ -58,6 +66,7 @@ const SignupContainer = () => {
         setIsId(1)
       }
       setIsCheck(1)
+      checkIsActiveButton();
     }
 
 
@@ -66,10 +75,12 @@ const SignupContainer = () => {
      * pw 입력 시 state 변경
      */
     const handlePwChange = (pw) => {
-      setPw(pw)
+      setPw(pw);
+      checkIsActiveButton();
     }
     const handlePwCheckChange = (pw) => {
-      setPwCheck(pw)
+      setPwCheck(pw);
+      checkIsActiveButton();
     }
 
 
@@ -85,6 +96,7 @@ const SignupContainer = () => {
       }
 
       setIsPw(1)
+      checkIsActiveButton();
     }
 
 
@@ -125,6 +137,7 @@ const SignupContainer = () => {
         return;
       }
       setIsEmail(1)
+      checkIsActiveButton();
     }
 
 
@@ -132,7 +145,7 @@ const SignupContainer = () => {
     /**
      * 회원가입 빈칸 확인
      */
-    const isActive = id && pw && nickname && tel && email && isCheck === true;
+    // const isActive = id && pw && nickname && tel && isCheck === true;
 
     const handleSignUp = async() => {
       if(!(isActive)) {
@@ -157,8 +170,8 @@ const SignupContainer = () => {
       navigate('/sign')
     }
 
-    const signupinfo = API.postsignup({id, pw, nickname, tel})
-    console.log(signupinfo)
+    // const signupinfo = API.postsignup({id, pw, nickname, tel})
+    // console.log(signupinfo)
 
     const options = [
         {
