@@ -1,4 +1,4 @@
-export { default as Counselor } from './Counselor';
+export { default as CounselorDetail } from './CounselorDetail';
 export { default as Favorite } from './Favorite';
 export { default as EditProfile } from './EditProfile';
 export { default as Search } from './Search';

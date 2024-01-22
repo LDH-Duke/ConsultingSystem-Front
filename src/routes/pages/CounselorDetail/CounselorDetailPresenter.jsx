@@ -1,9 +1,9 @@
 import React from 'react';
-import './Counselor.css';
+import './CounselorDetail.css';
 import { Button , Form, Tabs } from 'antd';
 import { Link } from 'react-router-dom';
 
-export const CounselorPresenter = ({
+export const CounselorDetailPresenter = ({
     items,
     counselorInfo
 }) => {

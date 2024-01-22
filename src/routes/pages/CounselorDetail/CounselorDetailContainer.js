@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { CounselorPresenter } from './CounselorPresenter'
+import { CounselorDetailPresenter } from './CounselorDetailPresenter'
 
-const CounselorContainer = () => {
+const CounselorDetailContainer = () => {
 
 
     // 예시 데이터
@@ -39,8 +39,8 @@ const CounselorContainer = () => {
       ];
 
     return (
-        <CounselorPresenter counselorInfo={counselorInfo} items={items} />
+        <CounselorDetailPresenter counselorInfo={counselorInfo} items={items} />
     )
 }
 
-export default CounselorContainer
+export default CounselorDetailContainer

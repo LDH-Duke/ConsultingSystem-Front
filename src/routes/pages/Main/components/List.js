@@ -40,7 +40,7 @@ const List = (props) => {
                 </div>
             </div>
             <div className="list-bottom">
-                <Link to='/counselor'><img src={example} alt=""></img></Link>
+                <Link to='/counselorDetail'><img src={example} alt=""></img></Link>
                 <div className="list-bottom-info">
                     <div className="list-bottom-info-top">
                         <div className="list-detail">
