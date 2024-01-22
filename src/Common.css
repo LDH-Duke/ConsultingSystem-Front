@@ -1,4 +1,6 @@
 :root{
-    --main-bg-color :red;
-    --sub-bg-color:blue;
+    --main-bg-color :#FF8472;
+    --sub-bg-color:#FF5238;
+
+    --border-color: #E9E9E9;
 }

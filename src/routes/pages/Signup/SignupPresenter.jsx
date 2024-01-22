@@ -5,6 +5,23 @@ import { Form, Input, Button, Select, Space } from "antd";
 import './Signup.css'
 
 export const SignupPresenter = ({
+    isId,
+    isPw,
+    isEmail,
+    isActive,
+
+    onChangeId,
+    onChangePw,
+    onChangePwCheck,
+    onChangeNickname,
+    onChangeTel,
+    onChangeEmail,
+
+    handleSignUp,
+    handleIdCheck,
+    handlePwCheck,
+    handleEmailCheck,
+    
     options,
     setId,
     setPw,
@@ -13,6 +30,15 @@ export const SignupPresenter = ({
     setTel,
     onSubmit,
 }) => {
+
+    const signup = (e) => {
+        if(isId == 0 || isPw == 0 || isEmail == 0) {
+            console.log("입력 값 오류");
+            return 0;
+        }
+        handleSignUp();
+    }
+
     return(
         <div className='signup-container'>
             <div className='signup-wrap'>
@@ -24,22 +50,33 @@ export const SignupPresenter = ({
                         <Form.Item>
                             <Formname name = {'아이디 (이메일)'} />
                             <Input type="email" placeholder = {'아이디를 입력해 주세요.'}
-                            onChange={(e)=>setId(e.target.value)}/>
+                            onChange={(e) => {onChangeId(e.target.value); onChangeEmail(e.target.value)}} onBlur={handleEmailCheck}/>
+                            {
+                                isId ? null : <span>존재하는 아이디입니다.</span>
+                            }
+                            {
+                                isEmail ? null : <span>이메일 형식에 맞지 않습니다.</span>
+                            }
+                            <Button onClick={handleIdCheck}>중복 확인</Button>
                         </Form.Item>
                         <Form.Item>
                             <Formname name = {'비밀번호'}/>
                                 <Input.Password placeholder = {'비밀번호를 입력해 주세요.'}
-                                onChange={(e)=>setPw(e.target.value)} />
+                                onChange={(e) => onChangePw(e.target.value)} onBlur={handlePwCheck} />
                         </Form.Item>
                         <Form.Item>
                             <Formname name = {'비밀번호 확인'}/>
                                 <Input.Password placeholder = {'비밀번호 확인'}
-                                onChange={(e)=>setPw2(e.target.value)} />
+                                onChange={(e) => onChangePwCheck(e.target.value)} onBlur={handlePwCheck} />
+                                {
+                                    isPw ? null : <span>비밀번호 미일치</span>
+                                }
                         </Form.Item>
                         <Form.Item>
                             <Formname name = {'닉네임'} />
                             <Input placeholder = {'닉네임'}
-                            onChange={(e)=>setNickname(e.target.value)}/>
+                            onChange={(e) => setNickname(e.target.value)}/>
+                            <Button>중복 확인</Button>
                         </Form.Item>
                         <Formname name = {'회원가입을 위해 휴대폰 인증을 진행해 주세요'} />
                         <div className="form-tel">
@@ -71,7 +108,10 @@ export const SignupPresenter = ({
                         </div>
                         <span>본인확인 후 회원가입 및 서비스 이용이 가능합니다.</span>
                         <Form.Item>
-                            <Button onClick={onSubmit}>회원가입</Button>
+                            <Button
+                                className={isActive ? 'active' : 'inactive'} 
+                                disabled={!isActive}
+                                onClick={signup}>회원가입</Button>
                         </Form.Item>
                     </Form>
                 </div>
