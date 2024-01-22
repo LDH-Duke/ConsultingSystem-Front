@@ -1,10 +1,6 @@
-/**
- * 
- */
-
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Counselor, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review } from './pages';
+import { Counselor, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error } from './pages';
 import Header from '../components/Header'
 
 const Router = () => (
@@ -24,6 +20,7 @@ const Router = () => (
       <Route exact path='/question' element={<Question /> } />
       <Route exact path='/consultingsignup' element={<ConsultingSignUp />} />
       <Route exact path='/review' element={<Review />} />
+      <Route exact path='/*' element={<Error />} />
     </Routes>
   </div>
 )

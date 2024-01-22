@@ -11,3 +11,4 @@ export { default as PriceDetail} from './PriceDetail';
 export { default as Question} from './Question';
 export { default as ConsultingSignUp } from './ConsultingSignUp';
 export { default as Review } from './Review';
+export { default as Error } from './Error';
