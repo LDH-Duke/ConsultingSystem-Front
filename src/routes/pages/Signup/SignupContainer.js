@@ -18,26 +18,27 @@ const SignupContainer = () => {
       console.log('닉네임:', nickname)
       console.log('전화번호:', tel)
 
-      const signupinfo = API.postsignup({id, pw, nickname, tel})
-      /**
-       * {
-       *  status: 200,
-       *  message: '회원가입에 성공하였습니다.'
-       * }
-       * 
-       * {
-       *  status: 400,
-       *  message: '동일한 이메일이 존재합니다.'
-       * }
-      */
+      // 비밀번호 일치 확인
+      if (pw !== pw2) {
+        console.log('비밀번호가 일치하지 않습니다.')
+        return;
+      }
 
-      // if (signupinfo.status === 200) {
-      //   // 회원가입 성공
-      //   // navigate('/signin')
-      // } else if (signupinfo.status === 400) {
-      //   // 회원가입 실패
-      //   // 알림 창 띄움
-      // }
+      // 이메일 양식 확인
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      if (!emailRegex.test(id)) {
+        console.log('올바른 이메일 형식이 아닙니다.')
+        return;
+      }
+
+      // 전화번호 확인
+      if (tel.length !== 11) {
+        console.log('전화번호 양식에 맞게 다시 입력해 주세요.')
+        return;
+      }
+
+      const signupinfo = API.postsignup({id, pw, nickname, tel})
+      console.log(signupinfo)
     }
 
     const options = [

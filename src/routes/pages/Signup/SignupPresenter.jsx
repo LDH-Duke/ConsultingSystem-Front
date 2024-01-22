@@ -23,7 +23,7 @@ export const SignupPresenter = ({
                     <Form>
                         <Form.Item>
                             <Formname name = {'아이디 (이메일)'} />
-                            <Input placeholder = {'아이디를 입력해 주세요.'}
+                            <Input type="email" placeholder = {'아이디를 입력해 주세요.'}
                             onChange={(e)=>setId(e.target.value)}/>
                         </Form.Item>
                         <Form.Item>
