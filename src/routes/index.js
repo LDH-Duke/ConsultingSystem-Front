@@ -23,7 +23,7 @@ const Router = () => (
       <Route exact path='/*' element={<Error />} />
       <Route exact path='/counselor/home' element={<CounselorHome />} />
       <Route exact path='/exchange' element={<Exchange />} />
-      <Route exact path='/askadmin' element={<AskAdmin />} />
+      <Route exact path='/askadmin' element={<AskAdmin />} />\
     </Routes>
   </div>
 )
