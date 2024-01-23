@@ -13,10 +13,12 @@ const CounselorContainer = ({
 
 
     const buttonAccept = () => {
+        alert('상담을 수락하셨습니다.')
         setbuttonchecked(true)
     };
 
     const buttonReject = () => {
+        alert('상담을 거절하셨습니다.')
         setbuttonchecked(false)
     };
 

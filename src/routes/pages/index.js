@@ -15,3 +15,6 @@ export { default as Error } from './Error';
 export { default as CounselorHome } from './CounselorHome';
 export { default as Exchange } from './Exchange';
 export { default as AskAdmin } from './AskAdmin';
+export { default as Consultinghistory } from './Consultinghistory';
+export { default as Product } from './Product';
+export { default as EditCounselor } from './EditCounselor';
