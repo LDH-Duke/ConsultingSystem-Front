@@ -10,6 +10,7 @@ import SubHeader from "../../../components/SubHeader";
 export const CounselorPresenter = ({
     buttonAccept,
     buttonReject,
+    recentRequestData
 }) => {
     
     return (
@@ -17,7 +18,8 @@ export const CounselorPresenter = ({
             <div className="Counselor-wrap">
                 <SubHeader/>
                 {/* 현재 상담 신청 목록 */}
-                <MultipleItems buttonAccept={buttonAccept} buttonReject={buttonReject} />
+                <MultipleItems buttonAccept={buttonAccept} buttonReject={buttonReject}
+                recentRequestData ={recentRequestData} />
 
                 {/* 구분선 */}
                 <div className="seperation-line"></div>
