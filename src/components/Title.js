@@ -5,7 +5,6 @@ import "./style/Title.css"
 /**
  * Title
  */
-
 const Title = props => {
     const {title} = props
 

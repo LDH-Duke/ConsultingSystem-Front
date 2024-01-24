@@ -22,8 +22,14 @@
     display: flex;
 }
 
-.list .icon span {
-    margin-left: 10px;
+.list .icon button {
+    height: 5vh;
+    background-color: #FF8472;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 3px 8px;
+    margin-right: 10px;
 }
 
 .list .list-bottom {

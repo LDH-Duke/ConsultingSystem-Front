@@ -16,7 +16,6 @@ export const PriceDetailPresenter = ({
         <div className="pricedetail-container">
             <div className="pricedetail-wrap">
                 <div className="title">
-                    {/* <Header /> */}
                     <Title title = {'결제 내역'} />
                     <div className="form">
                         <div className="form-top">

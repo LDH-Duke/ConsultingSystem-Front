@@ -85,3 +85,36 @@
 .profile-button > div {
     margin-bottom: 0 !important;
 }
+
+
+
+/* Tab CSS */
+.counselor-tab-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+}
+
+.counselor-tab-container .counselor-tab-wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.counselor-tab-container .counselor-tab-box {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+}
+
+.counselor-tab-container button {
+    font-weight: bold;
+    background-color: #FF8472;
+    color: white;
+    height: 10vh;
+}

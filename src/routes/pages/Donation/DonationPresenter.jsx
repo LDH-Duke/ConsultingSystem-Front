@@ -2,8 +2,12 @@ import React from 'react'
 import './Donation.css'
 import { Button, Input, Flex } from 'antd'; 
 import Title from '../../../components/Title';
+import { useNavigate } from 'react-router-dom';
 
-export const DonationPresenter = ({ TextArea }) => {
+export const DonationPresenter = ({
+    TextArea,
+    navigate
+}) => {
     
     return (
         <div className='donation-container'>
@@ -35,7 +39,7 @@ export const DonationPresenter = ({ TextArea }) => {
                         </div>
                         <div className='donation-button-box'>
                             <Button>선물하기</Button>
-                            <Button>취소</Button>
+                            <Button onClick={ () => { navigate(-1); } }>취소</Button>
                         </div>
                     </div>
                 </div>

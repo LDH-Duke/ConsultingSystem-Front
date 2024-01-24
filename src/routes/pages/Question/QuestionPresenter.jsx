@@ -5,13 +5,14 @@ import Category from "./components/Category";
 import { Button } from "antd";
 
 export const QuestionPresenter = ({
-    name
+    name,
+    navigate
 }) => {
+
     return(
         <div className="question-container">
             <div className="question-wrap">
                 <div className="title">
-                    {/* <Header /> */}
                     <Title title = {'상담 문의'} />
                 </div>
                 <div className="form">
@@ -31,6 +32,7 @@ export const QuestionPresenter = ({
                 </div>
                 <div className="button">
                     <Button>제출하기</Button>
+                    <Button onClick={ () => { navigate(-1); } }>취소</Button>
                 </div>
             </div>
         </div>

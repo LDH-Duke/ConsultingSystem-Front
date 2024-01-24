@@ -1,21 +1,21 @@
 import React from 'react'
 import './Favorite.css'
 import Title from '../../../components/Title'
-import Card from './components/Card'
+import FavoriteCard from './components/FavoriteCard'
 
 export const FavoritePresenter = ({
-    counselorInfo
+    counselors,
+    deleteFavorite
 }) => {
     
     return (
         <div className="favorite-container">
             <div className="favorite-wrap">
                 <div className='title'>
-                    {/* <Header /> */}
                     <Title title = {'즐겨찾기'} />
                 </div>
                 {
-                    counselorInfo.map(info => <Card Key={info.id} info={info} />)
+                    counselors.map(counselors => <FavoriteCard key={counselors.id} props={counselors} deleteFavorite={deleteFavorite} />)
                 }
             </div>
         </div>

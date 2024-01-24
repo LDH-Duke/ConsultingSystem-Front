@@ -23,7 +23,7 @@
     line-height: 25px;
 }
 
-.form {
+.exchange-form {
     width: 100%;
     height: 10vh;
     display: flex;
@@ -34,5 +34,4 @@
 
 .ant-input {
     width: 100%;
-    border-bottom: 3px solid #FF8472;
 }

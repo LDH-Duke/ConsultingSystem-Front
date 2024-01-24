@@ -20,6 +20,13 @@
     background-size: cover;
     height: 20vh;
     width: 25vh;
+    overflow: hidden;
+}
+
+.card-content .card-imgbox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card-cotent .profile-box {

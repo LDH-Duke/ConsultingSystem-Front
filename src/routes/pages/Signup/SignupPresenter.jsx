@@ -21,6 +21,8 @@ export const SignupPresenter = ({
     handleIdCheck,
     handlePwCheck,
     handleEmailCheck,
+    handleNicknameCheck,
+    handleTelCheck,
     
     options,
     setId,
@@ -49,13 +51,13 @@ export const SignupPresenter = ({
                     <Form>
                         <Form.Item>
                             <Formname name = {'아이디 (이메일)'} />
-                            <Input type="email" placeholder = {'아이디를 입력해 주세요.'}
+                            <Input type="email" placeholder = {'아이디를 입력해 주세요.'} autoFocus
                             onChange={(e) => {onChangeId(e.target.value); onChangeEmail(e.target.value)}} onBlur={handleEmailCheck}/>
                             {
-                                isId ? null : <span>존재하는 아이디입니다.</span>
+                                !isEmail ? <div>이메일 형식에 맞지 않습니다.</div> : null
                             }
                             {
-                                isEmail ? null : <span>이메일 형식에 맞지 않습니다.</span>
+                                !isId ? <div>존재하는 아이디입니다.</div> : null
                             }
                             <Button onClick={handleIdCheck}>중복 확인</Button>
                         </Form.Item>
@@ -69,13 +71,14 @@ export const SignupPresenter = ({
                                 <Input.Password placeholder = {'비밀번호 확인'}
                                 onChange={(e) => onChangePwCheck(e.target.value)} onBlur={handlePwCheck} />
                                 {
-                                    isPw ? null : <span>비밀번호 미일치</span>
+                                    !isPw ? null : <span>비밀번호 미일치</span>
                                 }
                         </Form.Item>
                         <Form.Item>
                             <Formname name = {'닉네임'} />
                             <Input placeholder = {'닉네임'}
-                            onChange={(e) => setNickname(e.target.value)}/>
+                            onChange={(e) => setNickname(e.target.value)}
+                            onBlur={() => {handleNicknameCheck()}}/>
                             <Button>중복 확인</Button>
                         </Form.Item>
                         <Formname name = {'회원가입을 위해 휴대폰 인증을 진행해 주세요'} />
@@ -102,7 +105,8 @@ export const SignupPresenter = ({
                             <div className="form-input-tel">
                                 <Form.Item>
                                     <Input placeholder = {'전화번호 입력'}
-                                    onChange={(e)=>setTel(e.target.value)}/>
+                                    onChange={(e)=>setTel(e.target.value)}
+                                    onBlur={() => {handleTelCheck()}}/>
                                 </Form.Item>
                             </div>
                         </div>

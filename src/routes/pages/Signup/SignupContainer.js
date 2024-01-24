@@ -12,10 +12,13 @@ const SignupContainer = () => {
     const [nickname, setNickname] = useState('');
     const [tel, setTel] = useState('');
     const [email, setEmail] = useState('');
-    const [isEmail, setIsEmail] = useState(1);
-    const [isId, setIsId] = useState(1);
-    const [isPw, setIsPw] = useState(1);
-    const [isCheck, setIsCheck] = useState(1);
+
+    const [isEmail, setIsEmail] = useState(0);
+    const [isId, setIsId] = useState(0);
+    const [isPw, setIsPw] = useState(0);
+    const [isNickname, setIsNickname] = useState(0);
+    const [isTel, setIsTel] = useState(0);
+    const [isCheck, setIsCheck] = useState(0);
     const [isActive, setIsActive] = useState(false);
 
     const navigate = useNavigate()
@@ -32,16 +35,16 @@ const SignupContainer = () => {
     /**
      * 회원가입 빈칸 확인
      */
-    const checkIsActiveButton = () => {
-      setIsActive(isId && isPw && nickname && tel && isCheck !== 0);
-    }
+    useEffect(() => {
+      setIsActive(isId && isPw && isEmail && isNickname && isTel === 1);
+    }, [isId, isPw, isEmail, isCheck, isNickname, isTel]);
+
 
     /**
      *  id 입력 시 state 변경
      */
     const handleIdChange = (id) => {
       setId(id);
-      checkIsActiveButton();
     }
 
 
@@ -58,15 +61,17 @@ const SignupContainer = () => {
       }
       console.log(data)
 
-      const result = await API.IdCheck(data, headers)
+      // const result = await API.IdCheck(data, headers)
+      const result = {
+        status: 200
+      };
 
-      if (result.code == 409) {
+      if (result.status == 409) {
         setIsId(0)
-      } else if (result.code == 200) {
+      } else if (result.status == 200) {
         setIsId(1)
       }
       setIsCheck(1)
-      checkIsActiveButton();
     }
 
 
@@ -76,11 +81,9 @@ const SignupContainer = () => {
      */
     const handlePwChange = (pw) => {
       setPw(pw);
-      checkIsActiveButton();
     }
     const handlePwCheckChange = (pw) => {
       setPwCheck(pw);
-      checkIsActiveButton();
     }
 
 
@@ -96,7 +99,24 @@ const SignupContainer = () => {
       }
 
       setIsPw(1)
-      checkIsActiveButton();
+    }
+
+    const handleNicknameCheck = () => {
+      if (nickname.length === 0) {
+        setIsNickname(0);
+        return;
+      }
+      
+      setIsNickname(1);      
+    }
+
+    const handleTelCheck = () => {
+      if (tel.length !== 11) {
+        setIsTel(0);
+        return;
+      }
+      
+      setIsTel(1);
     }
 
 
@@ -134,10 +154,10 @@ const SignupContainer = () => {
     const handleEmailCheck = () => {
       if (emailRegex.test(email) == false) {
         setIsEmail(0)
+        setIsId(0);
         return;
       }
       setIsEmail(1)
-      checkIsActiveButton();
     }
 
 
@@ -158,14 +178,13 @@ const SignupContainer = () => {
       }
 
       const data = {
-          'account': id,
-          'pw': pw,
-          'nickname': nickname,
-          'tel': tel,
-          'email': email,
+          email: email,
+          pw: pw,
+          name: nickname,
+          phone: tel,
       }
 
-      const result = await API.SignUp(data, headers)
+      const result = await API.postsignup(data);
       console.group(result)
       navigate('/sign')
     }
@@ -207,6 +226,8 @@ const SignupContainer = () => {
           handleIdCheck={handleIdCheck}
           handlePwCheck={handlePwCheck}
           handleEmailCheck={handleEmailCheck}
+          handleNicknameCheck={handleNicknameCheck}
+          handleTelCheck={handleTelCheck}
 
           options = {options}
           setId={setId}

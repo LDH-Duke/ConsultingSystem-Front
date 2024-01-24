@@ -77,7 +77,14 @@ const API = {
    * 즐겨찾기
    * --
    */
-  postFavorite : (body) => $http.post('favorite/add', body),
+  postFavorite : (body) => $http.post('/favorite/add', body),
+  deleteFavorite : (body) => $http.delete('/favorite/delete', body),
+  
+  /**
+   * 후기 작성
+   * --
+   */
+  postReview : (body) => $http.post('/review/write', body),
 
   /**
    * 프로필 수정

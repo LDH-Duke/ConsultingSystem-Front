@@ -1,9 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form, Input, Button } from 'antd';
 import { EditProfilePresenter } from './EditProfilePresenter'
 import API from '../../../api/API';
 
 const EditProfileContainer = () => {
+
+
+
+  /**
+   * 새로고침 탭 유지
+   */
+  const [tabValue, setTabValue] = useState(localStorage.getItem('tabs') || '1');
+
+  useEffect(() => {
+    localStorage.setItem('tabs', tabValue);
+  }, [tabValue]);
+
+  const onChange = (key) => {
+    setTabValue(key);
+  };
+
+  const onTabChange = (activeKey) => {
+    onChange(activeKey);
+  };
+
+
 
   // Tab
   const items = [
@@ -80,12 +101,14 @@ const EditProfileContainer = () => {
       children: <div className='aa'>aaa</div>,
     }
   ];
+
+  
   const onSubmit = () => {
     const profileupdate = API.putProfile()
   }
   
   return (
-    <EditProfilePresenter items={items} />
+    <EditProfilePresenter items={items} defaultTab={tabValue} onTabChange={onTabChange} />
   )
 }
 

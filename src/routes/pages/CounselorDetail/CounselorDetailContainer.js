@@ -1,46 +1,63 @@
 import React, { useState } from 'react'
 import { CounselorDetailPresenter } from './CounselorDetailPresenter'
+import { Button } from 'antd';
+import { Link } from 'react-router-dom';
 
-const CounselorDetailContainer = () => {
+const CounselorDetailContainer = ({
+
+}) => {
+
+  /**
+   * 임시 데이터
+   */
+  const [counselor, setCounselor] = useState(
+    {
+      counselor_id: 1,
+      name: '허관',
+      category: '진로',
+      price: 1000,
+      rank: '브론즈',
+      status: false,
+      introduce: '가'
+    }
+  );
 
 
-    // 예시 데이터
-    const counselorInfo = [
-        {
-            id : 1,
-            name : '알레시',
-            category : '진로',
-            rank : '브론즈'
-        }
-    ]
 
-    // Tab
-    const items = [
-        {
-          key: '1',
-          label: '서비스 공지',
-          children: '서비스 공지',
-        },
-        {
-          key: '2',
-          label: '서비스 소개',
-          children: '허관',
-        },
-        {
-          key: '3',
-          label: '상담사 정보',
-          children: <div className='aa'>aaa</div>,
-        },
-        {
-          key: '4',
-          label: '후기',
-          children: <div className='aa'>aaa</div>,
-        }
-      ];
+  // Tab
+  const items = [
+    {
+      key: '1',
+      label: '서비스 공지',
+      children: '서비스 공지',
+    },
+    {
+      key: '2',
+      label: '서비스 소개',
+      children: '허관',
+    },
+    {
+      key: '3',
+      label: '상담사 정보',
+      children: <div className='aa'>aaa</div>,
+    },
+    {
+      key: '4',
+      label: '후기',
+      children:
+        <div className='counselor-tab-container'>
+          <div className='counselor-tab-wrap'>
+            <div className='counselor-tab-box'>
+              <Link to={`/writereview/${counselor.counselor_id}`}><Button>후기 작성하기</Button></Link>
+            </div>
+          </div>
+        </div>
+    }
+  ];
 
-    return (
-        <CounselorDetailPresenter counselorInfo={counselorInfo} items={items} />
-    )
+  return (
+    <CounselorDetailPresenter counselor={counselor} items={items} />
+  )
 }
 
 export default CounselorDetailContainer

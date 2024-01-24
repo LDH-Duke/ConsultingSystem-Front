@@ -9,7 +9,7 @@ const Coin = (props) => {
             <div className="available-coin">환전가능금액</div>
             {/* 현재코인 받아서 계산 */}
             <div className="available-price">1,000,000</div>
-            <div className="form">
+            <div className="exchange-form">
                 <Form>
                     <Form.Item>
                         <Formname name = {'코인'}/>

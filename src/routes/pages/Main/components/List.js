@@ -5,15 +5,23 @@ import example from './img/example.png';
 import Category from "./Category";
 import {Button, Modal} from 'antd'
 
+
+
 /**
  * List
  */
+const List = ({
+    props,
+    addFavorite
+}) => {
 
-const List = (props) => {
     const {name} = props
     const {price} = props
     const {introduce} = props
     const {counselor_id} = props
+    const {category} = props
+    const {rank} = props
+    const {status} = props
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const showModal = () => {
@@ -31,22 +39,22 @@ const List = (props) => {
             <div className="list-top">
                 <div className="list-top-name">
                     <div className="info">
-                    <span><Category category={'진로'} /></span>
+                    <span><Category category={category} /></span>
                     <span>{name}</span>
                     </div>
                     <div className="icon">
-                        <span>추가</span>
+                        <Button onClick={ ()=> {addFavorite(counselor_id)}}>추가</Button>
                         <span>수락</span>
                     </div>
                 </div>
             </div>
             <div className="list-bottom">
                 
-                <Link to={`/counselor/${counselor_id}`}><img src={example} alt=""></img></Link>
+                <Link to={`/counselor/${counselor_id}`}><img src={example} alt="" /></Link>
                 <div className="list-bottom-info">
                     <div className="list-bottom-info-top">
                         <div className="list-detail">
-                            <span>등급명</span>
+                            <span>{rank}</span>
                             <span>가격 : {price} 원</span>
                             <span>{introduce}</span>
                         </div>
@@ -81,7 +89,12 @@ const List = (props) => {
                     </div>
                     <div className="list-bottom-info-bottom">
                         <div className="accept">
-                            <span>상담가능</span>
+                            {
+                                status ? 
+                                <span>상담가능</span>
+                                :
+                                <span>상담불가능</span>
+                            }
                         </div>
                         <div className="message">
                             <span>상담 횟수 (16)</span>

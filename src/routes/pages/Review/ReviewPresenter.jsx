@@ -3,6 +3,7 @@ import Title from "../../../components/Title";
 import ReviewCard from './components/ReviewCard';
 import { Button } from "antd";
 import "./Review.css";
+import { Link } from "react-router-dom";
 
 export const ReviewPresenter = () => {
     return(
@@ -24,9 +25,6 @@ export const ReviewPresenter = () => {
                     </div>
                     <div className='review-reward-text'>
                         <span>후기 작성시 포인트를 드립니다.</span>
-                    </div>
-                    <div className='review-button-box'>
-                        <Button>후기 작성하기</Button>
                     </div>
                 </div>
             </div>

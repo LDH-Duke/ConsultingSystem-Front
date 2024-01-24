@@ -5,15 +5,12 @@ import {Form, Button} from 'antd'
 
 export const MainPresenter = ({
     counselors,
+    addFavorite
 }) => {
-    useEffect(() => {
-        console.log(counselors)
-    }, [])
 
     return(
         <div className="main-container">
             <div className="main-wrap">
-                {/* <Header /> */}
                 <div className="main-select">
                     <div className="main-category">
                         <Form.Item>
@@ -31,9 +28,9 @@ export const MainPresenter = ({
                     </div>
                 </div>
                 <div className="list">
-                    <List name = {'상담사1'} price = {'1500'} introduce = {'인생은 속도가 아닌 방향'} counselor_id={counselors[0].id} ></List>
-                    <List name = {'상담사1'} price = {'1500'} introduce = {'인생은 속도가 아닌 방향'}></List>
-                    <List name = {'상담사1'} price = {'1500'} introduce = {'인생은 속도가 아닌 방향'}></List>
+                    {
+                        counselors.map(counselors => <List key={counselors.counselor_id} props={counselors} addFavorite={addFavorite} />)
+                    }
                 </div>
             </div>
         </div>

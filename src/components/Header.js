@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './style/Header.css';
 import { Button, Form } from 'antd';
+import cookie from '../cookie';
 
-const Header = props => {
-
+const Header = ({
+    hasCookies,
+    removeCookies
+}) => {
     return (
         <div className='header-container'>
             <div className='header-img-box'>
@@ -21,7 +24,11 @@ const Header = props => {
                 <Link to='/exchange'>포인트 환전</Link>
                 <Link to='/counselor/home'>상담사용 메인</Link>
                 <Form.Item>
-                    <Link to='/sign'><Button>로그인</Button></Link>
+                    {
+                        hasCookies ?
+                        <Button onClick={removeCookies}>로그아웃</Button> :
+                        <Link to='/sign'><Button>로그인</Button></Link>
+                    }
                 </Form.Item>
             </div>
         </div>
