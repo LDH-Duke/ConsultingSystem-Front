@@ -92,5 +92,11 @@ const API = {
    * 경로 수정해야됨
    */
   putProfile : (user_id, body) => $http.put(parameterToPath('/user/:profile', {user_id}), body),
+
+  /**
+   * 상담사 프로필 수정
+   * --
+   */
+  putCounselorProfile : (counselor_id, body) => $http.put(parameterToPath('/counselor/:counselor_id', {counselor_id}), body),
 };
 export default API;

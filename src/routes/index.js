@@ -52,6 +52,9 @@ const Router = () => {
       <Route exact path='/exchange' element={<Exchange />} />
       <Route exact path='/askadmin' element={<AskAdmin />} />
       <Route exact path='/writereview/:counselor_id' element={<WriteReview navigate={navigate}/>} />
+      <Route exact path='/consultinghistory' element={<Consultinghistory />} />
+      <Route exact path='/product' element={<Product />} />
+      <Route exact path='/editcounselor' element={<EditCounselor />} />
     </Routes>
   </div>
 )}

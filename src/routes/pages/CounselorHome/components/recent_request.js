@@ -24,10 +24,10 @@ const RecentRequest = (props) => {
                     </div>
                 </div>
                 <div className="Recent-request-thirdform">
-                    <Button className="accept-button" onClick={buttonAccept}>
+                    <Button className="accept-button" onClick={() => {buttonAccept(name);}}>
                         수락하기
                         </Button>
-                    <Button className="reject-button" onClick={buttonReject}>
+                    <Button className="reject-button" onClick={() => {buttonReject(name);}}>
                         거절하기
                         </Button>
                 </div>
