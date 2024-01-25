@@ -11,6 +11,7 @@ const SignInContainer = ({
     const [pw, setPw] = useState('')
     const [isUser, setIsUser] = useState(true)
     const navigate = useNavigate();
+    
 
     const onSubmit = async () => {
         // console.log('아이디:', id)
@@ -22,9 +23,10 @@ const SignInContainer = ({
             navigate('/');
         } else {
             const {data} = await API.postcounselorlogin({email: id, pw})
-
+            const counselor_id = cookie.getCookie('id');
+            
             setCookies(data);
-            navigate('/counselor/home');
+            navigate(`/counselor/home/${counselor_id}`);
         }
         // cookie.setCookie('id', data.data.id, {
         //     path: '/',

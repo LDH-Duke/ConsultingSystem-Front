@@ -180,6 +180,7 @@ const ConsultingSignUpContainer = () => {
       const body = {
           email: email,
           pw: pw,
+          name: name,
           nickname: nickname,
           phone: tel,
       }

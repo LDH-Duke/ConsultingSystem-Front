@@ -2,12 +2,15 @@ import { useEffect } from "react";
 import React, { useState } from "react";
 import { CounselorPresenter } from "./CounselorPresenter";
 import SubHeader from "../../../components/SubHeader";
+import cookie from "../../../cookie";
+import API from "../../../api/API";
 
 const CounselorContainer = ({
     switchChecked,
     handleSwitchChange,
 }) => {
 
+    const [counselor, setCounselor] = useState()
     // 핸들러 관련 부분
     const [buttonchecked, setbuttonchecked] = useState('');
 
@@ -41,7 +44,13 @@ const CounselorContainer = ({
     };
 
     useEffect(() => {
-        console.log(buttonchecked);
+        (async() => {
+
+        const counselor_id = cookie.getCookie('id');
+
+        const data = await API.getCounselor(counselor_id);
+
+        setCounselor(data)})();
     }, [buttonchecked]);
 
     return (
@@ -50,6 +59,7 @@ const CounselorContainer = ({
             buttonAccept={buttonAccept}
             buttonReject={buttonReject}
             recentRequestData={recentRequestData}
+            counselor = {counselor}
         />
     );
 };
