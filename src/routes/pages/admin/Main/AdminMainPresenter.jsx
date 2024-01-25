@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Tabs } from "antd";
 import Title from '../../../../components/Title';
 import './AdminMain.css';

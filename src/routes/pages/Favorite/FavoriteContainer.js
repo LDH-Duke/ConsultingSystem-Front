@@ -3,9 +3,16 @@ import { FavoritePresenter } from './FavoritePresenter'
 import API from '../../../api/API';
 import cookie from '../../../cookie';
 
-const FavoriteContainer = () => {
+const FavoriteContainer = ({
+  navigate
+}) => {
+
+
 
   const [favorite, setFavorite] = useState(false)
+
+
+
   /**
    * 회원 개인 즐겨찾기 (단일조회)
    */
@@ -14,6 +21,11 @@ const FavoriteContainer = () => {
 
       const userId = cookie.getCookie('id');
 
+      if (!userId) {
+        navigate('/sign');
+        return;
+      }
+
       const data = {
         user_id: userId
       };
@@ -21,6 +33,43 @@ const FavoriteContainer = () => {
       const result = await API.getFavorite(data);
     })();
   }, [])
+
+
+
+  /**
+    * 즐겨찾기 추가
+    */
+  const addFavorite = async (counselorId) => {
+
+    setFavorite(true);
+
+    const userId = cookie.getCookie('id');
+    const data = {
+      user_id: userId,
+      counselor_id: counselorId
+    };
+
+    const result = await API.postFavorite(data);
+  }
+
+
+
+  /**
+   * 즐겨찾기 취소
+   */
+  const deleteFavorite = async (counselorId) => {
+
+    setFavorite(false);
+
+    const userId = cookie.getCookie('id');
+
+    const data = {
+      user_id: userId,
+      counselor_id: counselorId
+    };
+
+    const result = await API.deleteFavorite(data);
+  }
 
 
 
@@ -59,25 +108,9 @@ const FavoriteContainer = () => {
 
 
 
-  /**
-   * 즐겨찾기 삭제
-   */
-  const deleteFavorite = async (counselorId) => {
-
-    setFavorite(false);
-
-    const userId = cookie.getCookie('id');
-
-    const data = {
-      user_id: userId,
-      counselor_id: counselorId
-    };
-
-    const result = await API.deleteFavorite(data);
-  }
 
   return (
-    <FavoritePresenter counselors={counselors} deleteFavorite={deleteFavorite} />
+    <FavoritePresenter counselors={counselors} addFavorite={addFavorite} deleteFavorite={deleteFavorite} favorite={favorite} />
   )
 }
 

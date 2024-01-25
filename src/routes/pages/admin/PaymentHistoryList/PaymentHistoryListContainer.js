@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { PaymentHistoryListPresenter } from "./PaymentHistoryListPresenter";
-import { useNavigate } from "react-router-dom";
 import API from "../../../../api/API";
 
 const PaymentHistoryListContainer = () => {

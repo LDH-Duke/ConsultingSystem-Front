@@ -12,7 +12,9 @@ import {Button, Modal} from 'antd'
  */
 const List = ({
     props,
-    addFavorite
+    addFavorite,
+    deleteFavorite,
+    favorite
 }) => {
 
     const {name, price, introduce, counselor_id, category, rank, status } = props
@@ -37,8 +39,12 @@ const List = ({
                     <span>{name}</span>
                     </div>
                     <div className="icon">
-                        <Button onClick={ ()=> {addFavorite(counselor_id)}}>추가</Button>
-                        <span>수락</span>
+                        {
+                            favorite ?
+                            <Button onClick={ ()=> {deleteFavorite(counselor_id)}}>취소</Button>    
+                            :
+                            <Button onClick={ ()=> {addFavorite(counselor_id)}}>추가</Button>
+                        }
                     </div>
                 </div>
             </div>

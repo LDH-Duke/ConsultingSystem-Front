@@ -217,7 +217,7 @@ const SignupContainer = () => {
       email: email
     };
 
-    const result = await API.postDoubleCheck(data);
+    const result = await API.postUserDoublecheck(data);
     console.log(result);
   }
 

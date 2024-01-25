@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 
 const FavoriteCard = ({
     props,
-    deleteFavorite
+    deleteFavorite,
+    addFavorite,
+    favorite
 }) => {
+
     /**
      * 해당 상담사 id
      */
@@ -27,7 +30,12 @@ const FavoriteCard = ({
                             <div className="profile-name">{props.name}</div>
                         </div>
                         <div className="button-box">
-                            <Button onClick={ () => { deleteFavorite(counselor_id) }}>삭제하기</Button>
+                            {
+                                favorite ?
+                                <Button onClick={ () => { deleteFavorite(counselor_id) }}>취소</Button>
+                                :
+                                <Button onClick={ () => { addFavorite(counselor_id) }}>추가</Button>
+                            }
                         </div>
                     </div>
                 </div>

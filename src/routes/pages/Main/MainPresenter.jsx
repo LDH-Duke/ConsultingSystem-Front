@@ -5,7 +5,9 @@ import {Form, Button} from 'antd'
 
 export const MainPresenter = ({
     counselors,
-    addFavorite
+    addFavorite,
+    deleteFavorite,
+    favorite
 }) => {
 
     return(
@@ -29,7 +31,7 @@ export const MainPresenter = ({
                 </div>
                 <div className="list">
                     {
-                        counselors.map(counselors => <List key={counselors.counselor_id} props={counselors} addFavorite={addFavorite} />)
+                        counselors.map(counselors => <List key={counselors.counselor_id} props={counselors} addFavorite={addFavorite} deleteFavorite={deleteFavorite} favorite={favorite}/>)
                     }
                 </div>
             </div>

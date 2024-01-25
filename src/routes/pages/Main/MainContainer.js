@@ -5,16 +5,26 @@ import cookie from '../../../cookie';
 
 const MainContainer = () => {
 
+
+    
     const [favorite, setFavorite] = useState(false);
+
+
 
     /**
      * 즐겨찾기 전체조회 (메인)
      */
     useEffect(() => {
+
+        // const counselorsInfo = API.getCounselors();
+        // setCounselors(counselorsInfo);
+
         (async () => {
             const result = await API.getFavorites();
         })();
-    }, [])
+    }, [favorite])
+
+
 
     /**
      * 임시 데이터
@@ -64,11 +74,25 @@ const MainContainer = () => {
             counselor_id: counselorId
         };
 
-        console.log(data, favorite)
         const result = await API.postFavorite(data);
     }
 
 
+    /**
+     * 즐겨찾기 취소
+     */
+    const deleteFavorite = async (counselorId) => {
+
+        setFavorite(false);
+
+        const userId = cookie.getCookie('id');
+        const data = {
+            user_id: userId,
+            counselor_id: counselorId
+        };
+
+        const result = await API.deleteFavorite(data);
+    }
 
     // useEffect(() => {
     //     const counselorsinfo = API.getCounselors()
@@ -76,7 +100,7 @@ const MainContainer = () => {
     // },[])
 
     return (
-        <MainPresenter counselors={counselors} addFavorite={addFavorite} />
+        <MainPresenter counselors={counselors} addFavorite={addFavorite} deleteFavorite={deleteFavorite} favorite={favorite} />
     )
 }
 

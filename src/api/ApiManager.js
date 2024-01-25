@@ -11,7 +11,7 @@ const getCookie = (name, options = null) => {
   return value ? decodeURIComponent(value[2]) : null;
 };
 
-const BACKEND_URL = `http://13.209.6.104:3333`;
+const BACKEND_URL = `http://3.34.129.182:3333`;
 
 export default class ApiManager {
   /**
@@ -23,7 +23,7 @@ export default class ApiManager {
         process.env.NODE_ENV === 'development'
           ? `${BACKEND_URL}/api/v1`
           // : 'http://3.34.90.66:3333/api/v1';
-          : 'http://13.209.6.104:3333/api/v1';
+          : 'http://3.34.129.182:3333/api/v1';
       // ? 'http://localhost:3333/api/v1'
       // ? 'http://localhost:3333/api/v1'
       // 싱글톤 변수 할당

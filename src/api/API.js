@@ -31,16 +31,6 @@ const API = {
   postsignup : (body) => $http.post('/user/signup', body),
 
   /**
-   * 회원가입 중복 확인
-   */
-  postDoubleCheck : (body) => $http.post('/user/doublecheck', body),
-
-  /**
-   * 회원가입 중복 확인
-   */
-  postDoubleCheck : (body) => $http.post('/user/doublecheck', body),
-
-  /**
    * 회원 로그인
    * --
    */
@@ -94,12 +84,6 @@ const API = {
    * --
    */
   postcounselorsignup : (body) => $http.post('/counselor/signup', body),
-
-  /**
-   * 상담사 로그인
-   * --
-   */
-  postcounselorlogin : (body) => $http.post('/counselor/signin', body),
 
   /**
    * 상담사 로그인

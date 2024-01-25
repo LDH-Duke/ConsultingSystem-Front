@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './style/Header.css';
 import { Button, Form } from 'antd';
 import cookie from '../cookie';
-import API from '../api/API';
 
 const Header = ({
     hasCookies,
@@ -29,6 +28,7 @@ const Header = ({
                 <Link to='/counselor/home'>상담사용 메인</Link>
                 <Link to='/ConsultingSignUp'>상담사 등록하기</Link>
                 <Link to='/admin/main'>관리자</Link>
+                <Link to='/sitemap'>사이트맵</Link>
                 <Form.Item>
                     {
                         hasCookies ?
@@ -41,4 +41,4 @@ const Header = ({
     )
 }
 
-export default Header
+export default Header;

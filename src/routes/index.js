@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { EditCounselor, Product, WriteReview, AskAdmin, Exchange, CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error, Consultinghistory, MyPage, AdminMain } from './pages';
+import { SiteMap, EditCounselor, Product, WriteReview, AskAdmin, Exchange, CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error, Consultinghistory, MyPage, AdminMain } from './pages';
 import Header from '../components/Header'
 import cookie from '../cookie';
 
@@ -35,7 +35,7 @@ const Router = () => {
     <Header hasCookies={hasCookies} removeCookies={removeCookies} />
     <Routes>
       <Route exact path="/counselor/:counselor_id" element={<CounselorDetail />} />
-      <Route exact path="/favorite" element={<Favorite />} />
+      <Route exact path="/favorite/:user_id" element={<Favorite navigate={navigate} />} />
       {/* <Route exact path="/editprofile" element={<EditProfile />} /> */}
       <Route exact path="/search" element={<Search />} />
       <Route exact path="/donation/:counselor_id" element={<Donation />} />
@@ -51,12 +51,13 @@ const Router = () => {
       <Route exact path='/counselor/home' element={<CounselorHome />} />
       <Route exact path='/exchange' element={<Exchange />} />
       <Route exact path='/askadmin' element={<AskAdmin />} />
-      <Route exact path='/writereview/:counselor_id' element={<WriteReview navigate={navigate}/>} />
+      <Route exact path='/writereview/:counselor_id' element={<WriteReview />} />
       <Route exact path='/consultinghistory' element={<Consultinghistory />} />
       <Route exact path='/product' element={<Product />} />
       <Route exact path='/editcounselor' element={<EditCounselor />} />
       <Route exact path='/mypage' element={<MyPage />} />
       <Route exact path='/admin/main' element={<AdminMain />} />
+      <Route exact path='/sitemap' element={<SiteMap />} />
     </Routes>
   </div>
 )}

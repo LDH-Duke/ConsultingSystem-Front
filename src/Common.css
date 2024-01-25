@@ -1,6 +1,14 @@
 :root{
-    --main-bg-color :#FF8472;
-    --sub-bg-color:#FF5238;
+    --main-bg-color :#00CC8F;
+    --sub-bg-color:#2AD8A0;
 
-    --border-color: #E9E9E9;
+    /* 타이틀 및 본문 */
+    --title-color: #232527;
+    --body-color: #232527;
+
+    /* 아이콘, 서브타이틀 */
+    --icon-color: #768085;
+    --sub-title-color: #768085;
+ 
+    --border-color: #768085;
 }
