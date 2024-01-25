@@ -28,6 +28,8 @@ const WriteReviewContainer = ({
 
     /**
      * 후기 작성
+     * ---
+     * textarea, score(rating) 추가 필요
      */
     const writeReview = async () => {
 
@@ -40,7 +42,7 @@ const WriteReviewContainer = ({
             score: 1
         }
 
-        // const result = await API.writeReview(data);
+        const result = await API.postReview(data);
 
     }
 

@@ -1,11 +1,12 @@
 import React  from "react";
 import Title from "../../../components/Title";
 import ReviewCard from './components/ReviewCard';
-import { Button } from "antd";
 import "./Review.css";
-import { Link } from "react-router-dom";
+import { Review } from "..";
 
-export const ReviewPresenter = () => {
+export const ReviewPresenter = ({
+    counselors,
+}) => {
     return(
         <div className="review-container">
             <div className="review-wrap">
@@ -30,11 +31,9 @@ export const ReviewPresenter = () => {
             </div>
             <div className='review-content-box'>
                 <div className='review-content-inner'>
-                    <ReviewCard />
-                    <ReviewCard />
-                    <ReviewCard />
-                    <ReviewCard />
-
+                    {
+                        counselors.map(counselors => <ReviewCard key={counselors.counselor_id} counselors={counselors} />)
+                    }
                 </div>
             </div>
         </div>

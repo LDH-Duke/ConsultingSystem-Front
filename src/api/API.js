@@ -30,6 +30,11 @@ const API = {
   postsignup : (body) => $http.post('/user/signup', body),
 
   /**
+   * 회원가입 중복 확인
+   */
+  postDoubleCheck : (body) => $http.post('/user/doublecheck', body),
+
+  /**
    * 로그인
    * --
    */
@@ -74,10 +79,27 @@ const API = {
   postcounselorsignup : (body) => $http.post('/counselor/signup', body),
 
   /**
-   * 즐겨찾기
+   * 즐겨찾기 전체조회 (메인)
+   * --
+   */
+  getFavorites : () => $http.get('/favorite'),
+
+  /**
+   * 즐겨찾기 단일조회 (즐겨찾기)
+   * --
+   */
+  getFavorite : (body) => $http.get('/favorite/:user_id', body),
+
+  /**
+   * 즐겨찾기 추가
    * --
    */
   postFavorite : (body) => $http.post('/favorite/add', body),
+
+  /**
+   * 즐겨찾기 삭제
+   * --
+   */
   deleteFavorite : (body) => $http.delete('/favorite/delete', body),
   
   /**
@@ -85,6 +107,16 @@ const API = {
    * --
    */
   postReview : (body) => $http.post('/review/write', body),
+
+  /**
+   * 후기 삭제
+   * --
+   */
+  
+  /**
+   * 전체 후기 조회
+   */
+  getReviews : () => $http.get('/review'),
 
   /**
    * 프로필 수정

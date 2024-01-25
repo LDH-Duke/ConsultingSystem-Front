@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { WriteReview, AskAdmin, Exchange, CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error } from './pages';
+import { EditCounselor, Product, Consultinghistory, WriteReview, AskAdmin, Exchange, CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error } from './pages';
 import Header from '../components/Header'
 import cookie from '../cookie';
 
@@ -35,7 +35,7 @@ const Router = () => {
     <Header hasCookies={hasCookies} removeCookies={removeCookies} />
     <Routes>
       <Route exact path="/counselor/:counselor_id" element={<CounselorDetail />} />
-      <Route exact path="/favorite" element={<Favorite />} />
+      <Route exact path="/favorite/:user_id" element={<Favorite />} />
       <Route exact path="/editprofile" element={<EditProfile />} />
       <Route exact path="/search" element={<Search />} />
       <Route exact path="/donation/:counselor_id" element={<Donation />} />

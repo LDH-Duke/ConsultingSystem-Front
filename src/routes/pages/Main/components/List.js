@@ -15,14 +15,8 @@ const List = ({
     addFavorite
 }) => {
 
-    const {name} = props
-    const {price} = props
-    const {introduce} = props
-    const {counselor_id} = props
-    const {category} = props
-    const {rank} = props
-    const {status} = props
-
+    const {name, price, introduce, counselor_id, category, rank, status } = props
+    
     const [isModalOpen, setIsModalOpen] = useState(false);
     const showModal = () => {
         setIsModalOpen(true);

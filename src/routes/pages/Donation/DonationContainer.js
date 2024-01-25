@@ -15,7 +15,7 @@ const DonationContainer = () => {
     useEffect(() => {
         const userinfo = API.getuser()
         setUser(userinfo)
-    })
+    },[])
 
     const onSubmit = () =>  {
         const donationinfo = API.postdonation({coin, info, user_id: user.user_id, counselor_id: params.counselor_id});

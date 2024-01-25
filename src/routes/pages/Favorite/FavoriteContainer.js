@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FavoritePresenter } from './FavoritePresenter'
 import API from '../../../api/API';
 import cookie from '../../../cookie';
@@ -6,6 +6,21 @@ import cookie from '../../../cookie';
 const FavoriteContainer = () => {
 
   const [favorite, setFavorite] = useState(false)
+  /**
+   * 회원 개인 즐겨찾기 (단일조회)
+   */
+  useEffect(() => {
+    (async () => {
+
+      const userId = cookie.getCookie('id');
+
+      const data = {
+        user_id: userId
+      };
+
+      const result = await API.getFavorite(data);
+    })();
+  }, [])
 
 
 
@@ -54,12 +69,12 @@ const FavoriteContainer = () => {
     const userId = cookie.getCookie('id');
 
     const data = {
-        user_id: userId,
-        counselor_id: counselorId
+      user_id: userId,
+      counselor_id: counselorId
     };
 
     const result = await API.deleteFavorite(data);
-}
+  }
 
   return (
     <FavoritePresenter counselors={counselors} deleteFavorite={deleteFavorite} />

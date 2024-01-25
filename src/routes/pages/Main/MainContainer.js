@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react';
 import { MainPresenter } from './MainPresenter'
-import API from '../../../api/API';
+import { API } from '../../../api';
 import cookie from '../../../cookie';
 
 const MainContainer = () => {
 
-    // const [userId, setUserId] = useState('허관');
-    const [counselorId, setCounselorId] = useState('');
     const [favorite, setFavorite] = useState(false);
-    
 
+    /**
+     * 즐겨찾기 전체조회 (메인)
+     */
+    useEffect(() => {
+        (async () => {
+            const result = await API.getFavorites();
+        })();
+    }, [])
 
     /**
      * 임시 데이터
@@ -44,14 +49,12 @@ const MainContainer = () => {
         }
     ]);
 
-    useEffect( () => {
-        console.log(favorite);
-    }, [favorite]);
+
 
     /**
      * 즐겨찾기 추가
      */
-    const addFavorite = async(counselorId) => {
+    const addFavorite = async (counselorId) => {
 
         setFavorite(true);
 

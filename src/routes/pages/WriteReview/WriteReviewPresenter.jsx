@@ -1,10 +1,12 @@
 import './WriteReview.css';
 import { Button } from 'antd';
 import Title from '../../../components/Title';
+import Category from './components/Category';
 
 export const WriteReviewPresenter = ({
     counselor,
-    navigate
+    navigate,
+    writeReview
 }) => {
 
     return (
@@ -17,7 +19,7 @@ export const WriteReviewPresenter = ({
                     <div className="writereview-detail">
                         <div className="img"></div>
                         <div className="info">
-                            {/* <Category category={'진로'} /> */}
+                            <Category category={counselor.category} />
                             <span>{counselor.name}</span>
                         </div>
                     </div>
@@ -29,7 +31,7 @@ export const WriteReviewPresenter = ({
                     </div>
                 </div>
                 <div className="button">
-                    <Button>제출하기</Button>
+                    <Button onClick={ () => { writeReview() }}>제출하기</Button>
                     <Button onClick={ () => { navigate(-1); } }>취소</Button>
                 </div>
             </div>
