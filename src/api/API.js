@@ -11,13 +11,14 @@ const parameterToPath = (path, params = {}) => {
   };
 
 const API = {
+
   /**
    * 상담사 정보 조회
    * --
    */
   getCounselors : () => $http.get('/counselor'),
 
-  /**
+    /**
    * 선택 상담사 정보 조회
    * --
    */
@@ -58,6 +59,12 @@ const API = {
   getuser : (user_id) => $http.get(parameterToPath('/user/:user_id' , {user_id})),
 
   /**
+   * 전제 사용자 정보 조회
+   * --
+   */
+  getusers : () => $http.get('/user'),
+
+  /**
    * 상담 문의
    * --
    * 경로 수정 필요
@@ -69,6 +76,11 @@ const API = {
    * --
    */
   getPricedetail : (user_id) => $http.get(parameterToPath('/coin', {user_id})),
+
+  /**
+   * 결제 내역 전체 조회
+   */
+  getCoinHistorys : () => $http.get('/coin'),
 
   /**
    * 검색

@@ -28,6 +28,7 @@ const Header = ({
                 <Link to='/exchange'>포인트 환전</Link>
                 <Link to='/counselor/home'>상담사용 메인</Link>
                 <Link to='/ConsultingSignUp'>상담사 등록하기</Link>
+                <Link to='/admin/main'>관리자</Link>
                 <Form.Item>
                     {
                         hasCookies ?

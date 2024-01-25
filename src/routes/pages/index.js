@@ -20,3 +20,4 @@ export { default as Consultinghistory } from './Consultinghistory';
 export { default as Product } from './Product';
 export { default as EditCounselor } from './EditCounselor';
 export { default as MyPage } from './MyPage';
+export { default as AdminMain } from './admin/Main';
