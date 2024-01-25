@@ -17,6 +17,8 @@ export const SignInPresenter = ({
                     <Title title = {'회원 로그인'}/>
                 </div>
                 <div className='form'>
+                    <input type='radio' name = 'category' checked/>회원
+                    <input type='radio' name = 'category' />상담사
                     <Form>
                         <Form.Item>
                             <Formname name = {'아이디 (이메일)'}/>

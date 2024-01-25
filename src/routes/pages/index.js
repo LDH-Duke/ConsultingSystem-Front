@@ -1,6 +1,6 @@
 export { default as CounselorDetail } from './CounselorDetail';
 export { default as Favorite } from './Favorite';
-export { default as EditProfile } from './EditProfile';
+// export { default as EditProfile } from './EditProfile';
 export { default as Search } from './Search';
 export { default as Donation } from './Donation';
 export { default as SignIn } from './SignIn';
@@ -19,3 +19,4 @@ export { default as WriteReview } from './WriteReview';
 export { default as Consultinghistory } from './Consultinghistory';
 export { default as Product } from './Product';
 export { default as EditCounselor } from './EditCounselor';
+export { default as MyPage } from './MyPage';
