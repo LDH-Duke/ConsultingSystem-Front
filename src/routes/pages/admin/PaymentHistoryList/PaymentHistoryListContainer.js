@@ -53,12 +53,12 @@ const PaymentHistoryListContainer = () => {
 
   useEffect(() => {
     (async () => {
-      const coinHistoryResult = await API.getCoinHistorys();
+      const {resultData} = await API.getCoinHistorys();
 
-      console.log(coinHistoryResult);
+      console.log(resultData);
 
       // TODO: API연결 필요
-      // setCoinHistorys(coinHistoryResult);
+      setCoinHistorys(resultData);
     })();
   }, []);
 

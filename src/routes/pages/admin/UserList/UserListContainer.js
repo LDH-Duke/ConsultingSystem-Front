@@ -39,12 +39,12 @@ const UserListContainer = () => {
 
   useEffect(() => {
     (async() => {
-      const userResult = await API.getusers();
+      const {data} = await API.getusers();
 
-      console.log(userResult);
+      console.log(data);
 
       // TODO: API연결 필요
-      // setUsers(userResult);
+      setUsers(data);
     })();
   }, []);
 

@@ -34,12 +34,12 @@ const CounselorListContainer = () => {
 
   useEffect(() => {
     (async () => {
-      const counselorResult = await API.getCounselors();
+      const {data} = await API.getCounselors();
   
-      console.log(counselorResult);
+      console.log(data);
       
       // TODO: API연결 필요
-      // setCounselors(counselorResult);
+      setCounselors(data);
     })();
   }, []);
 

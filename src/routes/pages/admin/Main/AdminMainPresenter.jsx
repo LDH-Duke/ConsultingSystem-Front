@@ -8,7 +8,7 @@ export const AdminMainPresenter = ({
 }) => {
     return(
         <div className="admin-page-container">
-            <Title title={'어드민 메인 페이지'}/>
+            <Title title={'관리자 메인 페이지'}/>
             <div className="admin-tab-container">
                 <Tabs items={items}/>
             </div>
