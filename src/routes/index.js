@@ -35,7 +35,7 @@ const Router = () => {
     <Header hasCookies={hasCookies} removeCookies={removeCookies} />
     <Routes>
       <Route exact path="/counselor/:counselor_id" element={<CounselorDetail />} />
-      <Route exact path="/favorite/:user_id" element={<Favorite />} />
+      <Route exact path="/favorite" element={<Favorite />} />
       <Route exact path="/editprofile" element={<EditProfile />} />
       <Route exact path="/search" element={<Search />} />
       <Route exact path="/donation/:counselor_id" element={<Donation />} />
@@ -55,6 +55,7 @@ const Router = () => {
       <Route exact path='/consultinghistory' element={<Consultinghistory />} />
       <Route exact path='/product' element={<Product />} />
       <Route exact path='/editcounselor' element={<EditCounselor />} />
+      <Route exact path='/mypage' element={<MyPage />} />
     </Routes>
   </div>
 )}

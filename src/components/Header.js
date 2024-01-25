@@ -24,9 +24,10 @@ const Header = ({
                 <Link to='/coin'>코인충전</Link>
                 <Link to={`/favorite/${user_id}`}>즐겨찾기</Link>
                 <Link to='/signup'>회원가입</Link>
-                <Link to='/editprofile'>프로필수정</Link>
+                <Link to='/mypage'>마이페이지</Link>
                 <Link to='/exchange'>포인트 환전</Link>
                 <Link to='/counselor/home'>상담사용 메인</Link>
+                <Link to='/ConsultingSignUp'>상담사 등록하기</Link>
                 <Form.Item>
                     {
                         hasCookies ?

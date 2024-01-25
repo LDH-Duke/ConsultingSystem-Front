@@ -35,7 +35,12 @@ const API = {
   postDoubleCheck : (body) => $http.post('/user/doublecheck', body),
 
   /**
-   * 로그인
+   * 회원가입 중복 확인
+   */
+  postDoubleCheck : (body) => $http.post('/user/doublecheck', body),
+
+  /**
+   * 회원 로그인
    * --
    */
   postsignin : (body) => $http.post('/user/signin', body),
@@ -77,6 +82,18 @@ const API = {
    * --
    */
   postcounselorsignup : (body) => $http.post('/counselor/signup', body),
+
+  /**
+   * 상담사 로그인
+   * --
+   */
+  postcounselorlogin : (body) => $http.post('/counselor/signin', body),
+
+  /**
+   * 상담사 로그인
+   * --
+   */
+  postcounselorlogin : (body) => $http.post('/counselor/signin', body),
 
   /**
    * 즐겨찾기 전체조회 (메인)
@@ -121,14 +138,25 @@ const API = {
   /**
    * 프로필 수정
    * --
-   * 경로 수정해야됨
    */
-  putProfile : (user_id, body) => $http.put(parameterToPath('/user/:profile', {user_id}), body),
+  putProfile : (user_id, body) => $http.put(parameterToPath('/user/:user_id', {user_id}), body),
 
   /**
    * 상담사 프로필 수정
    * --
    */
   putCounselorProfile : (counselor_id, body) => $http.put(parameterToPath('/counselor/:counselor_id', {counselor_id}), body),
+
+  /**
+   * 상담사 회원가입 중복확인
+   * --
+   */
+  postCounselorDoublecheck : (body) => $http.post('/counselor/doublecheck', body),
+  
+  /**
+   * 고객 회원가입 중복확인
+   * --
+   */
+  postUserDoublecheck : (body) => $http.post('/user/doublecheck', body),
 };
 export default API;

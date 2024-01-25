@@ -9,15 +9,21 @@ const SignInContainer = ({
 }) => {
     const [id, setId] = useState('')
     const [pw, setPw] = useState('')
+    const [isUser, setIsUser] = useState(true)
     const navigate = useNavigate();
 
     const onSubmit = async () => {
         // console.log('아이디:', id)
         // console.log('비밀번호:', pw)
+        if (isUser === true) {
+            const {data} = await API.postsignin({email: id, pw})
 
-        const {data} = await API.postsignin({email: id, pw})
+            setCookies(data);
+        } else {
+            const {data} = await API.postcounselorsignup({email: id, pw})
 
-        setCookies(data);
+            setCookies(data);
+        }
         // cookie.setCookie('id', data.data.id, {
         //     path: '/',
         //     secure: '/',
