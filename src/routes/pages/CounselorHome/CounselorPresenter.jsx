@@ -10,12 +10,14 @@ import SubHeader from "../../../components/SubHeader";
 export const CounselorPresenter = ({
     buttonAccept,
     buttonReject,
-    recentRequestData
+    recentRequestData,
+    counselor
 }) => {
     
     return (
         <div className="Counselor-container">
             <div className="Counselor-wrap">
+                {/* <h1>{counselor.name}의 상담사 페이지입니다.</h1> */}
                 <SubHeader/>
                 {/* 현재 상담 신청 목록 */}
                 <MultipleItems buttonAccept={buttonAccept} buttonReject={buttonReject}
@@ -50,7 +52,7 @@ export const CounselorPresenter = ({
                 <div className="SubButton-form">
                     <Link to= "/editcounselor" style={{ textDecoration: 'none' }}>
                         <Button className="Sub-Button">
-                            <div className="Subbutton-text">프로필 수정</div>
+                            <div className="Subbutton-text">프로필 등록</div>
                         </Button>
                     </Link>
                     <Link to= "/askadmin" style={{ textDecoration: 'none' }}>

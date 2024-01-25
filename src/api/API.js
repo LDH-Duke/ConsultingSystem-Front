@@ -154,5 +154,11 @@ const API = {
    * --
    */
   postUserDoublecheck : (body) => $http.post('/user/doublecheck', body),
+
+  /**
+   * 상품 등록하기
+   * --
+   */
+  postProduct : (counselor_id, body) => $http.post(parameterToPath('/counselor/production/add/:counselor_id', {counselor_id}), body),
 };
 export default API;

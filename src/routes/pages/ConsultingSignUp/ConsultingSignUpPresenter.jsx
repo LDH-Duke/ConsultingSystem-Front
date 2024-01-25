@@ -80,7 +80,7 @@ export const ConsultingSignUpPresenter = ({
                         <Form.Item>
                             <Formname name = {'본명'} />
                             <Input placeholder = {'본명'}
-                            onChange={onChangeName}
+                            onChange={(e) => {onChangeName(e);}}
                             onBlur={handleNameCheck} />
                             {
                                 !isName ? null : <span>본명을 입력하세요</span>

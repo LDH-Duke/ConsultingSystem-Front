@@ -10,6 +10,7 @@ const Header = ({
 }) => {
 
     const user_id = cookie.getCookie('id');
+    const counselor_id = cookie.getCookie('id');
 
     return (
         <div className='header-container'>
@@ -25,7 +26,7 @@ const Header = ({
                 <Link to='/signup'>회원가입</Link>
                 <Link to='/mypage'>마이페이지</Link>
                 <Link to='/exchange'>포인트 환전</Link>
-                <Link to='/counselor/home'>상담사용 메인</Link>
+                <Link to={`/counselor/home/${counselor_id}`}>상담사용 메인</Link>
                 <Link to='/ConsultingSignUp'>상담사 등록하기</Link>
                 <Link to='/admin/main'>관리자</Link>
                 <Link to='/sitemap'>사이트맵</Link>
