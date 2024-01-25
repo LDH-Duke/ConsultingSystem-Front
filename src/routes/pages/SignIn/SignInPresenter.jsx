@@ -9,6 +9,7 @@ export const SignInPresenter = ({
     setId,
     setPw,
     onSubmit,
+    setIsUser
 }) => {
     return (
         <div className='signin-container'>
@@ -17,8 +18,8 @@ export const SignInPresenter = ({
                     <Title title = {'회원 로그인'}/>
                 </div>
                 <div className='form'>
-                    <input type='radio' name = 'category' checked/>회원
-                    <input type='radio' name = 'category' />상담사
+                    <input type='radio' name = 'category' onChange={() => setIsUser(true)}/>회원
+                    <input type='radio' name = 'category' onChange={() => setIsUser(false)}/>상담사
                     <Form>
                         <Form.Item>
                             <Formname name = {'아이디 (이메일)'}/>

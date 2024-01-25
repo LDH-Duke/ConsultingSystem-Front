@@ -15,14 +15,16 @@ const SignInContainer = ({
     const onSubmit = async () => {
         // console.log('아이디:', id)
         // console.log('비밀번호:', pw)
-        if (isUser === true) {
+        if (isUser) {
             const {data} = await API.postsignin({email: id, pw})
 
             setCookies(data);
+            navigate('/');
         } else {
-            const {data} = await API.postcounselorsignup({email: id, pw})
+            const {data} = await API.postcounselorlogin({email: id, pw})
 
             setCookies(data);
+            navigate('/counselor/home');
         }
         // cookie.setCookie('id', data.data.id, {
         //     path: '/',
@@ -39,12 +41,10 @@ const SignInContainer = ({
          *  navigate('/')
          * } else 오류처리
          */
-
-        navigate('/');
     }
 
     return (
-        <SignInPresenter setId ={setId} setPw = {setPw} onSubmit={onSubmit}/>
+        <SignInPresenter setId ={setId} setPw = {setPw} onSubmit={onSubmit} setIsUser = {setIsUser}/>
     )
 }
 
