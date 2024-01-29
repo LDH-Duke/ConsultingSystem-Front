@@ -12,6 +12,7 @@ const ConsultingSignUpContainer = () => {
     const [name, setName] = useState('');
     const [nickname, setNickname] = useState('');
     const [tel, setTel] = useState('');
+    const [image, setImage] = useState('');
     const [email, setEmail] = useState('');
 
     const [isEmail, setIsEmail] = useState(0);
@@ -114,6 +115,13 @@ const ConsultingSignUpContainer = () => {
     }
 
 
+    // 이미지 등록 시 미리보기 화면
+    const onChangeImage = async () => {
+      // API로 이미지 전달
+
+      // 반환된 
+    }
+
 
     // 전화번호 입력 시 state 변경
     const handleTelChange = (tel) => {
@@ -211,12 +219,14 @@ const ConsultingSignUpContainer = () => {
 
     return(
         <ConsultingSignUpPresenter
+          image={image}
+
           isId={isId}
           isEmail={isEmail}
           isPw={isPw}
           isName={isName}
           isNickname={isNickname}
-          isActive={isActive}
+          isActive={isActive}          
 
           onChangeId={handleIdChange}
           onChangePw={handlePwChange}
@@ -224,6 +234,7 @@ const ConsultingSignUpContainer = () => {
           onChangeName={handleNameChange}
           onChangeNickname={handleNicknameChange}
           onChangeTel={handleTelChange}
+          onChangeImage={onChangeImage}
           onChangeEmail={handleEmailChange}
       
           handleSignUp={handleSignUp}

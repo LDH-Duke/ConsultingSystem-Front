@@ -5,6 +5,8 @@ import { Form, Input, Button, Select, Space } from "antd";
 import './ConsultingSignUp.css'
 
 export const ConsultingSignUpPresenter = ({
+        image,
+
         isId,
         isPw,
         isEmail,
@@ -18,6 +20,7 @@ export const ConsultingSignUpPresenter = ({
         onChangeName,
         onChangeNickname,
         onChangeTel,
+        onChangeImage,
         onChangeEmail,
 
         handleSignUp,
@@ -93,6 +96,18 @@ export const ConsultingSignUpPresenter = ({
                             onBlur={handleNicknameCheck}/>
                             {
                                 !isNickname ? null : <span>예명을 입력하세요</span>
+                            }
+                        </Form.Item>
+                        <Form.Item>
+                            <Formname name='이미지 등록'/>
+                            <Input
+                                type="file"
+                                placeholder="이미지를 선택하세요"
+                                onChange={onChangeImage}
+                            />
+                            {
+                                image.length === 0 ? null : 
+                                <img src={image} alt="프로필 사진" />
                             }
                         </Form.Item>
                         <Formname name = {'회원가입을 위해 휴대폰 인증을 진행해 주세요'} />

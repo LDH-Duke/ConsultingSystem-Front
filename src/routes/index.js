@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { Consulting_v2, Consulting_v1, SiteMap, EditCounselor, Product, WriteReview, AskAdmin, Exchange, CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error, Consultinghistory, MyPage, AdminMain } from './pages';
+import { ImageTest, Consulting_v2, Consulting_v1, SiteMap, EditCounselor, Product, WriteReview, AskAdmin, Exchange, CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error, Consultinghistory, MyPage, AdminMain } from './pages';
 import Header from '../components/Header'
 import cookie from '../cookie';
 
@@ -60,6 +60,7 @@ const Router = () => {
         <Route exact path='/sitemap' element={<SiteMap />} />
         <Route exact path='/consulting_v1' element={<Consulting_v1 />} />
         <Route exact path='/consulting_v2' element={<Consulting_v2 />} />
+        <Route exact path='/imagetest' element={<ImageTest />} />
       </Routes>
     </div>
   )

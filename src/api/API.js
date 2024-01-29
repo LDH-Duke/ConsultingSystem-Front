@@ -160,5 +160,10 @@ const API = {
    * --
    */
   postProduct : (counselor_id, body) => $http.post(parameterToPath('/counselor/production/add/:counselor_id', {counselor_id}), body),
+
+  /**
+   * 이미지 등록하기
+   */
+  postImage : (body) => $http.post('/counselor/addtemp', body),
 };
 export default API;

@@ -22,5 +22,6 @@ export { default as EditCounselor } from './EditCounselor';
 export { default as MyPage } from './MyPage';
 export { default as AdminMain } from './admin/Main';
 export { default as SiteMap } from './SiteMap';
-export { default as Consulting_v1 } from './Consulting'
-export { default as Consulting_v2 } from './Consulting2'
+export { default as Consulting_v1 } from './Consulting';
+export { default as Consulting_v2 } from './Consulting2';
+export { default as ImageTest } from './ImageTest';
