@@ -7,8 +7,8 @@ export { default as SignIn } from './SignIn';
 export { default as Signup } from './Signup';
 export { default as Main } from './Main';
 export { default as Coin } from './Coin';
-export { default as PriceDetail} from './PriceDetail';
-export { default as Question} from './Question';
+export { default as PriceDetail } from './PriceDetail';
+export { default as Question } from './Question';
 export { default as ConsultingSignUp } from './ConsultingSignUp';
 export { default as Review } from './Review';
 export { default as Error } from './Error';
@@ -22,3 +22,5 @@ export { default as EditCounselor } from './EditCounselor';
 export { default as MyPage } from './MyPage';
 export { default as AdminMain } from './admin/Main';
 export { default as SiteMap } from './SiteMap';
+export { default as Consulting_v1 } from './Consulting'
+export { default as Consulting_v2 } from './Consulting2'
