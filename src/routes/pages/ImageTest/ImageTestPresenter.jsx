@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import Formname from './components/Formname';
-import { Form, Button, Input } from 'antd'
+import { Form, Button, Input } from 'antd';
 
 export const ImageTestPresenter = ({
     setText,
-    imageSrc,
+    imageSrcs,
     onChangeImage
 }) => {
+
+
 
     return (
         <div className="images-test-container">
@@ -14,18 +16,20 @@ export const ImageTestPresenter = ({
                 type="file"
                 accept="image/*"
                 onChange={onChangeImage}
-                multiple='multiple'
+                multiple
             />
-            <textarea cols='100' rows='40' onChange={(e) => { setText(e.target.value) }} />
-            <button>등록</button>
+            <div>
+                <textarea cols='100' rows='40' onChange={(e) => { setText(e.target.value) }} />
+                <button>등록</button>
+            </div>
 
-            {/* {
-                imageSrc.map((img, idx) => {
+            {
+                imageSrcs.map((img,) => {
                     return (
                         <img src={img} alt="사진" />
                     )
                 })
-            } */}
+            }
 
         </div>
     )

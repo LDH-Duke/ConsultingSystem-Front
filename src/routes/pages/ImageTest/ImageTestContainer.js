@@ -6,52 +6,63 @@ import axios from 'axios';
 
 const ImageTestContainer = () => {
     const [returnUrl, setReturnUrl] = useState([]);
-    const [imageSrc, setImageSrc] = useState([]);
+    const [imageSrcs, setImageSrcs] = useState([]);
     const [text, setText] = useState('');
 
 
     const previewImage = (images) => {
         console.log(images)
-        const reader = new FileReader();
+        
+        let srcs = [];
+        for (let i = 0; i < images.length; i++) {
+            const reader = new FileReader();
 
-        reader.readAsDataURL(images)
-        reader.onloadend = e => {
-            setImageSrc(e.target.result);
+            reader.readAsDataURL(images[i])
+            reader.onloadend = e => {
+                srcs.push(e.target.result);
+            }
         }
-
-
+        setImageSrcs(srcs);
     }
 
     const onChangeImage = async (e) => {
         // API 연결
-        console.log(e.target.files);
-        // previewImage(e.target.files)
+        const images = e.target.files;
+        previewImage(images);
         const formData = new FormData();
-        formData.append('image', e.target.files);
+        formData.append('image', images);
+
+        for (let i = 0; i < images.length; i++) {
+            formData.append('image', images[i]);
+        }
+
+
         const headers = {
             'Content-type': 'multipart/form-data; boundary=<calculated when request is sent>; charset=UTF-8',
         }
 
-        const { data } = await axios({
-            method: 'POST',
-            url: 'http://3.34.129.182:3333/api/v1/counselor/addtemp',
-            mode: 'cors',
-            headers,
-            data: formData
-        })
-        console.log(data)
-        let url = ''
-        for (const a in data.data) {
-            url = data.data[a].replace('[[', '');
-            url = url.replace(']]', '');
-            setReturnUrl(url)
-        }
-        console.log(returnUrl)
+        // const { data } = await axios({
+        //     method: 'POST',
+        //     url: 'http://3.34.129.182:3333/api/v1/counselor/addtemp',
+        //     mode: 'cors',
+        //     // headers,
+        //     data: formData
+        // })
+        // 이미지 여러개 저장
+        const {data} = await axios.post('http://3.34.129.182:3333/api/v1/counselor/addtemp', formData, { headers })
 
+        // console.log(data.data)
+        const urls = [];
+        data.data.forEach(urlData => {
+            // console.log(urlData)
+            const url = urlData.replace('[[','').replace(']]','');
+            urls.push(url);
+        });
+        setReturnUrl(urls);
     }
 
     const onSubmit = () => {
-
+        
     }
 
 
@@ -59,7 +70,7 @@ const ImageTestContainer = () => {
     return (
         <ImageTestPresenter
             setText={setText}
-            imageSrc={imageSrc}
+            imageSrcs={imageSrcs}
             onChangeImage={onChangeImage} />
     )
 }
