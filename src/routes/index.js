@@ -58,6 +58,8 @@ const Router = () => {
       <Route exact path='/mypage' element={<MyPage />} />
       <Route exact path='/admin/main' element={<AdminMain />} />
       <Route exact path='/sitemap' element={<SiteMap />} />
+      <Route exact path='consulting_v1'/>
+      <Route exact path='consulting_v2'/>
     </Routes>
   </div>
 )}
