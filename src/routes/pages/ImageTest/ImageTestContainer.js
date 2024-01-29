@@ -5,44 +5,62 @@ import cookie from '../../../cookie';
 import axios from 'axios';
 
 const ImageTestContainer = () => {
-    const [images, setImages] = useState([]);
-    const [imageSrc, setImageSrc] = useState('');
+    const [returnUrl, setReturnUrl] = useState([]);
+    const [imageSrc, setImageSrc] = useState([]);
+    const [text, setText] = useState('');
 
-    const previewImage = (image) => {
+
+    const previewImage = (images) => {
+        console.log(images)
         const reader = new FileReader();
-        reader.readAsDataURL(image)
+
+        reader.readAsDataURL(images)
         reader.onloadend = e => {
             setImageSrc(e.target.result);
         }
+
+
     }
 
     const onChangeImage = async (e) => {
         // API 연결
-        console.log(e.target.files[0]);
-        previewImage(e.target.files[0])
+        console.log(e.target.files);
+        // previewImage(e.target.files)
         const formData = new FormData();
-        formData.append('image', e.target.files[0]);
+        formData.append('image', e.target.files);
         const headers = {
             'Content-type': 'multipart/form-data; boundary=<calculated when request is sent>; charset=UTF-8',
         }
 
-        const {data} = await axios({
+        const { data } = await axios({
             method: 'POST',
             url: 'http://3.34.129.182:3333/api/v1/counselor/addtemp',
             mode: 'cors',
             headers,
             data: formData
         })
+        console.log(data)
+        let url = ''
+        for (const a in data.data) {
+            url = data.data[a].replace('[[', '');
+            url = url.replace(']]', '');
+            setReturnUrl(url)
+        }
+        console.log(returnUrl)
 
-        console.log(data.data)
-        setImages(data.data)
     }
+
+    const onSubmit = () => {
+
+    }
+
+
 
     return (
         <ImageTestPresenter
-        images={images}
-        imageSrc={imageSrc}
-        onChangeImage={onChangeImage}/>
+            setText={setText}
+            imageSrc={imageSrc}
+            onChangeImage={onChangeImage} />
     )
 }
 
