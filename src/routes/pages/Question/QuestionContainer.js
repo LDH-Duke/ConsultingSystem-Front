@@ -1,32 +1,44 @@
 import React, { useEffect, useState } from 'react';
 import { QuestionPresenter } from "./QuestionPresenter";
 import API from '../../../api/API';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-const QuestionContainer = () => {
-    const [name] = useState('클로이');
+const QuestionContainer = ({
+    navigate
+}) => {
 
-    const [user, setUser] = useState([])
-    const [question, setQuestion] = useState([]);
-    const [counselor, setCounselor] = useState([]);
-    const params = useParams();
+    // 임시 문의 내용 데이터
+    const [content, setContent] = useState('');
+    const [counselor, setCounselor] = useState();
+
+    const { counselor_id } = useParams();
 
     useEffect(() => {
-        const counselorinfo = API.getCounselor(params.counselor_id);
-        setCounselor(counselorinfo)
+        (async () => {
+            const counselorData = await API.getCounselor(counselor_id);
+            setCounselor(counselorData.data);
+            
+        })();
     }, [])
 
-    const onSubmit = () => {
-        const questioninfo = API.postquestion({question, user_id: user.user_id, counselor_id : params.counselor_id});
+    const onSubmit = async () => {
+
+        const data = {
+            content: content
+        };
+
+        const result = await API.postQuestionToCounselor(counselor_id, data);
+        console.log(result)
     }
 
-    /**
-     * useNavigate(): 이전 페이지로
-     */
-    const navigate = useNavigate();
-
     return(
-        <QuestionPresenter navigate={navigate} name = {name} counselor = {counselor}/>
+        <QuestionPresenter
+            navigate={navigate}
+            counselor={counselor}
+            content={content}
+            setContent={setContent}
+            onSubmit={onSubmit}
+        />
     )
 }
 

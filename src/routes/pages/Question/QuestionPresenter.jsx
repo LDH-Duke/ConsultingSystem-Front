@@ -6,8 +6,16 @@ import { Button } from "antd";
 
 export const QuestionPresenter = ({
     name,
-    navigate
+    navigate,
+    counselor,
+    content,
+    setContent,
+    onSubmit
 }) => {
+
+    if (!counselor) {
+        return <div>로딩중</div>
+    }
 
     return(
         <div className="question-container">
@@ -20,18 +28,23 @@ export const QuestionPresenter = ({
                         <div className="img"></div>
                         <div className="info">
                             <Category category = {'진로'} />
-                            <span>{name}</span>
+                            <span>{counselor.name}</span>
                         </div>
                     </div>
                     <div className="question-info">
                         <div className="question-title">
                             <h3>문의 내용</h3>
                         </div>
-                        <textarea cols={100} rows={20}></textarea>
+                        <textarea
+                            cols={100}
+                            rows={20}
+                            value={content}
+                            onChange={(e) => setContent(e.target.value)}
+                        />
                     </div>
                 </div>
                 <div className="button">
-                    <Button>제출하기</Button>
+                    <Button onClick={ () => { onSubmit() }}>제출하기</Button>
                     <Button onClick={ () => { navigate(-1); } }>취소</Button>
                 </div>
             </div>

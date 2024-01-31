@@ -44,7 +44,7 @@ const Router = () => {
         <Route exact path='/signup' element={<Signup />} />
         <Route exact path='/coin' element={<Coin />} />
         <Route exact path='/pricedetail' element={<PriceDetail />} />
-        <Route exact path='/question/:counselor_id' element={<Question />} />
+        <Route exact path='/question/:counselor_id' element={<Question navigate={navigate} />} />
         <Route exact path='/consultingsignup' element={<ConsultingSignUp />} />
         <Route exact path='/review' element={<Review />} />
         <Route exact path='/*' element={<Error />} />

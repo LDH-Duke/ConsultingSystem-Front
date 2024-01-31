@@ -66,13 +66,14 @@ const List = ({
                                         </Button>
                                         <div className="list-modal">
                                             <Modal style={{ width: '100%' }} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+                                                <span>{counselor.name}</span>
                                                 <div className="modal-detail">
                                                     <div className="modal-top">
                                                         <div className="img"></div>
                                                         <div className="all-info">
                                                             <div className="info">
                                                                 <Category category={counselor.category} />
-                                                                <span>{counselor.name}</span>
+                                                                <span>{counselor.id}</span>
                                                             </div>
                                                             <div className="info-select">
                                                                 <span>상담 방법을 선택해 주세요</span>
@@ -93,9 +94,9 @@ const List = ({
                                     <div className="accept">
                                         {
                                             counselor.cosulting_status === "대기" ?
-                                                <span>상담가능</span>
-                                                :
                                                 <span>상담불가능</span>
+                                                :
+                                                <span>상담가능</span>
                                         }
                                     </div>
                                     <div className="message">

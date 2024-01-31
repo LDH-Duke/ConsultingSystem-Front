@@ -62,6 +62,13 @@ const API = {
   postquestion : (body) => $http.post('/ask', body),
 
   /**
+   * 상담사 문의
+   * --
+   */
+  postQuestionToCounselor : (counselor_id, body) => $http.post(parameterToPath('/ask/add/:counselor_id', {counselor_id}), body),
+
+
+  /**
    * 결제 내역
    * --
    */

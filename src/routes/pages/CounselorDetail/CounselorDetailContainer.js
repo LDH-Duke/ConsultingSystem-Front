@@ -1,49 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import { CounselorDetailPresenter } from './CounselorDetailPresenter'
 import { Button } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { API } from '../../../api';
 
 const CounselorDetailContainer = ({
 
 }) => {
 
-  const params = useParams();
- 
+  const { counselor_id } = useParams();
+  const [counselor, setCounselor] = useState();
 
-  /**
-   * 임시 데이터
-   */
-  const [counselor, setCounselor] = useState(
-    {
-      counselor_id: 1,
-      name: '허관',
-      category: '진로',
-      price: 1000,
-      rank: '브론즈',
-      status: false,
-      introduce: '가',
-      content: '가나다'
-    }
-  );
 
- /**
-   * 리뷰 단일 조회
-   */
- useEffect(() => {
-  (async () => {
-    const counselor_id = params;
+  
+  useEffect(() => {
+    (async () => {
+      const counselorData = await API.getCounselor(counselor_id);
 
-    const data = {
-      counselor_id: counselor_id
-    };
+      if (!counselorData) {
+        console.log('상담사 정보 없음');
+        return;
+      }
 
-    const result = await API.getReview(data);
-  })();
-}, [params])
+      setCounselor(counselorData.data);
 
-const onbuySubmit = async() => {
-  const postpuyproductinfo = await API.postbuyproduct();
-}
+      const result = await API.getReview(counselor_id);
+
+    })();
+  }, [])
+
+
+  const onbuySubmit = async () => {
+    const postpuyproductinfo = await API.postbuyproduct();
+  }
 
 
   // Tab
@@ -72,7 +61,7 @@ const onbuySubmit = async() => {
             <div className='counselor-tab-box'>
               <div className='counselor-tab-content'>
               </div>
-              <Link to={`/writereview/${counselor.counselor_id}`}><Button>후기 작성하기</Button></Link>
+              <Link to={`/writereview/${counselor_id}`}><Button>후기 작성하기</Button></Link>
             </div>
           </div>
         </div>
