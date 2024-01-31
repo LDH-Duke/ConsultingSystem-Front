@@ -178,5 +178,11 @@ const API = {
    * 이미지 등록하기
    */
   postImage : (body) => $http.post('/counselor/addtemp', body),
+
+  /**
+   * 상품 구매하기
+   * --
+   */
+  postbuyproduct : (body) => $http.post('/coin/buyproduct', body),
 };
 export default API;

@@ -18,12 +18,12 @@ export const EditCounselorPresenter = ({
                     (
                         <div className='self-info'>
                             <Info title = {"개인 공지"} introduce = {"개인 공지"}/>
-                            <button onClick={() => changeStatus(false)}>본인 소개 등록</button>
+                            <button onClick={() => changeStatus(false)}>본인 소개 페이지 이동</button>
                         </div>
                     ) : (
                         <div className="self-introduce">
                             <Info title = {"본인 소개"} introduce = {"본인 소개"} />
-                            <button onClick={() => changeStatus(true)}>개인 공지 등록</button>
+                            <button onClick={() => changeStatus(true)}>개인 공지 페이지 이동</button>
                         </div>
                     )
                 }

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { CounselorDetailPresenter } from './CounselorDetailPresenter'
 import { Button } from 'antd';
-import { Link, useParams } from 'react-router-dom';
-import API from '../../../api/API';
+import { Link } from 'react-router-dom';
 
 const CounselorDetailContainer = ({
 
@@ -27,23 +26,24 @@ const CounselorDetailContainer = ({
     }
   );
 
-
-
-  /**
+ /**
    * 리뷰 단일 조회
    */
-  useEffect(() => {
-    (async () => {
-      const counselor_id = params;
+ useEffect(() => {
+  (async () => {
+    const counselor_id = params;
 
-      const data = {
-        counselor_id: counselor_id
-      };
+    const data = {
+      counselor_id: counselor_id
+    };
 
-      const result = await API.getReview(data);
-    })();
-  }, [params])
+    const result = await API.getReview(data);
+  })();
+}, [params])
 
+const onbuySubmit = async() => {
+  const postpuyproductinfo = await API.postbuyproduct();
+}
 
 
   // Tab
@@ -76,7 +76,12 @@ const CounselorDetailContainer = ({
             </div>
           </div>
         </div>
-    }
+    },
+    {
+      key: '5',
+      label: '상담 상품',
+      children: <Button onClick={onbuySubmit}>상품구매하기</Button>,
+    },
   ];
 
   return (

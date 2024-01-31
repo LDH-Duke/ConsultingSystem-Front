@@ -2,6 +2,7 @@ import React from 'react';
 import './CounselorDetail.css';
 import { Button , Form, Tabs, Modal } from 'antd';
 import { Link } from 'react-router-dom';
+import API from '../../../api/API';
 
 export const CounselorDetailPresenter = ({
     items,
