@@ -25,6 +25,10 @@
     align-items: center;
 }
 
+.header-text-box p {
+    color: blue;
+}
+
 .header-text-box .ant-form-item {
     margin-bottom: 0px;
 }

@@ -18,7 +18,7 @@ const API = {
    */
   getCounselors : () => $http.get('/counselor'),
 
-    /**
+  /**
    * 선택 상담사 정보 조회
    * --
    */
@@ -101,7 +101,7 @@ const API = {
    * 즐겨찾기 단일조회 (즐겨찾기)
    * --
    */
-  getFavorite : (body) => $http.get('/favorite/:user_id', body),
+  getFavorite : (user_id) => $http.get(parameterToPath('/favorite/:user_id', {user_id})),
 
   /**
    * 즐겨찾기 추가
@@ -125,6 +125,19 @@ const API = {
    * 후기 삭제
    * --
    */
+  deleteReview : (review_item_id) => $http.delete(parameterToPath('/review/:review_item_id', {review_item_id})),
+
+  /**
+   * 후기 수정
+   * --
+   */
+  updateReview : (review_item_id, body) => $http.put(parameterToPath('/review/:review_item_id', {review_item_id}), body),
+
+  /**
+   * 단일 후기 조회
+   * --
+   */
+  getReview : (counselor_id) => $http.get(parameterToPath('/review/:counselor_id', {counselor_id})),
   
   /**
    * 전체 후기 조회

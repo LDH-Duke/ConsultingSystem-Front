@@ -17,7 +17,14 @@ export const FavoritePresenter = ({
                     <Title title = {'즐겨찾기'} />
                 </div>
                 {
-                    counselors.map(counselors => <FavoriteCard key={counselors.id} props={counselors} addFavorite={addFavorite} deleteFavorite={deleteFavorite} favorite={favorite}/>)
+                    counselors.map(counselors =>
+                        <FavoriteCard
+                            key={counselors.id}
+                            props={counselors}
+                            addFavorite={addFavorite}
+                            deleteFavorite={deleteFavorite}
+                            favorite={favorite}
+                        />)
                 }
             </div>
         </div>

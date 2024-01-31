@@ -42,9 +42,9 @@
     height: 55vh;
 } */
 
-.ant-picker-calendar.ant-picker-calendar-full .ant-picker-calendar-date {
+/* .ant-picker-calendar.ant-picker-calendar-full .ant-picker-calendar-date {
     height: 8vh;
-}
+} */
 
 .ant-btn-primary {
     display: flex;
@@ -59,4 +59,43 @@
     height: 0.6vh;
     background: #D9D9D9;
     border-radius: 90px;
+}
+
+
+/* antd Calendar css */
+:where(.css-dev-only-do-not-override-zl9ks2).ant-picker-calendar.ant-picker-calendar-full
+.ant-picker-calendar-date-content {
+    /*  */
+    overflow-y: visible;
+}
+
+:where(.css-dev-only-do-not-override-zl9ks2).ant-badge.ant-badge-status
+.ant-badge-status-text {
+    margin-inline-start: 0;
+}
+
+:where(.css-dev-only-do-not-override-zl9ks2).ant-badge.ant-badge-status
+.ant-badge-status-dot {
+    background-color: transparent;
+}
+
+.events {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ant-modal.css-dev-only-do-not-override-zl9ks2 {
+    width: 100vw !important;
+    height: 110% !important;
+}
+
+:where(.css-dev-only-do-not-override-zl9ks2).ant-modal
+.ant-modal-content {
+    height: 100%;
+}
+
+:where(.css-dev-only-do-not-override-zl9ks2).ant-picker-calendar.ant-picker-calendar-full
+.ant-picker-calendar-date {
+    overflow: overlay;
 }

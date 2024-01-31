@@ -2,10 +2,10 @@ import React  from "react";
 import Title from "../../../components/Title";
 import ReviewCard from './components/ReviewCard';
 import "./Review.css";
-import { Review } from "..";
 
 export const ReviewPresenter = ({
     counselors,
+    reviews
 }) => {
     return(
         <div className="review-container">
@@ -31,9 +31,7 @@ export const ReviewPresenter = ({
             </div>
             <div className='review-content-box'>
                 <div className='review-content-inner'>
-                    {
-                        counselors.map(counselors => <ReviewCard key={counselors.counselor_id} counselors={counselors} />)
-                    }
+                    <ReviewCard counselors={counselors} reviews={reviews} />
                 </div>
             </div>
         </div>
