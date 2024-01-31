@@ -6,68 +6,37 @@ import cookie from '../../../cookie';
 const MainContainer = () => {
 
 
+    // 즐겨찾기 목록
+    const [favorites, setFavorites] = useState([]);
+
+    // 상담사 목록
+    const [counselors, setCounselors] = useState([]);
+
+
     
-    const [favorite, setFavorite] = useState(false);
-
-
-
-    /**
-     * 즐겨찾기 전체조회 (메인)
-     */
     useEffect(() => {
 
-        // const counselorsInfo = API.getCounselors();
-        // setCounselors(counselorsInfo);
-
+        
         (async () => {
-            const result = await API.getFavorites();
+
+            // 상담사 전체 조회
+            const counselorsData = await API.getCounselors();
+            setCounselors(counselorsData.data);
+
+            // 회원 즐겨찾기 조회
+            const FavoritesData = await API.getFavorites();
+            setFavorites(FavoritesData.data);
+
         })();
-    }, [favorite])
+    }, [], [favorites])
 
-
-
-    /**
-     * 임시 데이터
-     */
-    const [counselors, setCounselors] = useState([
-        {
-            counselor_id: 1,
-            name: '허관',
-            category: '진로',
-            price: 1000,
-            rank: '브론즈',
-            status: false,
-            introduce: '가'
-        },
-        {
-            counselor_id: 2,
-            name: '김권후',
-            category: '대선',
-            price: 2000,
-            rank: '실버',
-            status: true,
-            introduce: '나'
-        },
-        {
-            counselor_id: 3,
-            name: '김건우',
-            category: '화이트',
-            price: 3000,
-            rank: '골드',
-            status: false,
-            introduce: '다'
-        }
-    ]);
-
-
-
+    
     /**
      * 즐겨찾기 추가
      */
     const addFavorite = async (counselorId) => {
 
-        setFavorite(true);
-
+        console.log(counselorId);
         const userId = cookie.getCookie('id');
         const data = {
             user_id: userId,
@@ -75,6 +44,9 @@ const MainContainer = () => {
         };
 
         const result = await API.postFavorite(data);
+
+        // 함수형 업데이트: 이전 즐겨찾기 목록에서 상담사 ID를 추가
+        setFavorites((prevFavorites) => [...prevFavorites, counselorId])
     }
 
 
@@ -83,8 +55,6 @@ const MainContainer = () => {
      */
     const deleteFavorite = async (counselorId) => {
 
-        setFavorite(false);
-
         const userId = cookie.getCookie('id');
         const data = {
             user_id: userId,
@@ -92,15 +62,18 @@ const MainContainer = () => {
         };
 
         const result = await API.deleteFavorite(data);
+
+        setFavorites((prevFavorites) => prevFavorites.filter((favoritedId) => favoritedId !== counselorId));
+        
     }
 
-    // useEffect(() => {
-    //     const counselorsinfo = API.getCounselors()
-    //     setCounselors(counselorsinfo)
-    // },[])
-
     return (
-        <MainPresenter counselors={counselors} addFavorite={addFavorite} deleteFavorite={deleteFavorite} favorite={favorite} />
+        <MainPresenter
+            counselors={counselors}
+            addFavorite={addFavorite}
+            deleteFavorite={deleteFavorite}
+            favorites={favorites}
+        />
     )
 }
 

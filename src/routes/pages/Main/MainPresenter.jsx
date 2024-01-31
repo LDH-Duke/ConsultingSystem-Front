@@ -7,7 +7,7 @@ export const MainPresenter = ({
     counselors,
     addFavorite,
     deleteFavorite,
-    favorite
+    favorites
 }) => {
 
     return(
@@ -30,9 +30,12 @@ export const MainPresenter = ({
                     </div>
                 </div>
                 <div className="list">
-                    {
-                        counselors.map(counselors => <List key={counselors.counselor_id} props={counselors} addFavorite={addFavorite} deleteFavorite={deleteFavorite} favorite={favorite}/>)
-                    }
+                    <List
+                        counselors={counselors}
+                        addFavorite={addFavorite}
+                        deleteFavorite={deleteFavorite}
+                        favorites={favorites}
+                    />
                 </div>
             </div>
         </div>

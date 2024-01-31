@@ -14,8 +14,8 @@ const SignInContainer = ({
     
 
     const onSubmit = async () => {
-        // console.log('아이디:', id)
-        // console.log('비밀번호:', pw)
+        console.log('아이디:', id)
+        console.log('비밀번호:', pw)
         if (isUser) {
             const {data} = await API.postsignin({email: id, pw})
 
