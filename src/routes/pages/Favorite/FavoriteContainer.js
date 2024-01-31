@@ -8,8 +8,8 @@ const FavoriteContainer = ({
 }) => {
 
 
-
-  const [favorite, setFavorite] = useState(false)
+  // 수정 해야함
+  const [favorite, setFavorite] = useState(true)
 
 
 
@@ -31,9 +31,9 @@ const FavoriteContainer = ({
       };
 
       const result = await API.getFavorite(data);
+      console.log(result)
     })();
   }, [])
-
 
 
   /**
@@ -110,7 +110,12 @@ const FavoriteContainer = ({
 
 
   return (
-    <FavoritePresenter counselors={counselors} addFavorite={addFavorite} deleteFavorite={deleteFavorite} favorite={favorite} />
+    <FavoritePresenter
+      counselors={counselors}
+      addFavorite={addFavorite}
+      deleteFavorite={deleteFavorite}
+      favorite={favorite}
+    />
   )
 }
 

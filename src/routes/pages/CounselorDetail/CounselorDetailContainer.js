@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CounselorDetailPresenter } from './CounselorDetailPresenter'
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
-import API from '../../../api/API';
 
 const CounselorDetailContainer = ({
 
 }) => {
+
+  const params = useParams();
+ 
 
   /**
    * 임시 데이터
@@ -19,15 +21,29 @@ const CounselorDetailContainer = ({
       price: 1000,
       rank: '브론즈',
       status: false,
-      introduce: '가'
+      introduce: '가',
+      content: '가나다'
     }
   );
 
-  const onbuySubmit = async() => {
-    const postpuyproductinfo = await API.postbuyproduct();
-  }
+ /**
+   * 리뷰 단일 조회
+   */
+ useEffect(() => {
+  (async () => {
+    const counselor_id = params;
 
-  // const getReview
+    const data = {
+      counselor_id: counselor_id
+    };
+
+    const result = await API.getReview(data);
+  })();
+}, [params])
+
+const onbuySubmit = async() => {
+  const postpuyproductinfo = await API.postbuyproduct();
+}
 
 
   // Tab
@@ -54,6 +70,8 @@ const CounselorDetailContainer = ({
         <div className='counselor-tab-container'>
           <div className='counselor-tab-wrap'>
             <div className='counselor-tab-box'>
+              <div className='counselor-tab-content'>
+              </div>
               <Link to={`/writereview/${counselor.counselor_id}`}><Button>후기 작성하기</Button></Link>
             </div>
           </div>

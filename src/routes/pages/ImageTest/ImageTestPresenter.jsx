@@ -5,10 +5,9 @@ import { Form, Button, Input } from 'antd';
 export const ImageTestPresenter = ({
     setText,
     imageSrcs,
-    onChangeImage
+    onChangeImage,
+    onSubmit
 }) => {
-
-
 
     return (
         <div className="images-test-container">
@@ -20,7 +19,7 @@ export const ImageTestPresenter = ({
             />
             <div>
                 <textarea cols='100' rows='40' onChange={(e) => { setText(e.target.value) }} />
-                <button>등록</button>
+                <button onClick={onSubmit}>등록</button>
             </div>
 
             {

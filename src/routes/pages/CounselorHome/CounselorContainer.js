@@ -10,7 +10,7 @@ const CounselorContainer = ({
     handleSwitchChange,
 }) => {
 
-    const [counselor, setCounselor] = useState()
+    const [counselor, setCounselor] = useState({})
     // 핸들러 관련 부분
     const [buttonchecked, setbuttonchecked] = useState('');
 
@@ -48,10 +48,10 @@ const CounselorContainer = ({
 
         const counselor_id = cookie.getCookie('id');
 
-        const data = await API.getCounselor(counselor_id);
+        const {data} = await API.getCounselor(counselor_id);
 
         setCounselor(data)})();
-    }, [buttonchecked]);
+    }, []);
 
     return (
         <CounselorPresenter

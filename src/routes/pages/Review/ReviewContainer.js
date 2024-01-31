@@ -13,6 +13,7 @@ const ReviewContainer = () => {
     }, [])
 
 
+
     /**
      * 임시 상담사 데이터
      */
@@ -46,6 +47,8 @@ const ReviewContainer = () => {
         }
     ]);
 
+
+
     /**
      * 임시 review_item 데이터
      */
@@ -54,23 +57,27 @@ const ReviewContainer = () => {
             review_item_id: 1,
             review_score: 5,
             review_content: '김권후는 사람인가?',
-            user_id: 2,
+            user_id: 1,
             review_id: 1
+        },
+        {
+            review_item_id: 2,
+            review_score: 4,
+            review_content: '김건우는 사람인가?',
+            user_id: 2,
+            review_id: 2
+        },
+        {
+            review_item_id: 3,
+            review_score: 3,
+            review_content: '이동희는 사람인가?',
+            user_id: 3,
+            review_id: 3
         }
     ]);
 
-    /**
-     * 임시 review 데이터
-     */
-    const [review, setReview] = useState({
-        review_total_score: 5,
-        review_count: 1,
-        review_id: 1,
-        counselor_id: 3
-    });
-
     return (
-        <ReviewPresenter counselors={counselors} reviews={reviews} review={review} />
+        <ReviewPresenter counselors={counselors} reviews={reviews} />
     )
 }
 

@@ -23,15 +23,15 @@ const SignInContainer = ({
             navigate('/');
         } else {
             const {data} = await API.postcounselorlogin({email: id, pw})
-            const counselor_id = cookie.getCookie('id');
-            
             setCookies(data);
+
+            const counselor_id = cookie.getCookie('id');            
             navigate(`/counselor/home/${counselor_id}`);
         }
         // cookie.setCookie('id', data.data.id, {
         //     path: '/',
         //     secure: '/',
-        // }) 
+        // })
         // cookie.setCookie('token', data.token, {
         //     path: '/',
         //     secure: '/',
