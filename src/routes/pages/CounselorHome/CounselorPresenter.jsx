@@ -17,7 +17,7 @@ export const CounselorPresenter = ({
     return (
         <div className="Counselor-container">
             <div className="Counselor-wrap">
-                <h1>{counselor.name}의 상담사 페이지입니다.</h1>
+                {/* <h1>{counselor.name}의 상담사 페이지입니다.</h1> */}
                 <SubHeader/>
                 {/* 현재 상담 신청 목록 */}
                 <MultipleItems buttonAccept={buttonAccept} buttonReject={buttonReject}

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { CounselorDetailPresenter } from './CounselorDetailPresenter'
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
+import API from '../../../api/API';
 
 const CounselorDetailContainer = ({
 
@@ -21,6 +22,10 @@ const CounselorDetailContainer = ({
       introduce: '가'
     }
   );
+
+  const onbuySubmit = async() => {
+    const postpuyproductinfo = await API.postbuyproduct();
+  }
 
   // const getReview
 
@@ -53,7 +58,12 @@ const CounselorDetailContainer = ({
             </div>
           </div>
         </div>
-    }
+    },
+    {
+      key: '5',
+      label: '상담 상품',
+      children: <Button onClick={onbuySubmit}>상품구매하기</Button>,
+    },
   ];
 
   return (
