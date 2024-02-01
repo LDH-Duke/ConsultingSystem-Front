@@ -53,8 +53,8 @@ const Router = () => {
         <Route exact path='/askadmin' element={<AskAdmin />} />
         <Route exact path='/writereview/:counselor_id' element={<WriteReview />} />
         <Route exact path='/consultinghistory' element={<Consultinghistory />} />
-        <Route exact path='/product' element={<Product />} />
-        <Route exact path='/editcounselor' element={<EditCounselor />} />
+        <Route exact path='/product/:counselor_id' element={<Product />} />
+        <Route exact path='/editcounselor/:counselor_id' element={<EditCounselor />} />
         <Route exact path='/mypage' element={<MyPage />} />
         <Route exact path='/admin/main' element={<AdminMain />} />
         <Route exact path='/sitemap' element={<SiteMap />} />

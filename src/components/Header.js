@@ -25,6 +25,7 @@ const Header = ({
                 <Link to='/coin'>코인충전</Link>
                 <Link to={`/favorite/${user_id}`}>즐겨찾기</Link>
                 <Link to='/mypage'>마이페이지</Link>
+                <Link to='/askadmin'>관리자문의</Link>
                 <p>| 상담사 |</p>
                 <Link to={`/counselor/home/${counselor_id}`}>상담사용 메인</Link>
                 <Link to='/exchange'>포인트 환전</Link>
