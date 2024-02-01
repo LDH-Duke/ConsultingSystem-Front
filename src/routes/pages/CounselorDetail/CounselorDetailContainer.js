@@ -3,6 +3,7 @@ import { CounselorDetailPresenter } from './CounselorDetailPresenter'
 import { Button } from 'antd';
 import { Link, useParams } from 'react-router-dom';
 import { API } from '../../../api';
+import ReviewCard from './components/ReviewCard';
 
 const CounselorDetailContainer = ({
 
@@ -10,6 +11,7 @@ const CounselorDetailContainer = ({
 
   const { counselor_id } = useParams();
   const [counselor, setCounselor] = useState();
+  const [reviews, setReviews] = useState([]);
 
 
   
@@ -24,7 +26,9 @@ const CounselorDetailContainer = ({
 
       setCounselor(counselorData.data);
 
-      const result = await API.getReview(counselor_id);
+      const reviewData = await API.getReview(counselor_id);
+      setReviews(reviewData.data);
+      
 
     })();
   }, [])
@@ -62,7 +66,11 @@ const CounselorDetailContainer = ({
               <div className='counselor-tab-content'>
               </div>
               <Link to={`/writereview/${counselor_id}`}><Button>후기 작성하기</Button></Link>
-            </div>
+              <ReviewCard 
+                reviews={reviews}
+                counselor={counselor}
+              />
+              </div>
           </div>
         </div>
     },
@@ -70,7 +78,7 @@ const CounselorDetailContainer = ({
       key: '5',
       label: '상담 상품',
       children: <Button onClick={onbuySubmit}>상품구매하기</Button>,
-    },
+    }, 
   ];
 
   return (

@@ -203,7 +203,25 @@ const API = {
    * 관리자에게 문의하기
    * --
    */
-  postaskadmin : (body) => $http.post('/ask/addadmin', body)
+  postaskadmin : (body) => $http.post('/ask/addadmin', body),
 
+  /**
+   * 문의 전체 조회
+   * --
+   */
+  getAsks : () => $http.get('/ask'),
+  
+  /**
+   * 고객별 문의 조회
+   * --
+   */
+  getAskForUser : (user_id) => $http.get(parameterToPath('/ask/user/:user_id', {user_id})),
+
+  /**
+   * 상담사별 문의 조회
+   * --
+   */
+  getAskForCounselor : (counselor_id) => $http.get(parameterToPath('/ask/counselor/:counselor_id', {counselor_id}))
 };
+
 export default API;
