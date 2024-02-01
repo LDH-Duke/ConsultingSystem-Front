@@ -31,7 +31,10 @@ export const ReviewPresenter = ({
             </div>
             <div className='review-content-box'>
                 <div className='review-content-inner'>
-                    <ReviewCard counselors={counselors} reviews={reviews} />
+                    <ReviewCard
+                        counselors={counselors}
+                        reviews={reviews}
+                    />
                 </div>
             </div>
         </div>

@@ -6,27 +6,23 @@ const ReviewCard = ({
     reviews
 }) => {
 
-    const { name, category, rank } = counselors;
-    const { review_item_id, review_score, review_content, user_id } = reviews;
-
-
     console.log(reviews)
     return (
         <>
             {
-                counselors.map((counselor, idx) => {
+                counselors.map((counselor) => {
                     <div className='reviewcard-container'>
                         <div className='reviewcard-counselor-profile'>
                             <div className='reviewcard-counselor-img'></div>
                             <div className='reviewcard-text-box'>
                                 <div className='reviewcard-counselor-text'>
-                                    <span>{counselor.category}</span>
+                                    {/* <span>{counselor.category}</span> */}
                                     <span>{counselor.name}</span>
                                     <span>{counselor.rank}</span>
                                 </div>
                                 <div className='reviewcard-rating-username'>
-                                    <span>{review_score}</span>
-                                    <span>{user_id}</span>
+                                    {/* <span>{review_score}</span> */}
+                                    {/* <span>{user_id}</span> */}
                                 </div>
                                 <div className='reviewcard-call-time'>
                                     <span>(통화 10~30분)</span>
@@ -34,7 +30,7 @@ const ReviewCard = ({
                             </div>
                         </div>
                         <div className='reviewcard-comment'>
-                            <span>{review_content}</span>
+                            {/* <span>{review_content}</span> */}
                         </div>
                     </div>
                 })

@@ -7,7 +7,6 @@ const QuestionContainer = ({
     navigate
 }) => {
 
-    // 임시 문의 내용 데이터
     const [content, setContent] = useState('');
     const [counselor, setCounselor] = useState();
 

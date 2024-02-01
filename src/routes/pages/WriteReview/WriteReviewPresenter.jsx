@@ -6,8 +6,14 @@ import Category from './components/Category';
 export const WriteReviewPresenter = ({
     counselor,
     navigate,
+    content,
+    setContent,
     writeReview
 }) => {
+
+    if (!counselor) {
+        return <div>로딩중</div>
+    }
 
     return (
         <div className="writereview-container">
@@ -19,7 +25,7 @@ export const WriteReviewPresenter = ({
                     <div className="writereview-detail">
                         <div className="img"></div>
                         <div className="info">
-                            <Category category={counselor.category} />
+                            <Category category={'진로'} />
                             <span>{counselor.name}</span>
                         </div>
                     </div>
@@ -27,7 +33,12 @@ export const WriteReviewPresenter = ({
                         <div className="writereview-title">
                             <h3>후기 내용</h3>
                         </div>
-                        <textarea cols={100} rows={20}></textarea>
+                        <textarea
+                            cols={100}
+                            rows={20}
+                            value={content}
+                            onChange={(e) => setContent(e.target.value)}
+                        />
                     </div>
                 </div>
                 <div className="button">
