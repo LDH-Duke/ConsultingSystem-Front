@@ -3,6 +3,7 @@ import { AdminMainPresenter } from "./AdminMainPresenter";
 import CounselorListContainer from '../CounselorList';
 import UserListContainer from '../UserList';
 import PaymentHistoryListContainer from '../PaymentHistoryList';
+import AskListContainer from "../AskList/AskListContainer";
 import { useNavigate } from "react-router-dom";
 
 const AdminMainContainer = () => {
@@ -52,7 +53,7 @@ const AdminMainContainer = () => {
       label: '문의 관리',
       children:
        <div>
-          문의 관리
+          <AskListContainer />
        </div>
     },
     {
