@@ -160,6 +160,7 @@ const API = {
   /**
    * 상담사 프로필 수정
    * --
+   * (일단 개인공지만)
    */
   putCounselorProfile : (counselor_id, body) => $http.put(parameterToPath('/counselor/:counselor_id', {counselor_id}), body),
 
@@ -191,5 +192,18 @@ const API = {
    * --
    */
   postbuyproduct : (body) => $http.post('/coin/buyproduct', body),
+  
+  /**
+   * 상담사 별 상품 조회
+   * --
+   */
+  getcounselorproduct : (counselor_id) => $http.get(parameterToPath('/counselor/production/:counselor_id', {counselor_id})),
+
+  /**
+   * 관리자에게 문의하기
+   * --
+   */
+  postaskadmin : (body) => $http.post('/ask/addadmin', body)
+
 };
 export default API;

@@ -40,7 +40,7 @@ export const CounselorPresenter = ({
                             <div className="Sub-text">보유 코인을 환전하세요</div>
                         </Button>
                     </Link>
-                    <Link to= "/product" style={{ textDecoration: 'none' }}>
+                    <Link to= {`/product/${counselor.id}`} style={{ textDecoration: 'none' }}>
                         <Button className="Main-Button">
                             <div className="Main-text">상품등록</div>
                             <div className="Sub-text">새로운 상품을 등록하세요</div>
@@ -50,7 +50,7 @@ export const CounselorPresenter = ({
 
                 {/* 프로필 수정, 관리자 문의, 미정 버튼 */}
                 <div className="SubButton-form">
-                    <Link to= "/editcounselor" style={{ textDecoration: 'none' }}>
+                    <Link to= {`/editcounselor/${counselor.id}`} style={{ textDecoration: 'none' }}>
                         <Button className="Sub-Button">
                             <div className="Subbutton-text">프로필 등록</div>
                         </Button>
