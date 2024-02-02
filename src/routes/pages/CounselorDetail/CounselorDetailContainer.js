@@ -6,6 +6,7 @@ import { API } from '../../../api';
 import cookie from '../../../cookie';
 import ReviewCard from './components/ReviewCard';
 import DetailAskListContainer from './DetailAskList';
+import ProductListContainer from './ProductList/ProductListContainer';
 
 const CounselorDetailContainer = ({
 
@@ -41,12 +42,6 @@ const CounselorDetailContainer = ({
 
     })();
   }, [])
-
-
-  const onbuySubmit = async () => {
-    const postpuyproductinfo = await API.postbuyproduct();
-  }
-
 
   // Tab ( 나중에 수정해야함 admin 폴더 참고 )
   const items = [
@@ -86,7 +81,10 @@ const CounselorDetailContainer = ({
     {
       key: '5',
       label: '상담 상품',
-      children: <Button onClick={onbuySubmit}>상품구매하기</Button>,
+      children: 
+        <div>
+        <ProductListContainer />
+        </div>,
     },
     {
       key: '6',
