@@ -5,7 +5,7 @@ import { List } from './List/List'
 
 export const TestPresenter = () => {
     return (
-        <Layout>
+        <Layout nav={1}>
             <Banner />
             <List />
         </Layout>

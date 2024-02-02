@@ -9,6 +9,10 @@
     border: 1px solid #e0e3e8;
 }
 
+.layout-container .nav{
+    margin-bottom: 0.25rem;
+}
+
 
 .layout-container .footer {
     margin-top: auto;

@@ -6,11 +6,11 @@ import { Banner } from './Banner/Banner'
 import './Layout.css'
 
 
-const Layout = ({ children }) => {
+const Layout = ({ children, nav }) => {
     return (
         <div className='layout-container'>
             <div className='nav'>
-                <Nav />
+                <Nav nav={nav}/>
             </div>
             <div className='body'>
                 {children}
