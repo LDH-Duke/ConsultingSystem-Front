@@ -3,7 +3,9 @@ import { CounselorDetailPresenter } from './CounselorDetailPresenter'
 import { Button } from 'antd';
 import { Link, useParams } from 'react-router-dom';
 import { API } from '../../../api';
+import cookie from '../../../cookie';
 import ReviewCard from './components/ReviewCard';
+import DetailAskListContainer from './DetailAskList';
 
 const CounselorDetailContainer = ({
 
@@ -12,11 +14,18 @@ const CounselorDetailContainer = ({
   const { counselor_id } = useParams();
   const [counselor, setCounselor] = useState();
   const [reviews, setReviews] = useState([]);
+  
+  const [userId, setUserId] = useState();
+  const [userCheck, setUserCheck] = useState(0);
 
 
   
   useEffect(() => {
     (async () => {
+
+      setUserId(cookie.getCookie('id'));
+      console.log(userId);
+
       const counselorData = await API.getCounselor(counselor_id);
 
       if (!counselorData) {
@@ -39,7 +48,7 @@ const CounselorDetailContainer = ({
   }
 
 
-  // Tab
+  // Tab ( 나중에 수정해야함 admin 폴더 참고 )
   const items = [
     {
       key: '1',
@@ -78,11 +87,20 @@ const CounselorDetailContainer = ({
       key: '5',
       label: '상담 상품',
       children: <Button onClick={onbuySubmit}>상품구매하기</Button>,
-    }, 
+    },
+    {
+      key: '6',
+      label: '1:1문의',
+      children: <DetailAskListContainer />
+    },
   ];
 
   return (
-    <CounselorDetailPresenter counselor={counselor} items={items} />
+    <CounselorDetailPresenter
+      counselor={counselor}
+      items={items}
+      userId={userId}
+    />
   )
 }
 

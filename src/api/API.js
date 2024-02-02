@@ -217,11 +217,19 @@ const API = {
    */
   getAskForUser : (user_id) => $http.get(parameterToPath('/ask/user/:user_id', {user_id})),
 
+  
   /**
    * 상담사별 문의 조회
    * --
    */
-  getAskForCounselor : (counselor_id) => $http.get(parameterToPath('/ask/counselor/:counselor_id', {counselor_id}))
+ getAskForCounselor : (counselor_id) => $http.get(parameterToPath('/ask/counselor/:counselor_id', {counselor_id})),
+
+ /**
+  * 상담사별 상세페이지 문의 조회
+  * --
+  */
+ getAskListForCounselor : (counselor_id) => $http.get(parameterToPath('/ask/detail/:counselor_id', {counselor_id})),
+
 };
 
 export default API;
