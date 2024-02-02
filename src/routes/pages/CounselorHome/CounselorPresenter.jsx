@@ -46,10 +46,10 @@ export const CounselorPresenter = ({
                             <div className="Sub-text">새로운 상품을 등록하세요</div>
                         </Button>
                     </Link>
-                    <Link to= {`/product/${counselor.id}`} style={{ textDecoration: 'none' }}>
+                    <Link to= {`/counselorasklist/${counselor.id}`} style={{ textDecoration: 'none' }}>
                         <Button className="Main-Button">
-                            <div className="Main-text">상품등록</div>
-                            <div className="Sub-text">새로운 상품을 등록하세요</div>
+                            <div className="Main-text">관리자 문의 내역</div>
+                            <div className="Sub-text">관리자 문의 내역을 확인하세요</div>
                         </Button>
                     </Link>
                 </div>

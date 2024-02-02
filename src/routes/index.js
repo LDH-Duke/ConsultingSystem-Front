@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { CounselorAskList, ImageTest, Consulting_v2, Consulting_v1, SiteMap, EditCounselor, Product, WriteReview, AskAdmin, Exchange, CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error, Consultinghistory, MyPage, AdminMain, ReviewUpdate } from './pages';
+import { CounselorAskList, ImageTest, Consulting_v2, Consulting_v1, SiteMap, EditCounselor, Product, WriteReview, AskAdmin, Exchange, CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error, Consultinghistory, MyPage, AdminMain, ReviewUpdate, UserAskHistory } from './pages';
 import Header from '../components/Header'
 import cookie from '../cookie';
 
@@ -43,19 +43,19 @@ const Router = () => {
         <Route exact path='/sign' element={<SignIn setCookies={setCookies} />} />
         <Route exact path='/signup' element={<Signup />} />
         <Route exact path='/coin' element={<Coin />} />
-        <Route exact path='/pricedetail' element={<PriceDetail />} />
+        <Route exact path='/pricedetail' element={<PriceDetail navigate={navigate}/>} />
         <Route exact path='/question/:counselor_id' element={<Question navigate={navigate} />} />
         <Route exact path='/consultingsignup' element={<ConsultingSignUp />} />
         <Route exact path='/review' element={<Review />} />
         <Route exact path='/*' element={<Error />} />
         <Route exact path='/counselor/home/:counselor_id' element={<CounselorHome />} />
         <Route exact path='/exchange' element={<Exchange />} />
-        <Route exact path='/askadmin' element={<AskAdmin />} />
+        <Route exact path='/askadmin' element={<AskAdmin navigate={navigate}/>} />
         <Route exact path='/writereview/:counselor_id' element={<WriteReview />} />
         <Route exact path='/consultinghistory' element={<Consultinghistory />} />
         <Route exact path='/product/:counselor_id' element={<Product />} />
         <Route exact path='/editcounselor/:counselor_id' element={<EditCounselor />} />
-        <Route exact path='/mypage' element={<MyPage />} />
+        <Route exact path='/mypage' element={<MyPage navigate={navigate}/>} />
         <Route exact path='/admin/main' element={<AdminMain />} />
         <Route exact path='/sitemap' element={<SiteMap />} />
         <Route exact path='/reviewupdate' element={<ReviewUpdate />} />
@@ -63,6 +63,7 @@ const Router = () => {
         <Route exact path='/consulting_v2' element={<Consulting_v2 />} />
         <Route exact path='/imagetest' element={<ImageTest />} />
         <Route exact path='/counselorasklist/:counselor_id' element={<CounselorAskList />} />
+        <Route exact path='/useraskhistory/:user_id' element={<UserAskHistory navigate={navigate}/>} />
       </Routes>
     </div>
   )

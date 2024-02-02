@@ -1,11 +1,16 @@
 import React from "react";
 import './CounselorAskList.css'
+import AskListCard from "./components/AskListCard";
 
-export const CounselorAskListPresenter = () => {
+export const CounselorAskListPresenter = ({
+    asks
+}) => {
 
     return (
         <div>
-            테스트
+            <AskListCard 
+                asks={asks}
+            />
         </div>
     )
 }
