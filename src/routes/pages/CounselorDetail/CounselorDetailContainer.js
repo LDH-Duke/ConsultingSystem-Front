@@ -6,7 +6,11 @@ import { API } from '../../../api';
 import cookie from '../../../cookie';
 import ReviewCard from './components/ReviewCard';
 import DetailAskListContainer from './DetailAskList';
+<<<<<<< HEAD
 import ProductListContainer from './ProductList/ProductListContainer';
+=======
+import DetailIntroduceContainer from './DetailIntroduce';
+>>>>>>> 233a277d6a1e12a0ec0543b1d2f8ef064164cfd2
 
 const CounselorDetailContainer = ({
 
@@ -47,13 +51,13 @@ const CounselorDetailContainer = ({
   const items = [
     {
       key: '1',
-      label: '서비스 공지',
-      children: '서비스 공지',
+      label: 'Notice',
+      children: 'Notice',
     },
     {
       key: '2',
-      label: '서비스 소개',
-      children: '허관',
+      label: 'Introduce',
+      children: <DetailIntroduceContainer />,
     },
     {
       key: '3',
