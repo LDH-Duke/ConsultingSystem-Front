@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { CounselorAskList, ImageTest, Consulting_v2, Consulting_v1, SiteMap, EditCounselor, Product, WriteReview, AskAdmin, Exchange, CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error, Consultinghistory, MyPage, AdminMain, ReviewUpdate, UserAskHistory } from './pages';
 import Header from '../components/Header'
+import { TestPresenter } from '../components/Layout/TestPresenter';
 import cookie from '../cookie';
 
 const Router = () => {
@@ -31,13 +32,14 @@ const Router = () => {
   }
 
   return (
-    <div>
-      <Header hasCookies={hasCookies} removeCookies={removeCookies} />
+    <div className='App'>
+      {/* <Header hasCookies={hasCookies} removeCookies={removeCookies} /> */}
       <Routes>
-        <Route exact path="/counselor/:counselor_id" element={<CounselorDetail />} />
-        <Route exact path="/favorite/:user_id" element={<Favorite navigate={navigate} />} />
+      <Route exact path='/' element={< TestPresenter/>} />
+        {/* <Route exact path="/counselor/:counselor_id" element={<CounselorDetail />} />
+        <Route exact path="/favorite/:user_id" element={<Favorite navigate={navigate} />} /> */}
         {/* <Route exact path="/editprofile" element={<EditProfile />} /> */}
-        <Route exact path="/search" element={<Search />} />
+        {/* <Route exact path="/search" element={<Search />} />
         <Route exact path="/donation/:counselor_id" element={<Donation />} />
         <Route exact path='/' element={<Main />} />
         <Route exact path='/sign' element={<SignIn setCookies={setCookies} />} />
@@ -63,7 +65,7 @@ const Router = () => {
         <Route exact path='/consulting_v2' element={<Consulting_v2 />} />
         <Route exact path='/imagetest' element={<ImageTest />} />
         <Route exact path='/counselorasklist/:counselor_id' element={<CounselorAskList />} />
-        <Route exact path='/useraskhistory/:user_id' element={<UserAskHistory navigate={navigate}/>} />
+        <Route exact path='/useraskhistory/:user_id' element={<UserAskHistory navigate={navigate}/>} /> */}
       </Routes>
     </div>
   )

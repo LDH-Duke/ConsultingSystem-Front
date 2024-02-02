@@ -6,11 +6,7 @@ import { API } from '../../../api';
 import cookie from '../../../cookie';
 import ReviewCard from './components/ReviewCard';
 import DetailAskListContainer from './DetailAskList';
-<<<<<<< HEAD
-import ProductListContainer from './ProductList/ProductListContainer';
-=======
 import DetailIntroduceContainer from './DetailIntroduce';
->>>>>>> 233a277d6a1e12a0ec0543b1d2f8ef064164cfd2
 
 const CounselorDetailContainer = ({
 
@@ -87,7 +83,7 @@ const CounselorDetailContainer = ({
       label: '상담 상품',
       children: 
         <div>
-        <ProductListContainer />
+        {/* <ProductListContainer /> */}
         </div>,
     },
     {
