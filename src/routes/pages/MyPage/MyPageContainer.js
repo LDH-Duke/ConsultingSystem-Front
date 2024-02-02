@@ -4,7 +4,9 @@ import API from "../../../api/API";
 import cookie from "../../../cookie";
 import { useNavigate } from "react-router";
 
-const MyPageContainer = () => {
+const MyPageContainer = ({
+    navigate
+}) => {
     const [isAuth, setIsAuth] = useState(false);
     const [pw, setPw] = useState('');
     const [user, setUser] = useState('');
@@ -16,8 +18,6 @@ const MyPageContainer = () => {
         total_coin : 2000,
         createdAt : '2024-01-25',
     })
-
-    const navigate = useNavigate();
 
     const check = () => {
         if(pw === '111') {
@@ -40,6 +40,11 @@ const MyPageContainer = () => {
 
     useEffect(() => {
         const id = cookie.getCookie('id');
+
+        if(!id) {
+            alert('로그인이 필요한 페이지입니다.')
+            navigate('/sign')
+        }
 
         (async() => {
         const {data} = await API.getuser(id);
