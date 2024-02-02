@@ -46,6 +46,12 @@ export const CounselorPresenter = ({
                             <div className="Sub-text">새로운 상품을 등록하세요</div>
                         </Button>
                     </Link>
+                    <Link to= {`/product/${counselor.id}`} style={{ textDecoration: 'none' }}>
+                        <Button className="Main-Button">
+                            <div className="Main-text">상품등록</div>
+                            <div className="Sub-text">새로운 상품을 등록하세요</div>
+                        </Button>
+                    </Link>
                 </div>
 
                 {/* 프로필 수정, 관리자 문의, 미정 버튼 */}

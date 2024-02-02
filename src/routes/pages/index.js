@@ -26,4 +26,4 @@ export { default as ReviewUpdate } from './ReviewUpdate';
 export { default as Consulting_v1 } from './Consulting';
 export { default as Consulting_v2 } from './Consulting2';
 export { default as ImageTest } from './ImageTest';
-export { default as CheckAsk } from './CheckAsk';
+export { default as CounselorAskList } from './CounselorAskList';
