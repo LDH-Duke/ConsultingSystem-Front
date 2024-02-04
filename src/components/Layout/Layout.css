@@ -1,0 +1,28 @@
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    max-width: 960px;
+    min-width: 360px;
+    min-height: 667px;
+    border: 1px solid #e0e3e8;
+
+    background-color: white;
+}
+
+.layout-container .nav{
+    /* margin-bottom: 0.25rem; */
+}
+
+.layout-container .body{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.layout-container .footer {
+    margin-top: auto;
+}

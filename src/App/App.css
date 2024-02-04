@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(235, 235, 235);
+  overflow: auto;
+}
+ol, ul {
+	list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.App-link {
+  color: #09d3ac;
+}

@@ -1,0 +1,19 @@
+.banner-container .bn {
+    display: flex;
+
+    padding: 0.5rem;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 350px;
+    min-height: 150px;
+    background-color: #ffffff;
+}
+
+.banner-container .bn img {
+    object-fit: fit;
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,12 @@
+.askadmin-container {
+    margin: 0 300px; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.askadmin-container .askadmin-wrap {
+    width: 100%;
+    height: 100%;
+}
