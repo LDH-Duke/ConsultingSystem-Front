@@ -1,6 +1,7 @@
 .list-container {
     display: flex;
     flex-direction: column;
+    padding: 0.5rem;
 }
 
 .list-container .list {
@@ -12,6 +13,7 @@
     padding: 0.5rem;
     width: 100%;
     border-radius: 5px;
+    border: 1px solid rgb(179, 179, 179);
 
     background-color: #f7f9fc;
 
@@ -47,16 +49,16 @@
     justify-content: center;
 }
 
-.list-info span{
+.list-info span {
     padding: 0.25rem;
 }
 
-.list-info span:nth-child(1){
+.list-info span:nth-child(1) {
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-.list-info>span:nth-child(2){
+.list-info>span:nth-child(2) {
     font-size: 0.9rem;
     font-weight: 600;
     color: #fe984e;
@@ -67,7 +69,7 @@
     flex-direction: row;
 }
 
-.list-info ul .tag{
+.list-info ul .tag {
     font-size: 0.7rem;
     font-weight: bold;
 
@@ -94,7 +96,7 @@
 
     transition: all 0.2s ease-in-out;
 
-    &:hover{
+    &:hover {
         background-color: #00cc8f;
         border: none;
         color: white;
