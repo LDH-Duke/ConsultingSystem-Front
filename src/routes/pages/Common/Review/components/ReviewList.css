@@ -1,0 +1,17 @@
+.review-list-container {
+    display: flex;
+    padding: 0.5rem;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+}
+
+.review-list-container .list {
+    display: grid;
+
+    grid-template-columns: min-content auto min-content;
+    grid-template-areas: 'list-img list-info list-btn';
+
+    padding: 0.5rem;
+    width: 100%;
+}

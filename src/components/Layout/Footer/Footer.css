@@ -1,0 +1,46 @@
+.footer-container {
+    height: 200px;
+    width: 100%;
+    background-color: #bec2c9;
+    padding: 0.5rem;
+}
+
+.footer-container .footer-wrap {
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+
+
+    width: auto;
+    height: 100%;
+
+    padding: 0.25rem;
+}
+
+.footer-container .company {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00cc8f;
+}
+
+
+.footer-container .info {
+    flex: 2;
+    font-size: 0.7rem;
+    color: white;
+
+}
+
+.footer-container .info li {
+    padding: 0.2rem;
+}
+
+.footer-container .info hr {
+
+    margin: 0.25rem 0;
+}

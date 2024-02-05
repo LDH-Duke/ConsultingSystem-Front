@@ -1,0 +1,104 @@
+.list-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+.list-container .list {
+    display: grid;
+
+    grid-template-columns: min-content auto min-content;
+    grid-template-areas: 'list-img list-info list-btn';
+
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(179, 179, 179);
+
+    background-color: #f7f9fc;
+
+    margin: 5px 0;
+}
+
+
+/* list img*/
+.list-img {
+    grid-area: list-img;
+
+    border-radius: 5px;
+    margin-right: 1rem;
+
+    width: 200px;
+    height: 150px;
+    background-color: #00cc8f;
+}
+
+.list-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fit;
+
+}
+
+/* list info*/
+.list-info {
+    grid-area: list-info;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.list-info span {
+    padding: 0.25rem;
+}
+
+.list-info span:nth-child(1) {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.list-info>span:nth-child(2) {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fe984e;
+}
+
+.list-info ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.list-info ul .tag {
+    font-size: 0.7rem;
+    font-weight: bold;
+
+    padding: 0.25rem;
+    color: #768085;
+}
+
+
+
+/*list button*/
+.list-btn {
+    grid-area: list-btn;
+    place-self: center;
+
+    width: 130px;
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid #00cc8f;
+
+    font-size: 0.8rem;
+    font-weight: bold;
+
+    background-color: #f7f9fc;
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #00cc8f;
+        border: none;
+        color: white;
+    }
+}

@@ -1,0 +1,8 @@
+.counselor-body-layout{
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.counselor-body-layout .ant-row:nth-child(2){
+    margin:8px 0 ;
+}

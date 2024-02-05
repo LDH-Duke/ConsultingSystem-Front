@@ -1,0 +1,70 @@
+/* 최상단 */
+.counselor-info-container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+/* 상담사 이미지 */
+.counselor-info-container .counselor-img-box {
+    width: 80px;
+    min-width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    background-color: black;
+}
+
+/* 상담사 정보 박스 */
+.counselor-info-container .counselor-info-box {
+    width: 100%;
+    position: relative;
+}
+
+/* 상담사 정보 내용 담는 곳 */
+.counselor-info-box .counselor-info-con {
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin-top: 8px;
+}
+.counselor-info-con:first-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+/* 상담사명 */
+.counselor-info-con .counselor-name {
+    position: relative;
+    color: #222;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+    line-height: 1.35;
+}
+
+/* 상담사 번호 */
+.counselor-info-con .counselor-number {
+    display: inline-block;
+    position: relative;
+    margin-left: 6px;
+    padding-left: 10px;
+    font-weight: normal;
+}
+
+/* 날짜 */
+.counselor-info-container .counselor-info-con .info-con {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-40%);
+}
+.counselor-info-con .info-con {
+    display: inline-block;
+    color: #999999;
+    margin-left: 10px;
+}
+
+/* 상담 시간 */
+.counselor-info-con .consulting-time {
+    display: flex;
+}

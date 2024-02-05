@@ -1,0 +1,13 @@
+.recent-search-container {
+    width: 100%;
+    height: auto;
+    padding: 24px 20px 32px;
+    border-bottom: 1px solid #bec2c9;
+    margin-bottom: 6px;
+    background-color: white;
+}
+
+.recent-search-container h2 {
+    font-size: 1.125rem;
+    font-weight: bold;
+}

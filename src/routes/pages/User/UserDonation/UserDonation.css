@@ -1,0 +1,106 @@
+.user-donation-container {
+    width: 100%;
+    height: 100%;
+    padding: 2.5rem 3rem 2.5rem 3rem;
+}
+
+.user-donation-container .user-donation-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-donation-box h1 {
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+
+
+/* 후원 금액 박스 */
+.user-donation-box .user-donation-coin {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding-top: 1rem;
+}
+
+
+
+/* 후원 금액 (input) */
+.user-donation-coin input {
+    width: 100%;
+    height: 3rem;
+    border-radius: 5px;
+    border: solid 2px #bec2c9;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    font-size: 0.8rem;
+}
+.user-donation-coin input:focus,
+.user-donation-coin input:hover {
+    outline: #00cc8f;
+    border: solid 2px #00cc8f;
+}
+
+
+
+/* 보유 코인 */
+.user-donation-box .user-donation-retain {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 0.5rem;
+}
+
+
+
+/* 코인 충전하러가기 */
+.user-donation-box .user-charge-coin {
+    color: gray;
+    font-size: 0.8rem;
+    display:flex;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+    font-weight: bold;
+}
+
+
+
+/* 후원 메시지 (textarea) */
+.user-donation-box .user-donation-text {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 1rem;
+}
+.user-donation-box .user-donation-text textarea {
+    width: 100%;
+    height: 15rem;
+    border-radius: 5px;
+    border: solid 2px #bec2c9;
+    padding: 1rem;
+    font-size: 1rem;
+    resize: vertical;
+}
+.user-donation-text textarea:focus,
+.user-donation-text textarea:hover {
+    outline: #00cc8f;
+    border: solid 2px #00cc8f;
+}
+
+
+
+/* 후원하기 버튼 */
+.user-donation-box .user-donation-button-box button {
+    width: 100%;
+    height: 3rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #bec2c9;
+    font-size: 1rem;
+}
+.user-donation-button-box button:hover {
+    background-color: #00cc8f;
+    color: white;
+}

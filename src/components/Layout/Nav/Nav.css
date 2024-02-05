@@ -1,0 +1,80 @@
+.nav-container {
+    display: grid;
+    gap: 0.5rem;
+
+
+    grid-template-columns: min-content auto max-content;
+    grid-template-areas: "logo tab user";
+
+    background-color: white;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+    /* background-color: rgb(136, 134, 134); */
+    color: black;
+    font-weight: bold;
+
+    box-shadow: 3px 3px 8px 0px rgb(201, 201, 201);
+    
+}
+
+/* nav logo */
+
+.logo {
+    grid-area: logo;
+    place-self: center;
+
+    margin-right: 1rem;
+    padding: 0.25rem;
+    border-radius: 5px;
+
+
+    color: #00cc8f;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    &:hover {
+        background-color: #00cc8f;
+        color: white;
+    }
+}
+
+/* nav tab */
+
+.tab {
+    grid-area: tab;
+    place-self: center end;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 0.5rem;
+}
+
+.nav-container .tab a {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+
+    &:hover {
+        color: #00cc8f;
+    }
+}
+
+/* nav user */
+.user {
+    grid-area: user;
+    place-self: center;
+}
+
+.user a {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #00cc8f;
+    background-color: #00cc8f;
+    color: white;
+
+    &:hover {
+        background-color: white;
+        color: #00cc8f;
+    }
+}

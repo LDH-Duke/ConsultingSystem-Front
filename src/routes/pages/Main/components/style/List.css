@@ -1,0 +1,145 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.list .list-top {
+    display: flex;
+    width: 100%;
+    height: 5vh;
+    border-bottom: 2px solid #FF8472;
+}
+
+.list .list-top-name {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list .info {
+    display: flex;
+}
+
+.list .icon button {
+    height: 5vh;
+    background-color: #FF8472;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 3px 8px;
+    margin-right: 10px;
+}
+
+.list .list-bottom {
+    display: flex;
+    gap: 1rem;
+}
+
+.list .list-bottom img {
+    width: 100%;
+}
+
+.list .list-bottom-info {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.list .list-bottom-info-top {
+    height: 13vh;
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    border-bottom: 2px solid #FF8472;
+}
+
+.list .list-detail {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.list .list-button {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.list .list-button button{
+    width: 200px;
+    height: 8vh;
+    background-color: #FF8472;
+    color: white;
+}
+
+.list .list-bottom-info-bottom {
+    display: flex;
+    height: 5vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list .message span {
+    margin-left: 10px;
+}
+
+.modal-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-detail .modal-top {
+    display: flex;
+}
+
+.modal-detail .img {
+    display: flex;
+    border: 2px solid gray;
+    width: 20%;
+    height: 10vh;
+}
+
+.modal-detail .all-info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.modal-detail .info {
+    display: flex;
+    height: 3vh;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.modal-detail .info-select {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.modal-detail .modal-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal-detail .modal-button span {
+    text-align: right;
+}
+
+.modal-detail .modal-button button {
+    margin: 10px 0;
+    background-color: #FF8472;
+    color: white;
+    height: 5vh;
+}
+
+.ant-modal-footer {
+    visibility: hidden;
+}
