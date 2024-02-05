@@ -33,7 +33,7 @@
 export { default as SignIn } from './Common/SignIn';
 export { default as CounselorDetail } from './Common/CounselorDetail';
 export { default as Sitemap } from './Common/Sitemap';
-export { default as Search } from './Common/search';
+export { default as Search } from './Common/Search';
 export { default as Review } from './Common/Review';
 
 // 회원
