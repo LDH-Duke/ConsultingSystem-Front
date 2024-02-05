@@ -1,0 +1,24 @@
+:where(.css-dev-only-do-not-override-1b0bdye).ant-form-item {
+    margin: 0;
+}
+
+:where(.css-dev-only-do-not-override-1b0bdye).ant-input-outlined:hover,
+:where(.css-dev-only-do-not-override-1b0bdye).ant-input-outlined:focus, :where(.css-dev-only-do-not-override-1b0bdye).ant-input-outlined:focus-within {
+    border-color: var(--sub-bg-color);
+}
+
+.ant-form-item-control-input-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-warning {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    
+    .warning-text {
+        color: var(--warning-color);
+    }
+}

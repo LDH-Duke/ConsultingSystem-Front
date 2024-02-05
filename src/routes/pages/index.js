@@ -1,6 +1,7 @@
 // export { default as CounselorDetail } from './CounselorDetail';
 // export { default as Favorite } from './Favorite';
 // export { default as EditProfile } from './EditProfile';
+// export { default as Search } from './Search';
 // export { default as Donation } from './Donation';
 // export { default as SignIn } from './SignIn';
 // export { default as Signup } from './Signup';
@@ -28,9 +29,15 @@
 // export { default as CounselorAskList } from './CounselorAskList';
 // export { default as UserAskHistory } from './UserAskHistory';
 
-/**
- * NEW
- */
-export { default as Search } from './Common/Search';
+// 공통
+export { default as SignIn } from './Common/SignIn';
+export { default as CounselorDetail } from './Common/CounselorDetail';
+export { default as Sitemap } from './Common/Sitemap';
+export { default as Search } from './Common/search';
 export { default as Review } from './Common/Review';
+
+// 회원
+export { default as UserSignUp } from './User/UserSignUp';
+export { default as UserChargeCoin } from './User/UserChargeCoin';
+export { default as UserFavorite } from './User/UserFavorite';
 export { default as UserDonation } from './User/UserDonation';

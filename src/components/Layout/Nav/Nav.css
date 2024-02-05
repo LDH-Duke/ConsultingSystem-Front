@@ -32,6 +32,8 @@
     color: #00cc8f;
     font-size: 1.5rem;
     font-weight: bold;
+    
+    cursor: pointer;
 
     &:hover {
         background-color: #00cc8f;

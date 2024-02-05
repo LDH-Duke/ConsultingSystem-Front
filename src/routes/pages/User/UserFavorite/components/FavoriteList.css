@@ -1,0 +1,13 @@
+.favorite-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorite-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: 60%;
+}

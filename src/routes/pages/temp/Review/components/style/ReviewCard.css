@@ -1,0 +1,50 @@
+.reviewcard-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 2px solid gray;
+}
+
+.reviewcard-container .reviewcard-counselor-profile {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid gray;
+}
+
+.reviewcard-counselor-profile .reviewcard-counselor-img {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    background-color: black;
+    background-clip: content-box;
+    padding-right: 1rem;
+}
+
+.reviewcard-counselor-profile .reviewcard-text-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewcard-counselor-profile .reviewcard-counselor-text {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+.reviewcard-counselor-profile .reviewcard-rating-username {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.reviewcard-counselor-profile .reviewcard-call-time {
+    display: flex;
+    align-items: center;
+}
+
+.reviewcard-container .reviewcard-comment {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}

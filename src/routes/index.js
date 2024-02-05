@@ -4,8 +4,13 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import Header from '../components/Header'
 import { TestPresenter } from '../components/Layout/TestPresenter';
 import { TestCounselorMainPresenter } from '../components/Layout/TestCounselorMainPresenter';
-import { Search, Review, UserDonation } from './pages';
 import cookie from '../cookie';
+
+// 공통 페이지
+import { SignIn, CounselorDetail, Sitemap } from './pages'; 
+// 회원 페이지
+import { UserSignUp, UserChargeCoin, UserFavorite } from './pages'; 
+
 
 const Router = () => {
   const navigate = useNavigate();
@@ -37,11 +42,19 @@ const Router = () => {
     <div className='App'>
       {/* <Header hasCookies={hasCookies} removeCookies={removeCookies} /> */}
       <Routes>
-        <Route exact path='/' element={< TestPresenter/>} />
-        <Route exact path='/counselor' element={< TestCounselorMainPresenter/>} />
-        <Route exact path='/search' element={< Search />} />
-        <Route exact path='/reviews' element={< Review />} />
-        <Route exact path='/donation' element={< UserDonation />} />
+        {/* 공통 */}
+        <Route exact path='/' element={<TestPresenter />} />
+        <Route exact path='/signin' element={<SignIn setCookies={setCookies} />} />
+        <Route exact path='/counselor/:counselor_id' element={<CounselorDetail setCookies={setCookies} />} />
+        <Route exact path='/sitemap' element={<Sitemap setCookies={setCookies} />} />
+
+        {/* 회원 */}
+        <Route exact path='/user/signup' element={<UserSignUp setCookies={setCookies} />} />
+        <Route exact path='/user/coin' element={<UserChargeCoin setCookies={setCookies} />} />
+        <Route exact path='/user/favorite' element={<UserFavorite setCookies={setCookies} />} />
+
+        {/* 상담사 */}
+        <Route exact path='/counselor' element={< TestCounselorMainPresenter />} />
         {/* <Route exact path="/counselor/:counselor_id" element={<CounselorDetail />} />
         <Route exact path="/favorite/:user_id" element={<Favorite navigate={navigate} />} /> */}
         {/* <Route exact path="/editprofile" element={<EditProfile />} /> */}
