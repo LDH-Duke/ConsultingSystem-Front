@@ -13,18 +13,6 @@ export const SignUpInputBox = ({
     checkPw,
     checkPhone,
 }) => {
-    // const option = [
-    //     {
-    //         label: '+82',
-    //         value: 'korea',
-    //         desc: '+82',
-    //     },
-    //     {
-    //         label: '+1',
-    //         value: 'usa',
-    //         desc: '+1',
-    //     }
-    // ];
     const option = [
         {
             label: '대한민국 +82',
@@ -124,6 +112,7 @@ export const SignUpInputBox = ({
                                 return {...info, phone};
                             });
                         }}
+                        onBlur={checkPhone}
                     />
                 </div>
                 <span className="phone-sub-notice">본인확인 후 회원가입 및 서비스 이용이 가능합니다</span>

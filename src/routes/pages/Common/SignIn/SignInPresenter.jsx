@@ -19,23 +19,18 @@ export const SignInPresenter = ({
 }) => {
     return (
         <Layout nav={1}>
-            <div className='signin-presenter'>
-                <div className='signin-notice'>
-                    <span>아이디와 비밀번호를 입력하신 후 로그인 버튼을 클릭해 주세요.</span>
-                </div>
-                <SignInWindow 
-                    isUser={isUser}
-                    isCheckEmail={isCheckEmail}
+            <SignInWindow 
+                isUser={isUser}
+                isCheckEmail={isCheckEmail}
 
-                    setEmail={setEmail}
-                    setPw={setPw}
+                setEmail={setEmail}
+                setPw={setPw}
 
-                    checkEmail={checkEmail}
+                checkEmail={checkEmail}
 
-                    toggleUserSignIn={toggleUserSignIn}
-                    SignIn={SignIn}
-                />
-            </div>
+                toggleUserSignIn={toggleUserSignIn}
+                SignIn={SignIn}
+            />
         </Layout>
     )
 }

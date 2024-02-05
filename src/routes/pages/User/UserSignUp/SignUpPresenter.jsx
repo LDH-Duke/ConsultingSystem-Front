@@ -20,25 +20,23 @@ export const SignUpPresenter = ({
 }) => {
     return (
         <Layout nav={1}>
-            <div className='signup-presenter'>
-                <SignUpBox
-                    title={'회원가입'}
+            <SignUpBox
+                title={'회원가입'}
 
-                    isCheckEmail={isCheckEmail}
-                    isCheckPw={isCheckPw}
+                isCheckEmail={isCheckEmail}
+                isCheckPw={isCheckPw}
 
-                    canSignup={canSignup}
+                canSignup={canSignup}
 
-                    setUserInfo={setUserInfo}
+                setUserInfo={setUserInfo}
 
-                    checkEmail={checkEmail}
-                    checkPw={checkPw}
-                    checkPhone={checkPhone}
-                    
-                    doubleCheck={doubleCheck}
-                    SignUp={SignUp}
-                />
-            </div>
+                checkEmail={checkEmail}
+                checkPw={checkPw}
+                checkPhone={checkPhone}
+                
+                doubleCheck={doubleCheck}
+                SignUp={SignUp}
+            />
         </Layout>
     )
 }
