@@ -32,6 +32,7 @@
 // 공통
 export { default as SignIn } from './Common/SignIn';
 export { default as CounselorDetail } from './Common/CounselorDetail';
+export { default as Sitemap } from './Common/Sitemap';
 
 // 회원
 export { default as UserSignUp } from './User/UserSignUp';

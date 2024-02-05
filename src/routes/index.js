@@ -7,7 +7,7 @@ import { TestCounselorMainPresenter } from '../components/Layout/TestCounselorMa
 import cookie from '../cookie';
 
 // 공통 페이지
-import { SignIn, CounselorDetail } from './pages'; 
+import { SignIn, CounselorDetail, Sitemap } from './pages'; 
 // 회원 페이지
 import { UserSignUp, UserChargeCoin, UserFavorite } from './pages'; 
 
@@ -46,6 +46,7 @@ const Router = () => {
         <Route exact path='/' element={<TestPresenter />} />
         <Route exact path='/signin' element={<SignIn setCookies={setCookies} />} />
         <Route exact path='/counselor/:counselor_id' element={<CounselorDetail setCookies={setCookies} />} />
+        <Route exact path='/sitemap' element={<Sitemap setCookies={setCookies} />} />
 
         {/* 회원 */}
         <Route exact path='/user/signup' element={<UserSignUp setCookies={setCookies} />} />

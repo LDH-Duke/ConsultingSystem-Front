@@ -1,0 +1,21 @@
+.sitemap-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    background-color: var(--sub-bg-color);
+    padding: 3.5rem 1.5rem;
+    color: white;
+
+    border-radius: 1rem;
+    
+    .title {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    .sub-title {
+        font-size: 0.9rem;
+    }
+}
