@@ -5,10 +5,11 @@
     gap: 1rem;
 
     background-color: var(--sub-bg-color);
-    padding: 3.5rem 1.5rem;
+    border: 2px solid var(--sub-bg-color);
     color: white;
-
     border-radius: 1rem;
+    
+    padding: 3.5rem 1.5rem;
     
     .title {
         font-size: 1.4rem;
@@ -18,4 +19,10 @@
     .sub-title {
         font-size: 0.9rem;
     }
+}
+
+.sitemap-item:hover {
+    background-color: white;
+    border: 2px solid var(--sub-bg-color);
+    color: var(--sub-bg-color);
 }

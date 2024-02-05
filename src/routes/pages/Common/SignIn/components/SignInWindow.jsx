@@ -1,7 +1,7 @@
 import React from "react";
 import { SignInBox } from './SignInBox';
 import styled from "styled-components";
-import './SignInBox.css';
+import './SignInWindow.css';
 import { Switch } from 'antd';
 
 export const SignInWindow = ({

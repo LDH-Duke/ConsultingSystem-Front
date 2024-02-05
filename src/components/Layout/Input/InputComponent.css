@@ -2,6 +2,11 @@
     margin: 0;
 }
 
+:where(.css-dev-only-do-not-override-1b0bdye).ant-input-outlined:hover,
+:where(.css-dev-only-do-not-override-1b0bdye).ant-input-outlined:focus, :where(.css-dev-only-do-not-override-1b0bdye).ant-input-outlined:focus-within {
+    border-color: var(--sub-bg-color);
+}
+
 .ant-form-item-control-input-content {
     display: flex;
     flex-direction: column;

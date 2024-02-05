@@ -5,7 +5,7 @@ import './PayCoin.css'
 export const PayCoin = () => {
     return (
         <div className="pay-coin-container">
-            <span>일반 결제</span>
+            <span className="title">일반 결제</span>
             <div className="pay-method-buttons">
                 <Button>
                     신용카드
@@ -18,7 +18,7 @@ export const PayCoin = () => {
                 </Button>
             </div>
             <div className="pay-button">
-                <Button style={{width: '100%'}}>
+                <Button>
                     결제하기
                 </Button>
             </div>

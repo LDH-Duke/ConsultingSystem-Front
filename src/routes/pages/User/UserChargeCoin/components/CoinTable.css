@@ -1,10 +1,24 @@
+.coin-table {
+    border-collapse: collapse;
+}
+
 .coin-table th {
-    background-color: var(--table-th-color);
+    background-color: var(--sub-bg-color);
+    color: white !important;
 }
 
 .coin-table th,
 .coin-table td {
-    border: 1px solid grey;
+    border: 2px solid var(--main-bg-color);
+    color: var(--main-bg-color);
     padding: 1rem;
+    font-weight: bold;
+}
+
+.coin-table tbody tr .info {
+    text-align: right;
+}
+
+.coin-table tbody tr .radio {
     text-align: center;
 }

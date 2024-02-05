@@ -1,7 +1,7 @@
 .coin-info-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
 
     .title {
@@ -16,7 +16,7 @@
     gap: 1rem;
 
     .show-coin {
-        color: var(--emphasise-color);
+        color: var(--main-bg-color);
         font-weight: bold;
-    }    
+    }
 }

@@ -19,15 +19,15 @@ export const CoinTable = ({
                     coins && 
                     coins.map((coin, index) => (
                         <tr>
-                            <td>
+                            <td className="radio">
                                 <input
                                     type="radio"
                                     name="coinRadio"
                                     onChange={() => selectCoin(index)}
                                 />
                             </td>
-                            <td>{coin}원</td>
-                            <td>{coin}코인</td>
+                            <td className="info">{coin}원</td>
+                            <td className="info">{coin}코인</td>
                         </tr>
                     ))
                 }

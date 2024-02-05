@@ -4,6 +4,11 @@
     gap: 1rem;
 
     width: 100%;
+
+    .title {
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
 }
 
 .pay-method-buttons {
@@ -12,4 +17,28 @@
 
 .pay-method-buttons button {
     width: 100%;
+    border: 2px solid var(--sub-bg-color);
+    background-color: var(--sub-bg-color);
+    color: white;
+}
+
+.pay-method-buttons
+:where(.css-dev-only-do-not-override-1b0bdye).ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+    border: 2px solid var(--main-bg-color);
+    background-color: white;
+    color: var(--main-bg-color);
+}
+
+.pay-button button {
+    width: 100%;
+    border: 2px solid var(--sub-bg-color);
+    background-color: var(--sub-bg-color);
+    color: white;
+}
+
+.pay-button
+:where(.css-dev-only-do-not-override-1b0bdye).ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+    border: 2px solid var(--main-bg-color);
+    background-color: white;
+    color: var(--main-bg-color);
 }

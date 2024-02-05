@@ -10,7 +10,7 @@ const CoinContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 
     width: 60%;
 
