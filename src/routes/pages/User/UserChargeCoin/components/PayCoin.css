@@ -1,0 +1,15 @@
+.pay-coin-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: 100%;
+}
+
+.pay-method-buttons {
+    display: flex;
+}
+
+.pay-method-buttons button {
+    width: 100%;
+}

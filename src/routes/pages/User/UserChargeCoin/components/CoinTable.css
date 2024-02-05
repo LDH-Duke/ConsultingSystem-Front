@@ -1,0 +1,10 @@
+.coin-table th {
+    background-color: var(--table-th-color);
+}
+
+.coin-table th,
+.coin-table td {
+    border: 1px solid grey;
+    padding: 1rem;
+    text-align: center;
+}

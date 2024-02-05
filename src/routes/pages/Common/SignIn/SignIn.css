@@ -1,0 +1,17 @@
+.signin-presenter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.signin-notice {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    span {
+        margin: 0 auto;
+    }
+}

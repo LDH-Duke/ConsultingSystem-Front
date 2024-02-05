@@ -1,6 +1,6 @@
 import React from "react";
 import './SiteMap.css';
-import Title from '../../../components/Title';
+import Title from '../../../../components/Title';
 import SiteMapCard from "./components/SiteMapCard";
 
 export const SiteMapPresenter = ({

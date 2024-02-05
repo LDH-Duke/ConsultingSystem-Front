@@ -1,0 +1,35 @@
+.favorite-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    border-bottom: 1px solid lightgrey;
+
+    padding-bottom: 1rem;
+}
+
+.favorite-list-item img {
+    width: 30%;
+}
+
+.favorite-list-item-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.favorte-list-item-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+
+    width: 100%;
+}
+
+.favorite-list-item-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}

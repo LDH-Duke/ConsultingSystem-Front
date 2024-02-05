@@ -28,38 +28,38 @@ const API = {
    * 회원가입
    * --
    */
-  postsignup : (body) => $http.post('/user/signup', body),
+  postSignup : (body) => $http.post('/user/signup', body),
 
   /**
    * 회원 로그인
    * --
    */
-  postsignin : (body) => $http.post('/user/signin', body),
+  postSignin : (body) => $http.post('/user/signin', body),
 
   /**
    * 선물하기
    * --
    */
-  postdonation : (body) => $http.post('/coin/buyproduct', body),
+  postDonation : (body) => $http.post('/coin/buyproduct', body),
 
   /**
    * 사용자 정보 조회
    * --
    */
-  getuser : (user_id) => $http.get(parameterToPath('/user/:user_id' , {user_id})),
+  getUser : (user_id) => $http.get(parameterToPath('/user/:user_id' , {user_id})),
 
   /**
    * 전제 사용자 정보 조회
    * --
    */
-  getusers : () => $http.get('/user'),
+  getUsers : () => $http.get('/user'),
 
   /**
    * 상담 문의
    * --
    * 경로 수정 필요
    */
-  postquestion : (body) => $http.post('/ask', body),
+  postQuestion : (body) => $http.post('/ask', body),
 
   /**
    * 상담사 문의
@@ -90,13 +90,13 @@ const API = {
    * 상담사 등록하기
    * --
    */
-  postcounselorsignup : (body) => $http.post('/counselor/signup', body),
+  postCounselorSignup : (body) => $http.post('/counselor/signup', body),
 
   /**
    * 상담사 로그인
    * --
    */
-  postcounselorlogin : (body) => $http.post('/counselor/signin', body),
+  postCounselorSignin : (body) => $http.post('/counselor/signin', body),
 
   /**
    * 즐겨찾기 전체조회 (메인)
@@ -138,7 +138,7 @@ const API = {
    * 후기 수정
    * --
    */
-  updateReview : (review_item_id, body) => $http.put(parameterToPath('/review/:review_item_id', {review_item_id}), body),
+  putReview : (review_item_id, body) => $http.put(parameterToPath('/review/:review_item_id', {review_item_id}), body),
 
   /**
    * 단일 후기 조회
@@ -191,19 +191,19 @@ const API = {
    * 상품 구매하기
    * --
    */
-  postbuyproduct : (body) => $http.post('/coin/buyproduct', body),
+  postBuyProduct : (body) => $http.post('/coin/buyproduct', body),
   
   /**
    * 상담사 별 상품 조회
    * --
    */
-  getcounselorproduct : (counselor_id) => $http.get(parameterToPath('/counselor/production/:counselor_id', {counselor_id})),
+  getCounselorProduct : (counselor_id) => $http.get(parameterToPath('/counselor/production/:counselor_id', {counselor_id})),
 
   /**
    * 관리자에게 문의하기
    * --
    */
-  postaskadmin : (body) => $http.post('/ask/addadmin', body),
+  postAskAdmin : (body) => $http.post('/ask/addadmin', body),
 
   /**
    * 문의 전체 조회

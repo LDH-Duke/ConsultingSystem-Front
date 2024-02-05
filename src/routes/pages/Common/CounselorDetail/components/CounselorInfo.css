@@ -1,0 +1,68 @@
+.counselor-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 70%;
+
+    .counselor-image {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: rgb(235, 235, 235);
+    }    
+}
+
+.counselor-info-container img {
+    /* width: 50%; */
+    object-fit: fill;
+}
+
+.counselor-info-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+
+    padding: 1rem 0;
+}
+
+.counselor-info-box .counselor-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .counselor-category {
+        background-color: var(--sub-bg-color);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        color: white;
+    }
+    
+    .counselor-nickname {
+        color: var( --body-color);
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+}
+
+/* 링크 */
+.counselor-info-box .counselor-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.counselor-info-box .counselor-links a {
+    background-color: var(--sub-bg-color);
+    padding: 1.25rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+}

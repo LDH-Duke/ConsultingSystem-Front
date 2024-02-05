@@ -1,0 +1,19 @@
+:where(.css-dev-only-do-not-override-1b0bdye).ant-form-item {
+    margin: 0;
+}
+
+.ant-form-item-control-input-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-warning {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    
+    .warning-text {
+        color: var(--warning-color);
+    }
+}

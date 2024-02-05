@@ -1,6 +1,6 @@
 import './WriteReview.css';
 import { Button } from 'antd';
-import Title from '../../../components/Title';
+import Title from '../../../../components/Title';
 import Category from './components/Category';
 
 export const WriteReviewPresenter = ({

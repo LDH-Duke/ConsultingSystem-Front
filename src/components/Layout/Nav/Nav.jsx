@@ -6,14 +6,15 @@ export const Nav = ({ nav }) => {
     return (
         <div className='nav-container'>
             <div className='logo'>
-                <span>MDMD</span>
+                <Link to='/'>MDMD</Link>
             </div>
             <div className='tab'>
                 {
                     nav ?
                         <ul>
                             <Link>검색</Link>
-                            <Link>코인충전</Link>
+                            <Link to='/user/favorite'>즐겨찾기</Link>
+                            <Link to='/user/coin'>코인충전</Link>
                             <Link>마이메뉴</Link>
                         </ul> :
                         <ul>
@@ -21,10 +22,9 @@ export const Nav = ({ nav }) => {
                             <Link>마이메뉴</Link>
                         </ul>
                 }
-
             </div>
             <div className='user'>
-                <Link>로그인</Link>
+                <Link to='/signin'>로그인</Link>
             </div>
         </div>
     )
