@@ -10,7 +10,7 @@
 .coin-table th,
 .coin-table td {
     border: 2px solid var(--main-bg-color);
-    color: var(--main-bg-color);
+    /* color: var(--main-bg-color); */
     padding: 1rem;
     font-weight: bold;
 }

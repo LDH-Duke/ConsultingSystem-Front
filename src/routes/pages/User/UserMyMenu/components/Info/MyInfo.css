@@ -1,0 +1,6 @@
+.mymenu-myinfo {
+    width: 100%;
+    background-color: var(--sub-bg-color);
+    display: flex;
+    justify-content: space-evenly;
+}

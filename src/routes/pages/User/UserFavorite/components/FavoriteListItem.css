@@ -24,13 +24,13 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 2rem;
+    gap: 1rem;
 
     width: 100%;
 }
 
 .favorite-list-item-name {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -38,6 +38,7 @@
     border: 2px solid var(--sub-bg-color);
     background-color: var(--sub-bg-color);
     color: white;
+    width: 5rem;
 }
 
 .favorite-list-item-infos

@@ -41,3 +41,5 @@ export { default as UserSignUp } from './User/UserSignUp';
 export { default as UserChargeCoin } from './User/UserChargeCoin';
 export { default as UserFavorite } from './User/UserFavorite';
 export { default as UserDonation } from './User/UserDonation';
+export { default as UserMyMenu } from './User/UserMyMenu';
+export { default as UserProfile } from './User/UserProfile';

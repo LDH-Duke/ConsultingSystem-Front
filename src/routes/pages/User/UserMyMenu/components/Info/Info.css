@@ -1,0 +1,30 @@
+.mymenu-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    border: 1px solid var(--border-color);
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+}
+
+.mymenu-info .info-notice {
+    font-size: 0.8rem;
+    color: var(--sub-title-color);
+}
+
+.mymenu-info .show-info {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--title-color);
+}
+
+.mymenu-info .go-to-button {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 0.3rem 0.8rem;
+}

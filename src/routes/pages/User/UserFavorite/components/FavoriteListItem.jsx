@@ -22,7 +22,6 @@ export const FavoriteListItem = ({
                             </div>
                             <Button
                                 onClick={() => {deleteFavorite(favoriteInfo.counselor_id)}}
-                                style={{width: '120px'}}
                             >
                                 취소
                             </Button>

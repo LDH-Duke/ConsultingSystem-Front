@@ -18,9 +18,12 @@ export const InputComponent = ({
     onBlur,
 
     notice,
-
+    
     isShowWarning,
     warnings,
+
+    isWrite,
+    value
 }) => {
     return (
         <Form.Item style={{width: '100%'}}>
@@ -30,6 +33,8 @@ export const InputComponent = ({
                 placeholder={placeholder}
                 onChange={onChange}
                 onBlur={onBlur}
+                readOnly={isWrite}
+                value={value}
             />
             {
                 notice &&
