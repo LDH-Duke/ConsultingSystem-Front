@@ -22,12 +22,13 @@ const SignUpContainer = ({
     pw: '',
     pw_check: '',
     name: '',
+    nickname: '',
     phone: '',
   });
 
 
   useEffect(() => {
-    setCanSignup(isCheckEmail && isCheckPw && isDoubleCheck && userInfo.name.length && isPhone);
+    setCanSignup(isCheckEmail && isCheckPw && isDoubleCheck && userInfo.name.length && userInfo.nickname.length && isPhone);
   }, [isCheckEmail, isCheckPw, isDoubleCheck, isPhone])
 
   /**
@@ -62,9 +63,10 @@ const SignUpContainer = ({
     const body = {
       email: userInfo.email,
       phone: userInfo.phone,
+      nickname: userInfo.nickname
     }
 
-    const result = await API.postUserDoublecheck(body);
+    const result = await API.postCounselorDoublecheck(body);
 
     if (result.status === 409) {
       // 중복확인 실패
@@ -98,11 +100,12 @@ const SignUpContainer = ({
       email: userInfo.email,
       pw: userInfo.pw,
       name: userInfo.name,
+      nickname: userInfo.nickname,
       phone: userInfo.phone,
     };
 
     // const result = isUser ? await API.postSignUp(body) : await API.postCounselorSignUp(body);
-    const result = await API.postSignup(body);
+    const result = await API.postCounselorSignup(body);
 
     switch (result) {
       case 401:

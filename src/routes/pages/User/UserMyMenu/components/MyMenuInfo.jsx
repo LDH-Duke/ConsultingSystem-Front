@@ -5,11 +5,12 @@ import { MenuList } from "./Menu/MenuList";
 import './MyMenuInfo.css';
 
 export const MyMenuInfo = ({
+    userInfo,
     myMenuItems
 }) => {
     return (
         <div className="mymenu-container">
-            <MyInfo/>
+            <MyInfo userInfo={userInfo}/>
             {/* <Menus myMenuItems={myMenuItems}/> */}
             <MenuList myMenuItems={myMenuItems}/>
         </div>

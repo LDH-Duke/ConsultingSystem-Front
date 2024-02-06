@@ -30,6 +30,7 @@
 // export { default as UserAskHistory } from './UserAskHistory';
 
 // 공통
+export { default as Main } from './Common/Main';
 export { default as SignIn } from './Common/SignIn';
 export { default as CounselorDetail } from './Common/CounselorDetail';
 export { default as Sitemap } from './Common/Sitemap';
@@ -43,3 +44,6 @@ export { default as UserFavorite } from './User/UserFavorite';
 export { default as UserDonation } from './User/UserDonation';
 export { default as UserMyMenu } from './User/UserMyMenu';
 export { default as UserProfile } from './User/UserProfile';
+
+// 상담사
+export { default as CounselorSignUp } from './Counselor/CounselorSignUp';

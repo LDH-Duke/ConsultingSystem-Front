@@ -85,6 +85,18 @@ export const SignUpInputBox = ({
                     });
                 }}
             />
+            
+            <InputComponent
+                name='예명'
+                type='text'
+                placeholder='예명을 입력해주세요'
+                onChange={(e) => {
+                    const nickname = e.target.value;
+                    setUserInfo(info => {
+                        return {...info, nickname};
+                    });
+                }}
+            />
 
             <div className="input-phone-container">
                 <span className="phone-notice">회원가입을 위해 휴대폰 인증을 진행해주세요</span>

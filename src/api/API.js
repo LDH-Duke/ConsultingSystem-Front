@@ -198,6 +198,12 @@ const API = {
    * --
    */
   getCounselorProduct : (counselor_id) => $http.get(parameterToPath('/counselor/production/:counselor_id', {counselor_id})),
+  
+  /**
+   * 상담사 별 상품 전체 조회
+   * --
+   */
+  getCounselorProducts : () => $http.get('/counselor/all/product'),
 
   /**
    * 관리자에게 문의하기

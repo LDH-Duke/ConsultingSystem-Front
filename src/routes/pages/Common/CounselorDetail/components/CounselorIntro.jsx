@@ -1,7 +1,6 @@
 import React from "react";
 import { Tabs } from "antd";
 import './CounselorIntro.css';
-import "./CounselorReview";
 import CounselorReview from "./CounselorReview";
 import CounselorTabContent from "./CounselorTabContent";
 

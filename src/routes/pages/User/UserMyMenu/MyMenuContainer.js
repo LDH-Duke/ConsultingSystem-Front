@@ -46,8 +46,33 @@ const MyMenuContainer = ({
     },
   ]
   
+  const [userInfo, setUserInfo] = useState({});
+
+  useEffect(() => {
+    (
+      async() => {
+        const id = cookie.getCookie('id');
+
+        if (id === null) {
+          //로그인 필요
+
+          return;
+        }
+
+        const result = await API.getUser(id);
+
+        if (result.status === 409) {
+          // 정보 없음
+          return;
+        }
+
+        setUserInfo(result.data);
+      }
+    )();
+  }, [])
+
   return (
-    <MyMenuPresenter myMenuItems={myMenuItems}/>
+    <MyMenuPresenter userInfo={userInfo} myMenuItems={myMenuItems}/>
   )
 }
 
