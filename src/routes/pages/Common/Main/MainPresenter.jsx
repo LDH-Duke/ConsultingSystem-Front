@@ -6,15 +6,36 @@ import { List } from '../../../../components/Layout/List/List';
 export const MainPresenter = ({
     isSignIn,
 
+    selectCounselor,
     counselors,
     addFavorite,
+
+    isModalOpen,
+    modalOpen,
+    handleOk,
+    handleCancel,
+    
+    connectConsultingV1,
+    connectConsultingV2,
 }) => {
     console.log(counselors)
     
     return (
         <Layout nav={1}>
             <Banner isSignIn={isSignIn}/>
-            <List counselors={counselors} addFavorite={addFavorite}/>
+            <List
+                selectCounselor={selectCounselor}
+                counselors={counselors}
+                addFavorite={addFavorite}
+
+                isModalOpen={isModalOpen}
+                modalOpen={modalOpen}
+                handleOk={handleOk}
+                handleCancel={handleCancel}
+          
+                connectConsultingV1={connectConsultingV1}
+                connectConsultingV2={connectConsultingV2}
+            />
         </Layout>
     )
 }

@@ -7,7 +7,7 @@ import { TestCounselorMainPresenter } from '../components/Layout/TestCounselorMa
 import cookie from '../cookie';
 
 // 공통 페이지
-import { Error, Main, Search, Review, SignIn, CounselorDetail, Sitemap } from './pages'; 
+import { Error, Main, Search, Review, SignIn, CounselorDetail, Sitemap, ConsultingV1, ConsultingV2 } from './pages'; 
 // 회원 페이지
 import { UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages'; 
 // 상담사 페이지
@@ -51,6 +51,8 @@ const Router = () => {
         <Route exact path='/sitemap' element={<Sitemap setCookies={setCookies} />} />
         <Route exact path='/review' element={<Review setCookies={setCookies} />} />
         <Route exact path='/search' element={<Search setCookies={setCookies} />} />
+        <Route exact path='/consultingv1' element={<ConsultingV1 setCookies={setCookies} />} />
+        <Route exact path='/consultingv2' element={<ConsultingV2 setCookies={setCookies} />} />
 
         {/* 회원 */}
         <Route exact path='/user/signup' element={<UserSignUp setCookies={setCookies} />} />
