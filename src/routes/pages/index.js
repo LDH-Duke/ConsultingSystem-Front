@@ -31,6 +31,7 @@
 
 // 공통
 export { default as Main } from './Common/Main';
+export { default as Error } from './Common/Error';
 export { default as SignIn } from './Common/SignIn';
 export { default as CounselorDetail } from './Common/CounselorDetail';
 export { default as Sitemap } from './Common/Sitemap';
@@ -47,3 +48,4 @@ export { default as UserProfile } from './User/UserProfile';
 
 // 상담사
 export { default as CounselorSignUp } from './Counselor/CounselorSignUp';
+export { default as CounselorAddProduct } from './Counselor/CounselorAddProduct';
