@@ -6,8 +6,7 @@ import cookie from '../../../../cookie';
 
 const FavoriteContainer = ({
   setCookies
-}) => {
-  
+}) => {  
   const [favoriteList, setFavoriteList] = useState([
     {
       counselor_id: 1,
@@ -91,6 +90,30 @@ const FavoriteContainer = ({
       introduce: '다'
     },
   ]);
+
+  useEffect(() => {
+    (async() => {
+      // 쿠키에서 회원 id를 가져옴
+      const id = cookie.getCookie('id');
+
+      if (id === null) {
+        // 로그인이 되어있지 않다는 알림
+
+        return;
+      }
+
+      // API로 좋아요 목록 요청
+      const result = await API.getFavorite(id);
+
+      if (result.status === 404) {
+        // 좋아요 목록이 없을 경우 알림
+
+        return;
+      }
+
+      setFavoriteList(result.data);
+    })();
+  }, []);
 
   const deleteFavorite = async (counselor_id) => {
     console.log('call deleteFavorite');

@@ -12,14 +12,14 @@ export const Nav = ({ nav }) => {
                 {
                     nav ?
                         <ul>
-                            <Link>검색</Link>
+                            <Link to='/search'>검색</Link>
                             <Link to='/user/favorite'>즐겨찾기</Link>
                             <Link to='/user/coin'>코인충전</Link>
-                            <Link>마이메뉴</Link>
+                            <Link to='/user/mymenu'>마이메뉴</Link>
                             <Link to='/sitemap'>사이트맵</Link>
                         </ul> :
                         <ul>
-                            <Link>검색</Link>
+                            <Link to='/search'>검색</Link>
                             <Link>마이메뉴</Link>
                             <Link to='/sitemap'>사이트맵</Link>
                         </ul>

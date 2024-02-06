@@ -9,5 +9,7 @@
     flex-direction: column;
     gap: 1rem;
 
-    width: 60%;
+    width: 100%;
+
+    padding: 0 1rem;
 }
