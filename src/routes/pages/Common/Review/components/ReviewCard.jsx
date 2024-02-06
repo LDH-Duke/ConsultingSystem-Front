@@ -1,6 +1,6 @@
 import React from "react";
 import "./ReviewCard.css";
-import CounselorInfo from "./CounselorInfo";
+import ReviewInfo from "./ReviewInfo";
 import ReviewCategory from "./ReviewCategory";
 import ReviewComment from "./ReviewComment";
 
@@ -12,7 +12,7 @@ const ReviewCard = ({
             {
                 reviews.map((review) => (
                     <div className="review-card-container">
-                        <CounselorInfo
+                        <ReviewInfo
                             review={review}
                         />
                         <ReviewCategory

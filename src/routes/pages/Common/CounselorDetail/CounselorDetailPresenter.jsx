@@ -15,7 +15,8 @@ const CounselorDetailContainer = styled.div`
 
 export const CounselorDetailPresenter = ({
     counselor,
-    counselor_id
+    counselor_id,
+    reviews
 }) => {
     return (
         <Layout nav={1}>
@@ -24,6 +25,7 @@ export const CounselorDetailPresenter = ({
                 <CounselorIntro
                     counselor={counselor}
                     counselor_id={counselor_id}
+                    reviews={reviews}
                 />
             </CounselorDetailContainer>
         </Layout>

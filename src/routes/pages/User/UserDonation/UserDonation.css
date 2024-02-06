@@ -99,6 +99,7 @@
     border: none;
     background-color: #bec2c9;
     font-size: 1rem;
+    transition: all 0.2s ease-in-out;
 }
 .user-donation-button-box button:hover {
     background-color: #00cc8f;

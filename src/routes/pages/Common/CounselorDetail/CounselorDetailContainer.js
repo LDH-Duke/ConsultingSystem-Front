@@ -6,43 +6,51 @@ import { useNavigate, useParams } from "react-router-dom";
 const CounselorDetailContainer = ({
   setCookies
 }) => {
-  const {counselor_id} = useParams();
-  const [counselor, setCounselor] = useState({
-    id: 1,
-    name: 'test',
-    nickname: 'test',
-    email: 'test@test.com',
-    phone: '01012345678',
-    rating: '브론즈',
-    total_coin: 10000,
-    status: '대기',
-    img: 'ㅁㄴㅇ',
-    intro: 'ㅁㄴㅇ',
-    notice: 'ㅁㄴㅇ',
-    detail: 'ㅁㄴㅇ',
-    createdAt: 'ㅁㄴㅇ',
-    updatedAt: 'ㅁㄴㅇ',
-    count: 15,
-    is_accept: true
-  });
+  const { counselor_id } = useParams();
+
+  // 상담사
+  const [counselor, setCounselor] = useState({});
+
+  // 후기
+  const [reviews, setReviews] = useState([]);
+
+  // 서비스공지
+  const [notice, setNotice] = useState([]);
+
+  // 서비스소개
+  const [introduce, setIntroduce] = useState('');
+
+
 
   useEffect(() => {
-    (async() => {
-      const result = await API.getCounselor(counselor_id);
+    (async () => {
 
-      if (result === null) {
+      /**
+       * 상담사 단일 정보 조회
+       */
+      const counselorData = await API.getCounselor(counselor_id);
+
+      if (counselorData === null) {
         // 정보 불러올 수 없다는 알림
         return;
       }
 
-      setCounselor(result.data);
+      setCounselor(counselorData.data);
+
+      /**
+       * 상담사 단일 후기
+       */
+      const reviewsData = await API.getReview(counselor_id);
+      setReviews(reviewsData.data);
+
     })();
-  })
+  }, [])
 
   return (
-    <CounselorDetailPresenter 
+    <CounselorDetailPresenter
       counselor={counselor}
       counselor_id={counselor_id}
+      reviews={reviews}
     />
   )
 }

@@ -1,27 +1,27 @@
 import React from "react";
-import "./CounselorInfo.css";
+import "./ReviewInfo.css";
 
-const CounselorInfo = () => {
+const ReviewInfo = () => {
     return (
-        <div className="counselor-info-container">
-            <div className="counselor-img-box">
+        <div className="review-info-container">
+            <div className="review-img-box">
 
             </div>
-            <div className="counselor-info-box">
-                <div className="counselor-info-con">
-                    <p className="counselor-name">
+            <div className="review-info-box">
+                <div className="review-info-con">
+                    <p className="review-name">
                         장승훈
-                        <span className="counselor-number">
+                        <span className="review-number">
                             12
                         </span>
                     </p>
                     <span className="info-con">2024.02.05</span>
                 </div>
-                <div className="counselor-info-con">
+                <div className="review-info-con">
                     ★★★★★
                     <span>회원명</span>
                 </div>
-                <div className="counselor-info-con">
+                <div className="review-info-con">
                     <div className="consulting-time">
                         <p>(통화 10~30분)</p>
                     </div>
@@ -31,4 +31,4 @@ const CounselorInfo = () => {
     )
 }
 
-export default CounselorInfo;
+export default ReviewInfo;

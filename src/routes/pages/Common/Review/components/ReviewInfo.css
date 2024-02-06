@@ -1,12 +1,12 @@
 /* 최상단 */
-.counselor-info-container {
+.review-info-container {
     display: flex;
     align-items: center;
     padding-bottom: 20px;
 }
 
 /* 상담사 이미지 */
-.counselor-info-container .counselor-img-box {
+.review-info-container .review-img-box {
     width: 80px;
     min-width: 80px;
     height: 80px;
@@ -15,25 +15,25 @@
 }
 
 /* 상담사 정보 박스 */
-.counselor-info-container .counselor-info-box {
+.review-info-container .review-info-box {
     width: 100%;
     position: relative;
 }
 
 /* 상담사 정보 내용 담는 곳 */
-.counselor-info-box .counselor-info-con {
+.review-info-box .review-info-con {
     display: flex;
     width: 100%;
     position: relative;
     margin-top: 8px;
 }
-.counselor-info-con:first-child {
+.review-info-con:first-child {
     margin-bottom: 0;
     border-bottom: none;
 }
 
 /* 상담사명 */
-.counselor-info-con .counselor-name {
+.review-info-con .review-name {
     position: relative;
     color: #222;
     font-size: 1rem;
@@ -43,7 +43,7 @@
 }
 
 /* 상담사 번호 */
-.counselor-info-con .counselor-number {
+.review-info-con .review-number {
     display: inline-block;
     position: relative;
     margin-left: 6px;
@@ -52,19 +52,19 @@
 }
 
 /* 날짜 */
-.counselor-info-container .counselor-info-con .info-con {
+.review-info-container .review-info-con .info-con {
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-40%);
 }
-.counselor-info-con .info-con {
+.review-info-con .info-con {
     display: inline-block;
     color: #999999;
     margin-left: 10px;
 }
 
 /* 상담 시간 */
-.counselor-info-con .consulting-time {
+.review-info-con .consulting-time {
     display: flex;
 }

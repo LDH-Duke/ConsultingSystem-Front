@@ -4,5 +4,10 @@
     width: 100%;
     height: auto;
     flex-direction: column;
-    border-bottom: 1px solid black;
+    margin-bottom: 0.5rem;
+    background-color: white;
+}
+
+.review-card-container:first-child {
+    border-top: none;
 }

@@ -9,3 +9,7 @@
 /* .counselor-intro-container>div {
     width: 100%;
 } */
+
+.ant-tabs {
+    width: 70%;
+}
