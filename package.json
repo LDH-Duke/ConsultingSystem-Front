@@ -3,18 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "antd": "^5.13.3",
     "axios": "^1.6.7",
     "react": "^18.2.0",
     "react-calendar": "^4.8.0",
+=======
+    "antd": "^5.13.1",
+    "axios": "^1.6.7",
+    "react": "^18.2.0",
+>>>>>>> c40c7a37945ef6be26bcbbea76c97f53a084db7e
     "react-cookie": "^7.0.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.1",
     "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
     "react-spring-bottom-sheet": "^3.4.1",
+<<<<<<< HEAD
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.8"
+=======
+    "slick-carousel": "^1.8.1"
+>>>>>>> c40c7a37945ef6be26bcbbea76c97f53a084db7e
   },
   "scripts": {
     "start": "react-scripts start",

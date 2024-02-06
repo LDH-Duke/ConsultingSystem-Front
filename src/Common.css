@@ -1,8 +1,11 @@
 :root{
     --main-bg-color :#00CC8F;
     --sub-bg-color:#2AD8A0;
+<<<<<<< HEAD
     --light-main-bg-color: #22ecb0;
     --light-sub-bg-color:#66f1c5;
+=======
+>>>>>>> c40c7a37945ef6be26bcbbea76c97f53a084db7e
 
     --title-color: #232527;
     --body-color: #232527;
@@ -11,10 +14,13 @@
     --sub-title-color: #768085;
  
     --border-color: #768085;
+<<<<<<< HEAD
 
     --warning-color: #DB1D0F;
     --emphasise-color: #B52609;
     --table-th-color: #BFBFBF;
 
     --light-bg-color: #d8dadb;
+=======
+>>>>>>> c40c7a37945ef6be26bcbbea76c97f53a084db7e
 }
