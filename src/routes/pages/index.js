@@ -14,7 +14,7 @@ export { default as Review } from './Review';
 export { default as Error } from './Error';
 export { default as CounselorHome } from './CounselorHome';
 export { default as Exchange } from './Exchange';
-export { default as AskAdmin } from './AskAdmin';
+// export { default as AskAdmin } from './AskAdmin';
 export { default as WriteReview } from './WriteReview';
 export { default as Consultinghistory } from './Consultinghistory';
 export { default as Product } from './Product';
@@ -28,3 +28,12 @@ export { default as Consulting_v2 } from './Consulting2';
 export { default as ImageTest } from './ImageTest';
 export { default as CounselorAskList } from './CounselorAskList';
 export { default as UserAskHistory } from './UserAskHistory';
+
+/**
+ * NEW
+ */
+
+export { default as CounselorMain } from './Counselor/CounselorMain';
+export { default as CounselorProfile } from './Counselor/CounselorProfile';
+
+export { default as AskAdmin } from './Common/AskAdmin';

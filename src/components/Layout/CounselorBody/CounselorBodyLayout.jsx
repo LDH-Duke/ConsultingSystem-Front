@@ -14,9 +14,9 @@ export const CounselorBodyLayout = () => {
                 <Col xl={24}><CommonBox/></Col>
             </Row>
             <Row gutter={8}>
+                <Col xl={8}><CommonBox title={'프로필 수정'} url={'/counselorprofile'}/></Col>
                 <Col xl={8}><CommonBox/></Col>
-                <Col xl={8}><CommonBox/></Col>
-                <Col xl={8}><CommonBox/></Col>
+                <Col xl={8}><CommonBox title={'관리자 문의'} url={'/askadmin'}/></Col>
             </Row>
         </div>
     )

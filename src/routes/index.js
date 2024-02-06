@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { CounselorAskList, ImageTest, Consulting_v2, Consulting_v1, SiteMap, EditCounselor, Product, WriteReview, AskAdmin, Exchange, CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error, Consultinghistory, MyPage, AdminMain, ReviewUpdate, UserAskHistory } from './pages';
+import { CounselorAskList, ImageTest, Consulting_v2, Consulting_v1, SiteMap, EditCounselor, Product, WriteReview, AskAdmin, Exchange, CounselorHome, CounselorDetail, Favorite, EditProfile, Search, Donation, SignIn, Signup, Main, Coin, PriceDetail, Question, ConsultingSignUp, Review, Error, Consultinghistory, MyPage, AdminMain, ReviewUpdate, UserAskHistory, CounselorMain, AskAdminHistroy, CounselorProfile } from './pages';
 import Header from '../components/Header'
 import { TestPresenter } from '../components/Layout/TestPresenter';
 import { TestCounselorMainPresenter } from '../components/Layout/TestCounselorMainPresenter';
@@ -37,7 +37,9 @@ const Router = () => {
       {/* <Header hasCookies={hasCookies} removeCookies={removeCookies} /> */}
       <Routes>
       <Route exact path='/' element={< TestPresenter/>} />
-      <Route exact path='/counselor' element={< TestCounselorMainPresenter/>} />
+      <Route exact path='/counselor' element={<CounselorMain />} />
+      <Route exact path='/askadmin' element={<AskAdmin />} />
+      <Route exact path='/counselorprofile' element={<CounselorProfile />} />
         {/* <Route exact path="/counselor/:counselor_id" element={<CounselorDetail />} />
         <Route exact path="/favorite/:user_id" element={<Favorite navigate={navigate} />} /> */}
         {/* <Route exact path="/editprofile" element={<EditProfile />} /> */}

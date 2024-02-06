@@ -1,0 +1,43 @@
+.side-nav{
+    display: flex;
+    flex-direction: column;
+
+    width: 25%;
+    margin-right: 0.5rem;
+}
+
+.side-nav .side-title{
+    display: block;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    color: #757575;
+
+    padding: 0.25rem;
+    border-bottom: 2px solid #00cc8f;
+}
+
+
+.side-nav .side-tap{
+    background-color: #ebebeb;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.side-nav .tap-list{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.side-nav .tap-list .tap{
+    padding: 0.25rem;
+
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+
+
+
+

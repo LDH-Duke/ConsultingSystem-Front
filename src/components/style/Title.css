@@ -1,8 +1,9 @@
 .content-title {
     border-top-style: solid;
-    border-width : 2px;
     border-bottom-style : solid;
-    border-color : #FF5238;
+    border-width : 2px;
+    border-color : #00cc8f;;
     padding : 10px;
+    margin-top: 10px;
     text-align : center;
 }

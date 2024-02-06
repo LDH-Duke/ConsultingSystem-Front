@@ -1,0 +1,22 @@
+.ask-container {
+    display: flex;
+
+    width: 100%;
+}
+
+.ask-container .ask-form {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.ask-container .ask-form textarea {
+    width: 100%;
+    height: 40vh;
+}
+
+.ask-container .ask-form button {
+    background-color: var(--main-bg-color);
+    margin-top: 0.75rem;
+}
