@@ -2,7 +2,8 @@ import React from 'react'
 import './List.css'
 
 export const List = ({
-    counselors
+    counselors,
+    addFavorite,
 }) => {
     // const counselors = [
     //     {
@@ -44,26 +45,27 @@ export const List = ({
                     return (
                         <div className={`list ${idx}`} key={`list ${idx}`}>
                             <div className='list-img'>
-                                <img src={counselor.img} alt='이미지'></img>
+                                <img src={counselor['counselor.img']} alt='이미지'></img>
                             </div>
                             <div className='list-info'>
-                                <span>{counselor.nickname}</span>
+                                <span>{counselor['counselor.nickname']}</span>
                                 <span>{counselor.price}</span>
                                 {/* <span>{counselor.tag}</span> */}
                                 <ul>
-                                {
-                                    counselor.tag &&
-                                    counselor.tag.map((tag, idx) => {
-                                        return (
-                                            
+                                    {
+                                        counselor.tag &&
+                                        counselor.tag.map((tag, idx) => {
+                                            return (
                                                 <span className={`tag ${idx}`} key={`tag ${idx}`}>{tag}</span>
-                                            
-                                        )
-                                    })
-                                }
+                                            )
+                                        })
+                                    }
                                 </ul>
                             </div>
-                            <button className='list-btn'>상담하기</button>
+                            <div className="list-btns">
+                                <button className='list-btn'>상담하기</button>
+                                <button className='list-btn' onClick={() => {addFavorite(counselor.counselor_id)}}>좋아요</button>
+                            </div>
                         </div>
                     )
                 })

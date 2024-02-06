@@ -33,7 +33,7 @@ export const InputComponent = ({
                 placeholder={placeholder}
                 onChange={onChange}
                 onBlur={onBlur}
-                readOnly={isWrite}
+                readOnly={!isWrite}
                 value={value}
             />
             {

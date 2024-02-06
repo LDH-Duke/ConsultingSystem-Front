@@ -7,12 +7,16 @@ import { ProfileBox } from "./components/ProfileBox";
 
 export const ProfilePresenter = ({
     userInfo,
+    setUserInfo,
+    
     onModify,
 }) => {
     return (
         <Layout nav={1}>
             <ProfileBox
                 userInfo={userInfo}
+                setUserInfo={setUserInfo}
+                
                 onModify={onModify}
             />
         </Layout>

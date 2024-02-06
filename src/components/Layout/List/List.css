@@ -80,6 +80,13 @@
 
 
 /*list button*/
+.list-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .list-btn {
     grid-area: list-btn;
     place-self: center;

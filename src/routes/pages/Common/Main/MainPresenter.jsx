@@ -4,14 +4,17 @@ import { Banner } from '../../../../components/Layout/Banner/Banner';
 import { List } from '../../../../components/Layout/List/List';
 
 export const MainPresenter = ({
-    counselors
+    isSignIn,
+
+    counselors,
+    addFavorite,
 }) => {
     console.log(counselors)
     
     return (
         <Layout nav={1}>
-            <Banner/>
-            <List counselors={counselors}/>
+            <Banner isSignIn={isSignIn}/>
+            <List counselors={counselors} addFavorite={addFavorite}/>
         </Layout>
     )
 }

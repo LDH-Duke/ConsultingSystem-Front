@@ -9,8 +9,8 @@ const MyMenuContainer = ({
 }) => {
   const myMenuItems = [
     {
-      title: '상담내역',
-      path: '/',
+      title: '즐겨찾기',
+      path: '/user/favorite',
     },
     {
       title: '상품\n구매내역',
