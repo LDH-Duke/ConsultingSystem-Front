@@ -13,23 +13,23 @@ const MyMenuContainer = ({
       path: '/user/favorite',
     },
     {
-      title: '상품\n구매내역',
+      title: '상품\n구매내역\n(작동X)',
       path: '/',
     },
     {
-      title: '나의예약',
+      title: '나의예약\n(작동X)',
       path: '/',
     },
     {
-      title: '코인충전\n사용내역',
+      title: '코인충전\n사용내역\n(작동X)',
       path: '/',
     },
     {
-      title: '결제내역',
+      title: '결제내역\n(작동X)',
       path: '/',
     },
     {
-      title: '나의 후기',
+      title: '알림내역\n(작동X)',
       path: '/',
     },
     {
@@ -37,12 +37,12 @@ const MyMenuContainer = ({
       path: '/askadmin/user',
     },
     {
-      title: '코인 자동충전',
-      path: '/',
+      title: '후기 작성',
+      path: '/user/writereview',
     },
     {
-      title: '알림내역',
-      path: '/',
+      title: '작성 후기 조회',
+      path: '/user/review',
     },
   ]
   

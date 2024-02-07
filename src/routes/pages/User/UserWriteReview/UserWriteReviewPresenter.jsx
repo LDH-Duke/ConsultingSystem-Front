@@ -7,7 +7,8 @@ export const UserWriteReviewPresenter = ({
     writeReview,
     setContent,
     content,
-    setScore
+    setScore,
+    goBack,
 }) => {
     return (
         <Layout nav={1}>
@@ -17,6 +18,7 @@ export const UserWriteReviewPresenter = ({
                 setContent={setContent}
                 content={content}
                 setScore={setScore}
+                goBack={goBack}
             />
         </Layout>
     )

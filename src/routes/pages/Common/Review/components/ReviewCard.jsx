@@ -3,6 +3,7 @@ import "./ReviewCard.css";
 
 const ReviewCard = ({
     reviews,
+    reviewUpdate,
     isShowButton,
 }) => {
     return (
@@ -10,6 +11,7 @@ const ReviewCard = ({
             <ul>
                 {
                     reviews.map((review, idx) => {
+                        console.log(review)
                         return (
                             <li className={`reivew-item ${idx}`} key={`reivew-item ${idx}`}>
                                 <div className="review-counselor">
@@ -25,7 +27,7 @@ const ReviewCard = ({
                                         isShowButton
                                         ?
                                         <div className="review-button">
-                                            <button>수정하기</button>
+                                            <button onClick={() => reviewUpdate(review['review_items.id'])}>수정하기</button>
                                         </div>
                                         :
                                         <></>

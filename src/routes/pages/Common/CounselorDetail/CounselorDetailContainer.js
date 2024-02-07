@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const CounselorDetailContainer = ({
   setCookies
 }) => {
+  const navigate = useNavigate();
   const { counselor_id } = useParams();
 
   // 상담사
@@ -46,11 +47,16 @@ const CounselorDetailContainer = ({
     })();
   }, [])
 
+  const goBack = () => {
+    navigate(-1);
+  }
+
   return (
     <CounselorDetailPresenter
       counselor={counselor}
       counselor_id={counselor_id}
       reviews={reviews}
+      goBack={goBack}
     />
   )
 }
