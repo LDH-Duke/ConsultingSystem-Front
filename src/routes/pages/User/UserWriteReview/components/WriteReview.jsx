@@ -4,7 +4,7 @@ import { Rate } from "antd";
 
 const WriteReview = ({
     isUpdate,
-    
+
     updateReview,
     deleteReview,
     writeReview,
@@ -12,11 +12,14 @@ const WriteReview = ({
     setContent,
     content,
 
+    textAreaContent,
+
     setScore,
     score,
     handleScore,
 
-    goBack
+    goBack,
+    goTo,
 }) => {
     return (
         <div className="write-review-container">
@@ -30,12 +33,24 @@ const WriteReview = ({
                     }
                 </div>
                 <div className="write-review-text">
-                    <textarea
-                        type="text"
-                        placeholder="후기 내용을 입력해주세요"
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
-                    />
+                    {
+                        isUpdate ?
+                            <textarea
+                                type="text"
+                                placeholder="후기 내용을 입력해주세요"
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
+                            >
+                            </textarea>
+                            :
+                            <textarea
+                            type="text"
+                            placeholder="후기 내용을 입력해주세요"
+                            value={content}
+                            onChange={(e) => setContent(e.target.value)}
+                            >
+                            </textarea>
+                    }
                     <Rate
                         onChange={handleScore}
                         value={score}

@@ -5,7 +5,6 @@ import { API } from "../../../../api";
 import { useNavigate } from "react-router-dom";
 
 const UserWriteReviewContainer = () => {
-
     const navigate = useNavigate();
 
     const [content, setContent] = useState('');
@@ -46,6 +45,10 @@ const UserWriteReviewContainer = () => {
         navigate(-1);
     }
 
+    const goTo = (link) => {
+        navigate(link);
+    }
+
     return (
         <UserWriteReviewPresenter
             writeReview={writeReview}
@@ -58,6 +61,7 @@ const UserWriteReviewContainer = () => {
             setContent={setContent}
 
             goBack={goBack}
+            goTo={goTo}
         />
     )
 }

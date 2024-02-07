@@ -4,13 +4,15 @@ import Layout from "../../../../components/Layout/Layout";
 import ReviewCard from "./components/ReviewCard";
 
 export const ReviewPresenter = ({
-    reviews
+    reviews,
+    goTo
 }) => {
     return (
         <Layout nav={1}>
             <ReviewCard
                 reviews={reviews}
                 isShowButton={false}
+                goTo={goTo}
             />
         </Layout>
     )

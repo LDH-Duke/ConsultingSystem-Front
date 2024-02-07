@@ -7,6 +7,8 @@ export const UserUpdateReviewPresenter = ({
     content,
     setContent,
 
+    textAreaContent,
+
     updateReview,
     deleteReview,
 
@@ -22,6 +24,8 @@ export const UserUpdateReviewPresenter = ({
                 
                 setContent={setContent}
                 content={content}
+
+                textAreaContent={textAreaContent}
 
                 goBack={goBack}
             />

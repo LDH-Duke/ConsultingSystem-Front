@@ -11,6 +11,7 @@ export const UserWriteReviewPresenter = ({
     score,
     handleScore,
     goBack,
+    goTo,
 }) => {
     return (
         <Layout nav={1}>
@@ -23,6 +24,7 @@ export const UserWriteReviewPresenter = ({
                 score={score}
                 handleScore={handleScore}
                 goBack={goBack}
+                goTo={goTo}
             />
         </Layout>
     )

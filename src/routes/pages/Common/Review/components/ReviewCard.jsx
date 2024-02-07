@@ -7,6 +7,7 @@ const ReviewCard = ({
     reviews,
     reviewUpdate,
     isShowButton,
+    goTo,
 }) => {
     return (
         <div className="review-card-container">
@@ -29,9 +30,14 @@ const ReviewCard = ({
                                         isShowButton
                                         ?
                                         <div className="review-button">
-                                            <Link to={`/user/review/update/${review['review_items.id']}`}>
+                                            <Link to=
+                                                {`/user/review/update?prev_content=${review['review_items.content']}&review_item_id=${review['review_items.id']}
+                                                `}>
                                                 <button>수정하기</button>
                                             </Link>
+                                            {/* <button onClick={() => {
+                                                goTo(`/user/review/update?prev_content=${review['review_items.content']}`)
+                                            }}>수정하기</button> */}
                                         </div>
                                         :
                                         <></>
