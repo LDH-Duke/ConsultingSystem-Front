@@ -20,9 +20,6 @@ export const List = ({
     handleCancel,
     modalItems,
     modalButtons,
-
-    connectConsultingV1,
-    connectConsultingV2,
 }) => {
     // const counselors = [
     //     {
@@ -64,7 +61,7 @@ export const List = ({
                     console.log(favorites.filter(favorite => favorite.counselor_id === counselor['counselor.id']))
                     return (
                         <div className={`list ${idx}`} key={`list ${idx}`}>
-                            <div className='list-img'  onClick={() => moveCounselorDetail(counselor['counselor.id'], counselor.id)}>
+                            <div className='list-img'  onClick={() => moveCounselorDetail(counselor['counselor.id'], counselor.price)}>
                                 <img src={counselor['counselor.img']} alt='이미지'></img>
                             </div>
                             <div className='list-info'>

@@ -8,7 +8,7 @@ const CounselorDetailContainer = ({
 }) => {
   const navigate = useNavigate();
   const { counselor_id } = useParams();
-  const { state: { production_id } } = useLocation();
+  const { state: { production_price } } = useLocation();
 
   // 상담사
   const [counselor, setCounselor] = useState({});
@@ -49,7 +49,7 @@ const CounselorDetailContainer = ({
       setCounselor(counselorData.data);
 
       // 상품 정보 가져오기
-      const productionData = await API.getProduction(production_id);
+      // const productionData = await API.getProduction(production_id);
 
       setModalItems([
         {
@@ -58,7 +58,7 @@ const CounselorDetailContainer = ({
         },
         {
           text: '가격',
-          value: productionData.data.price,
+          value: production_price,
         },
       ]);
 

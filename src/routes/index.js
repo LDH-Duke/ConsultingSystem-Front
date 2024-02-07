@@ -9,7 +9,7 @@ import cookie from '../cookie';
 // 공통 페이지
 import { Error, Main, Search, Review, SignIn, CounselorDetail, Sitemap, ConsultingV1, ConsultingV2, AskAdmin, UpdateAskAdmin } from './pages'; 
 // 회원 페이지
-import { UserUpdateReview, UserWriteReview, UserReview, UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite, UserReview, UserWriteReview, UserUpdateReview } from './pages'; 
+import { UserUpdateReview, UserWriteReview, UserReview, UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages'; 
 // 상담사 페이지
 import { CounselorSignUp, CounselorAddProduct, CounselorProfile, CounselorCoin, CounselorMain, CounselorConsultingHistory } from './pages';
 
