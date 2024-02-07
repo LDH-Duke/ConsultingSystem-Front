@@ -37,6 +37,11 @@ const API = {
   postSignin : (body) => $http.post('/user/signin', body),
 
   /**
+   * 회원 정보 수정
+   */
+  putUser : (user_id, body) => $http.put(parameterToPath('/user/:user_id', { user_id }), body),
+
+  /**
    * 선물하기
    * --
    */
@@ -205,6 +210,12 @@ const API = {
    * --
    */
   getCounselorProduct : (counselor_id) => $http.get(parameterToPath('/counselor/production/:counselor_id', {counselor_id})),
+  
+  /**
+   * 상담사 별 상품 전체 조회
+   * --
+   */
+  getCounselorProducts : () => $http.get('/counselor/all/product'),
 
   /**
    * 관리자에게 문의하기

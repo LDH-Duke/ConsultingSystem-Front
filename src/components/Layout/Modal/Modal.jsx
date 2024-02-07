@@ -1,7 +1,7 @@
 import React from 'react'
 import { Modal, Button } from 'antd'
 
-export const Modal = () => {
+export const ModalComponent = () => {
     return (
         <div className='modeal-container'>
             <Modal />

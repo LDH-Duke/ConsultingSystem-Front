@@ -1,0 +1,54 @@
+.pwinfo-container {
+    display: flex;
+
+    border: 1px solid;
+    border-radius: 5px;
+
+    padding: 0.5rem;
+
+    width: 100%;
+    height: 100%;
+}
+
+.pwinfo-container .pwinfo-title {
+    display: flex;
+    flex: 1;
+}
+
+.pwinfo-container .pwinfo-form {
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.pwinfo-container .pwinfo-input {
+    display: flex;
+
+    margin-bottom: 2rem;
+}
+
+.pwinfo-container .pwinfo-input span {
+    display: flex;
+
+    width: 20%;
+    
+    align-items: center;
+}
+
+.pwinfo-container .pwinfo-input input {
+    display: flex;
+
+    width: 80%;
+    height: 3vh;
+}
+
+.pwinfo-container .pwinfo-button {
+    display: flex;
+    justify-content: right;
+}
+
+.pwinfo-container .pwinfo-button button {
+    width: 10%;
+}

@@ -6,11 +6,12 @@ import styled from "styled-components";
 import { MyMenuInfo } from "./components/MyMenuInfo";
 
 export const MyMenuPresenter = ({
+    userInfo,
     myMenuItems
 }) => {
     return (
         <Layout nav={1}>
-            <MyMenuInfo myMenuItems={myMenuItems}/>
+            <MyMenuInfo userInfo={userInfo} myMenuItems={myMenuItems}/>
         </Layout>
     )
 }

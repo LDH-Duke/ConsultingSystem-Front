@@ -1,3 +1,4 @@
+
 import React from 'react'
 import './CommonBox.css'
 import { Link } from 'react-router-dom'
@@ -27,18 +28,21 @@ const CommonBoxTitle = styled.span`
 `
 
 
-export const CommonBox = () => {
-    const item = {
-        name: 'detail',
-        title: '상세 페이지',
-        url: '/counselor/detail',
-        img: ''
-    }
+export const CommonBox = (props) => {
+    // const item = {
+    //     name: 'detail',
+    //     title: '상세 페이지',
+    //     url: '/counselor/detail',
+    //     img: ''
+    // }
+    
+    const {url, title} = props
+
     return (
         <CommonBoxContainer>
-            <CommonBoxLink to={item.url}>
+            <CommonBoxLink to={url}>
                 <CommonBoxTitle>
-                    {item.title}
+                    {title}
                 </CommonBoxTitle>
             </CommonBoxLink>
         </CommonBoxContainer>

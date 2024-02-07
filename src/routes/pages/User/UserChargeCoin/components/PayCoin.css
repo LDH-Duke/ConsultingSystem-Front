@@ -13,6 +13,8 @@
 
 .pay-method-buttons {
     display: flex;
+
+    gap: 1rem;
 }
 
 .pay-method-buttons button {

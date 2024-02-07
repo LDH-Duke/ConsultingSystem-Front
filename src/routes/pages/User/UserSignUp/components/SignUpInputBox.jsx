@@ -75,13 +75,13 @@ export const SignUpInputBox = ({
             />
             
             <InputComponent
-                name='닉네임'
+                name='이름'
                 type='text'
-                placeholder='닉네임을 입력해주세요'
+                placeholder='이름을 입력해주세요'
                 onChange={(e) => {
-                    const nickname = e.target.value;
+                    const name = e.target.value;
                     setUserInfo(info => {
-                        return {...info, nickname};
+                        return {...info, name};
                     });
                 }}
             />

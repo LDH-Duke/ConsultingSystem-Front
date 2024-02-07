@@ -21,13 +21,13 @@ const SignUpContainer = ({
     email: '',
     pw: '',
     pw_check: '',
-    nickname: '',
+    name: '',
     phone: '',
   });
 
 
   useEffect(() => {
-    setCanSignup(isCheckEmail && isCheckPw && isDoubleCheck && userInfo.nickname.length && isPhone);
+    setCanSignup(isCheckEmail && isCheckPw && isDoubleCheck && userInfo.name.length && isPhone);
   }, [isCheckEmail, isCheckPw, isDoubleCheck, isPhone])
 
   /**
@@ -66,17 +66,15 @@ const SignUpContainer = ({
 
     const result = await API.postUserDoublecheck(body);
 
-    switch(result) {
-      case 409:
-        // 중복확인 실패
-        // 실패 알림
+    if (result.status === 409) {
+      // 중복확인 실패
+      // 실패 알림
 
-        break;
-      default:
-        // 중복확인 성공
-        setIsDoubleCheck(true);
-        break;
+      return;
     }
+      
+    // 중복확인 성공
+    setIsDoubleCheck(true);
   };
 
   /**
@@ -98,7 +96,9 @@ const SignUpContainer = ({
   const SignUp = async () => {
     const body = {
       email: userInfo.email,
-      pw: userInfo.pw
+      pw: userInfo.pw,
+      name: userInfo.name,
+      phone: userInfo.phone,
     };
 
     // const result = isUser ? await API.postSignUp(body) : await API.postCounselorSignUp(body);
@@ -111,7 +111,7 @@ const SignUpContainer = ({
         break;
       default:
         // 회원가입 성공
-        navigate('/user/signin');
+        navigate('/signin');
         break;
     }
   }

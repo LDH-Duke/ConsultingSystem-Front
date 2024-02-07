@@ -9,8 +9,8 @@ const MyMenuContainer = ({
 }) => {
   const myMenuItems = [
     {
-      title: '상담내역',
-      path: '/',
+      title: '즐겨찾기',
+      path: '/user/favorite',
     },
     {
       title: '상품\n구매내역',
@@ -34,7 +34,7 @@ const MyMenuContainer = ({
     },
     {
       title: '나의 1:1문의',
-      path: '/',
+      path: '/askadmin/user',
     },
     {
       title: '코인 자동충전',
@@ -46,8 +46,33 @@ const MyMenuContainer = ({
     },
   ]
   
+  const [userInfo, setUserInfo] = useState({});
+
+  useEffect(() => {
+    (
+      async() => {
+        const id = cookie.getCookie('id');
+
+        if (id === null) {
+          //로그인 필요
+
+          return;
+        }
+
+        const result = await API.getUser(id);
+
+        if (result.status === 409) {
+          // 정보 없음
+          return;
+        }
+
+        setUserInfo(result.data);
+      }
+    )();
+  }, [])
+
   return (
-    <MyMenuPresenter myMenuItems={myMenuItems}/>
+    <MyMenuPresenter userInfo={userInfo} myMenuItems={myMenuItems}/>
   )
 }
 

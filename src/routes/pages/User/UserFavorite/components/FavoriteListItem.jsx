@@ -12,16 +12,16 @@ export const FavoriteListItem = ({
         <>
             {
                 favoriteList &&
-                favoriteList.map(favoriteInfo => (
+                favoriteList.map((favoriteInfo) => (
                     <div className="favorite-list-item">
                         <img src={example} alt="상담사 이미지" />
                         <div className="favorite-list-item-infos">
                             <div className="favorte-list-item-info">
-                                <span className="favorite-list-item-category">{favoriteInfo.category}</span>
-                                <span className="favorite-list-item-name">{favoriteInfo.name}</span>
+                                <span className="favorite-list-item-category">{favoriteInfo['user.name']}</span>
+                                <span className="favorite-list-item-name">{favoriteInfo['counselor.nickname']}</span>
                             </div>
                             <Button
-                                onClick={() => {deleteFavorite(favoriteInfo.counselor_id)}}
+                                onClick={() => {deleteFavorite(favoriteInfo.counselor_id, favoriteInfo.id)}}
                             >
                                 취소
                             </Button>

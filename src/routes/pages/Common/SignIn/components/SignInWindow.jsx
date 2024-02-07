@@ -25,7 +25,7 @@ export const SignInWindow = ({
             <div className="signin-container">
                 {/* 토글 형식 */}
                 <div className="user-toggle">
-                    <span>회원 로그인</span>
+                    <span>상담사 로그인</span>
                     <Switch onChange={toggleUserSignIn}/>
                 </div>
 

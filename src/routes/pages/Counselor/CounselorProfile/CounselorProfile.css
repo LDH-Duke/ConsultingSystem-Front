@@ -1,0 +1,13 @@
+.counselorprofile-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+}
+
+.counselorprofile-container .counselorprofile-wrap {
+    display: flex;
+
+    margin-bottom: 2rem;
+}
