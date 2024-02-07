@@ -68,8 +68,8 @@ const Router = () => {
         <Route exact path='/user/mymenu' element={<UserMyMenu setCookies={setCookies} />} />
         <Route exact path='/user/profile' element={<UserProfile setCookies={setCookies} />} />
         <Route exact path='/user/review' element={<UserReview setCookies={setCookies} />} />
-        <Route exact path='/user/writereview' element={<UserWriteReview setCookies={setCookies} />} />
-        <Route exact path='/user/updatereview/:review_item_id' element={<UserUpdateReview setCookies={setCookies} />} />
+        <Route exact path='/user/review/write' element={<UserWriteReview setCookies={setCookies} />} />
+        <Route exact path='/user/review/update/:review_item_id' element={<UserUpdateReview setCookies={setCookies} />} />
 
         {/* 상담사 */}
         <Route exact path='/counselor' element={<CounselorMain />} />

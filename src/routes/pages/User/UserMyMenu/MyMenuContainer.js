@@ -38,7 +38,7 @@ const MyMenuContainer = ({
     },
     {
       title: '후기 작성',
-      path: '/user/writereview',
+      path: '/user/review/write',
     },
     {
       title: '작성 후기 조회',

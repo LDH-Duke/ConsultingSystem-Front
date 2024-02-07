@@ -1,18 +1,22 @@
 import React from "react";
 import "./WriteReview.css";
+import { Rate } from "antd";
 
 const WriteReview = ({
     isUpdate,
+    
     updateReview,
     deleteReview,
-
     writeReview,
 
     setContent,
     content,
-    setScore,
 
-    goBack,
+    setScore,
+    score,
+    handleScore,
+
+    goBack
 }) => {
     return (
         <div className="write-review-container">
@@ -32,6 +36,10 @@ const WriteReview = ({
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                     />
+                    <Rate
+                        onChange={handleScore}
+                        value={score}
+                    />
                 </div>
                 <div className="write-review-button">
                     {
@@ -41,7 +49,7 @@ const WriteReview = ({
                                 <button onClick={deleteReview}>삭제하기</button>
                             </>
                             :
-                            <button onClick={() => { writeReview() }}>제출하기</button>
+                            <button onClick={writeReview}>제출하기</button>
                     }
 
                 </div>

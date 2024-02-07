@@ -8,6 +8,8 @@ export const UserWriteReviewPresenter = ({
     setContent,
     content,
     setScore,
+    score,
+    handleScore,
     goBack,
 }) => {
     return (
@@ -18,6 +20,8 @@ export const UserWriteReviewPresenter = ({
                 setContent={setContent}
                 content={content}
                 setScore={setScore}
+                score={score}
+                handleScore={handleScore}
                 goBack={goBack}
             />
         </Layout>

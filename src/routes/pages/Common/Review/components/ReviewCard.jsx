@@ -1,6 +1,7 @@
 import React from "react";
 import "./ReviewCard.css";
 import { Link } from "react-router-dom";
+import { Rate } from "antd";
 
 const ReviewCard = ({
     reviews,
@@ -12,9 +13,8 @@ const ReviewCard = ({
             <ul>
                 {
                     reviews.map((review, idx) => {
-                        console.log(review)
-                        return (
-                            
+
+                        return (                            
                             <li className={`reivew-item ${idx}`} key={`reivew-item ${idx}`}>
                                 <div className="review-counselor">
                                     <div className="review-counselor-info">
@@ -29,7 +29,9 @@ const ReviewCard = ({
                                         isShowButton
                                         ?
                                         <div className="review-button">
-                                            <Link to={`/user/review/update/${review['review_items.id']}`}><button>수정하기</button></Link>
+                                            <Link to={`/user/review/update/${review['review_items.id']}`}>
+                                                <button>수정하기</button>
+                                            </Link>
                                         </div>
                                         :
                                         <></>
@@ -37,7 +39,13 @@ const ReviewCard = ({
                                 </div>
                                 <div className="review-user">
                                     <div className="user-name">
-                                        <span>{review['review_items.user.name']}</span>
+                                        <div>
+                                            <span>{review['review_items.user.name']}</span>
+                                            <Rate 
+                                                disabled
+                                                defaultValue={review['review_items.score']} // css 수정 필요
+                                            />
+                                        </div>
                                         <span>{review.createdAt}</span>
                                     </div>
                                     <div className="user-content">

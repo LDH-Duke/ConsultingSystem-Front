@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { UserUpdateReviewPresenter } from "./UserUpdateReviewPresenter";
 import { useNavigate, useParams } from "react-router-dom";
 import { API } from "../../../../api";
@@ -8,6 +8,8 @@ const UserUpdateReviewContainer = () => {
     const { review_item_id } = useParams();
 
     const [content, setContent] = useState('');
+
+
 
     /**
      * 후기 수정
