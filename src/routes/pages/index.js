@@ -48,6 +48,9 @@ export { default as UserFavorite } from './User/UserFavorite';
 export { default as UserDonation } from './User/UserDonation';
 export { default as UserMyMenu } from './User/UserMyMenu';
 export { default as UserProfile } from './User/UserProfile';
+export { default as UserReview } from './User/UserReview';
+export { default as UserWriteReview } from './User/UserWriteReview';
+export { default as UserUpdateReview } from './User/UserUpdateReview';
 
 // 상담사
 export { default as CounselorSignUp } from './Counselor/CounselorSignUp';
@@ -55,9 +58,4 @@ export { default as CounselorMain } from './Counselor/CounselorMain';
 export { default as CounselorProfile } from './Counselor/CounselorProfile';
 export { default as CounselorCoin } from './Counselor/CounselorCoin';
 export { default as CounselorAddProduct } from './Counselor/CounselorAddProduct';
-
-
-
-export { default as UserReview } from './User/UserReview';
-export { default as UserWriteReview } from './User/UserWriteReview';
-export { default as UserUpdateReview } from './User/UserUpdateReview';
+export { default as CounselorConsultingHistory } from './Counselor/CounselorConsultingHistory';

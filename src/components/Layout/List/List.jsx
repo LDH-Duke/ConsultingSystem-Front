@@ -1,6 +1,7 @@
 import React from 'react'
 import { Modal, Button } from 'antd';
 import { InputComponent } from '../Input/InputComponent';
+import { Link } from 'react-router-dom';
 import './List.css'
 
 export const List = ({
@@ -55,9 +56,11 @@ export const List = ({
                 counselors.map((counselor, idx) => {
                     return (
                         <div className={`list ${idx}`} key={`list ${idx}`}>
-                            <div className='list-img'>
-                                <img src={counselor['counselor.img']} alt='이미지'></img>
-                            </div>
+                            <Link to={`/counselor/${counselor['counselor.id']}`} className='list-detail'>
+                                <div className='list-img'>
+                                    <img src={counselor['counselor.img']} alt='이미지'></img>
+                                </div>
+                            </Link>
                             <div className='list-info'>
                                 <span>{counselor['counselor.nickname']}</span>
                                 <span>{counselor.price}</span>
@@ -77,39 +80,37 @@ export const List = ({
                                 <button className='list-btn' onClick={() => modalOpen(counselor)}>상담하기</button>
                                 <button className='list-btn' onClick={() => { addFavorite(counselor.counselor_id) }}>좋아요</button>
                             </div>
-                            <div className="list-modal">
-                                <Modal
-                                    title='상담하기'
-                                    open={isModalOpen}
-                                    onOk={handleOk}
-                                    okButtonProps={{
-                                        style: {
-                                            display: 'none'
-                                        }
-                                    }}
-                                    onCancel={handleCancel}
-                                    cancelText='닫기'
-                                >
-                                    <div className="counselor-infos">
-                                        <div className="counselor-info">
-                                            <span>예명</span>
-                                            <InputComponent
-                                                isReadonly={true}
-                                                value={selectCounselor['counselor.name']}
-                                            />
-                                        </div>
-                                        <div className="counselor-info">
-                                            <span>가격</span>
-                                            <InputComponent
-                                                isReadonly={true}
-                                                value={selectCounselor.price}
-                                            />
-                                        </div>
+                            <Modal
+                                title='상담하기'
+                                open={isModalOpen}
+                                onOk={handleOk}
+                                okButtonProps={{
+                                    style: {
+                                        display: 'none'
+                                    }
+                                }}
+                                onCancel={handleCancel}
+                                cancelText='닫기'
+                            >
+                                <div className="counselor-infos">
+                                    <div className="counselor-info">
+                                        <span>예명</span>
+                                        <InputComponent
+                                            isReadonly={true}
+                                            value={selectCounselor['counselor.name']}
+                                        />
                                     </div>
-                                    <Button onClick={connectConsultingV1}>상담 V1 연결</Button>
-                                    <Button onClick={connectConsultingV2}>상담 V2 연결</Button>
-                                </Modal>
-                            </div>
+                                    <div className="counselor-info">
+                                        <span>가격</span>
+                                        <InputComponent
+                                            isReadonly={true}
+                                            value={selectCounselor.price}
+                                        />
+                                    </div>
+                                </div>
+                                <Button onClick={connectConsultingV1}>상담 V1 연결</Button>
+                                <Button onClick={connectConsultingV2}>상담 V2 연결</Button>
+                            </Modal>
                         </div>
                     )
                 })

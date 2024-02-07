@@ -9,9 +9,9 @@ import cookie from '../cookie';
 // 공통 페이지
 import { Error, Main, Search, Review, SignIn, CounselorDetail, Sitemap, ConsultingV1, ConsultingV2, AskAdmin } from './pages'; 
 // 회원 페이지
-import { UserReview, UserUpdateReview, UserWriteReview, UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages'; 
+import { UserUpdateReview, UserWriteReview, UserReview, UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages'; 
 // 상담사 페이지
-import { CounselorSignUp, CounselorAddProduct, CounselorProfile, CounselorCoin, CounselorMain } from './pages';
+import { CounselorSignUp, CounselorAddProduct, CounselorProfile, CounselorCoin, CounselorMain, CounselorConsultingHistory } from './pages';
 
 const Router = () => {
   const navigate = useNavigate();
@@ -68,8 +68,8 @@ const Router = () => {
         <Route exact path='/user/mymenu' element={<UserMyMenu setCookies={setCookies} />} />
         <Route exact path='/user/profile' element={<UserProfile setCookies={setCookies} />} />
         <Route exact path='/user/review' element={<UserReview setCookies={setCookies} />} />
-        <Route exact path='/user/review/write/:review_item_id' element={<UserWriteReview setCookies={setCookies} />} />
-        <Route exact path='/user/review/update/:review_item_id' element={<UserUpdateReview setCookies={setCookies} />} />
+        <Route exact path='/user/writereview' element={<UserWriteReview setCookies={setCookies} />} />
+        <Route exact path='/user/updatereview/:review_item_id' element={<UserUpdateReview setCookies={setCookies} />} />
 
         {/* 상담사 */}
         <Route exact path='/counselor' element={<CounselorMain />} />
@@ -77,6 +77,7 @@ const Router = () => {
         <Route exact path='/counselor/addproduct' element={<CounselorAddProduct />} />
         <Route exact path='/counselor/coin' element={<CounselorCoin />} />
         <Route exact path='/counselor/profile' element={<CounselorProfile  />} />
+        <Route exact path='/counselor/consultinghistory' element={<CounselorConsultingHistory />} />
         {/* <Route exact path="/counselor/:counselor_id" element={<CounselorDetail />} />
         <Route exact path="/favorite/:user_id" element={<Favorite navigate={navigate} />} /> */}
         {/* <Route exact path="/editprofile" element={<EditProfile />} /> */}

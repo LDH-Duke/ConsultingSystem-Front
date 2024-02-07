@@ -1,46 +1,67 @@
 import React, { useState } from "react";
 import { UserUpdateReviewPresenter } from "./UserUpdateReviewPresenter";
+import { useNavigate, useParams } from "react-router-dom";
 import { API } from "../../../../api";
-import { useParams } from "react-router-dom";
 
 const UserUpdateReviewContainer = () => {
+    const navigate = useNavigate();
+    const { review_item_id } = useParams();
 
     const [content, setContent] = useState('');
-    const [score, setScore] = useState(0);
 
-    const { review_id } = useParams();
-
-    const updateReview = async() => {
-
-        console.log('call updateReview');
-
-        const data = {
-            review_id: review_id,
-            content: content,
-            score: score
+    /**
+     * 후기 수정
+     */
+    const updateReview = async () => {
+        const body = {
+            content,
+            score: 0,
         }
 
-        const result = await API.updateReview(data);
+        const result = await API.putReview(review_item_id, body);
+
+        if (result.status === 409) {
+            // 리뷰 수정 실패
+
+            return;
+        }
+
+        // 리뷰 수정 성공
+        navigate(-1);
     }
 
-    const deleteReview = async() => {
+    /**
+     * 후기 삭제
+     */
+    const deleteReview = async () => {
+        const result = await API.deleteReview(review_item_id);
 
-        console.log('call deleteReview');
+        if (result.status === 409) {
+            // 후기 삭제 실패
 
-        const result = await API.deleteReview(review_id);
+            return;
+        }
+
+        // 후기 삭제 성공
+        navigate(-1);
+    }
+
+    /**
+     * 뒤로가기
+     */
+    const goBack = () => {
+        navigate(-1);
     }
 
     return (
-
         <UserUpdateReviewPresenter
             content={content}
             setContent={setContent}
 
-            score={score}
-            setScore={setScore}
-
             updateReview={updateReview}
             deleteReview={deleteReview}
+
+            goBack={goBack}
         />
     )
 }

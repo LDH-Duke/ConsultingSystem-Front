@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const ReviewCard = ({
     reviews,
+    reviewUpdate,
     isShowButton,
 }) => {
     return (
@@ -11,6 +12,7 @@ const ReviewCard = ({
             <ul>
                 {
                     reviews.map((review, idx) => {
+                        console.log(review)
                         return (
                             
                             <li className={`reivew-item ${idx}`} key={`reivew-item ${idx}`}>
