@@ -17,9 +17,7 @@ export const MainPresenter = ({
     
     connectConsultingV1,
     connectConsultingV2,
-}) => {
-    console.log(counselors)
-    
+}) => {    
     return (
         <Layout nav={1}>
             <Banner isSignIn={isSignIn}/>

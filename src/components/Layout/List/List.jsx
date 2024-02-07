@@ -90,12 +90,21 @@ export const List = ({
                                     onCancel={handleCancel}
                                     cancelText='닫기'
                                 >
-                                    <div className="counselor-info">
-                                        <span>가격</span>
-                                        <InputComponent
-                                            isReadonly={true}
-                                            value={selectCounselor.price}
-                                        />
+                                    <div className="counselor-infos">
+                                        <div className="counselor-info">
+                                            <span>예명</span>
+                                            <InputComponent
+                                                isReadonly={true}
+                                                value={selectCounselor['counselor.name']}
+                                            />
+                                        </div>
+                                        <div className="counselor-info">
+                                            <span>가격</span>
+                                            <InputComponent
+                                                isReadonly={true}
+                                                value={selectCounselor.price}
+                                            />
+                                        </div>
                                     </div>
                                     <Button onClick={connectConsultingV1}>상담 V1 연결</Button>
                                     <Button onClick={connectConsultingV2}>상담 V2 연결</Button>

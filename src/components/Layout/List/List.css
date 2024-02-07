@@ -118,20 +118,26 @@
     gap: 1rem;
 }
 
-.ant-modal-body .counselor-info {
+.ant-modal-body .counselor-infos {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    flex-direction: column;
     width: 100%;
 
     padding-left: 1rem;
 
-    span {
-        flex: 1;
-        font-weight: bold;
-    }
+    .counselor-info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
 
-    div {
-        flex: 9;
+        span {
+            flex: 1;
+            font-weight: bold;
+        }
+
+        div {
+            flex: 9;
+        }
     }
 }

@@ -22,12 +22,17 @@ const Router = () => {
     cookie.setCookie('id', data.data.id, {
       path: '/',
       secure: '/',
-    })
+    });
 
     cookie.setCookie('token', data.token, {
       path: '/',
       secure: '/',
-    })
+    });
+
+    cookie.setCookie('userType', data.data.userType, {
+      path: '/',
+      secure: '/',
+    });
 
     setHasCookies(true);
   }
