@@ -58,3 +58,4 @@ export { default as CounselorMain } from './Counselor/CounselorMain';
 export { default as CounselorProfile } from './Counselor/CounselorProfile';
 export { default as CounselorCoin } from './Counselor/CounselorCoin';
 export { default as CounselorAddProduct } from './Counselor/CounselorAddProduct';
+export { default as CounselorConsultingHistory } from './Counselor/CounselorConsultingHistory';

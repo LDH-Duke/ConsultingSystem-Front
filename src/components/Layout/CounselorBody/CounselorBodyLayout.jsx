@@ -11,7 +11,7 @@ export const CounselorBodyLayout = () => {
                 <Col xl={12}><CommonBox/></Col>
             </Row>
             <Row>
-                <Col xl={24}><CommonBox/></Col>
+                <Col xl={24}><CommonBox title={'상담 내역'} url={'/counselor/consultinghistory'}/></Col>
             </Row>
             <Row gutter={8}>
                 <Col xl={8}><CommonBox title={'프로필 수정'} url={'/counselor/profile'}/></Col>

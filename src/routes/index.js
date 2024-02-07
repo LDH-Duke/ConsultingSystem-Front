@@ -11,7 +11,7 @@ import { Error, Main, Search, Review, SignIn, CounselorDetail, Sitemap, Consulti
 // 회원 페이지
 import { UserUpdateReview, UserWriteReview, UserReview, UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages'; 
 // 상담사 페이지
-import { CounselorSignUp, CounselorAddProduct, CounselorProfile, CounselorCoin, CounselorMain } from './pages';
+import { CounselorSignUp, CounselorAddProduct, CounselorProfile, CounselorCoin, CounselorMain, CounselorConsultingHistory } from './pages';
 
 const Router = () => {
   const navigate = useNavigate();
@@ -77,6 +77,7 @@ const Router = () => {
         <Route exact path='/counselor/addproduct' element={<CounselorAddProduct />} />
         <Route exact path='/counselor/coin' element={<CounselorCoin />} />
         <Route exact path='/counselor/profile' element={<CounselorProfile  />} />
+        <Route exact path='/counselor/consultinghistory' element={<CounselorConsultingHistory />} />
         {/* <Route exact path="/counselor/:counselor_id" element={<CounselorDetail />} />
         <Route exact path="/favorite/:user_id" element={<Favorite navigate={navigate} />} /> */}
         {/* <Route exact path="/editprofile" element={<EditProfile />} /> */}
