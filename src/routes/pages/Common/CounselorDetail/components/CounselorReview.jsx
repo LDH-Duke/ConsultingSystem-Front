@@ -1,16 +1,14 @@
 import React from "react";
 import "./CounselorReview.css";
-import ReviewList from "../../Review/components/ReviewList";
+import ReviewCard from "../../Review/components/ReviewCard";
 
 const CounselorReview = ({
-    reviews,
-    counselor
+    reviews
 }) => {
     return (
         <div>
-            <ReviewList
+            <ReviewCard
                 reviews={reviews}
-                counselor={counselor}
             />
         </div>
     )

@@ -43,3 +43,6 @@ export { default as UserFavorite } from './User/UserFavorite';
 export { default as UserDonation } from './User/UserDonation';
 export { default as UserMyMenu } from './User/UserMyMenu';
 export { default as UserProfile } from './User/UserProfile';
+export { default as UserReview } from './User/UserReview';
+export { default as UserWriteReview } from './User/UserWriteReview';
+export { default as UserUpdateReview } from './User/UserUpdateReview';

@@ -148,8 +148,15 @@ const API = {
   
   /**
    * 전체 후기 조회
+   * --
    */
   getReviews : () => $http.get('/review'),
+
+  /**
+   * 회원 단일 후기 조회
+   * --
+   */
+  getUserReviews : (user_id) => $http.get(parameterToPath('/review/user/:user_id', {user_id})),
 
   /**
    * 프로필 수정

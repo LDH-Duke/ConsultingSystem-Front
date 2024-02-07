@@ -2,13 +2,11 @@
     width: 100%;
     height: auto;
     padding: 0.5rem;
-    background-color: black;
 }
 
 .counselor-tab-container .counselor-tab-wrap {
     width: 100%;
     height: 100%;
-    background-color: gray;
     display: flex;
     align-items: center;
 }
@@ -16,7 +14,6 @@
 .counselor-tab-container .tab-box {
     width: 100%;
     height: 100%;
-    background-color: beige;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,15 +22,21 @@
 
 .tab-box .tab-title-box {
     width: 100%;
-    background-color: aqua;
     font-size: 1.125rem;
     font-weight: bold;
+    padding-bottom: 1rem;
 }
 
 .tab-box .tab-content-box {
     width: 100%;
     height: 100%;
-    background-color: blue;
-    margin: 1rem;
     font-size: 0.75;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid #e0e3e8;
+    background-color: #e0e3e8;
+}
+
+.ant-tabs-tab-active {
+    color: var(--sub-bg-color);
 }

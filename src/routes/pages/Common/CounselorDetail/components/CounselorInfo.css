@@ -61,8 +61,13 @@
 }
 
 .counselor-info-box .counselor-links a {
-    background-color: var(--sub-bg-color);
+    background-color: white;
     padding: 1.25rem 1rem;
     border-radius: 0.5rem;
-    color: white;
+    color: var(--body-color);
+    border: 1px solid var(--sub-bg-color);
+}
+
+.counselor-links a:hover {
+    background-color: var(--sub-bg-color);
 }

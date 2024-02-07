@@ -1,16 +1,16 @@
 import React from "react";
-import "./Review.css";
+import "./UserReview.css";
 import Layout from "../../../../components/Layout/Layout";
-import ReviewCard from "./components/ReviewCard";
+import ReviewCard from "../../Common/Review/components/ReviewCard";
 
-export const ReviewPresenter = ({
+export const UserReviewPresenter = ({
     reviews
 }) => {
     return (
         <Layout nav={1}>
             <ReviewCard
                 reviews={reviews}
-                isShowButton={false}
+                isShowButton={true}
             />
         </Layout>
     )

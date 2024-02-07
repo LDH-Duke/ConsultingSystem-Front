@@ -9,7 +9,7 @@ import cookie from '../cookie';
 // 공통 페이지
 import { Search, Review, SignIn, CounselorDetail, Sitemap } from './pages'; 
 // 회원 페이지
-import { UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages'; 
+import { UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite, UserReview, UserWriteReview, UserUpdateReview } from './pages'; 
 
 const Router = () => {
   const navigate = useNavigate();
@@ -56,6 +56,9 @@ const Router = () => {
         <Route exact path='/user/donation' element={<UserDonation setCookies={setCookies} />} />
         <Route exact path='/user/mymenu' element={<UserMyMenu setCookies={setCookies} />} />
         <Route exact path='/user/profile' element={<UserProfile setCookies={setCookies} />} />
+        <Route exact path='/user/review' element={<UserReview setCookies={setCookies} />} />
+        <Route exact path='/user/writereview' element={<UserWriteReview setCookies={setCookies} />} />
+        <Route exact path='/user/updatereview' element={<UserUpdateReview setCookies={setCookies} />} />
 
         {/* 상담사 */}
         <Route exact path='/counselor' element={< TestCounselorMainPresenter />} />

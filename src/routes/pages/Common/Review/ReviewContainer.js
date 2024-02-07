@@ -11,18 +11,16 @@ const ReviewContainer = () => {
         (async() => {
 
             /**
-             * 후기 전체 조회
-             */
-            const reviewsData = await API.getReviews();
-            setReviews(reviewsData.data);
-            console.log(reviewsData.data)
-
-            /**
              * 상담사 전체 조회
              */
             const counselorsData = await API.getCounselors();
             setCounselors(counselorsData.data);
-            console.log(counselorsData.data);
+
+            /**
+             * 후기 전체 조회
+             */
+            const reviewsData = await API.getReviews();
+            setReviews(reviewsData.data);
             
         })();
     }, [])
