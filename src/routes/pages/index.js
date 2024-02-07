@@ -40,6 +40,7 @@ export { default as Review } from './Common/Review';
 export { default as ConsultingV1 } from './Common/ConsultingV1';
 export { default as ConsultingV2 } from './Common/ConsultingV2';
 export { default as AskAdmin } from './Common/AskAdmin';
+export { default as UpdateAskAdmin } from './Common/UpdateAskAdmin';
 
 // 회원
 export { default as UserSignUp } from './User/UserSignUp';

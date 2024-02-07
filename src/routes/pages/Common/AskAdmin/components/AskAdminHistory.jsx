@@ -3,11 +3,14 @@ import { AskTable } from "./AskTable";
 import "./AskAdminHistory.css";
 
 export const AskAdminHistory = ({
-    asks
+    asks,
+    onDelete
 }) => {
     return(
         <div className="askadminhistory-container">
-            <AskTable asks = {asks}/>
+            <AskTable
+            onDelete = {onDelete} 
+            asks = {asks}/>
         </div>
     )
 }

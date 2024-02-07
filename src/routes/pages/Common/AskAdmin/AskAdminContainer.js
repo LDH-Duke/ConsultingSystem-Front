@@ -9,7 +9,6 @@ const AskAdminContainer = () => {
 
     const [content, setContent] = useState();
     const [asks, setAsks] = useState([]);
-    const [check, setCheck] = useState(false)
 
     const onSubmit = async() => {
         const body = {
@@ -18,6 +17,11 @@ const AskAdminContainer = () => {
 
         const askadmininfo = await API.postAskAdmin(body);
     }
+
+    const onDelete = async(ask_id) => {
+        const delteAskInfo = await API.deleteAsk(ask_id);
+    }
+
 
     useEffect (() => {
         (async () => {
@@ -29,14 +33,20 @@ const AskAdminContainer = () => {
                 await API.getAskForCounselor(id) :
                 await API.getAskForUser(id);
             
-                console.log(type)
             setAsks(getAdminHistory.data);
         })();
     }, [])
 
 
     return(
-        <AskAdminPresenter onSubmit = {onSubmit} setContent = {setContent} asks = {asks}/>
+        <AskAdminPresenter 
+        onSubmit = {onSubmit}
+        onDelete = {onDelete}
+        setContent = {setContent} 
+        asks = {asks} 
+
+
+        />
     )
 }
 
