@@ -9,7 +9,7 @@ import cookie from '../cookie';
 // 공통 페이지
 import { Error, Main, Search, Review, SignIn, CounselorDetail, Sitemap, ConsultingV1, ConsultingV2, AskAdmin } from './pages'; 
 // 회원 페이지
-import { UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages'; 
+import { UserReview, UserUpdateReview, UserWriteReview, UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages'; 
 // 상담사 페이지
 import { CounselorSignUp, CounselorAddProduct, CounselorProfile, CounselorCoin, CounselorMain } from './pages';
 
@@ -68,8 +68,8 @@ const Router = () => {
         <Route exact path='/user/mymenu' element={<UserMyMenu setCookies={setCookies} />} />
         <Route exact path='/user/profile' element={<UserProfile setCookies={setCookies} />} />
         <Route exact path='/user/review' element={<UserReview setCookies={setCookies} />} />
-        <Route exact path='/user/writereview' element={<UserWriteReview setCookies={setCookies} />} />
-        <Route exact path='/user/updatereview' element={<UserUpdateReview setCookies={setCookies} />} />
+        <Route exact path='/user/review/write/:review_item_id' element={<UserWriteReview setCookies={setCookies} />} />
+        <Route exact path='/user/review/update/:review_item_id' element={<UserUpdateReview setCookies={setCookies} />} />
 
         {/* 상담사 */}
         <Route exact path='/counselor' element={<CounselorMain />} />

@@ -1,5 +1,6 @@
 import React from "react";
 import "./ReviewCard.css";
+import { Link } from "react-router-dom";
 
 const ReviewCard = ({
     reviews,
@@ -11,6 +12,7 @@ const ReviewCard = ({
                 {
                     reviews.map((review, idx) => {
                         return (
+                            
                             <li className={`reivew-item ${idx}`} key={`reivew-item ${idx}`}>
                                 <div className="review-counselor">
                                     <div className="review-counselor-info">
@@ -25,7 +27,7 @@ const ReviewCard = ({
                                         isShowButton
                                         ?
                                         <div className="review-button">
-                                            <button>수정하기</button>
+                                            <Link to={`/user/review/update/${review['review_items.id']}`}><button>수정하기</button></Link>
                                         </div>
                                         :
                                         <></>
