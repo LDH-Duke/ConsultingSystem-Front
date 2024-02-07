@@ -21,7 +21,7 @@ export const FavoriteListItem = ({
                                 <span className="favorite-list-item-name">{favoriteInfo['counselor.nickname']}</span>
                             </div>
                             <Button
-                                onClick={() => {deleteFavorite(favoriteInfo.counselor_id, favoriteInfo.id)}}
+                                onClick={() => {deleteFavorite(favoriteInfo.counselor_id)}}
                             >
                                 취소
                             </Button>

@@ -17,25 +17,39 @@ export const CounselorDetailPresenter = ({
     counselor,
     counselor_id,
     reviews,
-    goBack
+    goBack,
+
+    isModalOpen,
+    modalOpen,
+    handleCancel,
+    modalItems,
+    modalButtons,
 }) => {
     return (
         <Layout nav={1}>
             <CounselorDetailContainer>
                 {
                     counselor ?
-                    <>
-                        <CounselorInfo counselor={counselor}/>
-                        <CounselorIntro
-                            counselor={counselor}
-                            counselor_id={counselor_id}
-                            reviews={reviews}
-                        />
-                    </> :
-                    <div className="non-counselor">
-                        해당 상담사가 존재하지 않습니다.
-                        <button onClick={goBack}>돌아가기</button>
-                    </div>
+                        <>
+                            <CounselorInfo
+                                counselor={counselor}
+
+                                isModalOpen={isModalOpen}
+                                modalOpen={modalOpen}
+                                handleCancel={handleCancel}
+                                modalItems={modalItems}
+                                modalButtons={modalButtons}
+                            />
+                            <CounselorIntro
+                                counselor={counselor}
+                                counselor_id={counselor_id}
+                                reviews={reviews}
+                            />
+                        </> :
+                        <div className="non-counselor">
+                            해당 상담사가 존재하지 않습니다.
+                            <button onClick={goBack}>돌아가기</button>
+                        </div>
                 }
             </CounselorDetailContainer>
         </Layout>
