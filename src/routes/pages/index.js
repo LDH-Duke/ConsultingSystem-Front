@@ -39,6 +39,7 @@ export { default as Search } from './Common/Search';
 export { default as Review } from './Common/Review';
 export { default as ConsultingV1 } from './Common/ConsultingV1';
 export { default as ConsultingV2 } from './Common/ConsultingV2';
+export { default as AskAdmin } from './Common/AskAdmin';
 
 // 회원
 export { default as UserSignUp } from './User/UserSignUp';
@@ -50,15 +51,9 @@ export { default as UserProfile } from './User/UserProfile';
 
 // 상담사
 export { default as CounselorSignUp } from './Counselor/CounselorSignUp';
-
-/**
- * NEW
- */
-
 export { default as CounselorMain } from './Counselor/CounselorMain';
 export { default as CounselorProfile } from './Counselor/CounselorProfile';
 export { default as CounselorCoin } from './Counselor/CounselorCoin';
-
-export { default as AskAdmin } from './Common/AskAdmin';
 export { default as CounselorAddProduct } from './Counselor/CounselorAddProduct';
+
 

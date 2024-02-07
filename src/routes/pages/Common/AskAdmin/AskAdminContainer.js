@@ -22,13 +22,14 @@ const AskAdminContainer = () => {
     useEffect (() => {
         (async () => {
             const id = cookie.getCookie('id')
+            const type = cookie.getCookie('userType')
     
             const getAdminHistory = 
                 params === "counselor" ?
                 await API.getAskForCounselor(id) :
                 await API.getAskForUser(id);
             
-                console.log(params, check)
+                console.log(type)
             setAsks(getAdminHistory.data);
         })();
     }, [])
