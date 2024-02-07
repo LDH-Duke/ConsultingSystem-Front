@@ -1,18 +1,25 @@
 import React from 'react'
 import { Modal, Button } from 'antd';
 import { InputComponent } from '../Input/InputComponent';
+import { ModalComponent } from '../Modal/Modal';
 import { Link } from 'react-router-dom';
 import './List.css'
 
 export const List = ({
-    selectCounselor,
     counselors,
+    selectCounselor,
+    moveCounselorDetail,
+
+    favorites,
     addFavorite,
+    deleteFavorite,
 
     isModalOpen,
     modalOpen,
     handleOk,
     handleCancel,
+    modalItems,
+    modalButtons,
 
     connectConsultingV1,
     connectConsultingV2,
@@ -54,13 +61,12 @@ export const List = ({
             {
                 counselors &&
                 counselors.map((counselor, idx) => {
+                    console.log(favorites.filter(favorite => favorite.counselor_id === counselor['counselor.id']))
                     return (
                         <div className={`list ${idx}`} key={`list ${idx}`}>
-                            <Link to={`/counselor/${counselor['counselor.id']}`} className='list-detail'>
-                                <div className='list-img'>
-                                    <img src={counselor['counselor.img']} alt='이미지'></img>
-                                </div>
-                            </Link>
+                            <div className='list-img'  onClick={() => moveCounselorDetail(counselor['counselor.id'], counselor.id)}>
+                                <img src={counselor['counselor.img']} alt='이미지'></img>
+                            </div>
                             <div className='list-info'>
                                 <span>{counselor['counselor.nickname']}</span>
                                 <span>{counselor.price}</span>
@@ -78,9 +84,20 @@ export const List = ({
                             </div>
                             <div className="list-btns">
                                 <button className='list-btn' onClick={() => modalOpen(counselor)}>상담하기</button>
-                                <button className='list-btn' onClick={() => { addFavorite(counselor.counselor_id) }}>좋아요</button>
+                                {
+                                    favorites.filter(favorite => favorite.counselor_id === counselor['counselor.id']).length ?
+                                        <button className='list-btn' onClick={() => { deleteFavorite(counselor['counselor.id']) }}>취소</button> :
+                                        <button className='list-btn' onClick={() => { addFavorite(counselor.counselor_id) }}>좋아요</button>
+                                }
                             </div>
-                            <Modal
+                            <ModalComponent
+                                title={'상담하기'}
+                                open={isModalOpen}
+                                handleCancel={handleCancel}
+                                items={modalItems}
+                                buttons={modalButtons}
+                            />
+                            {/* <Modal
                                 title='상담하기'
                                 open={isModalOpen}
                                 onOk={handleOk}
@@ -110,7 +127,7 @@ export const List = ({
                                 </div>
                                 <Button onClick={connectConsultingV1}>상담 V1 연결</Button>
                                 <Button onClick={connectConsultingV2}>상담 V2 연결</Button>
-                            </Modal>
+                            </Modal> */}
                         </div>
                     )
                 })

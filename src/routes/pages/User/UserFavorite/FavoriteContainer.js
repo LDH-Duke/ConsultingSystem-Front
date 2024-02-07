@@ -118,7 +118,10 @@ const FavoriteContainer = ({
     })();
   }, [isClick]);
 
-  const deleteFavorite = async (counselor_id, favorite_id) => {
+  /**
+   * 좋아요 취소
+   */
+  const deleteFavorite = async (counselor_id) => {
     console.log('call deleteFavorite');
     const user_id = cookie.getCookie('id');
 
