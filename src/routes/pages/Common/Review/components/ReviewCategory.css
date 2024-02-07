@@ -1,0 +1,8 @@
+.counsel-category grid {
+    display: grid;
+    grid-template-columns: 82px calc(100% - 82px);
+    height: auto;
+    line-height: 44px;
+    justify-content: left;
+    padding-top: 1rem;
+}

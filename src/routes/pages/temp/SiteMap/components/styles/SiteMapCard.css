@@ -1,0 +1,21 @@
+@import url(../../../../../Common.css);
+
+.sitemapcard-container {
+    background-color: var(--main-bg-color);
+    width: 15vw;
+    height: 25vh;
+    border-radius: 1rem;
+}
+
+.sitemapcard-container .sitemapcard-title-box {
+    width: auto;
+    height: auto;
+    font-size: 35px;
+    margin: 1rem;
+}
+
+.sitemapcard-container .sitemapcard-body-box {
+    width: auto;
+    height: auto;
+    margin: 1rem;
+}

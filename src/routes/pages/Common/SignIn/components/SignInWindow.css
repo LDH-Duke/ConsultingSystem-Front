@@ -1,0 +1,53 @@
+.signin-presenter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.signin-notice {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    span {
+        margin: 0 auto;
+    }
+}
+
+.signin-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* gap: 2rem; */
+
+    width: 80%;
+
+    box-shadow: 0px 0px 10px 2px lightgrey;
+    border-radius: 1rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.user-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 1rem;
+    margin-right: 1em;
+
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.user-toggle 
+:where(.css-dev-only-do-not-override-1b0bdye).ant-switch.ant-switch-checked {
+    background-color: var(--sub-bg-color);
+}
+
+.user-toggle 
+:where(.css-dev-only-do-not-override-1b0bdye).ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
+    background-color: var(--main-bg-color);
+}

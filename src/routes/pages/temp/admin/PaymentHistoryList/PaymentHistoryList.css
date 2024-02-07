@@ -1,0 +1,37 @@
+.admin-history-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.admin-history-list-container .admin-history-list-element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 8;
+    gap: 1rem;
+    border: 1px solid grey;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+}
+
+.admin-history-list-container .admin-history-list-element img {
+    width: 30%;
+}
+
+.admin-history-list-element .admin-history-infos {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1rem;
+}
+
+.admin-history-infos .admin-history-status .success {
+    color: blue;
+    font-weight: bold;
+}
+
+.admin-history-infos .admin-history-status .cancel {
+    color: red;
+    font-weight: bold;
+}

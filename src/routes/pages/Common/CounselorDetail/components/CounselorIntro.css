@@ -1,0 +1,15 @@
+.counselor-intro-container {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .counselor-intro-container>div {
+    width: 100%;
+} */
+
+.ant-tabs {
+    width: 70%;
+}

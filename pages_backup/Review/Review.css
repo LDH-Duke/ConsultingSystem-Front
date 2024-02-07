@@ -1,0 +1,77 @@
+/* @import url(../../../Common.css); */
+
+.review-container {
+    margin: 0 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: var(--main-bg-color); 이거 새로 추가한거임 보여줄라고 */
+}
+
+.review-container .review-wrap {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 1rem;
+}
+
+.review-container .review-top {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-bottom: 2px solid gray;
+}
+
+.review-container .review-text {
+    display: flex;
+    flex-direction: space-between;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.review-container .review-text-box {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-container .review-reward-text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.review-container .review-button-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.review-button-box button {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #FF8472;
+    color: white;
+    height: 3rem;
+}
+
+.review-container .review-content-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.review-content-box .review-content-inner {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+}

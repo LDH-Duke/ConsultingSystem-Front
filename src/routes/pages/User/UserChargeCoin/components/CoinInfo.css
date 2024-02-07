@@ -1,0 +1,22 @@
+.coin-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+
+    .title {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+
+.show-coin-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .show-coin {
+        color: var(--main-bg-color);
+        font-weight: bold;
+    }
+}

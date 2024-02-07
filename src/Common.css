@@ -1,6 +1,8 @@
 :root{
     --main-bg-color :#00CC8F;
     --sub-bg-color:#2AD8A0;
+    --light-main-bg-color: #22ecb0;
+    --light-sub-bg-color:#66f1c5;
 
     --title-color: #232527;
     --body-color: #232527;
@@ -9,4 +11,10 @@
     --sub-title-color: #768085;
  
     --border-color: #768085;
+
+    --warning-color: #DB1D0F;
+    --emphasise-color: #B52609;
+    --table-th-color: #BFBFBF;
+
+    --light-bg-color: #d8dadb;
 }

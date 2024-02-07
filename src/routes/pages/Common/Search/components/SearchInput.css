@@ -1,0 +1,31 @@
+.search-input-container{
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #bec2c9;
+    background-color: white;
+}
+
+.search-input-container input{
+    width: 95%;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.search-input-container input:focus,
+.search-input-container input:hover{
+    outline: none;
+    border: none;
+    /* border: 2px solid #00cc8f; */
+}
+
+.search-input-container button{
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background-color: white;
+}

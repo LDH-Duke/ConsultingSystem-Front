@@ -1,0 +1,47 @@
+.mymenu-myinfo {
+    width: 100%;
+    background-color: var(--sub-bg-color);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.mymenu-myinfo .mymenu-need-signin {
+    width: 100%;
+
+    background-color: var(--light-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2rem;
+    border-radius: 5px;
+
+    .need-signin {
+        color: var(--title-color);
+    }
+
+    .mymenu-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 2rem;
+    }
+
+    .mymenu-buttons a {
+        color: white;
+        font-weight: bold;
+    }
+
+    .mymenu-buttons a:nth-child(1) {
+        background-color: var(--sub-bg-color);
+        padding: 1rem 3rem;
+        border-radius: 5px;
+    }
+
+    .mymenu-buttons a:nth-child(2) {
+        background-color: lightsteelblue;
+        padding: 1rem 3rem;
+        border-radius: 5px;
+    }
+}

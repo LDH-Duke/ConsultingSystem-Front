@@ -1,0 +1,90 @@
+.Counselor-container {
+    margin: 0 300px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.Counselor-container .Counselor-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.Counselor-container .Counselor-wrap .seperation-line {
+    display: flex;
+    border: 1px solid #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Counselor-container .MainButton-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+}
+
+.Counselor-container .Main-Button {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 17vh;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+.Counselor-container .SubButton-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 31vh;
+}
+
+.Counselor-container .Sub-Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.6);
+    background-color: white;
+    width: 92%;
+    height: 7vh;
+    margin-top: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    justify-content: center;
+}
+
+.Main-text {
+    display: flex;
+    height: 33px;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -0.32px;
+    color: #000000;
+    padding-right: 1px;
+    padding-top: 2px;
+}
+
+.Sub-text {
+    display: flex;
+    width: 149px;
+    font-size: 10px;
+    letter-spacing: -0.32px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.Subbutton-text {
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: -0.32px;
+    color: #000000;
+}
