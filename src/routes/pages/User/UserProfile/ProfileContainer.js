@@ -7,13 +7,9 @@ import cookie from '../../../../cookie';
 const ProfileContainer = ({
   setCookies
 }) => {
+  const navigate = useNavigate();
+
   const [userInfo, setUserInfo] = useState({});
-  const [modifyInfo, setModifyInfo] = useState({
-    email: '',
-    pw:'',
-    name: '',
-    phone: '',
-  })
   
   useEffect(() => {
     (
@@ -37,14 +33,37 @@ const ProfileContainer = ({
     )();
   }, []);
 
-  const onModify = () => {
+
+  /**
+   * 회원 정보 수정
+   */
+  const onModify = async () => {
     // 수정하는 API 연결
-    
+    const id = cookie.getCookie('id');
+
+    if (id === null) {
+      // 로그인 필요
+
+      return;
+    }
+
+    const result = await API.putUser(id, userInfo);
+
+    if (result === false) {
+      // 수정 실패
+      return;
+    }
+
+    // 수정 성공
+    navigate('/user/mymenu');
   }
+
 
   return (
     <ProfilePresenter
       userInfo={userInfo}
+      setUserInfo={setUserInfo}
+
       onModify={onModify}
     />
   )

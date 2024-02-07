@@ -37,6 +37,11 @@ const API = {
   postSignin : (body) => $http.post('/user/signin', body),
 
   /**
+   * 회원 정보 수정
+   */
+  putUser : (user_id, body) => $http.put(parameterToPath('/user/:user_id', { user_id }), body),
+
+  /**
    * 선물하기
    * --
    */

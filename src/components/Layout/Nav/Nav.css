@@ -80,3 +80,18 @@
         color: #00cc8f;
     }
 }
+
+.user button {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #00cc8f;
+    background-color: #00cc8f;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+
+    &:hover {
+        background-color: white;
+        color: #00cc8f;
+    }
+}

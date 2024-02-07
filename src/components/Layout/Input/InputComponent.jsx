@@ -22,7 +22,7 @@ export const InputComponent = ({
     isShowWarning,
     warnings,
 
-    isWrite,
+    isReadonly,
     value
 }) => {
     return (
@@ -33,7 +33,7 @@ export const InputComponent = ({
                 placeholder={placeholder}
                 onChange={onChange}
                 onBlur={onBlur}
-                readOnly={isWrite}
+                readOnly={isReadonly}
                 value={value}
             />
             {

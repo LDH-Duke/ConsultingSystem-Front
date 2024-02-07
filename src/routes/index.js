@@ -7,11 +7,11 @@ import { TestCounselorMainPresenter } from '../components/Layout/TestCounselorMa
 import cookie from '../cookie';
 
 // 공통 페이지
-import { Main, Search, Review, SignIn, CounselorDetail, Sitemap, AskAdmin } from './pages'; 
+import { Main, Search, Review, SignIn, CounselorDetail, Sitemap } from './pages'; 
 // 회원 페이지
 import { UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages'; 
 // 상담사 페이지
-import { CounselorSignUp, CounselorMain, CounselorProfile, CounselorCoin } from './pages';
+import { CounselorSignUp } from './pages';
 
 const Router = () => {
   const navigate = useNavigate();
@@ -22,12 +22,17 @@ const Router = () => {
     cookie.setCookie('id', data.data.id, {
       path: '/',
       secure: '/',
-    })
+    });
 
     cookie.setCookie('token', data.token, {
       path: '/',
       secure: '/',
-    })
+    });
+
+    cookie.setCookie('userType', data.data.userType, {
+      path: '/',
+      secure: '/',
+    });
 
     setHasCookies(true);
   }
@@ -45,11 +50,14 @@ const Router = () => {
       <Routes>
         {/* 공통 */}
         <Route exact path='/' element={<Main />} />
+        <Route exact path='/*' element={<Error />} />
         <Route exact path='/signin' element={<SignIn setCookies={setCookies} />} />
         <Route exact path='/counselor/:counselor_id' element={<CounselorDetail setCookies={setCookies} />} />
         <Route exact path='/sitemap' element={<Sitemap setCookies={setCookies} />} />
         <Route exact path='/review' element={<Review setCookies={setCookies} />} />
         <Route exact path='/search' element={<Search setCookies={setCookies} />} />
+        <Route exact path='/consultingv1' element={<ConsultingV1 setCookies={setCookies} />} />
+        <Route exact path='/consultingv2' element={<ConsultingV2 setCookies={setCookies} />} />
 
         {/* 회원 */}
         <Route exact path='/user/signup' element={<UserSignUp setCookies={setCookies} />} />
@@ -60,11 +68,8 @@ const Router = () => {
         <Route exact path='/user/profile' element={<UserProfile setCookies={setCookies} />} />
 
         {/* 상담사 */}
-        <Route exact path='/counselor' element={<CounselorMain />} />
-        <Route exact path='/askadmin/:params' element={<AskAdmin />} />
-        <Route exact path='/counselorprofile' element={<CounselorProfile  />} />
+        <Route exact path='/counselor' element={< TestCounselorMainPresenter />} />
         <Route exact path='/counselor/signup' element={< CounselorSignUp />} />
-        <Route exact path='/counselor/coin' element={<CounselorCoin />} />
         {/* <Route exact path="/counselor/:counselor_id" element={<CounselorDetail />} />
         <Route exact path="/favorite/:user_id" element={<Favorite navigate={navigate} />} /> */}
         {/* <Route exact path="/editprofile" element={<EditProfile />} /> */}

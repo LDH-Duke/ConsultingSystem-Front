@@ -1,0 +1,13 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    width: 100%;
+
+    .go-main {
+        color: var(--main-bg-color);
+    }
+}
