@@ -8,7 +8,8 @@ import "./AskAdmin.css";
 export const AskAdminPresenter = ({
     onSubmit,
     setContent,
-    asks
+    asks,
+    onDelete
 }) => {
 
     const [tab, setTab] = useState(0)
@@ -18,10 +19,13 @@ export const AskAdminPresenter = ({
             <div className="askadmin-container">
                 <Sidebar setTab={setTab}/>
                 {
-                    tab === 0 ? <Ask onSubmit = {onSubmit} setContent = {setContent}/> : null
+                    tab === 0 ? <Ask onSubmit = {onSubmit} setContent = {setContent}
+                    isUpdate={true}/> : null
                 }
                 {
-                    tab === 1 ? <AskAdminHistory asks = {asks}/> : null
+                    tab === 1 ? <AskAdminHistory 
+                    onDelete = {onDelete}
+                    asks = {asks}/> : null
                 }
             </div>
         </Layout>

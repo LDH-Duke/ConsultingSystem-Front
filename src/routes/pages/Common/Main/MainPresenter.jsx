@@ -20,9 +20,6 @@ export const MainPresenter = ({
     handleCancel,
     modalItems,
     modalButtons,
-    
-    connectConsultingV1,
-    connectConsultingV2,
 }) => {    
     return (
         <Layout nav={1}>
@@ -42,9 +39,6 @@ export const MainPresenter = ({
                 handleCancel={handleCancel}
                 modalItems={modalItems}
                 modalButtons={modalButtons}
-          
-                connectConsultingV1={connectConsultingV1}
-                connectConsultingV2={connectConsultingV2}
             />
         </Layout>
     )

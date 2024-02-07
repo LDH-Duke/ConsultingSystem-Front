@@ -133,8 +133,8 @@ const MainContainer = ({
    * @params counselor_id => 상담사 아이디
    * @params product_id => 상품 아이디
    */
-  const moveCounselorDetail = (counselor_id, production_id) => {
-    navigate(`/counselor/${counselor_id}`, {state: {production_id}});
+  const moveCounselorDetail = (counselor_id, production_price) => {
+    navigate(`/counselor/${counselor_id}`, {state: {production_price}});
   }
 
   /* ======================= */
@@ -210,9 +210,6 @@ const MainContainer = ({
       handleCancel={handleCancel}
       modalItems={modalItems}
       modalButtons={modalButtons}
-
-      connectConsultingV1={connectConsultingV1}
-      connectConsultingV2={connectConsultingV2}
     />
   )
 }

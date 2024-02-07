@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './AskTable.css'
 
 
 export const AskTable = ({
-    asks
+    asks,
+    onDelete
 }) => {
   return (
     <table className='ask-table'>
@@ -22,7 +24,7 @@ export const AskTable = ({
         {
             asks.map((ask, idx) => {
                 return(
-                    <tr className={`aks ${idx}`}>
+                    <tr className={ask.id} key={ask.id}>
                         <td>
                             {idx}
                         </td>
@@ -31,6 +33,14 @@ export const AskTable = ({
                         </td>
                         <td>
                            {ask.createdAt} 
+                        </td>
+                        <td>
+                            <Link to = {`/askadmin/update/${ask.id}`}>
+                                <button>수정하기</button>
+                            </Link>
+                        </td>
+                        <td>
+                            <button onClick={() => onDelete(ask.id)}>삭제하기</button>
                         </td>
                     </tr>
                 )

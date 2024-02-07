@@ -254,6 +254,17 @@ const API = {
   */
  getAskListForCounselor : (counselor_id) => $http.get(parameterToPath('/ask/detail/:counselor_id', {counselor_id})),
 
+ /**
+  * 문의사항 수정
+  * --
+  */
+ putAsks : (ask_id, body) => $http.put(parameterToPath('/ask/:ask_id', {ask_id}), body),
+
+ /**
+  * 문의사항 삭제
+  * --
+  */
+ deleteAsk : (ask_id) => $http.delete(parameterToPath('/ask/:ask_id', {ask_id})) 
 };
 
 export default API;
