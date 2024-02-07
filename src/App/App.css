@@ -10,7 +10,7 @@
   align-items: center;
   background-color: rgb(235, 235, 235);
   overflow: auto;
-  /* height: 100vh; */
+  height: 100%;
 }
 
 ol,
