@@ -30,7 +30,7 @@ const SitemapContainer = ({
     {
       title: '후기',
       subTitle: '후기로 이동',
-      path: '/',
+      path: '/review',
     },
     {
       title: '콘텐츠',

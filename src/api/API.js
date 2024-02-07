@@ -206,6 +206,12 @@ const API = {
   postBuyProduct : (body) => $http.post('/coin/buyproduct', body),
   
   /**
+   * 상품 조회
+   * --
+   */
+  getProduction : (production_id) => $http.get(parameterToPath('/counselor/get/production/:production_id', {production_id})),
+  
+  /**
    * 상담사 별 상품 조회
    * --
    */

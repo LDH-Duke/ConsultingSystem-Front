@@ -1,0 +1,37 @@
+
+/* Modal */
+.ant-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ant-modal-body .modal-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    padding-left: 1rem;
+
+    .modal-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+
+        span {
+            flex: 1;
+            font-weight: bold;
+        }
+
+        div {
+            flex: 9;
+        }
+    }
+}
+
+.ant-modal-body .modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

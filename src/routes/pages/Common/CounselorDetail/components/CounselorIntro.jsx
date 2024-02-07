@@ -10,6 +10,12 @@ export const CounselorIntro = ({
   reviews
 }) => {
   const items = [
+
+
+
+    /**
+     * 서비스공지
+     */
     {
       key: '1',
       label: '서비스공지',
@@ -21,6 +27,12 @@ export const CounselorIntro = ({
           />
         </div>
     },
+
+
+
+    /**
+     * 서비스소개
+     */
     {
       key: '2',
       label: '서비스소개',
@@ -32,11 +44,28 @@ export const CounselorIntro = ({
           />
         </div>
     },
+
+
+
+    /**
+     * 상담사정보
+     */
     {
       key: '3',
-      label: '상담사 정보',
-      children: <div className='aa'>aaa</div>,
+      label: '상담사정보',
+      children:
+        <div>
+          <CounselorTabContent
+            title={'상담사정보'}
+          />
+        </div>
     },
+
+
+
+    /**
+     * 후기
+     */
     {
       key: '4',
       label: '후기',
@@ -45,28 +74,36 @@ export const CounselorIntro = ({
           <CounselorReview
             reviews={reviews}
           />
-
-          {/* <Link to={`/writereview/${counselor_id}`}><Button>후기 작성하기</Button></Link>
-                  <ReviewCard
-                    reviews={reviews}
-                    counselor={counselor} /> */}
         </div>
-
     },
+
+
+
+    /**
+     * 상담 상품
+     */
     {
       key: '5',
       label: '상담 상품',
       children:
         <div>
-          {/* <ProductListContainer /> */}
           asdf
-        </div>,
+        </div>
     },
+
+
+
+    /**
+     * 1:1 문의
+     */
     {
       key: '6',
       label: '1:1문의',
-      children: <div>div</div>
-    },
+      children:
+        <div>
+          div
+        </div>
+    }
   ];
 
   return (

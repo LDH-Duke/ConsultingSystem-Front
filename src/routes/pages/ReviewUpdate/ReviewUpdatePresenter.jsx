@@ -5,9 +5,7 @@ import Category from "./components/Category";
 import { Button } from "antd";
 
 export const ReviewUpdatePresenter = ({
-    name,
-    updateReview,
-    deleteReview
+    name
 }) => {
 
     return(
@@ -32,9 +30,7 @@ export const ReviewUpdatePresenter = ({
                     </div>
                 </div>
                 <div className="button">
-                    {/* <Button onClick={ () => { updateReview() }}>수정하기</Button> */}
                     <Button>취소</Button>
-                    {/* <Button onClick={ () => {deleteReview()}}>삭제하기</Button> */}
                 </div>
             </div>
         </div>
