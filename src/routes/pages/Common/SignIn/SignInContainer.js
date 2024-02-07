@@ -52,16 +52,16 @@ const SignInContainer = ({
     };
 
     const result = isUser ? await API.postSignin(body) : await API.postCounselorSignin(body);
-
+    
     switch (result) {
       case 401:
         //  로그인 실패
-
+        
         break;
-      default:
-        // 로그인 성공
-        setCookies(result.data);
-        navigate('/');
+        default:
+          // 로그인 성공
+          setCookies(result.data);
+          isUser ? navigate('/') : navigate('/counselor');
         break;
     }
   }

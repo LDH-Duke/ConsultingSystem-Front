@@ -3,11 +3,11 @@ import { AskTable } from "./AskTable";
 import "./AskAdminHistory.css";
 
 export const AskAdminHistory = ({
-    askData
+    asks
 }) => {
     return(
         <div className="askadminhistory-container">
-            <AskTable askData={askData}/>
+            <AskTable asks = {asks}/>
         </div>
     )
 }

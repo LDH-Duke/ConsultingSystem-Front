@@ -1,0 +1,52 @@
+.myintro-container {
+    display: flex;
+
+    border: 1px solid;
+    border-radius: 5px;
+
+    padding: 0.5rem;
+
+    width: 100%;
+    height: 100%;
+}
+
+.myintro-container .myintro-title {
+    display: flex;
+    flex: 1;
+}
+
+.myintro-container .myintro-form {
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.myintro-container .myintro-input {
+    display: flex;
+
+    margin-bottom: 2rem;
+}
+
+.myintro-container .myintro-input span {
+    display: flex;
+
+    width: 20%;
+}
+
+.myintro-container .myintro-input textarea {
+    display: flex;
+
+    width: 80%;
+    height: 20vh;
+}
+
+.myintro-container .myintro-button {
+    display: flex;
+    justify-content: right;
+}
+
+.myintro-container .myintro-form button {
+    width: 10%;
+}

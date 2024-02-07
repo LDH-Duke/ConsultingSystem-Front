@@ -54,5 +54,6 @@ export { default as CounselorSignUp } from './Counselor/CounselorSignUp';
 
 export { default as CounselorMain } from './Counselor/CounselorMain';
 export { default as CounselorProfile } from './Counselor/CounselorProfile';
+export { default as CounselorCoin } from './Counselor/CounselorCoin';
 
 export { default as AskAdmin } from './Common/AskAdmin';

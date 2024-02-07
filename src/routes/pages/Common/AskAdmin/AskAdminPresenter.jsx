@@ -6,7 +6,9 @@ import { Ask } from "./components/Ask";
 import "./AskAdmin.css";
 
 export const AskAdminPresenter = ({
-    askData
+    onSubmit,
+    setContent,
+    asks
 }) => {
 
     const [tab, setTab] = useState(0)
@@ -16,10 +18,10 @@ export const AskAdminPresenter = ({
             <div className="askadmin-container">
                 <Sidebar setTab={setTab}/>
                 {
-                    tab === 0 ? <Ask/> : null
+                    tab === 0 ? <Ask onSubmit = {onSubmit} setContent = {setContent}/> : null
                 }
                 {
-                    tab === 1 ? <AskAdminHistory askData={askData}/> : null
+                    tab === 1 ? <AskAdminHistory asks = {asks}/> : null
                 }
             </div>
         </Layout>

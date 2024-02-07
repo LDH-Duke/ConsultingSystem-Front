@@ -1,58 +1,13 @@
 .counselorprofile-container {
-    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
     width: 100%;
     height: 100%;
 }
 
 .counselorprofile-container .counselorprofile-wrap {
-    padding: 10px;
-}
-
-.counselorprofile-myinfo {
     display: flex;
-    border: 1px solid gray;
-    border-radius: 8px;
+
+    margin-bottom: 2rem;
 }
-
-.counselorprofile-myinfo .counselorprofile-title {
-    display: flex;
-    flex: 1;
-    padding: 10px;
-}
-
-.counselorprofile-myinfo .counselorprofile-modify {
-    display: flex;
-    flex-direction: column;
-    flex: 4;
-}
-
-.counselorprofile-myinfo .counselorprofile-form {
-    display: flex;
-    margin: 10px;
-}
-
-.counselorprofile-myinfo .counselorprofile-modify span {
-    display: flex;
-    width: 20%;
-    color: gray;
-}
-
-.counselorprofile-myinfo .counselorprofile-modify input {
-    display: flex;
-    width: 70%;
-    height: 140%;
-    border: 1px solid gray;
-    border-radius: 4px;
-}
-
-.counselorprofile-myinfo .counselorprofile-button {
-    display: flex;
-    justify-content: right;
-    padding: 10px;
-}
-
-.counselorprofile-myinfo .counselorprofile-button button{
-    margin-right: 10px;
-}
-
-

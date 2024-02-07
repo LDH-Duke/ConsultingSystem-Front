@@ -7,11 +7,11 @@ import { TestCounselorMainPresenter } from '../components/Layout/TestCounselorMa
 import cookie from '../cookie';
 
 // 공통 페이지
-import { Main, Search, Review, SignIn, CounselorDetail, Sitemap } from './pages'; 
+import { Main, Search, Review, SignIn, CounselorDetail, Sitemap, AskAdmin } from './pages'; 
 // 회원 페이지
 import { UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages'; 
 // 상담사 페이지
-import { CounselorSignUp } from './pages';
+import { CounselorSignUp, CounselorMain, CounselorProfile, CounselorCoin } from './pages';
 
 const Router = () => {
   const navigate = useNavigate();
@@ -61,9 +61,10 @@ const Router = () => {
 
         {/* 상담사 */}
         <Route exact path='/counselor' element={<CounselorMain />} />
-        <Route exact path='/askadmin' element={<AskAdmin />} />
+        <Route exact path='/askadmin/:params' element={<AskAdmin />} />
         <Route exact path='/counselorprofile' element={<CounselorProfile  />} />
         <Route exact path='/counselor/signup' element={< CounselorSignUp />} />
+        <Route exact path='/counselor/coin' element={<CounselorCoin />} />
         {/* <Route exact path="/counselor/:counselor_id" element={<CounselorDetail />} />
         <Route exact path="/favorite/:user_id" element={<Favorite navigate={navigate} />} /> */}
         {/* <Route exact path="/editprofile" element={<EditProfile />} /> */}

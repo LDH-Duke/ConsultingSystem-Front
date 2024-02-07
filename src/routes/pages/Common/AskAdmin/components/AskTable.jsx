@@ -3,7 +3,7 @@ import './AskTable.css'
 
 
 export const AskTable = ({
-    askData
+    asks
 }) => {
   return (
     <table className='ask-table'>
@@ -20,7 +20,7 @@ export const AskTable = ({
             </th>
         </tr>
         {
-            askData.map((ask, idx) => {
+            asks.map((ask, idx) => {
                 return(
                     <tr className={`aks ${idx}`}>
                         <td>

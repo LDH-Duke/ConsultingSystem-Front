@@ -1,29 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AskAdminPresenter } from "./AskAdminPresenter";
+import API from "../../../../api/API";
+import cookie from "../../../../cookie";
+import { useParams } from "react-router-dom";
 
 const AskAdminContainer = () => {
+    const { params } = useParams();
 
-    const askData= [
-        {
-            content : '문의 내용입니다.',
-            createdAt : '2023-08-16'
-        },
-        {
-            content : '문의 내용입니다.',
-            createdAt : '2023-08-16'
-        },
-        {
-            content : '문의 내용입니다.',
-            createdAt : '2023-08-16'
-        },
-        {
-            content : '문의 내용입니다.',
-            createdAt : '2023-08-16'
-        },
-    ]
+    const [content, setContent] = useState();
+    const [asks, setAsks] = useState([]);
+    const [check, setCheck] = useState(false)
+
+    const onSubmit = async() => {
+        const body = {
+            content
+        }
+
+        const askadmininfo = await API.postAskAdmin(body);
+    }
+
+    useEffect (() => {
+        (async () => {
+            const id = cookie.getCookie('id')
+    
+            const getAdminHistory = 
+                params === "counselor" ?
+                await API.getAskForCounselor(id) :
+                await API.getAskForUser(id);
+            
+                console.log(params, check)
+            setAsks(getAdminHistory.data);
+        })();
+    }, [])
+
 
     return(
-        <AskAdminPresenter askData={askData}/>
+        <AskAdminPresenter onSubmit = {onSubmit} setContent = {setContent} asks = {asks}/>
     )
 }
 

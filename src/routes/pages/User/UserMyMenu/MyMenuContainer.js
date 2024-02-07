@@ -34,7 +34,7 @@ const MyMenuContainer = ({
     },
     {
       title: '나의 1:1문의',
-      path: '/',
+      path: '/askadmin/user',
     },
     {
       title: '코인 자동충전',
