@@ -1,0 +1,37 @@
+.bottom-nav-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    left: 50%;
+    /* 화면의 가운데로 위치시키기 위해 50%로 설정 */
+    transform: translateX(-50%);
+
+    width: 50%;
+    background-color: white;
+
+    border-top: 2px solid #ebebeb;
+
+}
+
+.bottom-nav-container .bottom-nav-wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+}
+
+.bottom-nav-container svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.bottom-nav-container .bottom-nav-tap {
+    display: flex;
+
+    padding: 0.5rem;
+}
+
+.bottom-nav-container .active-icon {
+    stroke: red
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Col, Row } from 'antd'
 import { Footer } from './Footer/Footer'
 import { Nav } from './Nav/Nav'
+import { BottomNav } from './BottomNav/BottomNav'
 import { Banner } from './Banner/Banner'
 import cookie from '../../cookie';
 import './Layout.css'
@@ -27,13 +28,13 @@ const Layout = ({ children, nav }) => {
     return (
         <div className='layout-container'>
             <div className='nav'>
-                <Nav nav={userType !== '상담사'} id={id} signOut={signOut}/>
+                <Nav nav={userType !== '상담사'} id={id} signOut={signOut} />
             </div>
             <div className='body'>
                 {children}
             </div>
             <div className='footer'>
-                <Footer />
+                <BottomNav />
             </div>
             {/* <Row gutter={[16, 16]}>
                 <Col xs={24} md={24} xl={24}><Nav /></Col>
