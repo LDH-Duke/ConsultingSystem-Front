@@ -1,0 +1,32 @@
+.top-nav-container {
+    width: 100%;
+
+    padding: 1rem;
+
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 5px;
+    box-shadow: 0px 8px 10px 0px rgb(201, 201, 201);
+    z-index: 2;
+}
+
+.top-nav-container .top-nav-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+    
+    .top-nav-item {
+        color: black;
+        
+        display: flex;
+        align-content: center;
+        gap: 0.5rem;
+    }
+
+    .top-nav-item:nth-child(1),
+    .top-nav-item:nth-last-child(1) {
+        cursor: pointer;
+    }
+}

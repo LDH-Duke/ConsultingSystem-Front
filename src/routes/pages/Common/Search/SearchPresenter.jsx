@@ -10,7 +10,7 @@ export const SearchPresenter = ({
 }) => {
 
     return (
-        <Layout nav={1}>
+        <Layout nav={1} title={'검색'}>
             <div className="search-main-container">
                 <SearchInput />
                 <RecentSearch />

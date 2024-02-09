@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { Col, Row } from 'antd'
 import { Footer } from './Footer/Footer'
 import { Nav } from './Nav/Nav'
+import { TopNav } from './TopNav/TopNav'
 import { BottomNav } from './BottomNav/BottomNav'
 import { Banner } from './Banner/Banner'
 import cookie from '../../cookie';
 import './Layout.css'
 
 
-const Layout = ({ children, nav }) => {
+const Layout = ({ children, nav, title, isMain }) => {
     const [id, setId] = useState(null);
     const [userType, setUserType] = useState('');
 
@@ -29,6 +30,9 @@ const Layout = ({ children, nav }) => {
         <div className='layout-container'>
             <div className='nav'>
                 <Nav nav={userType !== '상담사'} id={id} signOut={signOut} />
+            </div>
+            <div className="top-nav">
+                <TopNav title={title} isMain={isMain}/>
             </div>
             <div className='body'>
                 {children}

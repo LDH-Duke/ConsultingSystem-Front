@@ -19,7 +19,7 @@ export const SignUpPresenter = ({
     SignUp,
 }) => {
     return (
-        <Layout nav={1}>
+        <Layout nav={1} title={'회원가입'}>
             <SignUpBox
                 title={'회원가입'}
 

@@ -22,7 +22,7 @@ export const MainPresenter = ({
     modalButtons,
 }) => {    
     return (
-        <Layout nav={1}>
+        <Layout nav={1} isMain={true}>
             <Banner isSignIn={isSignIn}/>
             <List
                 counselors={counselors}
