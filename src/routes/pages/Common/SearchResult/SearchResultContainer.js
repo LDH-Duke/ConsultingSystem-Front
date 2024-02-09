@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { MainPresenter } from "./MainPresenter";
+import React, { useState, useEffect } from 'react'
+import { SearchResultPresenter } from './SearchResultPresenter'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import API from "../../../../api/API";
-import { useNavigate } from "react-router-dom";
-import cookie from "../../../../cookie";
+import cookie from '../../../../cookie';
 
-const MainContainer = ({
-  setCookies
-}) => {
+const SearchResultContainer = () => {
   const navigate = useNavigate();
 
-  const [counselors, setCounselors] = useState([]);
-  const [favorites, setFavorites] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
+  const [keyword, setKeyword] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+
+  // List 관련 state
+  const [favorites, setFavorites] = useState([]);
   const [isSignIn, setIsSignIn] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClick, setIsClick] = useState(false);
@@ -27,38 +29,56 @@ const MainContainer = ({
   ]);
 
   useEffect(() => {
-    (
-      async () => {
-        // 상품 전체 조회
-        const result = await API.getCounselorProducts();
+    (async () => {
+      const searchKeyword = searchParams.get('keyword');
+      setKeyword(searchKeyword);
 
-        if (result.status === 409) {
-          // 상담사 정보 가져오기 실패
-          return;
-        }
+      const result = await API.getSearch(searchKeyword);
 
-        setCounselors(result.data);
+      if (result.state === 409) {
+        // 검색 실패
 
-        const userData = cookie.getCookie('id');
-        setIsSignIn(userData !== null);
-
-        // 좋아요 전체 조회
-        const favoriteResult = await API.getFavorite(userData);
-
-        if (favoriteResult.status === 409) {
-          // 좋아요 정보 가져오기 실패
-
-          return;
-        }
-
-        setFavorites(favoriteResult.data);
+        return;
       }
-    )();
-  }, [isClick]);
 
+      setSearchResults(result.data);
+
+
+      const userData = cookie.getCookie('id');
+      setIsSignIn(userData !== null);
+
+      // 좋아요 전체 조회
+      const favoriteResult = await API.getFavorite(userData);
+
+      if (favoriteResult.status === 409) {
+        // 좋아요 정보 가져오기 실패
+
+        return;
+      }
+
+      setFavorites(favoriteResult.data);
+    })();
+  }, [isClick])
+
+  const onKeyEnter = (e) => {
+    if (e.Key === 'Enter') {
+      Search();
+    }
+  }
+
+  const Search = () => {
+    const searchKeyword = keyword.trim();
+    setIsClick(!isClick);
+    navigate(`/search/result?keyword=${searchKeyword}`);
+  }
+
+
+  /* ==================== */
+  /*   리스트 관련 함수   */
+  /* ==================== */
   /**
-   * 좋아요 추가
-   */
+ * 좋아요 추가
+ */
   const addFavorite = async (counselor_id) => {
     const id = cookie.getCookie('id');
 
@@ -133,7 +153,7 @@ const MainContainer = ({
    * @params product_id => 상품 아이디
    */
   const moveCounselorDetail = (counselor_id, production_price) => {
-    navigate(`/counselor/${counselor_id}`, {state: {production_price}});
+    navigate(`/counselor/${counselor_id}`, { state: { production_price } });
   }
 
   /* ======================= */
@@ -190,10 +210,15 @@ const MainContainer = ({
   }
 
   return (
-    <MainPresenter
+    <SearchResultPresenter
       isSignIn={isSignIn}
 
-      counselors={counselors}
+      keyword={keyword}
+      setKeyword={setKeyword}
+      Search={Search}
+      onKeyEnter={onKeyEnter}
+
+      searchResults={searchResults}
       moveCounselorDetail={moveCounselorDetail}
 
       favorites={favorites}
@@ -210,4 +235,4 @@ const MainContainer = ({
   )
 }
 
-export default MainContainer;
+export default SearchResultContainer

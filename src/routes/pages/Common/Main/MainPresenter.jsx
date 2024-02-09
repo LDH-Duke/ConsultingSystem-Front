@@ -7,7 +7,6 @@ export const MainPresenter = ({
     isSignIn,
 
     counselors,
-    selectCounselor,
     moveCounselorDetail,
 
     favorites,
@@ -26,7 +25,6 @@ export const MainPresenter = ({
             <Banner isSignIn={isSignIn}/>
             <List
                 counselors={counselors}
-                selectCounselor={selectCounselor}
                 moveCounselorDetail={moveCounselorDetail}
 
                 favorites={favorites}

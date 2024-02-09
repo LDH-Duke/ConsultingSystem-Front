@@ -3,7 +3,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import cookie from '../cookie';
 
 // 공통 페이지
-import { Error, Main, Search, Review, SignIn, CounselorDetail, Sitemap, ConsultingV1, ConsultingV2, AskAdmin, UpdateAskAdmin } from './pages';
+import { Error, Main, Search, SearchResult, Review, SignIn, CounselorDetail, Sitemap, ConsultingV1, ConsultingV2, AskAdmin, UpdateAskAdmin } from './pages';
 // 회원 페이지
 import { UserUpdateReview, UserWriteReview, UserReview, UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages';
 // 상담사 페이지
@@ -15,6 +15,7 @@ const Router = () => {
   const [hasCookies, setHasCookies] = useState(false);
 
   const setCookies = (data) => {
+    console.log(data)
     cookie.setCookie('id', data.data.id, {
       path: '/',
       secure: '/',
@@ -52,6 +53,7 @@ const Router = () => {
         <Route exact path='/sitemap' element={<Sitemap setCookies={setCookies} />} />
         <Route exact path='/review' element={<Review setCookies={setCookies} />} />
         <Route exact path='/search' element={<Search setCookies={setCookies} />} />
+        <Route exact path='/search/result' element={<SearchResult setCookies={setCookies} />} />
         <Route exact path='/consultingv1' element={<ConsultingV1 setCookies={setCookies} />} />
         <Route exact path='/consultingv2' element={<ConsultingV2 setCookies={setCookies} />} />
         <Route exact path='/askadmin/:params' element={<AskAdmin />} />

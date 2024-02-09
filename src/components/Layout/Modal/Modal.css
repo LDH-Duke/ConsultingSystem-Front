@@ -18,15 +18,19 @@
         align-items: center;
         justify-content: flex-end;
         width: 100%;
-
+        
         span {
             flex: 1;
             font-weight: bold;
         }
-
+        
         div {
             flex: 9;
         }
+    }
+
+    .modal-item .ant-form-item{
+        margin: 0;
     }
 }
 

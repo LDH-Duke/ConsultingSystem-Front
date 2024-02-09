@@ -7,7 +7,6 @@ import './List.css'
 
 export const List = ({
     counselors,
-    selectCounselor,
     moveCounselorDetail,
 
     favorites,
@@ -58,7 +57,6 @@ export const List = ({
             {
                 counselors &&
                 counselors.map((counselor, idx) => {
-                    console.log(favorites.filter(favorite => favorite.counselor_id === counselor['counselor.id']))
                     return (
                         <div className={`list ${idx}`} key={`list ${idx}`}>
                             <div className='list-img'  onClick={() => moveCounselorDetail(counselor['counselor.id'], counselor.price)}>
@@ -82,6 +80,7 @@ export const List = ({
                             <div className="list-btns">
                                 <button className='list-btn' onClick={() => modalOpen(counselor)}>상담하기</button>
                                 {
+                                    favorites &&
                                     favorites.filter(favorite => favorite.counselor_id === counselor['counselor.id']).length ?
                                         <button className='list-btn' onClick={() => { deleteFavorite(counselor['counselor.id']) }}>취소</button> :
                                         <button className='list-btn' onClick={() => { addFavorite(counselor.counselor_id) }}>좋아요</button>

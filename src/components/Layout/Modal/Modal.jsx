@@ -41,6 +41,7 @@ export const ModalComponent = ({
                 </div>
                 <div className="modal-buttons">
                     {
+                        buttons &&
                         buttons.map(button => (
                             <Button onClick={button.onClick}>{button.text}</Button>
                         ))

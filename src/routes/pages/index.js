@@ -5,6 +5,7 @@ export { default as SignIn } from './Common/SignIn';
 export { default as CounselorDetail } from './Common/CounselorDetail';
 export { default as Sitemap } from './Common/Sitemap';
 export { default as Search } from './Common/Search';
+export { default as SearchResult } from './Common/SearchResult';
 export { default as Review } from './Common/Review';
 export { default as ConsultingV1 } from './Common/ConsultingV1';
 export { default as ConsultingV2 } from './Common/ConsultingV2';
