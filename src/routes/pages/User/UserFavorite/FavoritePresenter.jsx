@@ -11,7 +11,7 @@ export const FavoritePresenter = ({
     deleteFavorite
 }) => {
     return (
-        <Layout nav={1}>
+        <Layout nav={1} title={'좋아요'}>
             <FavoriteList
                 favoriteList={favoriteList}
                 

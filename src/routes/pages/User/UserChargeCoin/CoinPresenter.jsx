@@ -24,7 +24,7 @@ export const CoinPresenter = ({
     selectCoin,
 }) => {
     return (
-        <Layout nav={1}>
+        <Layout nav={1} title={'코인충전'}>
             <CoinContainer>
                 <CoinInfo
                     coins={coins}

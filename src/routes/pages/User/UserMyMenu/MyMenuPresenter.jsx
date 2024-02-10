@@ -10,7 +10,7 @@ export const MyMenuPresenter = ({
     myMenuItems
 }) => {
     return (
-        <Layout nav={1}>
+        <Layout nav={1} title={'마이메뉴'}>
             <MyMenuInfo userInfo={userInfo} myMenuItems={myMenuItems}/>
         </Layout>
     )

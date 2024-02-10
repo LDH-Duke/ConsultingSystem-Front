@@ -18,7 +18,7 @@ export const SignInPresenter = ({
     SignIn,
 }) => {
     return (
-        <Layout nav={1}>
+        <Layout nav={1} title={'로그인'}>
             <SignInWindow 
                 isUser={isUser}
                 isCheckEmail={isCheckEmail}

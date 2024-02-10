@@ -7,7 +7,6 @@ export const MainPresenter = ({
     isSignIn,
 
     counselors,
-    selectCounselor,
     moveCounselorDetail,
 
     favorites,
@@ -22,11 +21,10 @@ export const MainPresenter = ({
     modalButtons,
 }) => {    
     return (
-        <Layout nav={1}>
+        <Layout nav={1} isMain={true}>
             <Banner isSignIn={isSignIn}/>
             <List
                 counselors={counselors}
-                selectCounselor={selectCounselor}
                 moveCounselorDetail={moveCounselorDetail}
 
                 favorites={favorites}
