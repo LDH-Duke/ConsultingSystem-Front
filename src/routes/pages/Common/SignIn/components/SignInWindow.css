@@ -1,32 +1,15 @@
-.signin-presenter{
+/* .signin-presenter{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-}
-
-.signin-notice {
-    display: flex;
-    justify-content: center;
-
     width: 100%;
-
-    span {
-        margin: 0 auto;
-    }
-}
+} */
 
 .signin-container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    /* gap: 2rem; */
-
-    width: 80%;
-
-    box-shadow: 0px 0px 10px 2px lightgrey;
-    border-radius: 1rem;
-    padding: 2rem;
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.5rem;
     position: relative;
 }
 
@@ -51,3 +34,14 @@
 :where(.css-dev-only-do-not-override-1b0bdye).ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
     background-color: var(--main-bg-color);
 }
+
+/* .signin-notice {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    span {
+        margin: 0 auto;
+    }
+} */

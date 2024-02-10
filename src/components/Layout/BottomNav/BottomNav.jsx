@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { HomeIcon, SearchIcon, UserIcon, LikeIcon } from '../../../assets/navImg'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './BottomNav.css'
 
 export const BottomNav = () => {
-    const [selectedTab, setSelectedTab] = useState('')
+    const location = useLocation();
 
     const navIcons = [
         {
@@ -24,6 +24,8 @@ export const BottomNav = () => {
             url: '/user/favorite'
         }
     ]
+
+
     return (
         <div className='bottom-nav-container'>
             <div className='bottom-nav-wrap'>
@@ -32,12 +34,11 @@ export const BottomNav = () => {
                         const IconComponent = icon.icon
                         return (
                             <Link
-                                className={`bottom-nav-tap ${idx} ${selectedTab === idx ? 'active' : ''}`}
+                                className={`bottom-nav-tap ${idx} `}
                                 key={`bottom-nav-tap ${idx}`}
                                 to={icon.url}
-                                onClick={() => { setSelectedTab(idx); console.log(idx) }}
                             >
-                                <IconComponent className={selectedTab === idx ? 'active-icon' : ''} />
+                                <IconComponent className={`${location.pathname === icon.url ? 'selected' : ''}`}/>
                             </Link>
                         )
                     })

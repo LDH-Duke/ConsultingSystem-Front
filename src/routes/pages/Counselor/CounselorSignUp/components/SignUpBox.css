@@ -100,11 +100,11 @@
     border: 1px dashed grey;
 }
 
-.signup-box button {
+/* .signup-box button {
     background-color: var(--sub-bg-color);
     border-color: var(--sub-bg-color);
     color: white;
-}
+} */
 
 :where(.css-dev-only-do-not-override-1b0bdye).ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
     background-color: white;

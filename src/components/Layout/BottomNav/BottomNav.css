@@ -1,16 +1,14 @@
 .bottom-nav-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    left: 50%;
-    /* 화면의 가운데로 위치시키기 위해 50%로 설정 */
-    transform: translateX(-50%);
+    position: sticky;
 
-    width: 50%;
+    width: 100%;
     background-color: white;
 
-    border-top: 2px solid #ebebeb;
+    border-top: 1px solid #e0e3e8;
+    border-right: 1px solid #e0e3e8;
+    border-left: 1px solid #e0e3e8;
 
+    
 }
 
 .bottom-nav-container .bottom-nav-wrap {
@@ -32,6 +30,6 @@
     padding: 0.5rem;
 }
 
-.bottom-nav-container .active-icon {
-    stroke: red
+.bottom-nav-container .selected {
+    stroke: #00cc8f;
 }

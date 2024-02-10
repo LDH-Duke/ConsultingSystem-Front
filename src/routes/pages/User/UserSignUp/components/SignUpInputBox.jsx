@@ -1,6 +1,8 @@
 import React from "react";
 import { InputComponent } from '../../../../../components/Layout/Input/InputComponent';
 import { Select, Space } from 'antd';
+import { Input } from '../../../../../components/Layout/Input2/Input'
+
 import './SignUpInputBox.css';
 
 export const SignUpInputBox = ({
@@ -19,25 +21,95 @@ export const SignUpInputBox = ({
             value: 'korea',
             emoji: '대한민국',
             desc: '+82',
-          },
-          {
+        },
+        {
             label: '미국 +1',
             value: 'usa',
             emoji: '미국',
             desc: '+1'
-          },
+        },
     ];
 
     return (
-        <div className="input-container">
-            <InputComponent
+        <div className="signup-input-container">
+            <Input
+                label={'아이디'}
+                placeholder={'아이디(이메일)을 입력하세요.'}
+                onChange={function (e) {
+                    const email = e;
+                    setUserInfo(info => {
+                        return { ...info, email };
+                    });
+                }}
+
+                onBlur={checkEmail}
+            />
+
+            <Input
+                label={'비밀번호'}
+                placeholder={'비밀번호를 입력하세요.'}
+                type={'password'}
+                onChange={function (e) {
+                    const pw = e;
+                    setUserInfo(info => {
+                        return { ...info, pw };
+                    });
+                }}
+            />
+
+            <Input
+                label={'비밀번호 확인'}
+                placeholder={'비밀번호를 입력하세요.'}
+                type={'password'}
+                onChange={function (e) {
+                    const pw_check = e;
+                    setUserInfo(info => {
+                        return { ...info, pw_check };
+                    });
+                }}
+
+                onBlur={checkPw}
+            />
+            <Input
+                label={'이름'}
+                placeholder={'이름을 입력하세요.'}
+                onChange={function (e) {
+                    const name = e;
+                    setUserInfo(info => {
+                        return { ...info, name };
+                    });
+                }}
+            />
+            <Input
+                label={'휴대폰 번호'}
+                placeholder={'휴대폰 번호를 입력하세요.'}
+                onChange={function (e) {
+                    const phone = e;
+                    setUserInfo(info => {
+                        return { ...info, phone };
+                    });
+                }}
+
+                onBlur={checkPhone}
+            />
+
+        </div>
+    )
+}
+
+
+
+
+
+
+{/* <InputComponent
                 name='아이디 (이메일)'
                 type='email'
                 placeholder='아이디를 입력해주세요'
                 onChange={(e) => {
                     const email = e.target.value;
                     setUserInfo(info => {
-                        return {...info, email};
+                        return { ...info, email };
                     });
                 }}
                 onBlur={checkEmail}
@@ -50,10 +122,10 @@ export const SignUpInputBox = ({
                 name='비밀번호'
                 type='password'
                 placeholder='비밀번호를 입력해주세요'
-                onChange={(e) =>{
+                onChange={(e) => {
                     const pw = e.target.value;
                     setUserInfo(info => {
-                        return {...info, pw};
+                        return { ...info, pw };
                     });
                 }}
             />
@@ -65,7 +137,7 @@ export const SignUpInputBox = ({
                 onChange={(e) => {
                     const pw_check = e.target.value;
                     setUserInfo(info => {
-                        return {...info, pw_check};
+                        return { ...info, pw_check };
                     });
                 }}
                 onBlur={checkPw}
@@ -73,7 +145,7 @@ export const SignUpInputBox = ({
                 isShowWarning={isCheckPw}
                 warnings={['비밀번호가 맞지 않습니다']}
             />
-            
+
             <InputComponent
                 name='이름'
                 type='text'
@@ -81,12 +153,14 @@ export const SignUpInputBox = ({
                 onChange={(e) => {
                     const name = e.target.value;
                     setUserInfo(info => {
-                        return {...info, name};
+                        return { ...info, name };
                     });
                 }}
-            />
+            /> */}
 
-            <div className="input-phone-container">
+
+            
+            {/* <div className="input-phone-container">
                 <span className="phone-notice">회원가입을 위해 휴대폰 인증을 진행해주세요</span>
                 <div className="input-phone">
                     <Select
@@ -99,7 +173,7 @@ export const SignUpInputBox = ({
                                 <span role='img' aria-label={option.data.label}>
                                     {option.data.emoji}
                                 </span>
-                                    {option.data.desc}
+                                {option.data.desc}
                             </Space>
                         )}
                     />
@@ -109,14 +183,10 @@ export const SignUpInputBox = ({
                         onChange={(e) => {
                             const phone = e.target.value;
                             setUserInfo(info => {
-                                return {...info, phone};
+                                return { ...info, phone };
                             });
                         }}
                         onBlur={checkPhone}
                     />
                 </div>
-                <span className="phone-sub-notice">본인확인 후 회원가입 및 서비스 이용이 가능합니다</span>
-            </div>
-        </div>
-    )
-}
+            </div> */}

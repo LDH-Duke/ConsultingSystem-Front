@@ -7,7 +7,7 @@ import { Switch } from 'antd';
 export const SignInWindow = ({
     isUser,
     isCheckEmail,
-    
+
     setEmail,
     setPw,
 
@@ -17,32 +17,27 @@ export const SignInWindow = ({
     SignIn
 }) => {
     return (
-        <div className='signin-presenter'>
-            <div className='signin-notice'>
-                <span>아이디와 비밀번호를 입력하신 후 로그인 버튼을 클릭해 주세요.</span>
+        <div className="signin-container">
+            {/* 토글 형식 */}
+            <div className="user-toggle">
+                <span>상담사 로그인</span>
+                <Switch onChange={toggleUserSignIn} />
             </div>
-            
-            <div className="signin-container">
-                {/* 토글 형식 */}
-                <div className="user-toggle">
-                    <span>상담사 로그인</span>
-                    <Switch onChange={toggleUserSignIn}/>
-                </div>
 
-                {
-                    isUser ? 
+            {
+                isUser ?
                     <SignInBox
                         isCheckEmail={isCheckEmail}
-                        
+
                         setEmail={setEmail}
                         setPw={setPw}
-                        
+
                         checkEmail={checkEmail}
-                        
+
                         title={'회원 로그인'}
                         signUpLink='/user/signup'       // FIXME: 링크 수정 필요
                         SignIn={SignIn}
-                    /> : 
+                    /> :
                     <SignInBox
                         isCheckEmail={isCheckEmail}
 
@@ -54,14 +49,14 @@ export const SignInWindow = ({
                         title={'상담사 로그인'}
                         signUpLink='/counselor/signup'  // FIXME: 링크 수정 필요
                         SignIn={SignIn}
-                    /> 
-                }
-                {/* <CoverSignIn/> */}
-                {/* <CounselorSignInBox
+                    />
+            }
+            {/* <CoverSignIn/> */}
+            {/* <CounselorSignInBox
                     Box={Box}
                     isLeft={false}
                 /> */}
-                {/* <SocialContainer>
+            {/* <SocialContainer>
                     <div className="title">회원 로그인</div>
 
                     <IconContainer>
@@ -93,7 +88,6 @@ export const SignInWindow = ({
                 </FindContainer>
 
                 <Button >로그인</Button> */}
-            </div>
         </div>
     )
 }

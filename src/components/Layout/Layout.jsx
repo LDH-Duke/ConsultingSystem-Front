@@ -6,11 +6,12 @@ import { BottomNav } from './BottomNav/BottomNav'
 import { Banner } from './Banner/Banner'
 import cookie from '../../cookie';
 import './Layout.css'
+import { useLocation } from 'react-router-dom'
 
 
 const Layout = ({ children, nav }) => {
     const [id, setId] = useState(null);
-    const [userType, setUserType] = useState('');
+    const [userType, setUserType] = useState(0);
 
     useEffect(() => {
         setId(cookie.getCookie('id'));
