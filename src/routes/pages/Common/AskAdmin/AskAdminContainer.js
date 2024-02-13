@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { AskAdminPresenter } from "./AskAdminPresenter";
 import API from "../../../../api/API";
 import cookie from "../../../../cookie";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const AskAdminContainer = () => {
     const { params } = useParams();
 
     const [content, setContent] = useState();
     const [asks, setAsks] = useState([]);
+    const [isClick, setIsClick] = useState(false)
 
     const onSubmit = async() => {
         const body = {
@@ -16,10 +17,12 @@ const AskAdminContainer = () => {
         }
 
         const askadmininfo = await API.postAskAdmin(body);
+        setIsClick(!isClick)
     }
 
     const onDelete = async(ask_id) => {
         const delteAskInfo = await API.deleteAsk(ask_id);
+        setIsClick(!isClick)
     }
 
 
@@ -35,7 +38,7 @@ const AskAdminContainer = () => {
             
             setAsks(getAdminHistory.data);
         })();
-    }, [])
+    }, [isClick])
 
 
     return(

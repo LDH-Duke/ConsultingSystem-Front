@@ -18,6 +18,7 @@ export const SignInBox = ({
 
     title,
     signUpLink,
+    onKeyEnter,
     SignIn,
 }) => {
     return (
@@ -32,6 +33,7 @@ export const SignInBox = ({
                     onChange={setEmail}
                     placeholder={'아이디를 입력하세요.'}
                     onBlur={checkEmail}
+                    onKeyDown={onKeyEnter}
                 />
 
                 {/** 경고 메세지 삼항연산자 자리 */
@@ -44,7 +46,9 @@ export const SignInBox = ({
                     label={'비밀번호'}
                     type={'password'}
                     onChange={setPw}
-                    placeholder={'비밀번호를 입력하세요.'} />
+                    placeholder={'비밀번호를 입력하세요.'}
+                    onKeyDown={onKeyEnter}
+                />
 
             </div>
             <Button onClick={SignIn} title={'로그인'} />

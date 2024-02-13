@@ -35,8 +35,8 @@ export const Input = ({
     type,
     placeholder,
     onChange,
-    onBlur
-
+    onBlur,
+    onKeyDown,
 }) => {
   return (
     <InputContainer>
@@ -46,6 +46,7 @@ export const Input = ({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         onBlur={onBlur}
+        onKeyDown={onKeyDown}
         />
     </InputContainer>
   )
