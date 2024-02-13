@@ -8,7 +8,7 @@ export const CounselorBodyLayout = () => {
         <div className='counselor-body-layout'>
             <Row gutter={8}>
                 <Col xl={12}><CommonBox title={'상품 등록'} url={'/counselor/addproduct'}/></Col>
-                <Col xl={12}><CommonBox/></Col>
+                <Col xl={12}><CommonBox title={'문의 내역 확인'} url={'/counselor/ask/history'}/></Col>
             </Row>
             <Row>
                 <Col xl={24}><CommonBox title={'상담 내역'} url={'/counselor/consultinghistory'}/></Col>

@@ -57,6 +57,7 @@ export const CounselorIntro = ({
         <div>
           <CounselorTabContent
             title={'상담사정보'}
+            content={counselor.introduce}
           />
         </div>
     },
@@ -72,6 +73,7 @@ export const CounselorIntro = ({
       children:
         <div>
           <CounselorReview
+            counselor_id = {counselor_id}
             reviews={reviews}
           />
         </div>

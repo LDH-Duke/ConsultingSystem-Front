@@ -22,6 +22,7 @@ export { default as UserProfile } from './User/UserProfile';
 export { default as UserReview } from './User/UserReview';
 export { default as UserWriteReview } from './User/UserWriteReview';
 export { default as UserUpdateReview } from './User/UserUpdateReview';
+export { default as UserAsk } from './User/UserAsk';
 
 // 상담사
 export { default as CounselorSignUp } from './Counselor/CounselorSignUp';
@@ -30,3 +31,4 @@ export { default as CounselorProfile } from './Counselor/CounselorProfile';
 export { default as CounselorCoin } from './Counselor/CounselorCoin';
 export { default as CounselorAddProduct } from './Counselor/CounselorAddProduct';
 export { default as CounselorConsultingHistory } from './Counselor/CounselorConsultingHistory';
+export { default as CounselorAskHistory } from './Counselor/CounselorAskHistory';

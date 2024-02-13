@@ -1,0 +1,2 @@
+import CounselorAskHistoryContainer from "./CounselorAskHistoryContainer";
+export default CounselorAskHistoryContainer;

@@ -2,10 +2,12 @@ import React, { useState }from "react";
 import { UserWriteReviewPresenter } from "./UserWriteReviewPresenter";
 import cookie from "../../../../cookie";
 import { API } from "../../../../api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const UserWriteReviewContainer = () => {
     const navigate = useNavigate();
+
+    const {counselor_id} = useParams();
 
     const [content, setContent] = useState('');
     const [score, setScore] = useState(0);
@@ -27,7 +29,7 @@ const UserWriteReviewContainer = () => {
 
         const data = {
             user_id: user_id,
-            counselor_id: 4,
+            counselor_id: counselor_id,
             content: content,
             score: score
         }

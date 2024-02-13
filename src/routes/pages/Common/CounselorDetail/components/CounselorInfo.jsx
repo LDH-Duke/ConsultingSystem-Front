@@ -28,7 +28,7 @@ export const CounselorInfo = ({
 
                 <div className="counselor-links">
                     <Link to={'/user/donation'}>선물하기</Link>
-                    <Link>문의하기</Link>
+                    <Link to={`/user/ask/${counselor.id}`}>문의하기</Link>
                     <button className="consulting-button" onClick={modalOpen}>상담하기</button>
                     <ModalComponent
                         title={'상담하기'}

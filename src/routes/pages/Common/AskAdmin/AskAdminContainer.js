@@ -16,7 +16,7 @@ const AskAdminContainer = () => {
             content
         }
 
-        const askadmininfo = await API.postAskAdmin(body);
+        const askAdminInfo = await API.postAskAdmin(body);
         setIsClick(!isClick)
     }
 

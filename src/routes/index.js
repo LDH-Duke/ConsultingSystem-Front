@@ -5,9 +5,9 @@ import cookie from '../cookie';
 // 공통 페이지
 import { Error, Main, Search, SearchResult, Review, SignIn, CounselorDetail, Sitemap, ConsultingV1, ConsultingV2, AskAdmin, UpdateAskAdmin } from './pages';
 // 회원 페이지
-import { UserUpdateReview, UserWriteReview, UserReview, UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages';
+import { UserUpdateReview, UserWriteReview, UserReview, UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite, UserAsk } from './pages';
 // 상담사 페이지
-import { CounselorSignUp, CounselorAddProduct, CounselorProfile, CounselorCoin, CounselorMain, CounselorConsultingHistory } from './pages';
+import { CounselorSignUp, CounselorAddProduct, CounselorProfile, CounselorCoin, CounselorMain, CounselorConsultingHistory, CounselorAskHistory } from './pages';
 
 const Router = () => {
   const navigate = useNavigate();
@@ -67,8 +67,9 @@ const Router = () => {
         <Route exact path='/user/mymenu' element={<UserMyMenu setCookies={setCookies} />} />
         <Route exact path='/user/profile' element={<UserProfile setCookies={setCookies} />} />
         <Route exact path='/user/review' element={<UserReview setCookies={setCookies} />} />
-        <Route exact path='/user/review/write' element={<UserWriteReview setCookies={setCookies} />} />
+        <Route exact path='/user/review/write/:counselor_id' element={<UserWriteReview setCookies={setCookies} />} />
         <Route exact path='/user/review/update' element={<UserUpdateReview setCookies={setCookies} />} />
+        <Route exact path='/user/ask/:counselor_id' element={<UserAsk />} />
 
         {/* 상담사 */}
         <Route exact path='/counselor' element={<CounselorMain />} />
@@ -77,6 +78,7 @@ const Router = () => {
         <Route exact path='/counselor/coin' element={<CounselorCoin />} />
         <Route exact path='/counselor/profile' element={<CounselorProfile />} />
         <Route exact path='/counselor/consultinghistory' element={<CounselorConsultingHistory />} />
+        <Route exact path='/counselor/ask/history' element={<CounselorAskHistory />} />
 
       </Routes>
     </div>
