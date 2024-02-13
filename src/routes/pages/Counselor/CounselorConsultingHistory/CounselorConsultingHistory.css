@@ -1,0 +1,8 @@
+.History-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: aqua;
+    width: 100%;
+    height: 80vh;
+}
