@@ -8,6 +8,8 @@ import { Error, Main, Search, SearchResult, Review, SignIn, CounselorDetail, Sit
 import { UserUpdateReview, UserWriteReview, UserReview, UserProfile, UserMyMenu, UserDonation, UserSignUp, UserChargeCoin, UserFavorite } from './pages';
 // 상담사 페이지
 import { CounselorSignUp, CounselorAddProduct, CounselorProfile, CounselorCoin, CounselorMain, CounselorConsultingHistory } from './pages';
+// 관리자 페이지
+import { AdminMain } from './pages';
 
 const Router = () => {
   const navigate = useNavigate();
@@ -78,6 +80,8 @@ const Router = () => {
         <Route exact path='/counselor/profile' element={<CounselorProfile />} />
         <Route exact path='/counselor/consultinghistory' element={<CounselorConsultingHistory />} />
 
+        {/* 관리자 */}
+        <Route exact path='/admin/main' element={<AdminMain />} />        
       </Routes>
     </div>
   )

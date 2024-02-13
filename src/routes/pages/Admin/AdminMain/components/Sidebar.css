@@ -1,0 +1,30 @@
+.tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid var(--border-color);
+}
+
+.tabs .tabs-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+
+    cursor: pointer;
+
+    overflow: auto;
+
+    border-bottom: 1px solid var(--border-color);
+
+    &:hover {
+        padding: 0.5rem;
+        height: 100%;
+        background-color: white;
+        font-weight: bold;
+    }
+}
