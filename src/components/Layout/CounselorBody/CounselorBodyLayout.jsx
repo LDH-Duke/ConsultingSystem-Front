@@ -6,17 +6,17 @@ import './CounselorBodyLayout.css'
 export const CounselorBodyLayout = () => {
     return (
         <div className='counselor-body-layout'>
-            <Row gutter={8}>
-                <Col xl={12}><CommonBox title={'상품 등록'} url={'/counselor/addproduct'}/></Col>
-                <Col xl={12}><CommonBox/></Col>
+            <Row gutter={8} >
+                <Col xs={12}><CommonBox title={'상품 등록'} url={'/counselor/addproduct'}/></Col>
+                <Col xs={12}><CommonBox/></Col>
             </Row>
             <Row>
-                <Col xl={24}><CommonBox title={'상담 내역'} url={'/counselor/consultinghistory'}/></Col>
+                <Col xs={24}><CommonBox title={'상담 내역'} url={'/counselor/consultinghistory'}/></Col>
             </Row>
             <Row gutter={8}>
-                <Col xl={8}><CommonBox title={'프로필 수정'} url={'/counselor/profile'}/></Col>
-                <Col xl={8}><CommonBox title={'코인 환전'} url={'/counselor/coin'}/></Col>
-                <Col xl={8}><CommonBox title={'관리자 문의'} url={'/askadmin/counselor'}/></Col>
+                <Col xs={8}><CommonBox title={'프로필 수정'} url={'/counselor/profile'}/></Col>
+                <Col xs={8}><CommonBox title={'코인 환전'} url={'/counselor/coin'}/></Col>
+                <Col xs={8}><CommonBox title={'관리자 문의'} url={'/askadmin/counselor'}/></Col>
             </Row>
         </div>
     )

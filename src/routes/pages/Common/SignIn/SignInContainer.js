@@ -39,6 +39,12 @@ const SignInContainer = ({
   /**
    * 로그인 함수
    */
+  const onKeyEnter = (e) => {
+    if (e.key === 'Enter') {
+      SignIn();
+    }
+  }
+
   const SignIn = async () => {
     if (!isCheckEmail || pw.length < 0) {
       // TODO: 로그인 불가 알림
@@ -77,6 +83,7 @@ const SignInContainer = ({
       checkEmail={checkEmail}
 
       toggleUserSignIn={toggleUserSignIn}
+      onKeyEnter={onKeyEnter}
       SignIn={SignIn}
     />
   )

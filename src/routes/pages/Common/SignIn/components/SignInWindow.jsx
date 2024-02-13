@@ -14,6 +14,7 @@ export const SignInWindow = ({
     checkEmail,
 
     toggleUserSignIn,
+    onKeyEnter,
     SignIn
 }) => {
     return (
@@ -36,18 +37,20 @@ export const SignInWindow = ({
 
                         title={'회원 로그인'}
                         signUpLink='/user/signup'       // FIXME: 링크 수정 필요
+                        onKeyEnter={onKeyEnter}
                         SignIn={SignIn}
-                    /> :
+                        /> :
                     <SignInBox
                         isCheckEmail={isCheckEmail}
-
+                        
                         setEmail={setEmail}
                         setPw={setPw}
-
+                        
                         checkEmail={checkEmail}
-
+                        
                         title={'상담사 로그인'}
                         signUpLink='/counselor/signup'  // FIXME: 링크 수정 필요
+                        onKeyEnter={onKeyEnter}
                         SignIn={SignIn}
                     />
             }
