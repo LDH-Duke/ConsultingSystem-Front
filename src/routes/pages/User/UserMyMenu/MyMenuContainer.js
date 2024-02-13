@@ -13,7 +13,7 @@ const MyMenuContainer = ({
       path: '/user/favorite',
     },
     {
-      title: '상품\n구매내역\n(작동X)',
+      title: '구매내역\n(작동X)',
       path: '/',
     },
     {
@@ -33,7 +33,7 @@ const MyMenuContainer = ({
       path: '/',
     },
     {
-      title: '나의 1:1문의',
+      title: '1:1문의',
       path: '/askadmin/user',
     },
     {
@@ -45,12 +45,12 @@ const MyMenuContainer = ({
       path: '/user/review',
     },
   ]
-  
+
   const [userInfo, setUserInfo] = useState({});
 
   useEffect(() => {
     (
-      async() => {
+      async () => {
         const id = cookie.getCookie('id');
 
         if (id === null) {
@@ -72,7 +72,7 @@ const MyMenuContainer = ({
   }, [])
 
   return (
-    <MyMenuPresenter userInfo={userInfo} myMenuItems={myMenuItems}/>
+    <MyMenuPresenter userInfo={userInfo} myMenuItems={myMenuItems} />
   )
 }
 

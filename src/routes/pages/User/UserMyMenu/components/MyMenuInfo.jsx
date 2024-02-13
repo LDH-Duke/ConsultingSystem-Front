@@ -1,7 +1,7 @@
 import React from "react";
 import { MyInfo } from "./Info/MyInfo";
-import { Menus } from "./Menu/Menus";
 import { MenuList } from "./Menu/MenuList";
+import { Divider } from "antd";
 import './MyMenuInfo.css';
 
 export const MyMenuInfo = ({
@@ -10,9 +10,12 @@ export const MyMenuInfo = ({
 }) => {
     return (
         <div className="mymenu-container">
-            <MyInfo userInfo={userInfo}/>
-            {/* <Menus myMenuItems={myMenuItems}/> */}
-            <MenuList myMenuItems={myMenuItems}/>
+            <div className="mymenu-wrap">
+                <MyInfo userInfo={userInfo} />
+                <Divider />
+                <MenuList myMenuItems={myMenuItems} />
+            </div>
+
         </div>
     )
 }
