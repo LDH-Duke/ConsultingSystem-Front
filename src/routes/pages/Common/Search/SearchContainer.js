@@ -8,7 +8,7 @@ const SearchContainer = () => {
   const [keyword, setKeyword] = useState('');
 
   const onKeyEnter = (e) => {
-    if (e.Key === 'Enter') {
+    if (e.key === 'Enter') {
       Search();
     }
   }

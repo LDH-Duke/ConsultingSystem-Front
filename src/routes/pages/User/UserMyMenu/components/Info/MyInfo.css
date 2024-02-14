@@ -1,4 +1,64 @@
-.mymenu-myinfo {
+.mymenu-user {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    gap: 1rem;
+}
+
+.mymenu-user .user-info {
+    display: flex;
+}
+
+.mymenu-user .user-img {
+    height: 4rem;
+    width: 4rem;
+
+    border-radius: 50%;
+    border: 1px solid gray;
+
+    margin-right: 1rem;
+}
+
+.mymenu-user .user-name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.mymenu-user .user-name span:nth-child(1) {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.mymenu-user .user-name span:nth-child(2) {
+    font-size: 0.8rem;
+}
+
+.mymenu-user .myhistory-user {
+    display: flex;
+    justify-content: space-around;
+
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    padding: 1rem;
+}
+
+.mymenu-user .myhistory-tab {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.mymenu-user .myhistory-tab span:nth-child(2) {
+    color: #00cc8f;
+    font-weight: bold;
+}
+
+/* .mymenu-myinfo {
     width: 100%;
     background-color: var(--sub-bg-color);
     display: flex;
@@ -44,4 +104,4 @@
         padding: 1rem 3rem;
         border-radius: 5px;
     }
-}
+} */

@@ -15,6 +15,7 @@ export const SignInPresenter = ({
     checkEmail,
 
     toggleUserSignIn,
+    onKeyEnter,
     SignIn,
 }) => {
     return (
@@ -29,6 +30,7 @@ export const SignInPresenter = ({
                 checkEmail={checkEmail}
 
                 toggleUserSignIn={toggleUserSignIn}
+                onKeyEnter={onKeyEnter}
                 SignIn={SignIn}
             />
         </Layout>

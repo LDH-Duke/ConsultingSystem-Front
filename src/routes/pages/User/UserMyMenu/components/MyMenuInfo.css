@@ -1,10 +1,31 @@
 .mymenu-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
-    
-    width: 100%;
 
+    width: 100%;
+    height: 100%;
+
+    padding: 0 0.5rem;
+}
+
+
+.mymenu-container .mymenu-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    max-width: 410px;
+    min-width: 360px;
+
+    border: 2px solid #ebebeb;
     padding: 0 1rem;
+}
+
+.mymenu-container .ant-divider {
+    background-color: #00cc8f;
 }
