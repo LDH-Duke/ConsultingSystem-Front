@@ -13,16 +13,16 @@ export const MainPresenter = ({
     addFavorite,
     deleteFavorite,
 
-    isModalOpen,
-    modalOpen,
-    handleOk,
-    handleCancel,
-    modalItems,
-    modalButtons,
-}) => {    
+    // isModalOpen,
+    // modalOpen,
+    // handleOk,
+    // handleCancel,
+    // modalItems,
+    // modalButtons,
+}) => {
     return (
         <Layout nav={1} isMain={true}>
-            <Banner isSignIn={isSignIn}/>
+            <Banner isSignIn={isSignIn} />
             <List
                 counselors={counselors}
                 moveCounselorDetail={moveCounselorDetail}
@@ -31,12 +31,12 @@ export const MainPresenter = ({
                 addFavorite={addFavorite}
                 deleteFavorite={deleteFavorite}
 
-                isModalOpen={isModalOpen}
-                modalOpen={modalOpen}
-                handleOk={handleOk}
-                handleCancel={handleCancel}
-                modalItems={modalItems}
-                modalButtons={modalButtons}
+            // isModalOpen={isModalOpen}
+            // modalOpen={modalOpen}
+            // handleOk={handleOk}
+            // handleCancel={handleCancel}
+            // modalItems={modalItems}
+            // modalButtons={modalButtons}
             />
         </Layout>
     )

@@ -16,15 +16,15 @@ const MainContainer = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClick, setIsClick] = useState(false);
 
-  /**
-   * 모달 아이템
-   */
-  const [modalItems, setModalItems] = useState([
-    {
-      text: '',
-      value: '',
-    },
-  ]);
+  // /**
+  //  * 모달 아이템
+  //  */
+  // const [modalItems, setModalItems] = useState([
+  //   {
+  //     text: '',
+  //     value: '',
+  //   },
+  // ]);
 
   useEffect(() => {
     (
@@ -107,25 +107,26 @@ const MainContainer = ({
     setIsClick(!isClick);
   }
 
-  /**
-   * 상담 연결 (V1)
-   */
-  const connectConsultingV1 = (counselor_id) => {
-    __closeModal();
+  // /**
+  //  * 상담 연결 (V1)
+  //  */
+  // const connectConsultingV1 = (counselor_id) => {
+  //   console.log(counselor_id)
+  //   __closeModal();
+  //   // Consulting V1 이동
 
-    // Consulting V1 이동
-    navigate('/consultingv1');
-  }
+  //   navigate('/consultingv1');
+  // }
 
-  /**
-   * 상담 연결 (V2)
-   */
-  const connectConsultingV2 = (counselor_id) => {
-    __closeModal();
+  // /**
+  //  * 상담 연결 (V2)
+  //  */
+  // const connectConsultingV2 = (counselor_id) => {
+  //   __closeModal();
 
-    // Consulting V2 이동
-    navigate('/consultingv2');
-  }
+  //   // Consulting V2 이동
+  //   navigate('/consultingv2');
+  // }
 
   /**
    * 상담사 상세 페이지로 이동
@@ -133,61 +134,61 @@ const MainContainer = ({
    * @params product_id => 상품 아이디
    */
   const moveCounselorDetail = (counselor_id, production_price) => {
-    navigate(`/counselor/${counselor_id}`, {state: {production_price}});
+    navigate(`/counselor/${counselor_id}`, { state: { production_price } });
   }
 
-  /* ======================= */
-  /*          모달           */
-  /* ======================= */
-  // 모달 닫기
-  const __closeModal = () => {
-    setIsModalOpen(false);
-  }
+  // /* ======================= */
+  // /*          모달           */
+  // /* ======================= */
+  // // 모달 닫기
+  // const __closeModal = () => {
+  //   setIsModalOpen(false);
+  // }
 
-  /**
-       * 모달 버튼
-       */
-  const modalButtons = [
-    {
-      text: '상담 V1 연결',
-      onClick: connectConsultingV1,
-    },
-    {
-      text: '상담 V2 연결',
-      onClick: connectConsultingV2,
-    },
-  ];
+  // /**
+  //      * 모달 버튼
+  //      */
+  // const modalButtons = [
+  //   {
+  //     text: '상담 V1 연결',
+  //     onClick: connectConsultingV1,
+  //   },
+  //   {
+  //     text: '상담 V2 연결',
+  //     onClick: connectConsultingV2,
+  //   },
+  // ];
 
-  /**
-   * 모달 오픈
-   */
-  const modalOpen = (counselor) => {
-    setIsModalOpen(true);
-    setModalItems([
-      {
-        text: '예명',
-        value: counselor['counselor.nickname'],
-      },
-      {
-        text: '가격',
-        value: counselor.price,
-      },
-    ])
-  }
+  // /**
+  //  * 모달 오픈
+  //  */
+  // const modalOpen = (counselor) => {
+  //   setIsModalOpen(true);
+  //   setModalItems([
+  //     {
+  //       text: '예명',
+  //       value: counselor['counselor.nickname'],
+  //     },
+  //     {
+  //       text: '가격',
+  //       value: counselor.price,
+  //     },
+  //   ])
+  // }
 
-  /**
-   * 모달 확인 버튼 
-  */
-  const handleOk = () => {
-    __closeModal();
-  }
+  // /**
+  //  * 모달 확인 버튼 
+  // */
+  // const handleOk = () => {
+  //   __closeModal();
+  // }
 
-  /**
-   * 모달 취소 버튼 
-  */
-  const handleCancel = () => {
-    __closeModal();
-  }
+  // /**
+  //  * 모달 취소 버튼 
+  // */
+  // const handleCancel = () => {
+  //   __closeModal();
+  // }
 
   return (
     <MainPresenter
@@ -200,12 +201,12 @@ const MainContainer = ({
       addFavorite={addFavorite}
       deleteFavorite={deleteFavorite}
 
-      isModalOpen={isModalOpen}
-      modalOpen={modalOpen}
-      handleOk={handleOk}
-      handleCancel={handleCancel}
-      modalItems={modalItems}
-      modalButtons={modalButtons}
+    // isModalOpen={isModalOpen}
+    // modalOpen={modalOpen}
+    // handleOk={handleOk}
+    // handleCancel={handleCancel}
+    // modalItems={modalItems}
+    // modalButtons={modalButtons}
     />
   )
 }
