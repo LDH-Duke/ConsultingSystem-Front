@@ -1,0 +1,46 @@
+.Box-layout {
+    display: flex;
+    width: 100%;
+    height: 12vh;
+    background-color: white;
+    align-items: center;
+    border-bottom: 2px solid #EFEFEF;
+}
+
+.icon-layout {
+    display: flex;
+    margin-left: 16px;
+    width: 12%;
+    height: 7vh;
+    background-color: #EFEFEF;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contents-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+    width: 40%;
+    height: 11vh;
+    line-height: 18px;
+}
+
+.Question-Name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.Question-Category {
+    font-weight: 400;
+    font-size: 9px;
+    color: #666666;
+}
+
+.Question-Status {
+    font-weight: 540;
+    font-size: 12px;
+    color: #12B173;
+}

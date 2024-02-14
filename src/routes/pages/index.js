@@ -31,4 +31,7 @@ export { default as CounselorProfile } from './Counselor/CounselorProfile';
 export { default as CounselorCoin } from './Counselor/CounselorCoin';
 export { default as CounselorAddProduct } from './Counselor/CounselorAddProduct';
 export { default as CounselorConsultingHistory } from './Counselor/CounselorConsultingHistory';
+
+// 관리자
+export { default as AdminMain } from './Admin/AdminMain';
 export { default as CounselorAskHistory } from './Counselor/CounselorAskHistory';

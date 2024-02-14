@@ -1,0 +1,23 @@
+.user-table {
+    border-collapse: collapse;
+    width: 100%;
+
+    table-layout: fixed;
+    overflow: auto;
+}
+
+.user-table th {
+    font-size: 0.9rem;
+    background-color: white;
+}
+
+.user-table th,
+.user-table td {
+    border: 1px solid var(--border-color);
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+}
+
+.user-table tr:nth-child(2n) {
+    background-color: white;
+}

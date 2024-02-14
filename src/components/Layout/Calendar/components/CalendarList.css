@@ -1,0 +1,48 @@
+ .schedule {
+     display: flex;
+     flex-direction: column;
+
+     width: 100%;
+
+     border-radius: 5px;
+     border: solid 1px #a0a096;
+ }
+
+ .schedule .schedule-nav {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     padding: 0.5rem;
+
+     font-size: 1.2rem;
+     font-weight: bold;
+     color: #768085;
+ }
+
+ .schedule-select {
+     display: flex;
+     flex-direction: column;
+ }
+
+ .schedule-option {}
+
+ .schedule-option .option-title {
+     display: block;
+     padding: 0.25rem;
+ }
+
+ .schedule-option-btn {
+     display: flex;
+ }
+
+ .schedule .schedule-add {
+     display: flex;
+     width: 100%;
+     height: max-content;
+     justify-content: flex-end;
+
+     margin-top: auto;
+
+     margin-right: 1rem;
+ }

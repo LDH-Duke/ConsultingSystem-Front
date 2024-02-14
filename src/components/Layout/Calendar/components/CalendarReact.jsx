@@ -11,16 +11,27 @@ const CalendarContainer = styled.div`
     width: 100%;
 `;
 
-export const CalendarReact = () => {
+export const CalendarReact = ({
+    setclickDay
+}) => {
     const [value, onChange] = useState(new Date());
 
+
+
+    const onClickDay = (day) => {
+        const date = new Date(day);
+        const formattedDate = date.toLocaleDateString('ko-KR');
+        setclickDay(formattedDate)
+    }
+
     return (
-        <CalendarContainer>
+        <div>
             <Calendar onChange={onChange}
                 value={value}
+                onClickDay={e => onClickDay(e)}
                 formatDay={(locale, date) => date.toLocaleString("en", { day: "numeric" })}
                 calendarType='US'
             />
-        </CalendarContainer>
+        </div>
     );
 }
