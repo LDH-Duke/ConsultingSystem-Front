@@ -91,8 +91,24 @@ const MyMenuContainer = ({
     )();
   }, [])
 
+  /**
+   * 에러 처리 함수
+   */
+  const checkError = () => {
+    setError({
+      isError: false,
+      errorMsg: '',
+    });
+  }
+
   return (
-    <MyMenuPresenter userInfo={userInfo} myMenuItems={myMenuItems} />
+    <MyMenuPresenter
+      userInfo={userInfo}
+      myMenuItems={myMenuItems}
+      
+      error={error}
+      checkError={checkError}
+    />
   )
 }
 

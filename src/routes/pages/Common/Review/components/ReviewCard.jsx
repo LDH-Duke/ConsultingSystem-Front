@@ -13,9 +13,9 @@ const ReviewCard = ({
         <div className="review-card-container">
             <ul>
                 {
+                    reviews &&
                     reviews.map((review, idx) => {
-
-                        return (                            
+                        return (
                             <li className={`reivew-item ${idx}`} key={`reivew-item ${idx}`}>
                                 <div className="review-counselor">
                                     <div className="review-counselor-info">
@@ -28,26 +28,26 @@ const ReviewCard = ({
                                     </div>
                                     {
                                         isShowButton
-                                        ?
-                                        <div className="review-button">
-                                            <Link to=
-                                                {`/user/review/update?prev_content=${review['review_items.content']}&review_item_id=${review['review_items.id']}
-                                                `}>
-                                                <button>수정하기</button>
-                                            </Link>
-                                            {/* <button onClick={() => {
-                                                goTo(`/user/review/update?prev_content=${review['review_items.content']}`)
-                                            }}>수정하기</button> */}
-                                        </div>
-                                        :
-                                        <></>
+                                            ?
+                                            <div className="review-button">
+                                                <Link to=
+                                                    {`/user/review/update?prev_content=${review['review_items.content']}&review_item_id=${review['review_items.id']}
+                                                    `}>
+                                                    <button>수정하기</button>
+                                                </Link>
+                                                {/* <button onClick={() => {
+                                                    goTo(`/user/review/update?prev_content=${review['review_items.content']}`)
+                                                }}>수정하기</button> */}
+                                            </div>
+                                            :
+                                            <></>
                                     }
                                 </div>
                                 <div className="review-user">
                                     <div className="user-name">
                                         <div>
                                             <span>{review['review_items.user.name']}</span>
-                                            <Rate 
+                                            <Rate
                                                 disabled
                                                 defaultValue={review['review_items.score']} // css 수정 필요
                                             />
@@ -62,7 +62,6 @@ const ReviewCard = ({
                         )
                     })
                 }
-
             </ul>
 
             {/* {

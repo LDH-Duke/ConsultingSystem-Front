@@ -187,6 +187,9 @@ const FavoriteContainer = ({
       favoriteList={favoriteList}
 
       deleteFavorite={deleteFavorite}
+
+      error={error}
+      checkError={checkError}
     />
   )
 }

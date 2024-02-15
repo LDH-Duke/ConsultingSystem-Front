@@ -21,23 +21,39 @@ export const List = ({
     // modalItems,
     // modalButtons,
 }) => {
+    const navigate = useNavigate();
+
+    const [error, setError] = useState({
+        isError: true,
+        errorMsg: '',
+    });
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectCounselor, setSelectCounselor] = useState('');
-    const navigate = useNavigate();
 
     /**
      * 상담 연결 (V1)
-     */
+    */
     const connectConsultingV1 = async () => {
         const request = await API.getCounsultRequest(selectCounselor.counselor_id)
         console.log(request)
 
         if (!request.status) {
             console.log('에러')
+            // 에러 발생
+            setError({
+                isError: true,
+                errorMsg: '상담 연결 중 에러가 발생하였습니다.'
+            });
+            return;
         }
 
         if (request.status.is_user.total_coin < (selectCounselor.price * 5)) {
             console.log('잔액부족')
+            setError({
+                isError: true,
+                errorMsg: '상담 연결에 필요한 코인이 부족합니다.'
+            });
+            return;
         }
 
         //socket 연결 부분

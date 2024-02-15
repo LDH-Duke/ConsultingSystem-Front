@@ -33,35 +33,25 @@ const MainContainer = ({
   useEffect(() => {
     (
       async () => {
+        // 로그인 여부 판단
+        const userData = cookie.getCookie('id');
+        setIsSignIn(userData !== null);
+
         // 상품 전체 조회
         const result = await API.getCounselorProducts();
-
-        if (result.status === 409) {
-          // 상품 가져오기 실패
-          setError({
-            isError: true,
-            errorMsg: '상품 조회에 실패하였습니다.',
-          });
-          return;
-        }
-
         if (result.status === 500) {
           // 에러 발생
           setError({
             isError: true,
-            errorMsg: '상품 조회 중 에러가 발생하였습니다.',
+            errorMsg: '상품 전체 조회 중 에러가 발생하였습니다.',
           });
           return;
         }
 
         setCounselors(result.data);
 
-        const userData = cookie.getCookie('id');
-        setIsSignIn(userData !== null);
-
-        // 즐겨찾기 전체 조회
+        // 즐겨찾기 조회
         const favoriteResult = await API.getFavorite(userData);
-
         if (favoriteResult.status === 409) {
           // 즐겨찾기 정보 가져오기 실패
           setError({
@@ -90,7 +80,6 @@ const MainContainer = ({
    */
   const addFavorite = async (counselor_id) => {
     const id = cookie.getCookie('id');
-
     if (id === null) {
       // 로그인 필요
       setError({
@@ -107,10 +96,12 @@ const MainContainer = ({
 
     // 즐겨찾기
     const result = await API.postFavorite(body);
-
     if (result.status === 401) {
       // 즐겨찾기 추가 이슈
-
+      setError({
+        isError: true,
+        errorMsg: '즐겨찾기 추가에 실패하였습니다.'
+      });
       return;
     }
 
@@ -132,6 +123,14 @@ const MainContainer = ({
   const deleteFavorite = async (counselor_id, favorite_id) => {
     console.log('call deleteFavorite');
     const user_id = cookie.getCookie('id');
+    if (user_id === null) {
+      // 로그인 필요
+      setError({
+        isError: true,
+        errorMsg: '로그인이 필요합니다.'
+      });
+      return;
+    }
 
     const body = {
       user_id,
@@ -139,13 +138,12 @@ const MainContainer = ({
     };
 
     const result = await API.deleteFavorite(body);
-
     if (result.status === 401) {
       // 즐겨찾기 취소 실패
-          setError({
-            isError: true,
-            errorMsg: '즐겨찾기 취소를 실패했습니다.',
-          });
+      setError({
+        isError: true,
+        errorMsg: '즐겨찾기 취소를 실패히였습니다.',
+      });
       return;
     }
 
@@ -244,6 +242,16 @@ const MainContainer = ({
   //   __closeModal();
   // }
 
+  /**
+   * 에러 처리 함수
+   */
+  const checkError = () => {
+    setError({
+      isError: false,
+      errorMsg: '',
+    });
+  }
+
   return (
     <MainPresenter
       isSignIn={isSignIn}
@@ -255,12 +263,15 @@ const MainContainer = ({
       addFavorite={addFavorite}
       deleteFavorite={deleteFavorite}
 
-    // isModalOpen={isModalOpen}
-    // modalOpen={modalOpen}
-    // handleOk={handleOk}
-    // handleCancel={handleCancel}
-    // modalItems={modalItems}
-    // modalButtons={modalButtons}
+      // isModalOpen={isModalOpen}
+      // modalOpen={modalOpen}
+      // handleOk={handleOk}
+      // handleCancel={handleCancel}
+      // modalItems={modalItems}
+      // modalButtons={modalButtons}
+
+      error={error}
+      checkError={checkError}
     />
   )
 }

@@ -29,6 +29,15 @@ const UserWriteReviewContainer = () => {
     const writeReview = async () => {
         const user_id = cookie.getCookie('id');
 
+        if (user_id === null) {
+            // 로그인 필요
+            setError({
+                isError: true,
+                errorMsg: '로그인이 필요합니다.',
+            });
+            return;
+        }
+
         const data = {
             user_id: user_id,
             counselor_id: 4,
@@ -36,7 +45,6 @@ const UserWriteReviewContainer = () => {
             score: score
         }
         const result = await API.postReview(data);
-        console.log(result)
 
         if (result.status === 409) {
             // 작성 실패
@@ -90,6 +98,9 @@ const UserWriteReviewContainer = () => {
 
             goBack={goBack}
             goTo={goTo}
+
+            error={error}
+            checkError={checkError}
         />
     )
 }

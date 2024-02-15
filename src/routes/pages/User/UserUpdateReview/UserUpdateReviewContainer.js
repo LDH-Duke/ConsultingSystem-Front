@@ -118,6 +118,9 @@ const UserUpdateReviewContainer = () => {
             deleteReview={deleteReview}
 
             goBack={goBack}
+
+            error={error}
+            checkError={checkError}
         />
     )
 }

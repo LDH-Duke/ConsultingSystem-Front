@@ -33,8 +33,8 @@ const CounselorCoinContainer = () => {
                         errorMsg: '회원 정보 조회에 실패하였습니다.',
                     });
                     return;
-                } 
-                
+                }
+
                 if (getCounselorInfo.status === 500) {
                     // 에러 발생
                     setError({
@@ -44,14 +44,28 @@ const CounselorCoinContainer = () => {
                     return;
                 }
 
-
                 setCounselor(getCounselorInfo.data);
             }
         )();
     }, [])
 
+    /**
+     * 에러 처리 함수
+     */
+    const checkError = () => {
+        setError({
+            isError: false,
+            errorMsg: '',
+        });
+    }
+
     return (
-        <CounselorCoinPresenter counselor={counselor} />
+        <CounselorCoinPresenter
+            counselor={counselor}
+
+            error={error}
+            checkError={checkError}
+        />
     )
 }
 

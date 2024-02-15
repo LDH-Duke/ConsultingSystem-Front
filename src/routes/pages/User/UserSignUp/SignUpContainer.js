@@ -73,13 +73,26 @@ const SignUpContainer = ({
     if (result.status === 409) {
       // 중복확인 실패
       // 실패 알림
+      let message = '';
+      switch (result.data) {
+        case 4091:
+          message = '해당 이메일이 존재합니다.';
+          break;
+        case 4093:
+          message = '해당 전화번호가 존재합니다.';
+          break;
+        default:
+          message = '중복확인에 실패하였습니다.';
+          break;
+      }
+
       setError({
         isError: true,
-        errorMsg: '중복확인에 실패하였습니다.',
+        errorMsg: message,
       });
       return;
-    } 
-    
+    }
+
     if (result.status === 500) {
       // 에러 발생
       setError({
@@ -120,15 +133,6 @@ const SignUpContainer = ({
     // const result = isUser ? await API.postSignUp(body) : await API.postCounselorSignUp(body);
     const result = await API.postSignup(body);
 
-    if (result.status === 401) {
-      // 회원가입 실패
-      setError({
-        isError: true,
-        errorMsg: '회원가입에 실패하였습니다.',
-      });
-      return;
-    } 
-    
     if (result.status === 500) {
       // 에러 발생
       setError({
@@ -166,6 +170,9 @@ const SignUpContainer = ({
 
       doubleCheck={doubleCheck}
       SignUp={SignUp}
+
+      error={error}
+      checkError={checkError}
     />
   )
 }

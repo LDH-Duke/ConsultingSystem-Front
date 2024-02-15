@@ -45,7 +45,6 @@ const CounselorDetailContainer = ({
          * 상담사 단일 정보 조회
          */
         const counselorData = await API.getCounselor(counselor_id);
-
         if (counselorData.status === 404) {
           // 상담사 정보 조회 실패
           setError({
@@ -84,7 +83,6 @@ const CounselorDetailContainer = ({
          * 상담사 단일 후기
          */
         const reviewsData = await API.getReview(counselor_id);
-
         if (reviewsData.status === 409) {
           // 후기 조회 실패
           setError({
@@ -176,14 +174,14 @@ const CounselorDetailContainer = ({
     __closeModal();
   }
 
-    /**
-     * 에러 처리 함수
-     */
-    const checkError = () => {
-      setError({
-          isError: false,
-          errorMsg: '',
-      });
+  /**
+   * 에러 처리 함수
+   */
+  const checkError = () => {
+    setError({
+      isError: false,
+      errorMsg: '',
+    });
   }
 
   return (
@@ -198,6 +196,9 @@ const CounselorDetailContainer = ({
       handleCancel={handleCancel}
       modalItems={modalItems}
       modalButtons={modalButtons}
+
+      error={error}
+      checkError={checkError}
     />
   )
 }

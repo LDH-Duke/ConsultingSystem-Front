@@ -18,15 +18,22 @@ const UserReviewContainer = () => {
     useEffect(() => {
         (
             async () => {
-
                 const user_id = cookie.getCookie('id');
+                if (user_id === null) {
+                    // 로그인 필요
+                    setError({
+                        isError: true,
+                        errorMsg: '로그인이 필요합니다.',
+                    });
+                    return;
+                }
 
                 const reviewsData = await API.getUserReviews(user_id);
                 if (reviewsData.status === 409) {
                     // 리뷰 조회 실패
                     setError({
                         isError: true,
-                        errorMsg: '후기 조회를 실패하였습니다.'
+                        errorMsg: '작성한 후기가 없습니다.'
                     });
                     return;
                 } 
@@ -63,6 +70,9 @@ const UserReviewContainer = () => {
         <UserReviewPresenter
             reviews={reviews}
             reviewUpdate={reviewUpdate}
+
+            error={error}
+            checkError={checkError}
         />
     )
 }

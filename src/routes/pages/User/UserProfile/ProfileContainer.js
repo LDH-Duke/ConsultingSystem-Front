@@ -20,6 +20,7 @@ const ProfileContainer = ({
       async () => {
         // 유저 정보 가져오는 API 연결
         const id = cookie.getCookie('id');
+
         if (id === null) {
           // 로그인 필요
           setError({
@@ -111,6 +112,9 @@ const ProfileContainer = ({
       setUserInfo={setUserInfo}
 
       onModify={onModify}
+
+      error={error}
+      checkError={checkError}
     />
   )
 }

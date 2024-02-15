@@ -85,8 +85,25 @@ const CounselorProfileContainer = () => {
 
     }
 
+  /**
+   * 에러 처리 함수
+   */
+  const checkError = () => {
+    setError({
+      isError: false,
+      errorMsg: '',
+    });
+  }
+
     return (
-        <CounselorProfilePresenter counselor={counselor} setCounselor={setCounselor} onSubmit={onSubmit} />
+        <CounselorProfilePresenter
+            counselor={counselor}
+            setCounselor={setCounselor}
+            onSubmit={onSubmit}
+
+            error={error}
+            checkError={checkError}
+        />
     )
 }
 
