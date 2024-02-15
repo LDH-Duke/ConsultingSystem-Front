@@ -3,7 +3,7 @@ import './ConsultingBox.css';
 import { Collapse } from "antd";
 
 export const ConsultingBox = ({
-    QuestionInfo
+    QuestionInfo,
 }) => {
     return (
         <div className="Box-layout">
@@ -16,8 +16,8 @@ export const ConsultingBox = ({
             </div>
             <div className="contents-layout">
                 <p className="Question-Name">{QuestionInfo.Name}</p>
-                <p className="Question-Category">{QuestionInfo.Category}</p>
-                <p className="Question-Status">{QuestionInfo.Status}</p>
+                <p className="Question-Category">{QuestionInfo.totaltime}</p>
+                <p className="Question-Status">{QuestionInfo.usecoin}</p>
             </div>
         </div>
     )

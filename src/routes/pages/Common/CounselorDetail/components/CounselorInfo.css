@@ -8,18 +8,16 @@
 
     .counselor-image {
         width: 100%;
-
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-
+        padding: 10px ;
         background-color: rgb(235, 235, 235);
     }    
 }
 
 .counselor-info-container img {
-    /* width: 50%; */
-    object-fit: fill;
+    width: 40%;
 }
 
 .counselor-info-box {
@@ -96,4 +94,13 @@
         border: 1px solid var(--sub-bg-color);
         color: white;
     }
+}
+
+.counselor-info-container .counselor-detail {
+    display: flex;
+    width: 55%;
+    height: 19vh;
+    margin-left: 10px;
+    justify-content: space-between;
+    padding: 10px;
 }

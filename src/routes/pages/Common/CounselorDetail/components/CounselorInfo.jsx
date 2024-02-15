@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { ModalComponent } from "../../../../../components/Layout/Modal/Modal";
 import example from './example.png';
 import './CounselorInfo.css';
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const CounselorInfo = ({
     counselor,
-    
     isModalOpen,
     modalOpen,
     handleCancel,
@@ -17,6 +18,10 @@ export const CounselorInfo = ({
         <div className="counselor-info-container">
             <div className="counselor-image">
                 <img src={example} alt="상담사 이미지" />
+                <div className="counselor-detail">
+                    <span className="counselor-nickname">{counselor.nickname}</span>
+                    <FontAwesomeIcon icon={faHeart} onClick={() => {}} />
+                </div>
             </div>
 
             <div className="counselor-info-box">
