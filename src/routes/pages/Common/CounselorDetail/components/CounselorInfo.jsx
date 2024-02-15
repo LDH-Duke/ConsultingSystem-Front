@@ -19,8 +19,16 @@ export const CounselorInfo = ({
             <div className="counselor-image">
                 <img src={example} alt="상담사 이미지" />
                 <div className="counselor-detail">
-                    <span className="counselor-nickname">{counselor.nickname}</span>
-                    <FontAwesomeIcon icon={faHeart} onClick={() => {}} />
+                    <div className="first-form">
+                        <span className="counselor-nickname">{counselor.nickname}</span>
+                        <FontAwesomeIcon icon={faHeart} onClick={() => {}} />
+                    </div>
+                    <div className="second-form">
+                        <span>우수 상담원</span>
+                        <span>할인율 40%</span>
+
+                    </div>
+                    
                 </div>
             </div>
 

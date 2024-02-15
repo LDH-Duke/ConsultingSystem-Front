@@ -9,18 +9,54 @@ const UserAskContainer = () => {
 
     const [content, setContent] = useState();
 
+    const [error, setError] = useState({
+        isError: false,
+        errorMsg: '',
+    });
+
     const onSubmit = async() => {
         const body = {
             content
         };
         const askCounselorInfo = await API.postQuestionToCounselor(counselor_id, body);
+        if (askCounselorInfo.status === 409) {
+            // 문의 등록 실패
+            setError({
+                isError: true,
+                errorMsg: '문의 등록에 실패하였습니다.',
+            });
+            return;
+        }
+
+        if (askCounselorInfo.status === 500) {
+            // 에러 발생
+            setError({
+                isError: true,
+                errorMsg: '문의 등록 중 에러가 발생하였습니다.',
+            });
+            return;
+        }
+    }
+
+    /**
+     * 에러 처리 함수
+     */
+    const checkError = () => {
+        setError({
+            isError: false,
+            errorMsg: '',
+        });
     }
 
     return(
         <UserAskPresenter 
         setContent={setContent} 
         
-        onSubmit={onSubmit}/>
+        onSubmit={onSubmit}
+        
+        error = {error}
+        checkError = {checkError}
+        />
     )
 }
 
