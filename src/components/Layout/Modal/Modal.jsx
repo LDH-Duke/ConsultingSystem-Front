@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Modal, Button } from 'antd';
 import { InputComponent } from '../Input/InputComponent';
 import './Modal.css';
+import { useNavigate } from 'react-router-dom';
 
 export const ModalComponent = ({
     title,
     open,
+    selectCounselor,
 
     handleCancel,
 
     items,
     buttons,
 }) => {
+
+
     return (
         <div className='modal-container'>
             <Modal
@@ -43,7 +47,7 @@ export const ModalComponent = ({
                     {
                         buttons &&
                         buttons.map(button => (
-                            <Button onClick={button.onClick}>{button.text}</Button>
+                            <Button onClick={() => button.onClick(selectCounselor)}>{button.text}</Button>
                         ))
                     }
                 </div>
