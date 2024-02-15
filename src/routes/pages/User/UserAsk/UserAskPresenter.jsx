@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from '../../../../components/Layout/Layout';
 import { Ask } from "./components/Ask";
-import { Tabs } from "antd";
+import { AskTab } from "./components/AskTab";
 
 export const UserAskPresenter = ({
     setContent,
@@ -10,8 +10,7 @@ export const UserAskPresenter = ({
 }) => {
     return(
         <Layout nav={0}>
-            <Tabs />
-            <Ask 
+            <AskTab 
             setContent={setContent}
             
             onSubmit={onSubmit}

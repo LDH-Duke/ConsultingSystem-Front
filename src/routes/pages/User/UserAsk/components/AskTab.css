@@ -1,0 +1,10 @@
+.asktab-container {
+    display: flex;
+    
+    width: 100%;
+
+}
+
+.asktab-container .ant-tabs{
+    width: 100%;
+}
