@@ -7,7 +7,7 @@ import cookie from '../../../../cookie';
 const MyMenuContainer = ({
   setCookies
 }) => {
-  const myMenuItems = [
+  const myMenuItems = useState([
     {
       title: '즐겨찾기',
       path: '/user/favorite',
@@ -44,8 +44,12 @@ const MyMenuContainer = ({
       title: '작성 후기 조회',
       path: '/user/review',
     },
-  ]
+  ]);
 
+  const [error, setError] = useState({
+    isError: false,
+    errorMsg: '',
+  });
   const [userInfo, setUserInfo] = useState({});
 
   useEffect(() => {
@@ -55,7 +59,10 @@ const MyMenuContainer = ({
 
         if (id === null) {
           //로그인 필요
-
+          setError({
+            isError: true,
+            errorMsg: '로그인이 필요합니다.',
+          });
           return;
         }
 
@@ -63,6 +70,19 @@ const MyMenuContainer = ({
 
         if (result.status === 409) {
           // 정보 없음
+          setError({
+            isError: true,
+            errorMsg: '회원 정보 조회에 실패하였습니다.',
+          });
+          return;
+        } 
+        
+        if (result.status === 500) {
+          // 에러 발생
+          setError({
+            isError: true,
+            errorMsg: '회원 정보 조회 중 에러가 발생하였습니다.',
+          });
           return;
         }
 
@@ -71,8 +91,24 @@ const MyMenuContainer = ({
     )();
   }, [])
 
+  /**
+   * 에러 처리 함수
+   */
+  const checkError = () => {
+    setError({
+      isError: false,
+      errorMsg: '',
+    });
+  }
+
   return (
-    <MyMenuPresenter userInfo={userInfo} myMenuItems={myMenuItems} />
+    <MyMenuPresenter
+      userInfo={userInfo}
+      myMenuItems={myMenuItems}
+      
+      error={error}
+      checkError={checkError}
+    />
   )
 }
 

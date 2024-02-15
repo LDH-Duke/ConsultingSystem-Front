@@ -9,6 +9,10 @@ const AddProductContainer = ({
 }) => {
   const navigate = useNavigate();
 
+  const [error, setError] = useState({
+    isError: false,
+    errorMsg: '',
+  });
   const [productInfo, setProductInfo] = useState({
     name: '',
     price: '',
@@ -21,7 +25,10 @@ const AddProductContainer = ({
 
     if (counselor_id === null) {
       // 로그인 필요
-
+      setError({
+        isError: true,
+        errorMsg: '로그인이 필요합니다.',
+      });
       return;
     }
 
@@ -29,7 +36,10 @@ const AddProductContainer = ({
 
     if (result.status === 500) {
       // 오류 발생
-      
+      setError({
+        isError: true,
+        errorMsg: '상품 등록 중 에러가 발생하였습니다.',
+      });
       return;
     }
 
@@ -37,12 +47,25 @@ const AddProductContainer = ({
     navigate('/');
   }
 
+  /**
+   * 에러 처리 함수
+   */
+  const checkError = () => {
+    setError({
+      isError: false,
+      errorMsg: '',
+    });
+  }
+
   return (
-    <AddProductPresenter 
+    <AddProductPresenter
       productInfo={productInfo}
       setProductInfo={setProductInfo}
 
       addProduct={addProduct}
+
+      error={error}
+      checkError={checkError}
     />
   )
 }
