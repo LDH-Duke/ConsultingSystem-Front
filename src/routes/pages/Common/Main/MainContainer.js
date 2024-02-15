@@ -9,6 +9,10 @@ const MainContainer = ({
 }) => {
   const navigate = useNavigate();
 
+  const [error, setError] = useState({
+    isError: false,
+    errorMsg: '',
+  });
   const [counselors, setCounselors] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
@@ -33,7 +37,20 @@ const MainContainer = ({
         const result = await API.getCounselorProducts();
 
         if (result.status === 409) {
-          // 상담사 정보 가져오기 실패
+          // 상품 가져오기 실패
+          setError({
+            isError: true,
+            errorMsg: '상품 조회에 실패하였습니다.',
+          });
+          return;
+        }
+
+        if (result.status === 500) {
+          // 에러 발생
+          setError({
+            isError: true,
+            errorMsg: '상품 조회 중 에러가 발생하였습니다.',
+          });
           return;
         }
 
@@ -42,12 +59,24 @@ const MainContainer = ({
         const userData = cookie.getCookie('id');
         setIsSignIn(userData !== null);
 
-        // 좋아요 전체 조회
+        // 즐겨찾기 전체 조회
         const favoriteResult = await API.getFavorite(userData);
 
         if (favoriteResult.status === 409) {
-          // 좋아요 정보 가져오기 실패
+          // 즐겨찾기 정보 가져오기 실패
+          setError({
+            isError: true,
+            errorMsg: '즐겨찾기 정보 조회에 실패하였습니다.',
+          });
+          return;
+        }
 
+        if (favoriteResult.status === 500) {
+          // 에러 발생
+          setError({
+            isError: true,
+            errorMsg: '즐겨찾기 정보 조회 중 에러가 발생하였습니다.',
+          });
           return;
         }
 
@@ -57,14 +86,17 @@ const MainContainer = ({
   }, [isClick]);
 
   /**
-   * 좋아요 추가
+   * 즐겨찾기 추가
    */
   const addFavorite = async (counselor_id) => {
     const id = cookie.getCookie('id');
 
     if (id === null) {
       // 로그인 필요
-
+      setError({
+        isError: true,
+        errorMsg: '로그인이 필요합니다.',
+      });
       return;
     }
 
@@ -73,11 +105,21 @@ const MainContainer = ({
       counselor_id: counselor_id,
     };
 
+    // 즐겨찾기
     const result = await API.postFavorite(body);
 
     if (result.status === 401) {
-      // 좋아요 추가 이슈
+      // 즐겨찾기 추가 이슈
 
+      return;
+    }
+
+    if (result.status === 500) {
+      // 에러 발생
+      setError({
+        isError: true,
+        errorMsg: '즐겨찾기 중 에러가 발생하였습니다.',
+      });
       return;
     }
 
@@ -85,7 +127,7 @@ const MainContainer = ({
   }
 
   /**
-   * 좋아요 취소
+   * 즐겨찾기 취소
    */
   const deleteFavorite = async (counselor_id, favorite_id) => {
     console.log('call deleteFavorite');
@@ -99,8 +141,20 @@ const MainContainer = ({
     const result = await API.deleteFavorite(body);
 
     if (result.status === 401) {
-      // 좋아요 취소 실패
+      // 즐겨찾기 취소 실패
+          setError({
+            isError: true,
+            errorMsg: '즐겨찾기 취소를 실패했습니다.',
+          });
+      return;
+    }
 
+    if (result.status === 500) {
+      // 에러 발생
+      setError({
+        isError: true,
+        errorMsg: '즐겨찾기 취소 중 에러가 발생하였습니다.',
+      });
       return;
     }
 
@@ -133,7 +187,7 @@ const MainContainer = ({
    * @params product_id => 상품 아이디
    */
   const moveCounselorDetail = (counselor_id, production_price) => {
-    navigate(`/counselor/${counselor_id}`, {state: {production_price}});
+    navigate(`/counselor/${counselor_id}`, { state: { production_price } });
   }
 
   /* ======================= */
@@ -145,8 +199,8 @@ const MainContainer = ({
   }
 
   /**
-       * 모달 버튼
-       */
+   * 모달 버튼
+  */
   const modalButtons = [
     {
       text: '상담 V1 연결',
@@ -187,6 +241,16 @@ const MainContainer = ({
   */
   const handleCancel = () => {
     __closeModal();
+  }
+
+  /**
+   * 에러 처리 함수
+   */
+  const checkError = () => {
+    setError({
+      isError: false,
+      errorMsg: '',
+    });
   }
 
   return (

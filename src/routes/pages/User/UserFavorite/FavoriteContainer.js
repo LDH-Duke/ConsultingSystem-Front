@@ -6,7 +6,7 @@ import cookie from '../../../../cookie';
 
 const FavoriteContainer = ({
   setCookies
-}) => {  
+}) => {
   // const [favoriteList, setFavoriteList] = useState([
   //   {
   //     counselor_id: 1,
@@ -91,26 +91,45 @@ const FavoriteContainer = ({
   //   },
   // ]);
 
+  const [error, setError] = useState({
+    isError: false,
+    errorMsg: '',
+  });
   const [favoriteList, setFavoriteList] = useState([]);
   const [isClick, setIsClick] = useState(false);
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       // 쿠키에서 회원 id를 가져옴
       const id = cookie.getCookie('id');
 
       if (id === null) {
         // 로그인이 되어있지 않다는 알림
-
+        setError({
+          isError: true,
+          errorMsg: '로그인이 필요합니다.',
+        });
         return;
       }
 
-      // API로 좋아요 목록 요청
+      // API로 즐겨찾기 목록 요청
       const result = await API.getFavorite(id);
 
       if (result.status === 404) {
-        // 좋아요 목록이 없을 경우 알림
-
+        // 즐겨찾기 목록 조회에 실패할 경우
+        setError({
+          isError: true,
+          errorMsg: '즐겨찾기 목록 조회에 실패하였습니다.',
+        });
+        return;
+      } 
+      
+      if (result.status === 500) {
+        // 에러 발생
+        setError({
+          isError: true,
+          errorMsg: '즐겨찾기 목록 조회 중 에러가 발생하였습니다.',
+        });
         return;
       }
 
@@ -119,7 +138,7 @@ const FavoriteContainer = ({
   }, [isClick]);
 
   /**
-   * 좋아요 취소
+   * 즐겨찾기 취소
    */
   const deleteFavorite = async (counselor_id) => {
     console.log('call deleteFavorite');
@@ -133,12 +152,34 @@ const FavoriteContainer = ({
     const result = await API.deleteFavorite(body);
 
     if (result.status === 401) {
-      // 좋아요 취소 실패
-
+      // 즐겨찾기 취소 실패
+      setError({
+        isError: true,
+        errorMsg: '즐겨찾기 취소에 실패하였습니다.',
+      });
+      return;
+    } 
+    
+    if (result.status === 500) {
+      // 에러 발생
+      setError({
+        isError: true,
+        errorMsg: '즐겨찾기 취소 중 에러가 발생하였습니다.',
+      });
       return;
     }
 
     setIsClick(!isClick);
+  }
+
+  /**
+   * 에러 처리 함수
+   */
+  const checkError = () => {
+    setError({
+      isError: false,
+      errorMsg: '',
+    });
   }
 
   return (

@@ -10,6 +10,10 @@ const SignUpContainer = ({
   const emailRegex = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
   const navigate = useNavigate();
 
+  const [error, setError] = useState({
+    isError: false,
+    errorMsg: '',
+  });
   const [isCheckEmail, setIsCheckEmail] = useState(false);
   const [isCheckPw, setIsCheckPw] = useState(false);
   const [isPhone, setIsPhone] = useState(false);
@@ -71,9 +75,21 @@ const SignUpContainer = ({
     if (result.status === 409) {
       // 중복확인 실패
       // 실패 알림
-
+      setError({
+        isError: true,
+        errorMsg: '중복확인에 실패하였습니다.',
+      });
       return;
-    }
+    } 
+    
+    if (result.status === 500) {
+    // 에러 발생
+    setError({
+      isError: true,
+      errorMsg: '중복확인 중 에러가 발생하였습니다.',
+    });
+    return;
+  }
       
     // 중복확인 성공
     setIsDoubleCheck(true);
@@ -107,18 +123,36 @@ const SignUpContainer = ({
     // const result = isUser ? await API.postSignUp(body) : await API.postCounselorSignUp(body);
     const result = await API.postCounselorSignup(body);
 
-    switch (result) {
-      case 401:
-        // 회원가입 실패 알림
-
-        break;
-      default:
-        // 회원가입 성공
-        navigate('/signin');
-        break;
+    if (result.status === 401) {
+      // 회원가입 실패
+      setError({
+        isError: true,
+        errorMsg: '회원가입에 실패하였습니다.',
+      });
+      return;
+    } 
+    
+    if (result.status === 500) {
+      // 에러 발생
+      setError({
+        isError: true,
+        errorMsg: '회원가입 중 에러가 발생하였습니다.',
+      });
+      return;
     }
+
+    navigate('/signin');
   }
 
+  /**
+   * 에러 처리 함수
+   */
+  const checkError = () => {
+    setError({
+      isError: false,
+      errorMsg: '',
+    });
+  }
 
   return (
     <SignUpPresenter 

@@ -14,6 +14,10 @@ const UserUpdateReviewContainer = () => {
     // const queryParams = new URLSearchParams(location.search);
     // const prevContent = queryParams.get("prev_content") || "";
 
+    const [error, setError] = useState({
+        isError: false,
+        errorMsg: '',
+    });
     const [textAreaContent, setTextAreaContent] = useState('');
 
 
@@ -38,23 +42,47 @@ const UserUpdateReviewContainer = () => {
 
         if (result.status === 409) {
             // 리뷰 수정 실패
-
+            setError({
+                isError: true,
+                errorMsg: '후기 수정을 실패하였습니다.',
+            });
+            return;
+        } 
+        
+        if (result.status === 500) {
+            // 에러 발생
+            setError({
+                isError: true,
+                errorMsg: '후기 수정 중 에러가 발생하였습니다.',
+            });
             return;
         }
-
+        
         // 리뷰 수정 성공
         navigate(-1);
     }
-
+    
     /**
      * 후기 삭제
      */
     const deleteReview = async () => {
         const result = await API.deleteReview(reviewItemId);
-
+        
         if (result.status === 409) {
             // 후기 삭제 실패
-
+            setError({
+                isError: true,
+                errorMsg: '후기 삭제를 실패하였습니다.',
+            });
+            return;
+        } 
+        
+        if (result.status === 500) {
+            // 에러 발생
+            setError({
+                isError: true,
+                errorMsg: '후기 삭제 중 에러가 발생하였습니다.',
+            });
             return;
         }
 
@@ -67,6 +95,16 @@ const UserUpdateReviewContainer = () => {
      */
     const goBack = () => {
         navigate(-1);
+    }
+
+    /**
+     * 에러 처리 함수
+     */
+    const checkError = () => {
+        setError({
+            isError: false,
+            errorMsg: '',
+        });
     }
 
     return (

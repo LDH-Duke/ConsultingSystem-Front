@@ -5,11 +5,13 @@ import WriteReview from "./components/WriteReview";
 
 export const UserWriteReviewPresenter = ({
     writeReview,
+    score,
+    setScore,
+    handleScore,
+
     setContent,
     content,
-    setScore,
-    score,
-    handleScore,
+    
     goBack,
     goTo,
 }) => {

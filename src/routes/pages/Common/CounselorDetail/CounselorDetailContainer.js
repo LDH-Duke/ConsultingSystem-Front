@@ -10,6 +10,10 @@ const CounselorDetailContainer = ({
   const { counselor_id } = useParams();
   const { state: { production_price } } = useLocation();
 
+  const [error, setError] = useState({
+    isError: false,
+    errorMsg: '',
+  });
   // 상담사
   const [counselor, setCounselor] = useState({});
 
@@ -35,40 +39,73 @@ const CounselorDetailContainer = ({
   ]);
 
   useEffect(() => {
-    (async () => {
-      /**
-       * 상담사 단일 정보 조회
-       */
-      const counselorData = await API.getCounselor(counselor_id);
+    (
+      async () => {
+        /**
+         * 상담사 단일 정보 조회
+         */
+        const counselorData = await API.getCounselor(counselor_id);
 
-      if (counselorData === null) {
-        // 정보 불러올 수 없다는 알림
-        return;
+        if (counselorData.status === 404) {
+          // 상담사 정보 조회 실패
+          setError({
+            isError: true,
+            errorMsg: '상담사 정보 조회에 실패하였습니다.',
+          });
+          return;
+        }
+
+        if (counselorData.status === 500) {
+          // 에러 발생
+          setError({
+            isError: true,
+            errorMsg: '상담사 정보 조회 중 에러가 발생하였습니다.',
+          });
+          return;
+        }
+
+        setCounselor(counselorData.data);
+
+        // 상품 정보 가져오기
+        // const productionData = await API.getProduction(production_id);
+
+        setModalItems([
+          {
+            text: '예명',
+            value: counselorData.data.nickname,
+          },
+          {
+            text: '가격',
+            value: production_price,
+          },
+        ]);
+
+        /**
+         * 상담사 단일 후기
+         */
+        const reviewsData = await API.getReview(counselor_id);
+
+        if (reviewsData.status === 409) {
+          // 후기 조회 실패
+          setError({
+            isError: true,
+            errorMsg: '상담사 후기 조회에 실패하였습니다.',
+          });
+          return;
+        }
+
+        if (reviewsData.status === 500) {
+          // 에러 발생
+          setError({
+            isError: true,
+            errorMsg: '상담사 후기 조회 중 에러가 발생하였습니다.',
+          });
+          return;
+        }
+
+        setReviews(reviewsData.data);
       }
-
-      setCounselor(counselorData.data);
-
-      // 상품 정보 가져오기
-      // const productionData = await API.getProduction(production_id);
-
-      setModalItems([
-        {
-          text: '예명',
-          value: counselorData.data.nickname,
-        },
-        {
-          text: '가격',
-          value: production_price,
-        },
-      ]);
-
-      /**
-       * 상담사 단일 후기
-       */
-      const reviewsData = await API.getReview(counselor_id);
-      setReviews(reviewsData.data);
-
-    })();
+    )();
   }, [])
 
   const goBack = () => {
@@ -137,6 +174,16 @@ const CounselorDetailContainer = ({
   */
   const handleCancel = () => {
     __closeModal();
+  }
+
+    /**
+     * 에러 처리 함수
+     */
+    const checkError = () => {
+      setError({
+          isError: false,
+          errorMsg: '',
+      });
   }
 
   return (
