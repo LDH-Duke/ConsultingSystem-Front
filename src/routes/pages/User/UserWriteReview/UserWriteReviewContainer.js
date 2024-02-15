@@ -9,8 +9,6 @@ const UserWriteReviewContainer = () => {
 
     const {counselor_id} = useParams();
 
-    const {counselor_id} = useParams();
-
     const [error, setError] = useState({
         isError: false,
         errorMsg: '',
