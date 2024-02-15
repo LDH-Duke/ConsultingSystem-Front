@@ -26,6 +26,15 @@ const CounselorCoinContainer = () => {
                 }
 
                 const getCounselorInfo = await API.getCounselor(counselor_id);
+                if (getCounselorInfo.code === 500) {
+                    // 서버 연결 안됨
+                    setError({
+                        isError: true,
+                        errorMsg: `서버 연결이 원활하지 않습니다.\n잠시만 기다려주시기 바랍니다.`
+                    });
+                    return;
+                }
+
                 if (getCounselorInfo.status === 404) {
                     // 수정 실패
                     setError({

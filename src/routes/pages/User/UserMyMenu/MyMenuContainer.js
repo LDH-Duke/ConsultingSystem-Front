@@ -56,7 +56,6 @@ const MyMenuContainer = ({
     (
       async () => {
         const id = cookie.getCookie('id');
-
         if (id === null) {
           //로그인 필요
           setError({
@@ -67,6 +66,14 @@ const MyMenuContainer = ({
         }
 
         const result = await API.getUser(id);
+        if (result.code === 500) {
+          // 서버 연결 안됨
+          setError({
+            isError: true,
+            errorMsg: `서버 연결이 원활하지 않습니다.\n잠시만 기다려주시기 바랍니다.`
+          });
+          return;
+        }
 
         if (result.status === 409) {
           // 정보 없음
@@ -75,8 +82,8 @@ const MyMenuContainer = ({
             errorMsg: '회원 정보 조회에 실패하였습니다.',
           });
           return;
-        } 
-        
+        }
+
         if (result.status === 500) {
           // 에러 발생
           setError({
@@ -105,7 +112,7 @@ const MyMenuContainer = ({
     <MyMenuPresenter
       userInfo={userInfo}
       myMenuItems={myMenuItems}
-      
+
       error={error}
       checkError={checkError}
     />

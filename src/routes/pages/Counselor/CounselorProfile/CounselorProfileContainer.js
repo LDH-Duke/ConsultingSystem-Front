@@ -25,6 +25,14 @@ const CounselorProfileContainer = () => {
                 }
 
                 const getCounselorInfo = await API.getCounselor(counselor_id);
+                if (getCounselorInfo.code === 500) {
+                    // 서버 연결 안됨
+                    setError({
+                        isError: true,
+                        errorMsg: `서버 연결이 원활하지 않습니다.\n잠시만 기다려주시기 바랍니다.`
+                    });
+                    return;
+                }
 
                 if (getCounselorInfo.status === 404) {
                     // 회원 정보 없음
@@ -33,8 +41,8 @@ const CounselorProfileContainer = () => {
                         errorMsg: '회원 정보가 존재하지 않습니다.',
                     });
                     return;
-                } 
-                
+                }
+
                 if (getCounselorInfo.status === 500) {
                     // 에러 발생
                     setError({
@@ -62,6 +70,14 @@ const CounselorProfileContainer = () => {
         }
 
         const postCounselorInfo = await API.putCounselorProfile(counselor_id, counselor);
+        if (postCounselorInfo.code === 500) {
+            // 서버 연결 안됨
+            setError({
+                isError: true,
+                errorMsg: `서버 연결이 원활하지 않습니다.\n잠시만 기다려주시기 바랍니다.`
+            });
+            return;
+        }
 
         if (postCounselorInfo.status === 409) {
             // 수정 실패
@@ -70,8 +86,8 @@ const CounselorProfileContainer = () => {
                 errorMsg: '회원 정보 수정에 실패하였습니다.',
             });
             return;
-        } 
-        
+        }
+
         if (postCounselorInfo.status === 500) {
             // 에러 발생
             setError({
@@ -85,15 +101,15 @@ const CounselorProfileContainer = () => {
 
     }
 
-  /**
-   * 에러 처리 함수
-   */
-  const checkError = () => {
-    setError({
-      isError: false,
-      errorMsg: '',
-    });
-  }
+    /**
+     * 에러 처리 함수
+     */
+    const checkError = () => {
+        setError({
+            isError: false,
+            errorMsg: '',
+        });
+    }
 
     return (
         <CounselorProfilePresenter

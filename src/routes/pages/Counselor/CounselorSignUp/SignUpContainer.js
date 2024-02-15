@@ -71,6 +71,14 @@ const SignUpContainer = ({
     }
 
     const result = await API.postCounselorDoublecheck(body);
+    if (result.code === 500) {
+      // 서버 연결 안됨
+      setError({
+        isError: true,
+        errorMsg: `서버 연결이 원활하지 않습니다.\n잠시만 기다려주시기 바랍니다.`
+      });
+      return;
+    }
 
     if (result.status === 409) {
       // 중복확인 실패
@@ -139,6 +147,14 @@ const SignUpContainer = ({
 
     // const result = isUser ? await API.postSignUp(body) : await API.postCounselorSignUp(body);
     const result = await API.postCounselorSignup(body);
+    if (result.code === 500) {
+      // 서버 연결 안됨
+      setError({
+        isError: true,
+        errorMsg: `서버 연결이 원활하지 않습니다.\n잠시만 기다려주시기 바랍니다.`
+      });
+      return;
+    }
 
     if (result.status === 409) {
       // 회원가입 실패

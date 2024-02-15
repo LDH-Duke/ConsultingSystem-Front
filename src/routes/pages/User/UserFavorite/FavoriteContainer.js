@@ -102,7 +102,6 @@ const FavoriteContainer = ({
     (async () => {
       // 쿠키에서 회원 id를 가져옴
       const id = cookie.getCookie('id');
-
       if (id === null) {
         // 로그인이 되어있지 않다는 알림
         setError({
@@ -114,6 +113,14 @@ const FavoriteContainer = ({
 
       // API로 즐겨찾기 목록 요청
       const result = await API.getFavorite(id);
+      if (result.code === 500) {
+        // 서버 연결 안됨
+        setError({
+          isError: true,
+          errorMsg: `서버 연결이 원활하지 않습니다.\n잠시만 기다려주시기 바랍니다.`
+        });
+        return;
+      }
 
       if (result.status === 404) {
         // 즐겨찾기 목록 조회에 실패할 경우
@@ -122,8 +129,8 @@ const FavoriteContainer = ({
           errorMsg: '즐겨찾기 목록 조회에 실패하였습니다.',
         });
         return;
-      } 
-      
+      }
+
       if (result.status === 500) {
         // 에러 발생
         setError({
@@ -141,8 +148,15 @@ const FavoriteContainer = ({
    * 즐겨찾기 취소
    */
   const deleteFavorite = async (counselor_id) => {
-    console.log('call deleteFavorite');
     const user_id = cookie.getCookie('id');
+    if (user_id === null) {
+      // 로그인이 되어있지 않다는 알림
+      setError({
+        isError: true,
+        errorMsg: '로그인이 필요합니다.',
+      });
+      return;
+    }
 
     const body = {
       user_id,
@@ -150,6 +164,14 @@ const FavoriteContainer = ({
     };
 
     const result = await API.deleteFavorite(body);
+    if (result.code === 500) {
+      // 서버 연결 안됨
+      setError({
+        isError: true,
+        errorMsg: `서버 연결이 원활하지 않습니다.\n잠시만 기다려주시기 바랍니다.`
+      });
+      return;
+    }
 
     if (result.status === 401) {
       // 즐겨찾기 취소 실패
@@ -158,8 +180,8 @@ const FavoriteContainer = ({
         errorMsg: '즐겨찾기 취소에 실패하였습니다.',
       });
       return;
-    } 
-    
+    }
+
     if (result.status === 500) {
       // 에러 발생
       setError({

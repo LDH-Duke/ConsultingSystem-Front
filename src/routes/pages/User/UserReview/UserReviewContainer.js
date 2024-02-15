@@ -29,6 +29,15 @@ const UserReviewContainer = () => {
                 }
 
                 const reviewsData = await API.getUserReviews(user_id);
+                if (reviewsData.code === 500) {
+                  // 서버 연결 안됨
+                  setError({
+                    isError: true,
+                    errorMsg: `서버 연결이 원활하지 않습니다.\n잠시만 기다려주시기 바랍니다.`
+                  });
+                  return;
+                }
+                
                 if (reviewsData.status === 409) {
                     // 리뷰 조회 실패
                     setError({

@@ -66,6 +66,15 @@ const SignInContainer = ({
     };
 
     const result = isUser ? await API.postSignin(body) : await API.postCounselorSignin(body);
+    if (result.code === 500) {
+      // 서버 연결 안됨
+      setError({
+        isError: true,
+        errorMsg: `서버 연결이 원활하지 않습니다.\n잠시만 기다려주시기 바랍니다.`
+      });
+      return;
+    }
+
     if (result.status === 401) {
       // 로그인 실패
       setError({

@@ -6,7 +6,7 @@ import { API } from "../../../../api";
 const UserUpdateReviewContainer = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
-    
+
     const [reviewItemId, setReviewItemId] = useState(0);
     const [content, setContent] = useState('');
 
@@ -24,7 +24,7 @@ const UserUpdateReviewContainer = () => {
     useEffect(() => {
         const prevContent = searchParams.get('prev_content');
         const reviewItem = searchParams.get('review_item_id');
-        
+
         setContent(prevContent);
         setReviewItemId(reviewItem);
     }, [])
@@ -39,6 +39,14 @@ const UserUpdateReviewContainer = () => {
         }
 
         const result = await API.putReview(reviewItemId, body);
+        if (result.code === 500) {
+            // 서버 연결 안됨
+            setError({
+                isError: true,
+                errorMsg: `서버 연결이 원활하지 않습니다.\n잠시만 기다려주시기 바랍니다.`
+            });
+            return;
+        }
 
         if (result.status === 409) {
             // 리뷰 수정 실패
@@ -47,8 +55,8 @@ const UserUpdateReviewContainer = () => {
                 errorMsg: '후기 수정을 실패하였습니다.',
             });
             return;
-        } 
-        
+        }
+
         if (result.status === 500) {
             // 에러 발생
             setError({
@@ -57,17 +65,25 @@ const UserUpdateReviewContainer = () => {
             });
             return;
         }
-        
+
         // 리뷰 수정 성공
         navigate(-1);
     }
-    
+
     /**
      * 후기 삭제
      */
     const deleteReview = async () => {
         const result = await API.deleteReview(reviewItemId);
-        
+        if (result.code === 500) {
+            // 서버 연결 안됨
+            setError({
+                isError: true,
+                errorMsg: `서버 연결이 원활하지 않습니다.\n잠시만 기다려주시기 바랍니다.`
+            });
+            return;
+        }
+
         if (result.status === 409) {
             // 후기 삭제 실패
             setError({
@@ -75,8 +91,8 @@ const UserUpdateReviewContainer = () => {
                 errorMsg: '후기 삭제를 실패하였습니다.',
             });
             return;
-        } 
-        
+        }
+
         if (result.status === 500) {
             // 에러 발생
             setError({
