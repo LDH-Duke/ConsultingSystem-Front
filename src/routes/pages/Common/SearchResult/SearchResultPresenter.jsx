@@ -17,12 +17,12 @@ export const SearchResultPresenter = ({
     addFavorite,
     deleteFavorite,
 
-    isModalOpen,
-    modalOpen,
-    handleOk,
-    handleCancel,
-    modalItems,
-    modalButtons,
+    // isModalOpen,
+    // modalOpen,
+    // handleOk,
+    // handleCancel,
+    // modalItems,
+    // modalButtons,
 }) => {
 
     return (
@@ -44,12 +44,12 @@ export const SearchResultPresenter = ({
                         addFavorite={addFavorite}
                         deleteFavorite={deleteFavorite}
         
-                        isModalOpen={isModalOpen}
-                        modalOpen={modalOpen}
-                        handleOk={handleOk}
-                        handleCancel={handleCancel}
-                        modalItems={modalItems}
-                        modalButtons={modalButtons}
+                        // isModalOpen={isModalOpen}
+                        // modalOpen={modalOpen}
+                        // handleOk={handleOk}
+                        // handleCancel={handleCancel}
+                        // modalItems={modalItems}
+                        // modalButtons={modalButtons}
                     />
                 }
             </div>

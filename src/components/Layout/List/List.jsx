@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Modal, Button } from 'antd';
 import { InputComponent } from '../Input/InputComponent';
 import { ModalComponent } from '../Modal/Modal';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './List.css'
+import API from '../../../api/API';
 
 export const List = ({
     counselors,
@@ -13,45 +14,111 @@ export const List = ({
     addFavorite,
     deleteFavorite,
 
-    isModalOpen,
-    modalOpen,
-    handleOk,
-    handleCancel,
-    modalItems,
-    modalButtons,
+    // isModalOpen,
+    // modalOpen,
+    // handleOk,
+    // handleCancel,
+    // modalItems,
+    // modalButtons,
 }) => {
-    // const counselors = [
-    //     {
-    //         nickname: '홍단',
-    //         price: '1200',
-    //         tag: ['#친절함', '#편함', '#재밌음'],
-    //         url: ''
-    //     },
-    //     {
-    //         nickname: '홍단',
-    //         price: '1200',
-    //         tag: ['#친절함', '#편함', '#재밌음'],
-    //         url: ''
-    //     },
-    //     {
-    //         nickname: '홍단',
-    //         price: '1200',
-    //         tag: ['#친절함', '#편함', '#재밌음'],
-    //         url: ''
-    //     },
-    //     {
-    //         nickname: '홍단',
-    //         price: '1200',
-    //         tag: ['#친절함', '#편함', '#재밌음'],
-    //         url: ''
-    //     },
-    //     {
-    //         nickname: '홍단',
-    //         price: '1200',
-    //         tag: ['#친절함', '#편함', '#재밌음'],
-    //         url: ''
-    //     },
-    // ]
+    const navigate = useNavigate();
+
+    const [error, setError] = useState({
+        isError: true,
+        errorMsg: '',
+    });
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectCounselor, setSelectCounselor] = useState('');
+
+    /**
+     * 상담 연결 (V1)
+    */
+    const connectConsultingV1 = async () => {
+        const request = await API.getCounsultRequest(selectCounselor.counselor_id)
+        console.log(request)
+
+        if (!request.status) {
+            console.log('에러')
+            // 에러 발생
+            setError({
+                isError: true,
+                errorMsg: '상담 연결 중 에러가 발생하였습니다.'
+            });
+            return;
+        }
+
+        if (request.status.is_user.total_coin < (selectCounselor.price * 5)) {
+            console.log('잔액부족')
+            setError({
+                isError: true,
+                errorMsg: '상담 연결에 필요한 코인이 부족합니다.'
+            });
+            return;
+        }
+
+        //socket 연결 부분
+        //consulting api 연동 부분
+
+
+        setIsModalOpen(false);
+        // Consulting V1 이동
+        navigate('/consultingv1');
+    }
+
+    /**
+     * 상담 연결 (V2)
+     */
+    const connectConsultingV2 = (counselor_id) => {
+        setIsModalOpen(false);
+        // Consulting V2 이동
+        navigate('/consultingv2');
+    }
+
+
+    /**
+       * 모달 버튼
+       */
+    const modalButtons = [
+        {
+            text: '상담 V1 연결',
+            onClick: connectConsultingV1,
+        },
+        {
+            text: '상담 V2 연결',
+            onClick: connectConsultingV2,
+        },
+    ];
+
+    /**
+     * 모달 오픈
+     */
+    const modalOpen = (counselor) => {
+        setSelectCounselor(counselor);
+        setIsModalOpen(true);
+        setModalItems([
+            {
+                text: '예명',
+                value: counselor['counselor.nickname'],
+            },
+            {
+                text: '가격',
+                value: counselor.price,
+            },
+        ])
+    }
+
+    /**
+     * 모달 아이템
+     */
+    const [modalItems, setModalItems] = useState([
+        {
+            text: '',
+            value: '',
+        },
+    ]);
+
+
+
     return (
         <div className='list-container'>
             {
@@ -59,7 +126,7 @@ export const List = ({
                 counselors.map((counselor, idx) => {
                     return (
                         <div className={`list ${idx}`} key={`list ${idx}`}>
-                            <div className='list-img'  onClick={() => moveCounselorDetail(counselor['counselor.id'], counselor.price)}>
+                            <div className='list-img' onClick={() => moveCounselorDetail(counselor['counselor.id'], counselor.price)}>
                                 <img src={counselor['counselor.img']} alt='이미지'></img>
                             </div>
                             <div className='list-info'>
@@ -79,55 +146,29 @@ export const List = ({
                             </div>
                             <div className="list-btns">
                                 <button className='list-btn' onClick={() => modalOpen(counselor)}>상담하기</button>
+
                                 {
                                     favorites &&
-                                    favorites.filter(favorite => favorite.counselor_id === counselor['counselor.id']).length ?
+                                        favorites.filter(favorite => favorite.counselor_id === counselor['counselor.id']).length ?
                                         <button className='list-btn' onClick={() => { deleteFavorite(counselor['counselor.id']) }}>취소</button> :
                                         <button className='list-btn' onClick={() => { addFavorite(counselor.counselor_id) }}>좋아요</button>
                                 }
                             </div>
-                            <ModalComponent
-                                title={'상담하기'}
-                                open={isModalOpen}
-                                handleCancel={handleCancel}
-                                items={modalItems}
-                                buttons={modalButtons}
-                            />
-                            {/* <Modal
-                                title='상담하기'
-                                open={isModalOpen}
-                                onOk={handleOk}
-                                okButtonProps={{
-                                    style: {
-                                        display: 'none'
-                                    }
-                                }}
-                                onCancel={handleCancel}
-                                cancelText='닫기'
-                            >
-                                <div className="counselor-infos">
-                                    <div className="counselor-info">
-                                        <span>예명</span>
-                                        <InputComponent
-                                            isReadonly={true}
-                                            value={selectCounselor['counselor.name']}
-                                        />
-                                    </div>
-                                    <div className="counselor-info">
-                                        <span>가격</span>
-                                        <InputComponent
-                                            isReadonly={true}
-                                            value={selectCounselor.price}
-                                        />
-                                    </div>
-                                </div>
-                                <Button onClick={connectConsultingV1}>상담 V1 연결</Button>
-                                <Button onClick={connectConsultingV2}>상담 V2 연결</Button>
-                            </Modal> */}
                         </div>
                     )
                 })
             }
+            <ModalComponent
+                title={'상담하기'}
+                open={isModalOpen} //열림 여부
+                cancelText={'닫기'}
+                items={modalItems}
+                selectCounselor={selectCounselor}
+
+                buttons={modalButtons}
+                handleCancel={() => setIsModalOpen(false)}
+            >
+            </ModalComponent>
         </div>
     )
 }

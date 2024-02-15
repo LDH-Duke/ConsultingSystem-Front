@@ -4,22 +4,67 @@ import API from "../../../../api/API";
 import cookie from "../../../../cookie";
 
 const CounselorMainContainer = () => {
-
+    const [error, setError] = useState({
+        isError: false,
+        errorMsg: '',
+    });
     const [counselor, setCounselor] = useState([]);
 
     useEffect(() => {
-        (async() => {
-            
-            const counselor_id = cookie.getCookie('id');
+        (
+            async () => {
 
-            const {data} = await API.getCounselor(counselor_id);
+                const counselor_id = cookie.getCookie('id');
+                if (counselor_id === null) {
+                    // 로그인 필요
+                    setError({
+                        isError: true,
+                        errorMsg: '로그인이 필요합니다.',
+                    });
+                    return;
+                }
 
-            setCounselor(data);
-        })();
+                const result = await API.getCounselor(counselor_id);
+                if (result.status === 404) {
+                    // 수정 실패
+                    setError({
+                        isError: true,
+                        errorMsg: '회원 정보 조회에 실패하였습니다.',
+                    });
+                    return;
+                }
+
+                if (result.status === 500) {
+                    // 에러 발생
+                    setError({
+                        isError: true,
+                        errorMsg: '회원 정보 조회 중 에러가 발생하였습니다.',
+                    });
+                    return;
+                }
+
+                setCounselor(result.data);
+            }
+        )();
     }, []);
 
-    return(
-        <CounselorMainPresenter counselor = {counselor} />
+    /**
+     * 에러 처리 함수
+     */
+    const checkError = () => {
+        setError({
+            isError: false,
+            errorMsg: '',
+        });
+    }
+
+    return (
+        <CounselorMainPresenter
+            counselor={counselor}
+
+            error={error}
+            checkError={checkError}
+        />
     )
 }
 

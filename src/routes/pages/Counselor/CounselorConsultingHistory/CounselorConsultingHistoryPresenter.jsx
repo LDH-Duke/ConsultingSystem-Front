@@ -1,17 +1,23 @@
 import React from "react";
 import Layout from "../../../../components/Layout/Layout";
 import "./CounselorConsultingHistory.css"
-import { ConsultingBox } from "./components/ConsultingBox";
+import { ConsultingHistoryList } from "./components/ConsultingHistoryList";
+
+
 
 export const CounselorConsultingHistoryPresenter = ({
     QuestionInfo,
+    items,
+    Panel,
+    Collapse
 }) => {
     return(
         <Layout nav={0}>
-            <div className="History-layout">
-                <ConsultingBox QuestionInfo = {QuestionInfo} >
-                </ConsultingBox>
-            </div>
+            <ConsultingHistoryList
+                QuestionInfo={QuestionInfo}
+                items={items}
+                Panel={Panel}
+                Collapse={Collapse}/>
         </Layout>
     )
 }

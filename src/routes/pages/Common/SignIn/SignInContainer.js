@@ -6,10 +6,15 @@ import { useNavigate } from "react-router-dom";
 const SignInContainer = ({
   setCookies
 }) => {
-  // 이메일 정규식
-  const emailRegex = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
   const navigate = useNavigate();
 
+  // 이메일 정규식
+  const emailRegex = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
+
+  const [error, setError] = useState({
+    isError: false,
+    errorMsg: '',
+  });
   const [isUser, setIsUser] = useState(true);
   const [isCheckEmail, setIsCheckEmail] = useState(false);
 
@@ -48,7 +53,10 @@ const SignInContainer = ({
   const SignIn = async () => {
     if (!isCheckEmail || pw.length < 0) {
       // TODO: 로그인 불가 알림
-
+      setError({
+        isError: true,
+        errorMsg: '이메일과 비밀번호 형식을 다시 한번 확인 해주시기 바랍니다.'
+      });
       return;
     }
 
@@ -58,23 +66,40 @@ const SignInContainer = ({
     };
 
     const result = isUser ? await API.postSignin(body) : await API.postCounselorSignin(body);
-    
-    switch (result) {
-      case 401:
-        //  로그인 실패
-        
-        break;
-        default:
-          // 로그인 성공
-          setCookies(result.data);
-          isUser ? navigate('/') : navigate('/counselor');
-        break;
+    if (result.status === 401) {
+      // 로그인 실패
+      setError({
+        isError: true,
+        errorMsg: '로그인에 실패하였습니다.'
+      });
+      return;
     }
+
+    if (result.status === 500) {
+      // 에러 발생
+      setError({
+        isError: true,
+        errorMsg: '로그인 중 에러가 발생하였습니다.'
+      });
+      return;
+    }
+
+    setCookies(result.data);
+    isUser ? navigate('/') : navigate('/counselor');
   }
 
+  /**
+   * 에러 처리 함수
+   */
+  const checkError = () => {
+    setError({
+      isError: false,
+      errorMsg: '',
+    });
+  }
 
   return (
-    <SignInPresenter 
+    <SignInPresenter
       isUser={isUser}
       isCheckEmail={isCheckEmail}
 
@@ -85,6 +110,9 @@ const SignInContainer = ({
       toggleUserSignIn={toggleUserSignIn}
       onKeyEnter={onKeyEnter}
       SignIn={SignIn}
+
+      error={error}
+      checkError={checkError}
     />
   )
 }
