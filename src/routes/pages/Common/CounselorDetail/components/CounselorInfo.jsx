@@ -24,8 +24,8 @@ export const CounselorInfo = ({
                         <FontAwesomeIcon icon={faHeart} onClick={() => {}} />
                     </div>
                     <div className="second-form">
-                        <span>우수 상담원</span>
-                        <span>할인율 40%</span>
+                        <span className="counselor-grade">우수 상담원</span>
+                        <span className="discount">할인율 40%</span>
 
                     </div>
                     
